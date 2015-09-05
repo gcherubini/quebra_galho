@@ -3,11 +3,11 @@
 ?>
 
 
-<div class="row service_item">
-  <div class="col-md-3 service_item_thumb"> 
+<div class="row servico">
+  <div class="col-md-3 servico_img"> 
   	<?php echo '<img class="img-responsive" src="'.$servico["img_url"].'"/>'; ?> 
   </div>
-  <div class="col-md-9 service_item_content">
+  <div class="col-md-9">
 		<h3> <?php echo $servico["nome"]; ?> (<?php echo $servico["idade"]; ?> anos) </h3>
 		<p> "<?php echo $servico["slogan"]; ?>" </p>
 		<h4> <?php echo $servico["categoria"]; ?> </h4>

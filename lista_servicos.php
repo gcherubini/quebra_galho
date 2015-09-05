@@ -97,9 +97,12 @@
 		<?php include("webparts/header.php"); ?>
 		
 		
-		<br>
-		<p> Encontre o serviço que necessita com os campos de pesquisa abaixo: </p>
 		
+		<div class="row">
+			<div class="col-md-8"> 
+				<p class="servicos_titulo_filtro"> Encontre o serviço que necessita com os campos de pesquisa abaixo: </p>
+			</div> 
+		</div>
 
 		<div class="row">
 			<div class="col-md-8"> 
@@ -112,7 +115,7 @@
 			</div>
 		</div>
 					
-		<div class="row servicos">
+		<div class="servicos">
 		</div>
     </div>
 

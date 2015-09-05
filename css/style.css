@@ -1,6 +1,5 @@
 .container {
 	background-color:white;
-	padding:20px;
 }
 
 .header_website_info{
@@ -11,43 +10,47 @@
 	margin-top:20px;
 }
 
-.service_item {
-	margin-bottom: 10px;
-	padding: 10px 0px;
+.servicos_titulo_filtro{
+	margin-top:20px;
 }
+
 
 .servicos {
 	margin: auto;
 	padding: auto;
-}
-.servico_espacamento {
-	margin: auto;
-	padding: auto;
-	text-align: justify;
-	padding: 15px 30px;
-	/*border: solid 1px black;
-	padding-left: 25px;
-	padding-right: 25px;*/
+	margin-top:20px;
 }
 
 .servico {
 	background: #F2F2F2;
-	padding-bottom: 20px;
+	
+	padding: auto;
+	margin: auto;
 }
 
-.servico:hover{
+.servico_espacamento {
+	margin: auto;
+	padding: auto;
+	text-align: justify;
+	width: 90%;
+	/*padding: 15px 30px;
+	border: solid 1px black;
+	padding-left: 25px;
+	padding-right: 25px;*/
+}
+
+
+.servico_espacamento:hover{
    background:#ccc;
-}
-
-.servico_last {
-	padding-right: 0px;
 }
 
 .servico_img {
 	margin: auto;
+	padding: auto;
 }
 
 .servico_img img {
+	width: 280px;
 	height: 200px;
 }
 
