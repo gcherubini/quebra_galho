@@ -1,0 +1,40 @@
+{
+   "servicos":[  
+      {  
+         "id":1,
+		   "nome": "Guilherme",
+         "idade": 20,
+         "slogan": "Trabalho com qualidade e dedicação",
+         "descricao":"O Lorem Ipsum é um texto modelo da indústria tipográfica e de impressão. O Lorem Ipsum tem vindo a ser o texto padrão usado por estas indústrias desde o ano de 1500, quando uma misturou os caracteres de um texto para criar um espécime de livro. Este texto não só sobreviveu 5 séculos.",
+         "categoria":"Gestor",
+         "img_url":"img/carpinteiro.jpg"
+      },
+     {  
+         "id":2,
+         "nome": "Pedro",
+         "idade": 30,
+         "slogan": "Trabalho com qualidade e dedicação",
+         "descricao":"O Lorem Ipsum é um texto modelo da indústria tipográfica e de impressão. O Lorem Ipsum tem vindo a ser o texto padrão usado por estas indústrias desde o ano de 1500, quando uma misturou os caracteres de um texto para criar um espécime de livro. Este texto não só sobreviveu 5 séculos.",
+         "categoria":"Técnico de Informática",
+         "img_url":"img/pedrero.jpg"
+      },
+      {  
+         "id":3,
+         "nome": "Joel",
+         "idade": 26,
+         "slogan": "Trabalho com qualidade e dedicação",
+         "descricao":"O Lorem Ipsum é um texto modelo da indústria tipográfica e de impressão. O Lorem Ipsum tem vindo a ser o texto padrão usado por estas indústrias desde o ano de 1500, quando uma misturou os caracteres de um texto para criar um espécime de livro. Este texto não só sobreviveu 5 séculos.",
+         "categoria":"Pedreiro",
+         "img_url":"img/joao_barbeiro.jpg"
+      },
+      {  
+         "id":4,
+         "nome": "Romeu",
+         "idade": 42,
+         "slogan": "Trabalho com qualidade e dedicação",
+         "descricao":"O Lorem Ipsum é um texto modelo da indústria tipográfica e de impressão. O Lorem Ipsum tem vindo a ser o texto padrão usado por estas indústrias desde o ano de 1500, quando uma misturou os caracteres de um texto para criar um espécime de livro. Este texto não só sobreviveu 5 séculos.",
+         "categoria":"Marcineiro",
+         "img_url":"img/carpinteiro.jpg"
+      }
+   ]
+}

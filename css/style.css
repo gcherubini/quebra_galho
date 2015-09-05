@@ -1,0 +1,63 @@
+.container {
+	background-color:white;
+	padding:20px;
+}
+
+.header_website_info{
+	margin-top:20px;
+}
+
+.header_menu {
+	margin-top:20px;
+}
+
+.service_item {
+	margin-bottom: 10px;
+	padding: 10px 0px;
+}
+
+.servicos {
+	margin: auto;
+	padding: auto;
+}
+.servico_espacamento {
+	margin: auto;
+	padding: auto;
+	text-align: justify;
+	padding: 15px 30px;
+	/*border: solid 1px black;
+	padding-left: 25px;
+	padding-right: 25px;*/
+}
+
+.servico {
+	background: #F2F2F2;
+	padding-bottom: 20px;
+}
+
+.servico:hover{
+   background:#ccc;
+}
+
+.servico_last {
+	padding-right: 0px;
+}
+
+.servico_img {
+	margin: auto;
+}
+
+.servico_img img {
+	height: 200px;
+}
+
+.service_item_thumb {	
+	
+}
+
+.service_item_content {
+	
+}
+
+#cropContainerMinimal{ width:100%; height:200px; position: relative; border:1px solid #ccc;}
+
