@@ -62,5 +62,12 @@
 	
 }
 
-#cropContainerMinimal{ width:100%; height:200px; position: relative; border:1px solid #ccc;}
 
+/* Cadastro Usuário */
+
+.div_crop_foto_usuario {
+	width:200px;
+	height: 200px;
+	position: relative;
+	border:1px solid #ccc;
+}
