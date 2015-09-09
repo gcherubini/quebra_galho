@@ -1,10 +1,10 @@
 <?php
-$nome = trim($_GET['nome']);;
-$sobrenome = trim($_GET['sobrenome']);;
-$estado = trim($_GET['estado']);;
-$cidade = trim($_GET['cidade']);;
-$idade = trim($_GET['idade']);;
-$sexo = trim($_GET['sexo']);;
+$nome = trim($_POST['nome']);;
+$sobrenome = trim($_POST['sobrenome']);;
+$estado = trim($_POST['estado']);;
+$cidade = trim($_POST['cidade']);;
+$idade = trim($_POST['idade']);;
+$sexo = trim($_POST['sexo']);;
 
 
 $conn = include "db_connection.php";

@@ -16,6 +16,7 @@
 		   	$.ajax({
 			        type : 'POST',
 			        dataType : 'text',
+			        data: $(form).serialize(),
 			        url: 'backend/novo_usuario.php',
 			        success : function(result) {
 			        	if(result == "") {
