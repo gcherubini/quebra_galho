@@ -20,11 +20,18 @@
 
 <script src="libraries/bootstrap/js/bootstrap.min.js"></script>
 
+
 <script src="js/jquery-ui.1.11.4.js"></script>
 
+
+<!-- CONFLICTS BELLOW!!! -->
 <script src="libraries/croppic/assets/js/jquery.mousewheel.min.js"></script>
+
 <script src="libraries/croppic/croppic.js"></script>
-	
+
+<script src="libraries/validation/js/jquery.validate.min.js"></script>
+<script src="libraries/validation/js/localization/messages_pt_BR.js"> </script>
+
 	
 	
 	
