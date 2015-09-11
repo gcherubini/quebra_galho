@@ -135,12 +135,9 @@
 
     <div class="container">
 
-		
-		<div class="page-header">
-		   <h2> Inscrever-se </h1>
-		</div>
-
-		<p> Se cadastre no nosso website para poder contratar um serviço ou oferecer um serviço: </p> 
+	
+		<h2> Inscrever-se </h1>
+		<p> Se cadastre no nosso website para poder contratar ou oferecer um serviço: </p> 
 
 		<form id="form" method="get" action="" class="form-horizontal">
 			<fieldset>

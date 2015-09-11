@@ -37,11 +37,12 @@
 		        async: false,
 		        success : function(json_result) {
 		        	//alert(json_result)
-		        	//console.log(json_result)
+		        	console.log(json_result)
 		           
+		           populaComboEstado(json_result);
 		            $.each(json_result, function(index, servico_json) {	
 		            	populaServicoNaTela(servico_json);
-		            	populaCombo(servico_json);
+		            	populaComboTipoServico(servico_json);
 			        });
 			        comboJaFoiPopulado = true;
 		        },
@@ -51,11 +52,22 @@
 		    });
 	}
 	
-	
-	function populaCombo(servico_json){
+
+	function populaComboEstado(json_result){
+		// need to get unique values (distinct)
+		//var UniqueNames= $.unique(data.DATA.map(function (d) {return d.estado;}));
+
+		// carregar servico no combo de tipo de servicos
+		if(comboJaFoiPopulado == false) {
+			
+		}
+	}
+
+	function populaComboTipoServico(servico_json){
 		// carregar servico no combo de tipo de servicos
 		if(comboJaFoiPopulado == false) {
 			$('.combo_tipo_de_servico').append("<option>" + servico_json.categoria + "</option>");
+			$('.combo_estado').append("<option>" + servico_json.estado + "</option>");
 		}
 	}
 
@@ -95,6 +107,10 @@
 
     <div class="container">
 
+
+		<h2> Painel de quebra-galhos </h1>
+		<p> Pesquise abaixo o serviço que deseja contratar, uma listagem de diversos quebra-galhos de todo Brasil segue abaixo: </p> 
+
 		<div class="row">
 			<div class="col-md-6"> 
 					<input type="text" class="form-control input_texto_pesquisar" placeholder="Pesquisar por...">
@@ -105,9 +121,37 @@
 					</select>
 			</div>
 			<div class="col-md-3"> 
-					<select class="form-control combo_estado">
-						<option value="">Estado</option>
+					<select class="form-control combo_estado" name="combo_estado">
+						<option value="">Todos os estados</option>
+						<!-- <option value="AC">Acre</option>
+						<option value="AL">Alagoas</option>
+						<option value="AP">Amapá</option>
+						<option value="AM">Amazonas</option>
+						<option value="BA">Bahia</option>
+						<option value="CE">Ceará</option>
+						<option value="DF">Distrito Federal</option>
+						<option value="ES">Espirito Santo</option>
+						<option value="GO">Goiás</option>
+						<option value="MA">Maranhão</option>
+						<option value="MT">Mato Grosso</option>
+						<option value="MS">Mato Grosso do Sul</option>
+						<option value="MG">Minas Gerais</option>
+						<option value="PA">Pará</option>
+						<option value="PB">Paraiba</option>
+						<option value="PR">Paraná</option>
+						<option value="PE">Pernambuco</option>
+						<option value="PI">Piauí</option>
+						<option value="RJ">Rio de Janeiro</option>
+						<option value="RN">Rio Grande do Norte</option>
+						<option value="RS">Rio Grande do Sul</option>
+						<option value="RO">Rondônia</option>
+						<option value="RR">Roraima</option>
+						<option value="SC">Santa Catarina</option>
+						<option value="SP">São Paulo</option>
+						<option value="SE">Sergipe</option>
+						<option value="TO">Tocantis</option> -->
 					</select>
+
 			</div>
 		</div>
 					

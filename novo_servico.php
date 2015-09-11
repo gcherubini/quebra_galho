@@ -56,12 +56,8 @@
     <div class="container">
 
 		
-		
-		<div class="page-header">
-		   <h2> Publicar serviço </h1>
-		</div>
-
-		  <p> Adicione informações relacionadas ao serviço prestado </p> 
+		 <h2> Publicar serviço </h1>
+		 <p> Adicione informações relacionadas ao serviço prestado </p> 
 
 		  <form id="form" class="form-horizontal" >
 			<div class="form-group">

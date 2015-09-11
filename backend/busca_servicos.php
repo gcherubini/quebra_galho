@@ -1,22 +1,26 @@
 <?php
-$filtroDeTexto = trim($_GET['filtroDeTexto']);; 
-$filtroDoCombo = trim($_GET['filtroDoCombo']);; 
-$filtroDeEstado = trim($_GET['filtroDeEstado']);; 
+$filtroDeTexto = trim($_GET['filtroDeTexto']);
+$filtroDoCombo = trim($_GET['filtroDoCombo']);
+/* $filtroDeEstado = trim($_GET['filtroDeEstado']); */
 
-$conn = include "db_connection.php";
-$sql = " SELECT * FROM servico ";
-$orderBy = " ORDER BY destaque DESC ";
 $errorMessage = "";
+$conn = include "db_connection.php";
+$sql = " SELECT servico.*,usuario.* FROM servico JOIN usuario ON servico.id_usuario = usuario.id_usuario";
+$orderBy = " ORDER BY destaque DESC ";
 
-if($filtroDeTexto != ""){
-	$sql .= " WHERE nome like '%".$filtroDeTexto."%' ";
-}
-if($filtroDoCombo != ""){
-	if($filtroDeTexto != "") { $sql .= " AND "; }
-	else { $sql .= " WHERE "; }
-	$sql .= " categoria like '%".$filtroDoCombo."%' ";
-}
+
+
+/* sample:
+SELECT servico.*, usuario.*
+FROM servico 
+JOIN usuario ON servico.id_usuario = usuario.id_usuario
+WHERE usuario.nome LIKE '%a%';
+*/
+
+$sql .= " WHERE usuario.nome LIKE '%".$filtroDeTexto."%' AND servico.categoria like '%".$filtroDoCombo."%' ";
 $sql .= $orderBy;
+
+// DEBUG MODE ->  echo $sql;
 
 if ($conn->connect_error) {
     $errorMessage = "Connection failed: " . $conn->connect_error;
@@ -24,11 +28,14 @@ if ($conn->connect_error) {
 
 $result = $conn->query($sql);
 
-$rows = array();
+$retArray = array();
 while($r = $result->fetch_assoc()) {
-   $rows[] = $r;
+    $retArray[] = $r;
 }
-echo json_encode($rows);
+
+// Return json with servico + usuario attrs
+echo json_encode($retArray);
+
 
 
 $result->close();
