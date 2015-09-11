@@ -1,48 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <?php include("webparts/head_imports.php"); ?>
+   <?php include("webparts/head_imports.php"); ?>
    <title>Bootstrap 101 Template</title>
 
-	<?php include("webparts/head_imports.php"); ?>
- 
- 	<script type="text/javascript">
+	<script type="text/javascript"> 
 
- 	var erroMsg = "Aconteceu um erro ao salvar seu serviço, tente mais tarde!";
- 	var sucessoMsg = "Seu serviço foi salvo com sucesso, obrigado!";
+	var comboJaFoiPopulado = false;
 
-	$(function() {
-		$(form).submit(function() {
-		   	$.ajax({
-			        type : 'POST',
-			        dataType : 'text',
-			        url: 'backend/novo_servico.php',
-			        success : function(result) {
-			        	if(result == "") {
-			        		sucessoSalvarDB(result);
-			        	}
-			        	else{
-			        		erroSalvarDB(result);
-			        	}
-			        },
-			        error: function(XMLHttpRequest, textStatus, errorThrown){
-				        erroSalvarDB(textStatus);
-				    }
-			    });
+ 	$(document).ready(function () {
+ 		
+		$('.input_texto_pesquisar').on('input',function(e){
+		    buscaEcarregaServicos();
+		});
 
-		    return false; // avoid to execute the actual submit of the form.
-		});	 	
+		$('.combo_tipo_de_servico').on('change', function() {
+			buscaEcarregaServicos();
+		});
+
+		buscaEcarregaServicos();
 	});
 
-	function erroSalvarDB(error){
-		alert(erroMsg);
-		$(form)[0].reset();
-		//alert(error);
+
+
+
+	function buscaEcarregaServicos(){
+		limpaServicos();
+
+		$.ajax({
+		        type : 'GET',
+		        dataType : 'json',
+		        data: ({filtroDeTexto:  $('.input_texto_pesquisar').val(), 
+		        	    filtroDoCombo:  $('.combo_tipo_de_servico').val(),
+		        		filtroDeEstado: $('.combo_estado').val()}) ,
+		        url: 'backend/busca_servicos.php',
+		        async: false,
+		        success : function(json_result) {
+		        	//alert(json_result)
+		        	//console.log(json_result)
+		           
+		            $.each(json_result, function(index, servico_json) {	
+		            	populaServicoNaTela(servico_json);
+		            	populaCombo(servico_json);
+			        });
+			        comboJaFoiPopulado = true;
+		        },
+		        error: function(XMLHttpRequest, textStatus, errorThrown){
+			    	alert("error: " + textStatus);
+			    } 
+		    });
+	}
+	
+	
+	function populaCombo(servico_json){
+		// carregar servico no combo de tipo de servicos
+		if(comboJaFoiPopulado == false) {
+			$('.combo_tipo_de_servico').append("<option>" + servico_json.categoria + "</option>");
+		}
 	}
 
-	function sucessoSalvarDB(error){
-		alert(sucessoMsg);
+	function populaServicoNaTela(servico_json){
+		// carregar servico (divs)
+		var url_div = "webparts/div_servico.php";
+    	if(servico_json.destaque == true) {
+    		url_div = "webparts/div_servico_destaque.php"; 
+    	}
+
+		$.ajax({
+		    type : 'GET',
+		    dataType : 'text',
+		    url: url_div,
+		    data: ({servico: servico_json}),
+		    async: false,
+		    success : function(div_result) {
+		    	$('.servicos').append(div_result);
+		    } 
+		});
 	}
+
+	function limpaServicos() {
+ 		// quando há mudanca de filtros por exemplo
+ 		$('.servicos').text("");
+ 	}
 
 
 	</script>
@@ -50,88 +89,31 @@
   </head>
   <body>
 
-	
+	<?php include("webparts/header.php"); ?>
+		
+		
 
     <div class="container">
 
-		<?php include("webparts/header.php"); ?>
-		
-		<div class="page-header">
-		   <h2> Publicar serviço </h1>
+		<div class="row">
+			<div class="col-md-6"> 
+					<input type="text" class="form-control input_texto_pesquisar" placeholder="Pesquisar por...">
+			</div>
+			<div class="col-md-3"> 
+					<select class="form-control combo_tipo_de_servico">
+						<option value="">Tipo de serviço</option>
+					</select>
+			</div>
+			<div class="col-md-3"> 
+					<select class="form-control combo_estado">
+						<option value="">Estado</option>
+					</select>
+			</div>
 		</div>
-
-		  <p> Adicione informações relacionadas ao serviço prestado </p> 
-
-		  <form id="form" class="form-horizontal" >
-			<div class="form-group">
-			  <label for="inputPassword3" class="col-sm-2 control-label">Serviço prestado</label>
-			  <div class="col-sm-10">
-				<input type="text" class="form-control" id="inputPassword3" name="titulo">
-			  </div>
-			</div>
-
-			<div class="form-group">
-			  <label for="inputEmail3" class="col-sm-2 control-label">Descreva o serviço</label>
-			  <div class="col-sm-10">
-			   <textarea class="form-control" rows="3" name="descricao"></textarea>
-			  </div>
-			</div>
-
-			<div class="form-group">
-			  <label for="inputEmail3" class="col-sm-2 control-label">Tempo estimado de serviço</label>
-			  <div class="col-sm-10">
-				<input type="text" class="form-control" id="inputEmail3" name="tempo_estimado">
-			  </div>
-			</div>
-			
-			<div class="form-group">
-			  <label for="inputEmail3" class="col-sm-2 control-label">Valor hora</label>
-			  <div class="col-sm-10">
-				<input type="text" class="form-control" id="inputEmail3" name="valor_servico_hora">
-			  </div>
-			</div>
-
-			<div class="form-group">
-			  <label for="inputEmail3" class="col-sm-2 control-label">Imagem</label>
-			  <div class="col-sm-10">
-					<div class="col-lg-4 ">
-						<div id="cropContainerMinimal"></div>
-					</div>
-					<div class="col-lg-8 ">
-						<p class="centered" style="float:left; margin-left:20px;">Envie uma foto sua na qual será mostrada no seu anúncio </p>
-					</div>
-			  </div>
-			</div>     
-			 
-
-			 
-			<div class="form-group">
-			  <div class="col-sm-offset-2 col-sm-10">
-				<button type="submit" class="btn btn-default">Publicar !</button>
-			  </div>
-			</div>
-			
-
-		  </form>
-
+					
+		<div class="servicos">
+		</div>
     </div>
 
-
-
-    <script>
-	
-		var croppicContaineroutputMinimal = {
-				uploadUrl:'libraries/croppic/img_save_to_file.php',
-				cropUrl:'libraries/croppic/img_crop_to_file.php', 
-				modal:false,
-				doubleZoomControls:true,
-				enableMousescroll:true,
-				loaderHtml:'<div class="loader bubblingG"><span id="bubblingG_1"></span><span id="bubblingG_2"></span><span id="bubblingG_3"></span></div> '
-		}
-		var cropContaineroutput = new Croppic('cropContainerMinimal', croppicContaineroutputMinimal);
-		
-		
-	</script>
-	
   </body>
 </html>

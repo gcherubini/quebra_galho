@@ -25,9 +25,9 @@
 
 
 <!-- CONFLICTS BELLOW!!! -->
-<script src="libraries/croppic/assets/js/jquery.mousewheel.min.js"></script>
 
-<script src="libraries/croppic/croppic.js"></script>
+<script src="libraries/croppic/assets/js/jquery.mousewheel.min.js"></script>
+<!-- <script src="libraries/croppic/croppic.js"></script> -->
 
 <script src="libraries/validation/js/jquery.validate.min.js"></script>
 <script src="libraries/validation/js/localization/messages_pt_BR.js"> </script>

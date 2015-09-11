@@ -3,7 +3,7 @@
 ?>
 
 
-<div class="col-md-4 servico"> 
+<div class="col-md-3 servico"> 
 	<div class="servico_espacamento">
 		<div class="row servico_img">
 			<?php echo '<img class="img-responsive" src="'.$servico["img_url"].'"/>'; ?>

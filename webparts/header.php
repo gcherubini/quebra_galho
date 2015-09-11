@@ -1,24 +1,36 @@
-<div class="header_website_info">
-	<nav class="navbar">
-	  <div class="container-fluid">
-		<div class="navbar-header">
-		  <a class="navbar-brand" href="#">
-			<!-- <img alt="Brand" src="..."> Logotipo imagem --> 
-			<p> Logotipo </p>
-		  </a>
-		</div>
-		
-		<p class="navbar-text"> 
-			Texto descritivo do website
-		</p>
-	  </div>
- </div>
-
-</nav>
-
-<div class="header_menu">
-	<ul class="nav nav-pills">
-	  <li role="presentation" class="active"><a href="index.php">Publique seu Serviço</a></li>
-	  <li role="presentation"><a href="lista_servicos.php">Todos os serviços</a></li>
-	</ul>    
+<div class="header_div_top">
+	
+	<div class="container header_div_top_right"> 
+			<a href="#" > Ajuda </a>
+			<span class="glyphicon glyphicon-menu-right"></span>
+			<a href="#"> Entrar</a>
+			<a href="novo_usuario.php"> Cadastre-se</a>
+	</div>
+	
 </div>
+
+<div class="header_div_top_2">
+	<div class="container">
+		<div class="col-md-2">
+			<div class="logo">
+			</div>
+		</div>
+		<div class="col-md-10">
+			
+			<ul class="menu">
+				<a href="index.php"><li class="activate"> Inicio </li></a>
+				<a href="novo_servico.php"><li>Publicar</li></a>
+				<a href="novo_servico.php"><li>Sobre</li></a>
+				<a href="novo_servico.php"><li>Contato</li></a>
+			</ul>
+		</div>
+	</div>
+</div>
+
+
+
+<div class="header_div_top_3">
+
+</div>
+
+

@@ -1,15 +1,18 @@
 <?php
-$nome = trim($_POST['nome']);;
-$sobrenome = trim($_POST['sobrenome']);;
-$estado = trim($_POST['estado']);;
-$cidade = trim($_POST['cidade']);;
-$idade = trim($_POST['idade']);;
-$sexo = trim($_POST['sexo']);;
+$email = trim($_POST['email']);
+$senha = trim($_POST['senha']);
+$nome = trim($_POST['nome']);
+$sobrenome = trim($_POST['sobrenome']);
+$estado = trim($_POST['estado']);
+$cidade = trim($_POST['cidade']);
+$idade = trim($_POST['idade']);
+$sexo = trim($_POST['sexo']);
+
 
 
 $conn = include "db_connection.php";
-$sql = "INSERT INTO servico (nome, sobrenome, estado, cidade, idade, sexo)
-		VALUES ('".$nome."', '".$sobrenome."', '".$estado."', '".$cidade."', '".$idade."', '".$sexo."')";
+$sql = "INSERT INTO servico (email, senha, nome, sobrenome, estado, cidade, idade, sexo)
+		VALUES ('".$email."', '".$senha."','".$nome."', '".$sobrenome."', '".$estado."', '".$cidade."', '".$idade."', '".$sexo."')";
 $errorMessage = "";
 
 if ($conn->connect_error) {

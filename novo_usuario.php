@@ -17,20 +17,63 @@
 		
 		$("#form").validate({
 			rules: {
-				nome: "required",
-				sobrenome: "required",
 				email: {
 					required: true,
 					email: true
+				},
+				senha: {
+					required: true,
+					minlength: 6
+				},
+				senha_conf: {
+					required: true,
+					minlength: 6,
+					equalTo: "#senha"
+				},
+				nome: {
+					required: true
+				},
+				sobrenome: {
+					required: true
+				},
+				estado: {
+					required: true
+				},
+				idade: {
+					required: true,
+					number: true,
+					maxlength: 2
 				}
 			},
 			messages: {
-				nome: "Please enter your firstname",
-				sobrenome: "Please enter your lastname",
 				email: {
-					required: "EMAIL!!!",
-					minlength: "EMAIL CERTO!!"
+					required: "Por favor digite seu e-mail",
+					email: "Por favor digite um e-mail válido"
+				},
+				senha: {
+					required: "Por favor digite uma senha",
+					minlength: "Sua senha tem que ter pelo menos 6 letras"
+				},
+				senha_conf: {
+					required: "Por favor digite a confirmação da sua senha",
+					minlength: "Sua senha tem que ter pelo menos 6 letras",
+					equalTo: "As senhas não conferem"
+				},
+				nome: {
+					required: "Por favor nos diga seu nome"
+				},
+				sobrenome: {
+					required: "Por favor nos diga seu sobrenome"
+				},
+				estado: {
+					required: "Por favor nos diga seu estado"
+				},
+				idade: {
+					required: "Por favor digite sua idade",
+					number: "Por favor, digite apenas números",
+					maxlength: "Por favor digite sua idade de no máximo dois dígitos"
 				}
+
 			}
 		});
 
@@ -38,16 +81,16 @@
 	});
 	</script>
  
- 	<script type="text/javascript">/*
+ 	<script type="text/javascript">
 
  	var erroMsg = "Aconteceu um erro ao salvar seu usuário, tente mais tarde!";
  	var sucessoMsg = "Usuário salvo com sucesso, obrigado!";
 
-	//$(function() {
+	$(function() {
 		
 		// validate signup form on keyup and submit
 
-		/*$(form).submit(function() {
+		$(form).submit(function() {
 		   	$.ajax({
 			        type : 'POST',
 			        dataType : 'text',
@@ -67,10 +110,10 @@
 			    });
 
 		    return false; // avoid to execute the actual submit of the form.
-		});	 	*/
+		});	 	
 	//});
 
-	/*function erroSalvarDB(error){
+	function erroSalvarDB(error){
 		alert(erroMsg);
 		$(form)[0].reset();
 		alert(error);
@@ -79,7 +122,7 @@
 	function sucessoSalvarDB(error){
 		alert(sucessoMsg);
 	}
-*/
+
 
 	</script>
 
@@ -88,9 +131,10 @@
 
 	
 
+<?php include("webparts/header.php"); ?>
+
     <div class="container">
 
-		<?php include("webparts/header.php"); ?>
 		
 		<div class="page-header">
 		   <h2> Inscrever-se </h1>
@@ -101,27 +145,43 @@
 		<form id="form" method="get" action="" class="form-horizontal">
 			<fieldset>
 
-				<label for="nome">Firstname</label>
-				<input id="input_nome" name="nome" type="text">
-
 				<div class="row">
-					  <div class="col-sm-8">
-					  		<div class="col-sm-4">
+					  <div class="col-sm-12">
+					  		<div class="col-sm-2">
 					  			<label for="email" class="control-label">E-mail</label>
 					  		</div>
-					  		 <div class="col-sm-8">	
+					  		 <div class="col-sm-10">	
 						   		<input type="email" class="form-control" id="email" name="email" >
 							</div>
 					   </div>
-					   <div class="col-sm-4">
-					   		<div class="col-sm-4">
-					  			<label for="telefone" class="control-label">Telefone</label>
-					  		</div>
-					  		 <div class="col-sm-8">	
-						   		<input type="text" class="form-control" id="telefone" name="telefone" >
-							</div>
-					  </div>
+					   
 				</div>
+
+				<div class="row">
+					  <div class="col-sm-12">
+					  		<div class="col-sm-2">
+					  			<label for="senha" class="control-label">Senha</label>
+					  		</div>
+					  		 <div class="col-sm-10">	
+						   		<input type="password" class="form-control" id="senha" name="senha" >
+							</div>
+					   </div>
+					   
+				</div>
+
+				<div class="row">
+					  <div class="col-sm-12">
+					  		<div class="col-sm-2">
+					  			<label for="senha_conf" class="control-label">Confirmação de Senha</label>
+					  		</div>
+					  		 <div class="col-sm-10">	
+						   		<input type="password" class="form-control" id="senha_conf" name="senha_conf" >
+							</div>
+					   </div>
+					   
+				</div>
+
+	
 
 				<div class="row">
 					  <div class="col-sm-6">
@@ -141,6 +201,7 @@
 							</div>
 					  </div>
 				</div>
+			
 					
 				<div class="row">		  
 					  <div class="col-sm-6">
@@ -178,12 +239,11 @@
 					   		<div class="col-sm-4">
 					  			<label for="input_sexo" class="control-label">Sexo</label>
 					  		</div>
-					  		 <div class="col-sm-8">	
-						   		<select id="input_sexo" name="sexo" class="form-control combo_tipo_de_servico">
-									<option value="">Selecione</option>
-									<option value="M">Masculino</option>
-									<option value="F">Feminino</option>
-								</select>
+					  		 <div class="col-sm-8">	 		
+						   			<input type="radio" id="sexo-M" value="m" name="sexo">
+						   			<label for="sexo-M" class="control-label" style="font-weight:normal;">Masculino </label>
+						   			<input type="radio" id="sexo-F" value="f" name="sexo">
+						   			<label for="sexo-F" class="control-label" style="font-weight:normal;">Feminino</label>
 							</div>	   		
 					  </div>
 				</div>

@@ -1,6 +1,7 @@
 <?php
 $filtroDeTexto = trim($_GET['filtroDeTexto']);; 
 $filtroDoCombo = trim($_GET['filtroDoCombo']);; 
+$filtroDeEstado = trim($_GET['filtroDeEstado']);; 
 
 $conn = include "db_connection.php";
 $sql = " SELECT * FROM servico ";

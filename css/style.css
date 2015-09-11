@@ -1,16 +1,76 @@
+/* Layout website */
+*{
+	font: 12px "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
 .container {
-	background-color:white;
+	width: 90%;
 }
 
-.header_website_info{
+.header_div_top {
+	height: 30px;
+	width: 100%;
+	background-color: #17679D;
+
+}
+
+.header_div_top_right a, .header_div_top_right .glyphicon-menu-right{ 
+	color: white;
+	margin-left: 20px;
+	text-align: right;
+	float: right;
+	padding-top:8px;
+}
+
+.header_div_top_right .glyphicon-menu-right{ 
+	color: white;
+	font-size:12px;
+	padding-top:8px;
+	margin-right:-12px;
+}
+
+
+.header_div_top_2 {
+	height: 100px;
+	width: 100%;
+}
+
+.header_div_top_2 .logo {
+	height: 80px;
+	width: 200px;
+	border:1px solid #ccc;
 	margin-top:20px;
 }
 
-.header_menu {
-	margin-top:20px;
+.header_div_top_2 .menu  {
+	list-style-type: none;
+	margin-top:45px;
+}
+.header_div_top_2 .menu li, .header_div_top_2 .menu a {
+	float: left;
+	text-decoration: none;
+	margin-right: 20px;
+	color: #474646;
+	font-size:18px;
 }
 
-.servicos_titulo_filtro{
+.header_div_top_2 .menu li:hover, .header_div_top_2 .menu .activate{
+	border-bottom: 3px solid #17679D;
+}
+
+
+.header_div_top_3 {
+	margin-top: 20px;
+	margin-bottom: 30px;
+	height: 20px;
+	width: 100%;
+	background-color: #ccc;
+}
+
+
+/*painel servicos */
+
+.servicos_titulo_filtro {
 	margin-top:20px;
 }
 
@@ -70,4 +130,13 @@
 	height: 200px;
 	position: relative;
 	border:1px solid #ccc;
+}
+
+.error {
+	color: red;
+}
+
+form .row {
+	margin-top: 10px;
+	margin-bottom: 20px;
 }
