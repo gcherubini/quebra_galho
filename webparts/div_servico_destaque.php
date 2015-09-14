@@ -10,7 +10,7 @@
   <div class="col-md-9">
 		<h3> <?php echo $servico["nome"]; ?> (<?php echo $servico["idade"]; ?> anos) </h3>
 		<p> "<?php echo $servico["slogan"]; ?>" </p>
-		<h4> <?php echo $servico["categoria"]; ?> </h4>
+		<h4> <?php echo $servico["emprego"]; ?> </h4>
 		
 		<div class="row">
 			<div class="col-md-4"> <b> Valor hora: </b> R$ 100,00 </div>

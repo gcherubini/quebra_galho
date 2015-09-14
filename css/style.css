@@ -122,6 +122,10 @@
 	
 }
 
+.servicos_itens_nao_encotrados{
+	display: none;
+}
+
 
 /* Cadastro Usuário */
 

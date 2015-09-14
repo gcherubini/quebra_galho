@@ -16,7 +16,7 @@
 			<div class="col-md-12"> <p>"<?php echo $servico["slogan"]; ?>"</p> </div>
 		</div>
 		<div class="row servico_titulo">
-			<div class="col-md-12"> <h4> <?php echo $servico["categoria"]; ?> </h4> </div>
+			<div class="col-md-12"> <h4> <?php echo $servico["emprego"]; ?> </h4> </div>
 		</div>
 
 		<div class="row servico_detalhe">

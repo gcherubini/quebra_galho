@@ -18,56 +18,55 @@
 			buscaEcarregaServicos();
 		});
 
+		$('.combo_estado').on('change', function() {
+			buscaEcarregaServicos();
+		});
+
 		buscaEcarregaServicos();
 	});
-
-
-
 
 	function buscaEcarregaServicos(){
 		limpaServicos();
 
+mostraMensagemDeItensNaoEncontrados()
+
 		$.ajax({
 		        type : 'GET',
 		        dataType : 'json',
-		        data: ({filtroDeTexto:  $('.input_texto_pesquisar').val(), 
-		        	    filtroDoCombo:  $('.combo_tipo_de_servico').val(),
-		        		filtroDeEstado: $('.combo_estado').val()}) ,
+		        data: ({filtroTexto:  $('.input_texto_pesquisar').val(), 
+		        	    filtroComboEmprego:  $('.combo_tipo_de_servico').val(),
+		        		filtroComboEstado: $('.combo_estado').val()}) ,
 		        url: 'backend/busca_servicos.php',
 		        async: false,
 		        success : function(json_result) {
 		        	//alert(json_result)
-		        	console.log(json_result)
+		        	//console.log(json_result)
 		           
-		           populaComboEstado(json_result);
-		            $.each(json_result, function(index, servico_json) {	
-		            	populaServicoNaTela(servico_json);
-		            	populaComboTipoServico(servico_json);
-			        });
-			        comboJaFoiPopulado = true;
+		            // need to test in IE
+		            var countJsonItens = Object.keys(json_result).length 
+
+		 			if(countJsonItens == 0) {
+		 					mostraMensagemDeItensNaoEncontrados()
+		 			}
+		 			else {
+		            		$.each(json_result, function(index, servico_json) {	
+		            			populaServicoNaTela(servico_json);
+		            			populaComboTipoServico(servico_json);
+			        		});
+			        		comboJaFoiPopulado = true;
+			        }
 		        },
 		        error: function(XMLHttpRequest, textStatus, errorThrown){
 			    	alert("error: " + textStatus);
+			    	mostraMensagemDeItensNaoEncontrados()
 			    } 
 		    });
 	}
 	
-
-	function populaComboEstado(json_result){
-		// need to get unique values (distinct)
-		//var UniqueNames= $.unique(data.DATA.map(function (d) {return d.estado;}));
-
-		// carregar servico no combo de tipo de servicos
-		if(comboJaFoiPopulado == false) {
-			
-		}
-	}
-
 	function populaComboTipoServico(servico_json){
 		// carregar servico no combo de tipo de servicos
 		if(comboJaFoiPopulado == false) {
-			$('.combo_tipo_de_servico').append("<option>" + servico_json.categoria + "</option>");
-			$('.combo_estado').append("<option>" + servico_json.estado + "</option>");
+			$('.combo_tipo_de_servico').append("<option>" + servico_json.emprego + "</option>");
 		}
 	}
 
@@ -89,6 +88,12 @@
 		    } 
 		});
 	}
+
+
+	function mostraMensagemDeItensNaoEncontrados() {
+ 		// quando há mudanca de filtros por exemplo
+ 		$('.servicos_itens_nao_encotrados').css("display","block");
+ 	}
 
 	function limpaServicos() {
  		// quando há mudanca de filtros por exemplo
@@ -123,7 +128,7 @@
 			<div class="col-md-3"> 
 					<select class="form-control combo_estado" name="combo_estado">
 						<option value="">Todos os estados</option>
-						<!-- <option value="AC">Acre</option>
+						<option value="AC">Acre</option>
 						<option value="AL">Alagoas</option>
 						<option value="AP">Amapá</option>
 						<option value="AM">Amazonas</option>
@@ -149,7 +154,7 @@
 						<option value="SC">Santa Catarina</option>
 						<option value="SP">São Paulo</option>
 						<option value="SE">Sergipe</option>
-						<option value="TO">Tocantis</option> -->
+						<option value="TO">Tocantis</option> 
 					</select>
 
 			</div>
@@ -157,6 +162,10 @@
 					
 		<div class="servicos">
 		</div>
+		<div class="servicos_itens_nao_encotrados">
+			<p> Desculpe... Nenhum quebra-galho foi encontrado em sua busca. </p>
+		</div>
+
     </div>
 
   </body>
