@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 $email = trim($_POST['email']);
 $senha = trim($_POST['senha']);
 $nome = trim($_POST['nome']);
@@ -23,8 +25,18 @@ if ($conn->query($sql) === FALSE) {
     $errorMessage .= "SQL error: " . $sql . "<br>" . $conn->error;
 }
 
+
+if($errorMessage == "") {
+	$idInserted = mysql_insert_id();
+	$_SESSION['id_usuario']
+}
+else {
+	echo $errorMessage;
+}
+
+
 $conn->close();
 
-echo $errorMessage;
+
 
 ?>
