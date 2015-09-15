@@ -5,16 +5,12 @@
 
 	<?php include("webparts/head_imports.php"); ?>
 
-
 	<script>
-	$.validator.setDefaults({
-		submitHandler: function() {
-			alert("submitted!");
-		}
-	});
+
+	var erroMsg = "Aconteceu um erro ao salvar seu usuário, tente mais tarde!";
+ 	var sucessoMsg = "Usuário salvo com sucesso, obrigado!";
 
 	$().ready(function() {
-		
 		$("#form").validate({
 			rules: {
 				email: {
@@ -33,16 +29,13 @@
 				nome: {
 					required: true
 				},
-				sobrenome: {
-					required: true
-				},
-				estado: {
-					required: true
-				},
 				idade: {
 					required: true,
 					number: true,
 					maxlength: 2
+				},
+				sexo: {
+					required: true
 				}
 			},
 			messages: {
@@ -62,66 +55,63 @@
 				nome: {
 					required: "Por favor nos diga seu nome"
 				},
-				sobrenome: {
-					required: "Por favor nos diga seu sobrenome"
-				},
-				estado: {
-					required: "Por favor nos diga seu estado"
-				},
 				idade: {
 					required: "Por favor digite sua idade",
 					number: "Por favor, digite apenas números",
 					maxlength: "Por favor digite sua idade de no máximo dois dígitos"
+				},
+				sexo: {
+					required: "Por favor nos diga sua idade"
 				}
+			}
+		});	
+	});
 
+	
+
+	$.validator.setDefaults({
+			submitHandler: function() {
+				
+			   	$.ajax({
+				        type : 'POST',
+				        dataType : 'text',
+				        data: $(form).serialize(),
+				        url: 'backend/novo_usuario.php',
+				        success : function(result) {
+				        	if(result == "") {
+				        		sucessoSalvarDB(result);
+				        	}
+				        	else{
+				        		erroSalvarDB(result);
+				        	}
+				        },
+				        error: function(XMLHttpRequest, textStatus, errorThrown){
+					        erroSalvarDB(textStatus);
+					    }
+				    });
+
+			    return false; // avoid to execute the actual submit of the form.
+				
 			}
 		});
 
+		function erroSalvarDB(error){
+			alert(erroMsg);
+			//$(form)[0].reset();
+			//alert(error);
+		}
+
+	function sucessoSalvarDB(error){
+		alert(sucessoMsg);
+		window.location.href = "painel_usuario.php";
+	}
 	
-	});
+
 	</script>
  
  	<script type="text/javascript">
 
- 	var erroMsg = "Aconteceu um erro ao salvar seu usuário, tente mais tarde!";
- 	var sucessoMsg = "Usuário salvo com sucesso, obrigado!";
-
-	$(function() {
-		
-		// validate signup form on keyup and submit
-
-		$(form).submit(function() {
-		   	$.ajax({
-			        type : 'POST',
-			        dataType : 'text',
-			        data: $(form).serialize(),
-			        url: 'backend/novo_usuario.php',
-			        success : function(result) {
-			        	if(result == "") {
-			        		sucessoSalvarDB(result);
-			        	}
-			        	else{
-			        		erroSalvarDB(result);
-			        	}
-			        },
-			        error: function(XMLHttpRequest, textStatus, errorThrown){
-				        erroSalvarDB(textStatus);
-				    }
-			    });
-
-		    return false; // avoid to execute the actual submit of the form.
-		});	 	
-	//});
-
-	function erroSalvarDB(error){
-		alert(erroMsg);
-		$(form)[0].reset();
-		alert(error);
-	}
-
-	function sucessoSalvarDB(error){
-		alert(sucessoMsg);
-	}
+ 	
 
 
 	</script>
@@ -155,74 +145,38 @@
 				</div>
 
 				<div class="row">
-					  <div class="col-sm-12">
-					  		<div class="col-sm-2">
+					  <div class="col-sm-6">
+					  		<div class="col-sm-4">
 					  			<label for="senha" class="control-label">Senha</label>
 					  		</div>
-					  		 <div class="col-sm-10">	
+					  		 <div class="col-sm-8">	
 						   		<input type="password" class="form-control" id="senha" name="senha" >
 							</div>
 					   </div>
-					   
+					   <div class="col-sm-6">
+					   		<div class="col-sm-4">
+					  			<label for="senha_conf" class="control-label">Confirmação</label>
+					  		</div>
+					  		 <div class="col-sm-8">	
+						   		<input type="password" class="form-control" id="senha_conf" name="senha_conf" >
+							</div>
+					  </div>
 				</div>
 
 				<div class="row">
 					  <div class="col-sm-12">
 					  		<div class="col-sm-2">
-					  			<label for="senha_conf" class="control-label">Confirmação de Senha</label>
+					  			<label for="nome" class="control-label">Nome</label>
 					  		</div>
 					  		 <div class="col-sm-10">	
-						   		<input type="password" class="form-control" id="senha_conf" name="senha_conf" >
+						   		<input type="text" class="form-control" id="nome" name="nome" >
 							</div>
 					   </div>
 					   
 				</div>
 
-	
-
-				<div class="row">
-					  <div class="col-sm-6">
-					  		<div class="col-sm-4">
-					  			<label for="nome" class="control-label">Nome</label>
-					  		</div>
-					  		 <div class="col-sm-8">	
-						   		<input type="text" class="form-control" id="nome" name="nome" >
-							</div>
-					   </div>
-					   <div class="col-sm-6">
-					   		<div class="col-sm-4">
-					  			<label for="sobrenome" class="control-label">Sobrenome</label>
-					  		</div>
-					  		 <div class="col-sm-8">	
-						   		<input type="text" class="form-control" id="sobrenome" name="sobrenome" >
-							</div>
-					  </div>
-				</div>
 			
-					
-				<div class="row">		  
-					  <div class="col-sm-6">
-					  		<div class="col-sm-4">
-					  			<label for="input_estado" class="control-label">Estado</label>
-					  		</div>
-					  		 <div class="col-sm-8">	
-						   		<select id="input_estado" name="estado" class="form-control combo_tipo_de_servico">
-									<option value="">Selecione seu estado</option>
-									<option value="RS">RS</option>
-									<option value="SP">SP</option>
-								</select>
-							</div>
-					  </div>
-					   <div class="col-sm-6">
-					   		<div class="col-sm-4">
-					  			<label for="input_cidade" class="control-label">Cidade</label>
-					  		</div>
-					  		 <div class="col-sm-8">	
-						   		<input type="text" class="form-control" id="input_cidade" name="cidade">
-							</div>	   		
-					  </div>
-				</div>
-
+			
 				<div class="row">		  
 					  <div class="col-sm-6">
 					  		<div class="col-sm-4">

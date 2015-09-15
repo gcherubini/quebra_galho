@@ -1,10 +1,40 @@
+<?php
+if (session_status() == PHP_SESSION_NONE) { session_start(); }
+?>
+
+<script>
+$().ready(function() {
+	$('.logout').click(function() {
+	     	$.ajax({
+		        url: 'backend/logout.php',
+		        success : function() {
+		        	window.location.reload(true);
+		        },
+		        error: function(XMLHttpRequest, textStatus, errorThrown){
+			        alert("Erro ao deslogar!");
+			    }
+		    });
+
+	});
+});
+
+
+</script>
+
 <div class="header_div_top">
 	
 	<div class="container header_div_top_right"> 
 			<a href="#" > Ajuda </a>
 			<span class="glyphicon glyphicon-menu-right"></span>
-			<a href="#"> Entrar</a>
-			<a href="novo_usuario.php"> Cadastre-se</a>
+			
+			<?php if (isset($_SESSION['id_usuario'])) { ?>
+				<a class="logout"> Sair</a>
+				<a href="#"> Carrinho</a>
+			<?php } else { ?>
+	 	  		<a href="login.php"> Entrar</a>
+				<a href="novo_usuario.php"> Cadastre-se</a>
+ 			<?php } ?>
+			
 	</div>
 	
 </div>

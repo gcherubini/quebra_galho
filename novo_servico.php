@@ -1,4 +1,6 @@
-<?php  session_start(); ?>
+<?php
+if (session_status() == PHP_SESSION_NONE) { session_start(); }
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -59,10 +61,7 @@
 
 <?php
 	if (isset($_SESSION['id_usuario'])) {
-   		// logged in
- ?>
-
-		
+ ?>		
 		 <h2> Publicar serviço </h1>
 		 <p> Adicione informações relacionadas ao serviço prestado </p> 
 
@@ -122,7 +121,7 @@
  	} else {
  	  include("webparts/div_voce_precisa_se_logar.php"); 
  	}
-?>
+	?>
 
     </div>
 

@@ -88,7 +88,7 @@ CREATE TABLE `usuario` (
   `img_url` varchar(999) DEFAULT NULL,
   `estrelas` int(11) DEFAULT NULL,
   PRIMARY KEY (`id_usuario`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -97,7 +97,7 @@ CREATE TABLE `usuario` (
 
 LOCK TABLES `usuario` WRITE;
 /*!40000 ALTER TABLE `usuario` DISABLE KEYS */;
-INSERT INTO `usuario` VALUES (1,'joao_belezza@gmail.com','123456','João Belezza',19,'M',NULL,3),(2,'pedro.ernesto@gmail.com','123456','Pedro Ernesto',26,'M',NULL,4),(3,'maria.rosario@gmail.com','123456','Maria do Rosário',60,'F',NULL,NULL),(4,'rosana.coimbar@gmail.com','123456','Rosana Coimbra',32,'F',NULL,5);
+INSERT INTO `usuario` VALUES (1,'joao_belezza@gmail.com','123456','João Belezza',19,'M',NULL,3),(2,'pedro.ernesto@gmail.com','123456','Pedro Ernesto',26,'M',NULL,4),(3,'maria.rosario@gmail.com','123456','Maria do Rosário',60,'F',NULL,NULL),(4,'rosana.coimbar@gmail.com','123456','Rosana Coimbra',32,'F',NULL,5),(5,'pedro@gmail.com','123456','Pedro Escobar',89,'m',NULL,NULL),(6,'qisso@gmail.com','123456','qisso',19,'m',NULL,NULL),(7,'','','',0,'',NULL,NULL),(8,'email@mail.com','123456','nome',18,'m',NULL,NULL),(9,'larissamerelles@gmail.com','123456','Larissa Merelles',25,'f',NULL,NULL),(10,'joaobecker@gmail.com','123456','João Becker',35,'m',NULL,NULL),(11,'Silvana@gmail.com','123456','Silvana Valdemort',36,'f',NULL,NULL);
 /*!40000 ALTER TABLE `usuario` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -110,4 +110,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-09-14 10:47:50
+-- Dump completed on 2015-09-15 17:34:10
