@@ -12,9 +12,15 @@ $sql = "SELECT servico.*,usuario.*,emprego.* FROM servico
 		JOIN emprego ON servico.id_emprego = emprego.id_emprego ";
 
 $sql .= " WHERE usuario.nome LIKE '%".$filtroTexto."%' AND 
-		  emprego.emprego like '%".$filtroComboEmprego."%' AND 
-		  servico.estado like '%".$filtroComboEstado."%' AND
-		  usuario.id_usuario like '%".$filtroIdUsuario."%'";
+		  emprego.emprego like '%".$filtroComboEmprego."%'";
+
+if($filtroComboEstado != "") {
+	$sql .= " AND servico.estado = '".$filtroComboEstado."' ";	
+}
+if($filtroIdUsuario != "") {
+	$sql .= " AND usuario.id_usuario = '".$filtroIdUsuario."'";	
+}
+
 
 $orderBy = " ORDER BY destaque DESC ";
 $sql .= $orderBy;

@@ -50,15 +50,19 @@ DROP TABLE IF EXISTS `servico`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `servico` (
-  `id_servico` int(11) NOT NULL,
+  `id_servico` int(11) NOT NULL AUTO_INCREMENT,
   `slogan` varchar(50) DEFAULT NULL,
   `descricao` varchar(999) DEFAULT NULL,
   `destaque` tinyint(4) DEFAULT '0',
   `estado` varchar(10) DEFAULT NULL,
   `id_usuario` int(11) DEFAULT NULL,
   `id_emprego` int(11) DEFAULT NULL,
-  PRIMARY KEY (`id_servico`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  PRIMARY KEY (`id_servico`),
+  KEY `id_emprego` (`id_emprego`),
+  KEY `id_usuario` (`id_usuario`),
+  CONSTRAINT `servico_ibfk_1` FOREIGN KEY (`id_emprego`) REFERENCES `emprego` (`id_emprego`),
+  CONSTRAINT `servico_ibfk_2` FOREIGN KEY (`id_usuario`) REFERENCES `usuario` (`id_usuario`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -67,7 +71,7 @@ CREATE TABLE `servico` (
 
 LOCK TABLES `servico` WRITE;
 /*!40000 ALTER TABLE `servico` DISABLE KEYS */;
-INSERT INTO `servico` VALUES (0,'','asd',0,NULL,11,1);
+INSERT INTO `servico` VALUES (2,'Ser rápido e veloz','x',0,'SP',11,1),(3,'Jogo 10','x',1,'RS',2,2),(4,'Trabalho com felicidade','x',0,'RJ',3,3),(5,'Administro bem','x',0,'ALL',11,4);
 /*!40000 ALTER TABLE `servico` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -110,4 +114,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-09-16  1:01:00
+-- Dump completed on 2015-09-16 15:04:39

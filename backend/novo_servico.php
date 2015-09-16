@@ -16,18 +16,17 @@ if ($conn->connect_error) {
 } 
 
 // get id_emprego
-/*$sql = "SELECT id_emprego FROM emprego WHERE emprego = " . $emprego;
+$sql = "SELECT id_emprego FROM emprego WHERE emprego = '" . $emprego. "'";
 $id_emprego = "";
 $result = $conn->query($sql);
 while($r = $result->fetch_assoc()) {
     $id_emprego = $r["id_emprego"];
 }
 $result->close();
-*/
+
 // insert new servico
-$id_emprego = 1;
-$sql = "INSERT INTO servico (slogan, descricao, id_usuario, id_emprego)
-		VALUES ('".$slogan."', '".$descricao."','".$id_usuario."', '".$id_emprego."')";
+$sql = "INSERT INTO servico (slogan, descricao, id_usuario, id_emprego, estado)
+		VALUES ('".$slogan."', '".$descricao."','".$id_usuario."', '".$id_emprego."', '".$estado."')";
 $result = $conn->query($sql);
 
 if ($result === FALSE) {

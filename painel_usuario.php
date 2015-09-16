@@ -47,7 +47,7 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 		$.ajax({
 		        type : 'POST',
 		        dataType : 'json',
-		        data: ({filtroIdUsuario:  	<?php echo $_SESSION['id_usuario']; ?>	}) ,
+		        data: ({filtroIdUsuario: <?php echo $_SESSION['id_usuario']; ?>	}) ,
 		        url: 'backend/busca_servicos.php',
 		        async: false,
 		        success : function(json_result) {

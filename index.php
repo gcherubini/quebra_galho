@@ -100,6 +100,7 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 	function limpaServicos() {
  		// quando há mudanca de filtros por exemplo
  		$('.servicos').text("");
+ 		$('.servicos_itens_nao_encotrados').css("display","none");
  	}
 
 
