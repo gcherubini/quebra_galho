@@ -1,11 +1,11 @@
 <?php
 if (session_status() == PHP_SESSION_NONE) { session_start(); }
 
-$email = trim($_POST['email']);
-$senha = trim($_POST['senha']);
-$nome = trim($_POST['nome']);
-$idade = trim($_POST['idade']);
-$sexo = trim($_POST['sexo']);
+$email = isset($_POST['email']) ? trim($_POST['email']) : '';
+$senha = isset($_POST['senha']) ? trim($_POST['senha']) : '';
+$nome = isset($_POST['nome']) ? trim($_POST['nome']) : '';
+$idade = isset($_POST['idade']) ? trim($_POST['idade']) : '';
+$sexo = isset($_POST['sexo']) ? trim($_POST['sexo']) : '';
 
 $errorMessage = "";
 $conn = include "db_connection.php";

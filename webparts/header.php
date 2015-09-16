@@ -1,7 +1,3 @@
-<?php
-if (session_status() == PHP_SESSION_NONE) { session_start(); }
-?>
-
 <script>
 $().ready(function() {
 	$('.logout').click(function() {
@@ -29,7 +25,7 @@ $().ready(function() {
 			
 			<?php if (isset($_SESSION['id_usuario'])) { ?>
 				<a class="logout"> Sair</a>
-				<a href="#"> Carrinho</a>
+				<a href="painel_usuario.php"> <?php echo $_SESSION['nome']; ?> </a>
 			<?php } else { ?>
 	 	  		<a href="login.php"> Entrar</a>
 				<a href="novo_usuario.php"> Cadastre-se</a>

@@ -1,3 +1,7 @@
+<?php
+if (session_status() == PHP_SESSION_NONE) { session_start(); }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -67,8 +71,6 @@
 		});	
 	});
 
-	
-
 	$.validator.setDefaults({
 			submitHandler: function() {
 				
@@ -95,25 +97,17 @@
 			}
 		});
 
-		function erroSalvarDB(error){
-			alert(erroMsg);
-			//$(form)[0].reset();
-			//alert(error);
-		}
+	function erroSalvarDB(error){
+		alert(erroMsg);
+		//$(form)[0].reset();
+		//alert(error);
+	}
 
 	function sucessoSalvarDB(error){
 		alert(sucessoMsg);
 		window.location.href = "painel_usuario.php";
 	}
 	
-
-	</script>
- 
- 	<script type="text/javascript">
-
- 	
-
-
 	</script>
 
   </head>
@@ -125,13 +119,11 @@
 
     <div class="container">
 
-	
 		<h2> Inscrever-se </h1>
 		<p> Se cadastre no nosso website para poder contratar ou oferecer um serviço: </p> 
 
 		<form id="form" method="get" action="" class="form-horizontal">
 			<fieldset>
-
 				<div class="row">
 					  <div class="col-sm-12">
 					  		<div class="col-sm-2">
@@ -175,8 +167,6 @@
 					   
 				</div>
 
-			
-			
 				<div class="row">		  
 					  <div class="col-sm-6">
 					  		<div class="col-sm-4">
@@ -216,8 +206,7 @@
 					<!-- <button type="submit" class="btn btn-default">Publicar !</button> -->
 					<input class="submit" type="submit" value="Submit">
 				  </div>
-				</div>
-						
+				</div>	
 			</fieldset>
 		</form>
     </div>

@@ -1,3 +1,7 @@
+<?php
+if (session_status() == PHP_SESSION_NONE) { session_start(); }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -28,10 +32,8 @@
 	function buscaEcarregaServicos(){
 		limpaServicos();
 
-mostraMensagemDeItensNaoEncontrados()
-
 		$.ajax({
-		        type : 'GET',
+		        type : 'POST',
 		        dataType : 'json',
 		        data: ({filtroTexto:  $('.input_texto_pesquisar').val(), 
 		        	    filtroComboEmprego:  $('.combo_tipo_de_servico').val(),
@@ -72,9 +74,9 @@ mostraMensagemDeItensNaoEncontrados()
 
 	function populaServicoNaTela(servico_json){
 		// carregar servico (divs)
-		var url_div = "webparts/div_servico.php";
+		var url_div = "webparts/lista_servicos_div_servico.php";
     	if(servico_json.destaque == true) {
-    		url_div = "webparts/div_servico_destaque.php"; 
+    		url_div = "webparts/lista_servicos_div_servico_destaque.php"; 
     	}
 
 		$.ajax({
