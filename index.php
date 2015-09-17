@@ -171,5 +171,7 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 
     </div>
 
+    <?php include("webparts/rodape.php"); ?>
+
   </body>
 </html>

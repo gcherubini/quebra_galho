@@ -75,11 +75,9 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 			
 
 		  </form>
-
-		
-		
-		
     </div>
+
+    <?php include("webparts/rodape.php"); ?>
 
   </body>
 </html>

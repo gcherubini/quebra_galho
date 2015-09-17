@@ -133,9 +133,10 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 	  include("webparts/div_voce_precisa_se_logar.php"); 
 	}
 ?>		
-				
-			
+					
     </div>
+
+     <?php include("webparts/rodape.php"); ?>
 
   </body>
 </html>

@@ -191,22 +191,7 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 
     </div>
 
-
-
-    <script>
-	
-		var croppicContaineroutputMinimal = {
-				uploadUrl:'libraries/croppic/img_save_to_file.php',
-				cropUrl:'libraries/croppic/img_crop_to_file.php', 
-				modal:false,
-				doubleZoomControls:true,
-				enableMousescroll:true,
-				loaderHtml:'<div class="loader bubblingG"><span id="bubblingG_1"></span><span id="bubblingG_2"></span><span id="bubblingG_3"></span></div> '
-		}
-		var cropContaineroutput = new Croppic('cropContainerMinimal', croppicContaineroutputMinimal);
-		
-		
-	</script>
+    <?php include("webparts/rodape.php"); ?>
 	
   </body>
 </html>

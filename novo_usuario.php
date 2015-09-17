@@ -13,7 +13,7 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 
 	var erroMsg = "Aconteceu um erro ao salvar seu usuário, tente mais tarde!";
  	var sucessoMsg = "Usuário salvo com sucesso, obrigado!";
-
+ 	
 	$().ready(function() {
 		$("#form").validate({
 			rules: {
@@ -211,7 +211,7 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 		</form>
     </div>
 
-
+    <?php include("webparts/rodape.php"); ?>
 
     <script>
 	
