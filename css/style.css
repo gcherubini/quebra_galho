@@ -67,6 +67,10 @@
 	background-color: #ccc;
 }
 
+.pagina_nao_encontrada {
+	display: none;
+}
+
 
 /*painel servicos */
 

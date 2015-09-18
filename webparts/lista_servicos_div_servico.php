@@ -10,27 +10,18 @@
 		</div>
 
 		<div class="row servico_titulo">
-			<div class="col-md-12"> <h3> <?php echo $servico["nome"]; ?> (<?php echo $servico["idade"]; ?> anos)</h3> </div>
+
+
+		
+			<a <?php echo  "href='quebra_galho_perfil.php?id_servico=" . $servico["id_servico"] . "'"; ?>> 
+				<div class="col-md-12"> <h3> <?php echo $servico["nome"]; ?> (<?php echo $servico["idade"]; ?> anos)</h3> </div>
+			</a>
 		</div>		
 		<div class="row servico_detalhe">
 			<div class="col-md-12"> <p>"<?php echo $servico["slogan"]; ?>"</p> </div>
 		</div>
 		<div class="row servico_titulo">
 			<div class="col-md-12"> <h4> <?php echo $servico["emprego"]; ?> </h4> </div>
-		</div>
-
-		<div class="row servico_detalhe">
-			<div class="col-md-6"> <b> Valor hora: </b>  </div>
-			<div class="col-md-6"> <b> Serviços realizados: </b>  </div>
-		</div>
-
-		<div class="row servico_detalhe">
-			<div class="col-md-6">  R$ 50,00 </div>
-			<div class="col-md-6">  5 </div>
-		</div>
-
-		<div class="row servico_detalhe"> 
-			<div class="col-md-12"> <b> Tempo no mercado: </b> 10 anos </div>
 		</div>
 
 		<div class="row servico_detalhe"> 
@@ -51,5 +42,8 @@
 				?>
 			</div>
 		</div>
+
+		<a  <?php echo  "id='" . $servico["id_servico"] . "'"; ?> href="" class="contratar_servico">Contratar</a>
+
 	</div>
 </div>

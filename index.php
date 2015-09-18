@@ -26,6 +26,11 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 			buscaEcarregaServicos();
 		});
 
+		$('.contratar_servico').click(function() {
+			alert('test');
+	     	//contrataServico($(this).attr("id"));
+		});
+
 		buscaEcarregaServicos();
 	});
 
@@ -102,6 +107,26 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
  		$('.servicos').text("");
  		$('.servicos_itens_nao_encotrados').css("display","none");
  	}
+
+ 	function contrataServico(id_servico){
+		alert("r")
+		/*$.ajax({
+		        type : 'POST',
+		        dataType : 'text',
+		        data: ({id_servico: id_servico}) ,
+		        url: 'backend/deletar_servico.php',
+		        async: false,
+		        success : function(json_result) {
+		        	if(json_result != "") {
+		        		mostraMensagemDeErroNaDelecao()
+		        	}
+		        },
+		        error: function(XMLHttpRequest, textStatus, errorThrown){
+			    	//alert("error: " + textStatus);
+			    	mostraMensagemDeErroNaDelecao()
+			    } 
+		    });*/
+	}
 
 
 	</script>

@@ -15,9 +15,7 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
  		buscaEcarregaServicos();
 
 		$('.deletar_servico').click(function() {
-	     		var id_servico = $(this).attr("id");
-	     		//alert(id_servico);
-	     		deletaServico(id_servico);
+	     	deletaServico($(this).attr("id"));
 		});
 
  	});
@@ -27,7 +25,6 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 		        dataType : 'text',
 		        data: ({id_servico: id_servico}) ,
 		        url: 'backend/deletar_servico.php',
-		        async: false,
 		        success : function(json_result) {
 		        	if(json_result != "") {
 		        		mostraMensagemDeErroNaDelecao()
@@ -49,11 +46,9 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 		        dataType : 'json',
 		        data: ({filtroIdUsuario: <?php echo $_SESSION['id_usuario']; ?>	}) ,
 		        url: 'backend/busca_servicos.php',
-		        async: false,
 		        success : function(json_result) {
 		        	//alert(json_result)
 		        	//console.log(json_result)
-		           
 		            // need to test in IE
 		            var countJsonItens = Object.keys(json_result).length 
 
@@ -64,7 +59,6 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 		            		$.each(json_result, function(index, servico_json) {	
 		            			populaServicoNaTela(servico_json);
 			        		});
-			        		comboJaFoiPopulado = true;
 			        }
 		        },
 		        error: function(XMLHttpRequest, textStatus, errorThrown){
@@ -127,6 +121,17 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 		  </div>
 		  <div class="servicos_itens_nao_encotrados">
 			<p> Você ainda não publicou nenhum serviço... </p>
+			<a href="novo_servico.php"> Seja um Quebra-Galho </a>
+		</div>
+
+		 <h3> Suas negociações </h1>
+
+		  <div class="servicos_negociando">
+
+		  </div>
+		  <div class="servicos_negociando_nao_encotrados">
+			<p> Você ainda não está negociando com nenhum quebra-galho... </p>
+			<a href="index.php"> Encontre um Quebra-Galho  </a>
 		</div>
 <?php
 	} else {

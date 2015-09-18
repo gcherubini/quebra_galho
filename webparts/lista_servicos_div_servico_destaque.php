@@ -12,25 +12,23 @@
 		<p> "<?php echo $servico["slogan"]; ?>" </p>
 		<h4> <?php echo $servico["emprego"]; ?> </h4>
 		
-		<div class="row">
-			<div class="col-md-4"> <b> Valor hora: </b> R$ 100,00 </div>
-			<div class="col-md-4"> <b> Tempo no mercado: </b> 10 anos </div>
-		</div>
-		
-		
-		<?php
-			$totalEstrelas = 5;
-			$usuarioEstrelas = $servico["estrelas"];
+		<p>
+			<?php
+				$totalEstrelas = 5;
+				$usuarioEstrelas = $servico["estrelas"];
 
-			if($usuarioEstrelas>0){
-				echo "<b> Qualidade de serviço: </b>";
-				for($i = 0; $i < $servico["estrelas"]; $i++){
-				echo "<span class='glyphicon glyphicon-star'> </span>";
+				if($usuarioEstrelas>0){
+					echo "<b> Qualidade de serviço: </b>";
+					for($i = 0; $i < $servico["estrelas"]; $i++){
+					echo "<span class='glyphicon glyphicon-star'> </span>";
+					}
+					for($i = 0; $i < $totalEstrelas-$servico["estrelas"]; $i++){
+						echo "<span class='glyphicon glyphicon-star-empty'> </span>";
+					}
 				}
-				for($i = 0; $i < $totalEstrelas-$servico["estrelas"]; $i++){
-					echo "<span class='glyphicon glyphicon-star-empty'> </span>";
-				}
-			}
-		?>
+			?>
+		</p>
+
+		<a  <?php echo  "id='" . $servico["id_servico"] . "'"; ?> href="" class="contratar_servico">Contratar</a>
   </div>
 </div>
