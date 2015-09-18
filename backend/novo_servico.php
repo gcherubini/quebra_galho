@@ -1,7 +1,7 @@
 <?php
 if (session_status() == PHP_SESSION_NONE) { session_start(); }
 
-$id_usuario = $_SESSION['id_usuario'] ;
+$id_usuario = isset($_SESSION['id_usuario']) ? trim($_SESSION['id_usuario']) : '';
 $emprego = isset($_POST['emprego']) ? trim($_POST['emprego']) : '';
 $slogan = isset($_POST['slogan']) ? trim($_POST['slogan']) : '';
 $descricao = isset($_POST['descricao']) ? trim($_POST['descricao']) : '';

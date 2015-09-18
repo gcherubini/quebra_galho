@@ -17,7 +17,7 @@ $().ready(function() {
 
 </script>
 
-<div class="header_div_top">
+<div class="topo1">
 	
 	<div class="container header_div_top_right"> 
 			<a href="#" > Ajuda </a>
@@ -35,7 +35,7 @@ $().ready(function() {
 	
 </div>
 
-<div class="header_div_top_2">
+<div class="topo2">
 	<div class="container">
 		<div class="col-md-2">
 			<div class="logo">
@@ -55,7 +55,7 @@ $().ready(function() {
 
 
 
-<div class="header_div_top_3">
+<div class="topo3">
 
 </div>
 

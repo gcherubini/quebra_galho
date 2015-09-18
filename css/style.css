@@ -7,7 +7,7 @@
 	width: 90%;
 }
 
-.header_div_top {
+.topo1 {
 	height: 30px;
 	width: 100%;
 	background-color: #17679D;
@@ -30,23 +30,23 @@
 }
 
 
-.header_div_top_2 {
+.topo2 {
 	height: 100px;
 	width: 100%;
 }
 
-.header_div_top_2 .logo {
+.topo2 .logo {
 	height: 80px;
 	width: 200px;
 	border:1px solid #ccc;
 	margin-top:20px;
 }
 
-.header_div_top_2 .menu  {
+.topo2 .menu  {
 	list-style-type: none;
 	margin-top:45px;
 }
-.header_div_top_2 .menu li, .header_div_top_2 .menu a {
+.topo2 .menu li, .topo2 .menu a {
 	float: left;
 	text-decoration: none;
 	margin-right: 20px;
@@ -54,12 +54,12 @@
 	font-size:18px;
 }
 
-.header_div_top_2 .menu li:hover, .header_div_top_2 .menu .activate{
+.topo2 .menu li:hover, .topo2 .menu .activate{
 	border-bottom: 3px solid #17679D;
 }
 
 
-.header_div_top_3 {
+.topo3 {
 	margin-top: 20px;
 	margin-bottom: 30px;
 	height: 20px;
@@ -71,8 +71,18 @@
 	display: none;
 }
 
+.voce_precisa_estar_logado {
+}
+
+/*publicar servico*/
+.publicar_servico {
+
+}
 
 /*painel servicos */
+.servico	{	
+	cursor: pointer;
+}
 
 .servicos_titulo_filtro {
 	margin-top:20px;
@@ -149,3 +159,14 @@ form .row {
 	color:blue;
 }
 
+
+/* Resultado de Operacoes */ 
+.resultado_de_operacoes{
+	display: none;
+}
+.resultado_de_operacoes .resultado_sucesso{
+ 	display: none;
+}
+.resultado_de_operacoes .resultado_erro{
+	display: none;
+}

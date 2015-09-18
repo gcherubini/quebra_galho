@@ -3,7 +3,7 @@
 ?>
 
 
-<div class="row servico">
+<div class="row servico abrir_quebra_galho" <?php echo  "id='" . $servico["id_servico"] . "'"; ?>> 
   <div class="col-md-3 servico_img"> 
   	<?php echo '<img class="img-responsive" src="'.$servico["img_url"].'"/>'; ?> 
   </div>
@@ -28,7 +28,5 @@
 				}
 			?>
 		</p>
-
-		<a  <?php echo  "id='" . $servico["id_servico"] . "'"; ?> href="" class="contratar_servico">Contratar</a>
   </div>
 </div>

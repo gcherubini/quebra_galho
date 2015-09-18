@@ -1,3 +1,5 @@
+CREATE DATABASE  IF NOT EXISTS `servicosonline` /*!40100 DEFAULT CHARACTER SET latin1 */;
+USE `servicosonline`;
 -- MySQL dump 10.13  Distrib 5.6.24, for Win64 (x86_64)
 --
 -- Host: 127.0.0.1    Database: servicosonline
@@ -51,15 +53,15 @@ CREATE TABLE `negociacao` (
   `id_negociacao` int(11) NOT NULL AUTO_INCREMENT,
   `contratante` int(11) DEFAULT NULL,
   `contratado` int(11) DEFAULT NULL,
-  `servico` int(11) DEFAULT NULL,
+  `id_servico` int(11) DEFAULT NULL,
   PRIMARY KEY (`id_negociacao`),
   KEY `contratante` (`contratante`),
   KEY `contratado` (`contratado`),
-  KEY `servico` (`servico`),
+  KEY `servico` (`id_servico`),
   CONSTRAINT `negociacao_ibfk_1` FOREIGN KEY (`contratante`) REFERENCES `usuario` (`id_usuario`),
   CONSTRAINT `negociacao_ibfk_2` FOREIGN KEY (`contratado`) REFERENCES `usuario` (`id_usuario`),
-  CONSTRAINT `negociacao_ibfk_3` FOREIGN KEY (`servico`) REFERENCES `servico` (`id_servico`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  CONSTRAINT `negociacao_ibfk_3` FOREIGN KEY (`id_servico`) REFERENCES `servico` (`id_servico`)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -68,6 +70,7 @@ CREATE TABLE `negociacao` (
 
 LOCK TABLES `negociacao` WRITE;
 /*!40000 ALTER TABLE `negociacao` DISABLE KEYS */;
+INSERT INTO `negociacao` VALUES (7,12,11,5),(8,12,2,3);
 /*!40000 ALTER TABLE `negociacao` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -145,4 +148,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-09-18  1:33:31
+-- Dump completed on 2015-09-18 13:57:07

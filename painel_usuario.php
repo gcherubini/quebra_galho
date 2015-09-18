@@ -6,7 +6,7 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 <html lang="en">
   <head>
    <?php include("webparts/head_imports.php"); ?>
-   <title>Bootstrap 101 Template</title>
+   <title>Quebra-Galho</title>
 
    <script type="text/javascript"> 
    
@@ -100,9 +100,11 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
   </head>
   <body>
 
-	<?php include("webparts/header.php"); ?>
+	<?php include("webparts/topo.php"); ?>
 
     <div class="container">
+
+    <?php include("webparts/resultado_de_operacoes.php"); ?>
 
 <?php
 	if (isset($_SESSION['id_usuario'])) {
@@ -132,7 +134,9 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 		  <div class="servicos_negociando_nao_encotrados">
 			<p> Você ainda não está negociando com nenhum quebra-galho... </p>
 			<a href="index.php"> Encontre um Quebra-Galho  </a>
-		</div>
+
+			 <?php include("webparts/pagina_nao_encontrada.php"); ?>
+	</div>
 <?php
 	} else {
 	  include("webparts/div_voce_precisa_se_logar.php"); 

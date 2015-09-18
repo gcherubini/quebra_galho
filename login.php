@@ -6,7 +6,7 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 <html lang="en">
   <head>
    <?php include("webparts/head_imports.php"); ?>
-   <title>Bootstrap 101 Template</title>
+   <title>Quebra-Galho</title>
 
 
    <script type="text/javascript">
@@ -14,23 +14,23 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 	$(function() {
 		$(form).submit(function() {
 		   	$.ajax({
-			        type : 'POST',
-			        dataType : 'text',
-			        url: 'backend/login.php',
-			        data: $(form).serialize(),
-			        success : function(result) {
-			        	if(result == "true") {
-			        		window.location.href = "painel_usuario.php";
-			        	}
-			        	else {
-			        		alert("Erro de conexão. Talvez você tenha digitado sua senha errada...")
-			        	}
-			        },
-			        error: function(XMLHttpRequest, textStatus, errorThrown){
-				       alert("Aconteceu um erro inesperado, tente mais tarde...")
-				       //alert("error! status:  " + textStatus);
-				    }
-			    });
+		        type : 'POST',
+		        dataType : 'text',
+		        url: 'backend/login.php',
+		        data: $(form).serialize(),
+		        success : function(result) {
+		        	if(result == "true") {
+		        		window.location.href = "painel_usuario.php";
+		        	}
+		        	else {
+		        		alert("Erro de conexão. Talvez você tenha digitado sua senha errada...")
+		        	}
+		        },
+		        error: function(XMLHttpRequest, textStatus, errorThrown){
+			       alert("Aconteceu um erro inesperado, tente mais tarde...")
+			       alert("error! status:  " + textStatus);
+			    }
+		    });
 
 		    return false; // avoid to execute the actual submit of the form.
 		});	 	
@@ -43,12 +43,11 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
   </head>
   <body>
 
-	<?php include("webparts/header.php"); ?>
+	<?php include("webparts/topo.php"); ?>
 
     <div class="container">
+		<?php include("webparts/resultado_de_operacoes.php"); ?>
 
-		
-	
 		 <h2> Entre no Quebra-Galho </h1>
 		 
 		  <form id="form" class="form-horizontal" >
@@ -72,9 +71,9 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 				<button type="submit" class="btn btn-default">Entrar</button>
 			  </div>
 			</div>
-			
-
 		  </form>
+		  
+		   <?php include("webparts/pagina_nao_encontrada.php"); ?>
     </div>
 
     <?php include("webparts/rodape.php"); ?>

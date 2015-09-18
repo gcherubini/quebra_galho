@@ -3,7 +3,7 @@
 ?>
 
 
-<div class="col-md-3 servico"> 
+<div class="col-md-3 servico abrir_quebra_galho" <?php echo  "id='" . $servico["id_servico"] . "'"; ?>> 
 	<div class="servico_espacamento">
 		<div class="row servico_img">
 			<?php echo '<img class="img-responsive" src="'.$servico["img_url"].'"/>'; ?>
@@ -11,11 +11,9 @@
 
 		<div class="row servico_titulo">
 
-
-		
-			<a <?php echo  "href='quebra_galho_perfil.php?id_servico=" . $servico["id_servico"] . "'"; ?>> 
+			<p> 
 				<div class="col-md-12"> <h3> <?php echo $servico["nome"]; ?> (<?php echo $servico["idade"]; ?> anos)</h3> </div>
-			</a>
+			</p>
 		</div>		
 		<div class="row servico_detalhe">
 			<div class="col-md-12"> <p>"<?php echo $servico["slogan"]; ?>"</p> </div>
@@ -42,8 +40,5 @@
 				?>
 			</div>
 		</div>
-
-		<a  <?php echo  "id='" . $servico["id_servico"] . "'"; ?> href="" class="contratar_servico">Contratar</a>
-
 	</div>
 </div>

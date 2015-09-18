@@ -5,7 +5,7 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 <!DOCTYPE html>
 <html lang="en">
   <head>
-   <title>Bootstrap 101 Template</title>
+   <title>Quebra-Galho</title>
 
 	<?php include("webparts/head_imports.php"); ?>
 
@@ -115,9 +115,11 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 
 	
 
-<?php include("webparts/header.php"); ?>
+<?php include("webparts/topo.php"); ?>
 
     <div class="container">
+
+    <?php include("webparts/resultado_de_operacoes.php"); ?>
 
 		<h2> Inscrever-se </h1>
 		<p> Se cadastre no nosso website para poder contratar ou oferecer um serviço: </p> 
@@ -209,6 +211,8 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 				</div>	
 			</fieldset>
 		</form>
+
+		 <?php include("webparts/pagina_nao_encontrada.php"); ?>
     </div>
 
     <?php include("webparts/rodape.php"); ?>

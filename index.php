@@ -6,14 +6,19 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 <html lang="en">
   <head>
    <?php include("webparts/head_imports.php"); ?>
-   <title>Bootstrap 101 Template</title>
+   <title>Quebra-Galho</title>
 
 	<script type="text/javascript"> 
 
 	var comboJaFoiPopulado = false;
 
  	$(document).ready(function () {
- 		
+
+ 		// click does not work when we have imported php with ajax
+		$('.container').on('click', '.abrir_quebra_galho', function() {
+			abrirQuebraGalho($(this).attr("id"));
+		});
+
 		$('.input_texto_pesquisar').on('input',function(e){
 		    buscaEcarregaServicos();
 		});
@@ -26,11 +31,8 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 			buscaEcarregaServicos();
 		});
 
-		$('.contratar_servico').click(function() {
-			alert('test');
-	     	//contrataServico($(this).attr("id"));
-		});
 
+		
 		buscaEcarregaServicos();
 	});
 
@@ -108,24 +110,8 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
  		$('.servicos_itens_nao_encotrados').css("display","none");
  	}
 
- 	function contrataServico(id_servico){
-		alert("r")
-		/*$.ajax({
-		        type : 'POST',
-		        dataType : 'text',
-		        data: ({id_servico: id_servico}) ,
-		        url: 'backend/deletar_servico.php',
-		        async: false,
-		        success : function(json_result) {
-		        	if(json_result != "") {
-		        		mostraMensagemDeErroNaDelecao()
-		        	}
-		        },
-		        error: function(XMLHttpRequest, textStatus, errorThrown){
-			    	//alert("error: " + textStatus);
-			    	mostraMensagemDeErroNaDelecao()
-			    } 
-		    });*/
+ 	function abrirQuebraGalho(id_servico){
+		$.redirect("quebra_galho_perfil.php",{id_servico: id_servico}); 
 	}
 
 
@@ -134,12 +120,10 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
   </head>
   <body>
 
-	<?php include("webparts/header.php"); ?>
+	<?php include("webparts/topo.php"); ?>
 		
-		
-
     <div class="container">
-
+    	<?php include("webparts/resultado_de_operacoes.php"); ?>
 
 		<h2> Painel de quebra-galhos </h1>
 		<p> Pesquise abaixo o serviço que deseja contratar, uma listagem de diversos quebra-galhos de todo Brasil segue abaixo: </p> 
@@ -194,6 +178,7 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 			<p> Desculpe... Nenhum quebra-galho foi encontrado em sua busca. </p>
 		</div>
 
+		 <?php include("webparts/pagina_nao_encontrada.php"); ?>
     </div>
 
     <?php include("webparts/rodape.php"); ?>

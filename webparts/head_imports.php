@@ -16,13 +16,15 @@
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
 <!-- <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script> -->
-<script src="js/jquery-2.1.4.min.js"></script>
+<script src="libraries/jquery/jquery-2.1.4.min.js"></script>
 
 <script src="libraries/bootstrap/js/bootstrap.min.js"></script>
 
+<script src="libraries/jquery/jquery-ui.1.11.4.js"></script>
 
-<script src="js/jquery-ui.1.11.4.js"></script>
+<script src="libraries/jqueryRedirect/jquery.redirect.js"></script>
 
+<script src="js/quebra_galho.js" type="text/javascript"></script>
 
 <!-- CONFLICTS BELLOW!!! -->
 
