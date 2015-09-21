@@ -53,14 +53,14 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 		  <form id="form" class="form-horizontal" >
 			<div class="form-group">
 			  <label for="email" class="col-sm-2 control-label">E-mail</label>
-			  <div class="col-sm-10">
+			  <div class="col-sm-3">
 				<input type="text" class="form-control" id="email" name="email">
 			  </div>
 			</div>
 
 			<div class="form-group">
 			  <label for="senha" class="col-sm-2 control-label">Senha</label>
-			  <div class="col-sm-10">
+			  <div class="col-sm-3">
 			   <input type="password" class="form-control" id="senha" name="senha">
 			  </div>
 			</div>
