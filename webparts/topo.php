@@ -20,7 +20,7 @@ $().ready(function() {
 <div class="topo1">
 	
 	<div class="container header_div_top_right"> 
-			<a href="#" > Ajuda </a>
+			<a href="ajuda.php" > Ajuda </a>
 			<span class="glyphicon glyphicon-menu-right"></span>
 			
 			<?php if (isset($_SESSION['id_usuario'])) { ?>
@@ -46,8 +46,7 @@ $().ready(function() {
 			<ul class="menu">
 				<a href="index.php"><li class="activate"> Inicio </li></a>
 				<a href="novo_servico.php"><li>Publicar</li></a>
-				<a href="novo_servico.php"><li>Sobre</li></a>
-				<a href="novo_servico.php"><li>Contato</li></a>
+				<a href="sobre.php"><li>Sobre</li></a>
 			</ul>
 		</div>
 	</div>
