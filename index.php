@@ -13,6 +13,7 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 	var comboJaFoiPopulado = false;
 
  	$(document).ready(function () {
+ 		ativaMenu("#menu_inicio");
 
  		// click does not work when we have imported php with ajax
 		$('.container').on('click', '.abrir_quebra_galho', function() {

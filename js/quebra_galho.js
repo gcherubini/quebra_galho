@@ -1,3 +1,7 @@
+function ativaMenu (idMenu) {
+		$(idMenu).addClass("activate");
+}
+
 function mostraResultadoOperacoes (sucesso, msg) {
 	if(sucesso){
 		$(".resultado_de_operacoes").css("display","block");
@@ -10,3 +14,4 @@ function mostraResultadoOperacoes (sucesso, msg) {
 		$(".resultado_erro").text(msg);
 	}
 }
+

@@ -44,9 +44,9 @@ $().ready(function() {
 		<div class="col-md-10">
 			
 			<ul class="menu">
-				<a href="index.php"><li class="activate"> Inicio </li></a>
-				<a href="novo_servico.php"><li>Publicar</li></a>
-				<a href="sobre.php"><li>Sobre</li></a>
+				<a href="index.php"><li id="menu_inicio"> Inicio </li></a>
+				<a href="novo_servico.php"><li id="menu_publicar">Publicar</li></a>
+				<a href="sobre.php"><li id="menu_sobre">Sobre</li></a>
 			</ul>
 		</div>
 	</div>

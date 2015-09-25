@@ -11,7 +11,12 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 
    <script type="text/javascript">
 
+   	
+
 	$(function() {
+
+		ativaMenu("#menu_sobre");
+
 		$(form).submit(function() {
 		   	$.ajax({
 		        type : 'POST',

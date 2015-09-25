@@ -17,6 +17,9 @@ echo "<script> var id_usuario = $id_usuario; </script>";
  	var sucessoMsg = "Seu serviço foi salvo com sucesso, obrigado!";
 
  	$().ready(function() {
+
+ 		ativaMenu("#menu_publicar");
+
  		if(id_usuario == 0) {
 			$.redirect("voce_precisa_de_uma_conta.php"); 
 		}
