@@ -170,3 +170,10 @@ form .row {
 .resultado_de_operacoes .resultado_erro{
 	display: none;
 }
+
+
+/* painel usuario */
+
+.negociacoes_nao_encotrados{
+	display:none;
+}

@@ -13,6 +13,7 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
  	$(document).ready(function () {
  		
  		buscaEcarregaServicos();
+ 		buscaEcarregaNegociacoes();
 
 		$('.deletar_servico').click(function() {
 	     	deletaServico($(this).attr("id"));
@@ -68,18 +69,62 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 		    });
 	}
 
-	function populaServicoNaTela(servico_json){
+	function buscaEcarregaNegociacoes(){
+
+		$.ajax({
+		        type : 'POST',
+		        dataType : 'json',
+		        url: 'backend/busca_negociacoes.php',
+		        success : function(json_result) {
+		        	//alert(json_result)
+		        	//console.log(json_result)
+		            // need to test in IE
+		            var countJsonItens = Object.keys(json_result).length 
+
+		 			if(countJsonItens == 0) {
+	 					mostraMensagemDeNegociacoesNaoEncontradas()
+		 			}
+		 			else {
+	            		$.each(json_result, function(index, json_result) {	
+	            			populaNegociacaoNaTela(json_result);
+		        		});
+			        }
+		        },
+		        error: function(XMLHttpRequest, textStatus, errorThrown){
+			    	alert("error: " + textStatus);
+			    	mostraMensagemDeNegociacoesNaoEncontradas()
+			    } 
+		    });
+	}
+
+	function populaServicoNaTela(json_result){
 		// carregar servico (divs)
-		var url_div = "webparts/painel_servico_div_servico_publicado.php";
+		var url_div = "webparts/painel_usuario_div_servico_publicado.php";
     	
 		$.ajax({
 		    type : 'GET',
 		    dataType : 'text',
 		    url: url_div,
-		    data: ({servico: servico_json}),
+		    data: ({servico: json_result}),
 		    async: false,
 		    success : function(div_result) {
 		    	$('.servicos_publicados').append(div_result);
+		    } 
+		});
+	}
+
+	function populaNegociacaoNaTela(json_result){
+		// carregar servico (divs)
+		var url_div = "webparts/painel_usuario_div_negociacao.php";
+    	
+		$.ajax({
+		    type : 'GET',
+		    dataType : 'text',
+		    url: url_div,
+		    data: ({servico: json_result}),
+		    async: false,
+		    success : function(div_result) {
+		    	$('.negociacoes').append(div_result);
 		    } 
 		});
 	}
@@ -88,6 +133,12 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
  		// quando há mudanca de filtros por exemplo
  		$('.servicos_itens_nao_encotrados').css("display","block");
  	}
+
+ 	function mostraMensagemDeNegociacoesNaoEncontradas() {
+ 		// quando há mudanca de filtros por exemplo
+ 		$('.negociacoes_nao_encotrados').css("display","block");
+ 	}
+
  	function mostraMensagemDeErroNaDelecao() {
  		alert("Ops... Aconteceu um erro ao deletar este serviço, por favor tentar mais tarde.")
  	}
@@ -128,21 +179,22 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 
 		 <h3> Suas negociações </h1>
 
-		  <div class="servicos_negociando">
+		  <div class="negociacoes">
 
 		  </div>
-		  <div class="servicos_negociando_nao_encotrados">
+		  <div class="negociacoes_nao_encotrados">
 			<p> Você ainda não está negociando com nenhum quebra-galho... </p>
 			<a href="index.php"> Encontre um Quebra-Galho  </a>
+		  </div>
 
-			 <?php include("webparts/pagina_nao_encontrada.php"); ?>
-	</div>
+		  
 <?php
 	} else {
 	  include("webparts/div_voce_precisa_se_logar.php"); 
 	}
 ?>		
 					
+			<?php include("webparts/pagina_nao_encontrada.php"); ?>
     </div>
 
      <?php include("webparts/rodape.php"); ?>
