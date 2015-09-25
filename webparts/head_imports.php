@@ -34,6 +34,10 @@
 <script src="libraries/validation/js/jquery.validate.min.js"></script>
 <script src="libraries/validation/js/localization/messages_pt_BR.js"> </script>
 
+
+<!-- http://infiniteajaxscroll.com/docs/getting-started.html -->
+<script src="libraries/infiniteAjaxScroll/jquery-ias.min.js"> </script>
+
 	
 	
 	
