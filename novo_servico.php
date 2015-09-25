@@ -24,6 +24,9 @@ echo "<script> var id_usuario = $id_usuario; </script>";
 			$.redirect("voce_precisa_de_uma_conta.php"); 
 		}
 
+		buscaEcarregaComboEmprego();
+		
+
 		$("#form").validate({
 			rules: {
 				emprego: {
@@ -83,6 +86,28 @@ echo "<script> var id_usuario = $id_usuario; </script>";
 		});
 
 	
+	
+
+	function buscaEcarregaComboEmprego(){
+		$.ajax({
+		        type : 'POST',
+		        dataType : 'json',
+		        url: 'backend/busca_empregos.php',
+		        async: false,
+		        success : function(json_result) {
+		        	//alert(json_result)
+		        	//console.log(json_result)
+		           
+		            $.each(json_result, function(index, json_result) {	
+            			$('.combo_emprego').append("<option>" + json_result.emprego + "</option>");
+	        		});
+		        },
+		        error: function(XMLHttpRequest, textStatus, errorThrown){
+			    	alert("error: " + textStatus);
+			    } 
+		    });
+	}
+
 	function erroSalvarDB(error){
 		alert(erroMsg);
 		$(form)[0].reset();
@@ -93,6 +118,7 @@ echo "<script> var id_usuario = $id_usuario; </script>";
 		//alert(sucessoMsg);
 		window.location.href = "painel_usuario.php";
 	}
+
 
 	</script>
 
@@ -113,7 +139,9 @@ echo "<script> var id_usuario = $id_usuario; </script>";
 				<div class="form-group">
 				  <label for="emprego" class="col-sm-2 control-label">Emprego </label>
 				  <div class="col-sm-10">
-					<input type="text" class="form-control" id="emprego" name="emprego">
+					<select class="form-control combo_emprego" id="emprego" name="emprego">
+						<option value="">Selecione</option>
+					</select>
 				  </div>
 				</div>
 
