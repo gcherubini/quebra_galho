@@ -4,7 +4,7 @@ USE `servicosonline`;
 --
 -- Host: 127.0.0.1    Database: servicosonline
 -- ------------------------------------------------------
--- Server version	5.6.21
+-- Server version	5.6.25
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -61,7 +61,7 @@ CREATE TABLE `negociacao` (
   CONSTRAINT `negociacao_ibfk_1` FOREIGN KEY (`contratante`) REFERENCES `usuario` (`id_usuario`),
   CONSTRAINT `negociacao_ibfk_2` FOREIGN KEY (`contratado`) REFERENCES `usuario` (`id_usuario`),
   CONSTRAINT `negociacao_ibfk_3` FOREIGN KEY (`id_servico`) REFERENCES `servico` (`id_servico`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -70,7 +70,7 @@ CREATE TABLE `negociacao` (
 
 LOCK TABLES `negociacao` WRITE;
 /*!40000 ALTER TABLE `negociacao` DISABLE KEYS */;
-INSERT INTO `negociacao` VALUES (7,12,11,5),(8,12,2,3);
+INSERT INTO `negociacao` VALUES (7,12,11,5),(8,12,2,3),(9,11,2,3),(10,11,3,4),(14,11,12,6),(15,12,11,2);
 /*!40000 ALTER TABLE `negociacao` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -88,6 +88,9 @@ CREATE TABLE `servico` (
   `destaque` tinyint(4) DEFAULT '0',
   `estado` varchar(10) DEFAULT NULL,
   `data_criacao` date DEFAULT NULL,
+  `email_contato` varchar(350) DEFAULT NULL,
+  `cel_contato` varchar(255) DEFAULT NULL,
+  `tel_contato` varchar(255) DEFAULT NULL,
   `id_usuario` int(11) DEFAULT NULL,
   `id_emprego` int(11) DEFAULT NULL,
   PRIMARY KEY (`id_servico`),
@@ -104,7 +107,7 @@ CREATE TABLE `servico` (
 
 LOCK TABLES `servico` WRITE;
 /*!40000 ALTER TABLE `servico` DISABLE KEYS */;
-INSERT INTO `servico` VALUES (2,'Ser rápido e veloz','x',0,'SP',NULL,11,1),(3,'Jogo 10','x',1,'RS',NULL,2,2),(4,'Trabalho com felicidade','x',0,'RJ',NULL,3,3),(5,'Administro bem','x',0,'ALL',NULL,11,4),(6,'bebida aa','asasa',0,'ALL',NULL,12,10);
+INSERT INTO `servico` VALUES (2,'Ser rápido e veloz','x',0,'SP',NULL,'emailcontato@gmail.com','(51) 9438-2932','(51) 3737-9281',11,1),(3,'Jogo 10','x',1,'RS',NULL,'emailcontato@gmail.com','(51) 9438-2932','(51) 3737-9281',2,2),(4,'Trabalho com felicidade','x',0,'RJ',NULL,'emailcontato@gmail.com','(51) 9438-2932','(51) 3737-9281',3,3),(5,'Administro bem','x',0,'ALL',NULL,'emailcontato@gmail.com','(51) 9438-2932','(51) 3737-9281',11,4),(6,'bebida aa','asasa',0,'ALL',NULL,'emailcontato@gmail.com','(51) 9438-2932','(51) 3737-9281',12,10);
 /*!40000 ALTER TABLE `servico` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -148,4 +151,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-09-22 23:42:39
+-- Dump completed on 2015-09-26 16:38:00
