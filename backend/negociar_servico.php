@@ -12,20 +12,23 @@ if ($conn->connect_error) {
     $errorMessage = "Connection failed: " . $conn->connect_error;
 } 
 
-// get contratado
-$sql = "SELECT id_usuario FROM servico 
+// get contratado and their contact info
+$sql = "SELECT * FROM servico 
 		WHERE id_servico = '" . $id_servico. "'";
 $contratado = "";
+$contratadoArray = array();
 $result = $conn->query($sql);
 while($r = $result->fetch_assoc()) {
     $contratado = $r["id_usuario"];
+    $contratadoArray[] = $r;
 }
 $result->close();
 
 // check if negociacao already exists
 $sql = "SELECT * FROM negociacao 
 	    WHERE contratante = '" . $contratante. "' 
-	    AND   contratado = '" . $contratado. "'";
+	    AND   contratado = '" . $contratado. "'
+	    AND   id_servico = '" . $id_servico. "'";
 $negociacaoAlreadyExist = false;
 $result = $conn->query($sql);
 while($r = $result->fetch_assoc()) {
@@ -51,6 +54,14 @@ else {
 
 $conn->close();
 
-echo $errorMessage;
+
+if($errorMessage == "") {
+	echo json_encode($contratadoArray);
+}
+else{
+	$errorArray = array('errorMessage'  => $errorMessage);
+	echo json_encode($errorArray);
+}
+
 
 ?>

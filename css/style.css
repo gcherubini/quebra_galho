@@ -177,3 +177,9 @@ form .row {
 .negociacoes_nao_encotrados{
 	display:none;
 }
+
+/* Quebra Galho Perfil */
+
+.quebra_galho_contato{
+	display: none;
+}

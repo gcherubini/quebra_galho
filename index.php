@@ -112,7 +112,7 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
  	}
 
  	function abrirQuebraGalho(id_servico){
-		$.redirect("quebra_galho_perfil.php",{id_servico: id_servico}); 
+		window.location.replace("quebra_galho_perfil.php?id_servico="+id_servico);
 	}
 
 

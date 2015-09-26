@@ -8,14 +8,13 @@
   <div class="col-md-10">
 		<h4> <?php echo $servico["emprego"]; ?> </h4>
 		<p> "<?php echo $servico["slogan"]; ?>" </p>
-		<p> <?php echo $servico["descricao"]; ?> </p>
   </div>
    <div class="col-md-2">
 		<p>
-			<a href="" class="editar_servico">Editar</a>
+			<a href="" class="editar_servico">Editar informações do serviço</a>
 		</p>
 		<p> 
-			<a  <?php echo  "id='" . $servico["id_servico"] . "'"; ?> href="" class="deletar_servico">Deletar</a>
+			<a  <?php echo  "id='" . $servico["id_servico"] . "'"; ?> href="" class="deletar_servico">Deletar serviço</a>
 		</p>
   </div>
 

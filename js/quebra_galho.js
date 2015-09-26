@@ -15,3 +15,11 @@ function mostraResultadoOperacoes (sucesso, msg) {
 	}
 }
 
+function valorEhVazio (valor) {
+		if(valor == null || valor == undefined || valor == "" ){
+			return true;
+		}
+		else{
+			return false;
+		}
+}

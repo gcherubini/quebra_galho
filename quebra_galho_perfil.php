@@ -3,7 +3,7 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 //mudar pra post...
 
 $id_usuario = isset($_SESSION['id_usuario']) ? trim($_SESSION['id_usuario']) : 0;
-$id_servico = isset($_POST['id_servico']) ? trim($_POST['id_servico']) : 0;
+$id_servico = isset($_GET['id_servico']) ? trim($_GET['id_servico']) : 0;
 echo "<script> var id_servico = $id_servico; </script>";
 echo "<script> var id_usuario = $id_usuario; </script>";
 ?>
@@ -25,8 +25,8 @@ echo "<script> var id_usuario = $id_usuario; </script>";
  			$(".quebra_galho_perfil").css("display","none");
  		}
 
- 		$('.container').on('click', '.contratar', function() {
-			contratar();
+ 		$('.container').on('click', '.negociar', function() {
+			negociar();
 		});
 	});
 
@@ -48,39 +48,51 @@ echo "<script> var id_usuario = $id_usuario; </script>";
 	}
 
 	function populaServicoNaTela (servico_json) {
-		$(".servico_titulo").text(servico_json.nome);
-		$(".servico_emprego").text(servico_json.emprego);
+		$(".servico_nome").text(servico_json.nome);
+		$(".servico_emprego_e_idade").text(servico_json.emprego);
+		$(".servico_emprego_e_idade").append(" (" + servico_json.idade + " anos)");
+		$(".servico_descricao").text(servico_json.descricao);
+ 		
 	}
 	
-	function contratar() {
+	function negociar() {
 		if(id_usuario == 0) {
 			$.redirect("voce_precisa_de_uma_conta.php"); 
 		}
 		else {
 			$.ajax({
 		        type : 'POST',
-		        dataType : 'text',
-		        url: 'backend/contratar_servico.php',
+		        dataType : 'json',
+		        url: 'backend/negociar_servico.php',
 		        data: ({id_servico: id_servico}) ,
-		        success : function(result) {
-		        	if(result == ""){
-		        		mostraResultadoOperacoes(true, "Usuário salvo no seu perfil com sucesso");
+		        success : function(json_result) {
+		        	//alert(JSON.stringify(json_result));
+					//alert(json_result.errorMessage);
+
+					if(valorEhVazio(json_result.errorMessage)){
+	        			$.each(json_result, function(index, json_result) {	
+		        			sucessoAoNegociar(json_result);
+						});
 		        	}
 		        	else {
-		        		erroAoContratar(result);
+		        		mostraResultadoOperacoes(false, json_result.errorMessage);
 		        	}
+
+		        	
 		        },
 		        error: function(XMLHttpRequest, textStatus, errorThrown){
-			       erroAoContratar(textStatus);
-			      
+			       mostraResultadoOperacoes(false, "Aconteceu um erro inesperado ao tentar negociar, tente mais tarde...");
 			    }
 	    	});
 		}
 	}
 
-	function erroAoContratar(error) {
-		 alert("Aconteceu um erro inesperado ao tentar contratar, tente mais tarde...");
-		 mostraResultadoOperacoes(false, error);
+	function sucessoAoNegociar(json_result) {
+		//mostraResultadoOperacoes(true, "Usuário salvo no seu perfil com sucesso");
+		$(".servico_email_contato").text(json_result.email_contato);
+		$(".servico_cel_contato").text(json_result.cel_contato);
+		$(".servico_telefone_contato").text(json_result.tel_contato);
+		$(".quebra_galho_contato").fadeIn();
 	}
 
 	</script>
@@ -94,10 +106,20 @@ echo "<script> var id_usuario = $id_usuario; </script>";
 
     <?php include("webparts/resultado_de_operacoes.php"); ?>
 
+    	<div class="quebra_galho_contato">
+    		<p> Abaixo seguem as informações de contato: </p>
+			<p class="servico_email_contato">  </p>
+			<p class="servico_cel_contato">  </p>
+			<p class="servico_telefone_contato">  </p>
+			<br>
+			<p> Este quebra-galho foi também salvo no seu painel! </p>
+    	</div>
+
     	<div class="quebra_galho_perfil"> 
-    		 <h1 class="servico_titulo">  </h1>
-			 <p class="servico_emprego">  </p>
-			 <a class="contratar" href="#"> Contratar </a>
+    		 <h1 class="servico_nome">  </h1>
+    		 <h5 class="servico_emprego_e_idade"> </h5> 
+			 <p class="servico_descricao">  </p>
+			 <a class="negociar" href="#"> Negociar </a>
     	</div>
     
 	    <?php include("webparts/pagina_nao_encontrada.php"); ?>
