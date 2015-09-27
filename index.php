@@ -9,8 +9,38 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
    <title>Quebra-Galho</title>
 
 	<script type="text/javascript"> 
+	
+
+
+
+	var carregouTodosOsItems = false;
+	var numeroDeItensPorPaginacao = 10;
+	var paginasCarregadas = 0;
+
+	$(document).ready(function () {
+		$(window).scroll(function() {
+		   if($(window).scrollTop() + $(window).height() > $(document).height() - 10) {
+		   		//alert("chegou no fim");
+		       $(".paginacao_carregando_img").css("display","block");
+		       $(".paginacao_carregando_acabou_msg").css("display","none");
+		       
+		       $.when( carregaServicos() ).done(function() {
+			   		setTimeout(function() {
+					    $(".paginacao_carregando_img").css("display","none");
+
+					    if(carregouTodosOsItems = true){
+							$(".paginacao_carregando_acabou_msg").css("display","block");
+						}
+					  }, 2000);
+			   });
+		   }
+		});
+	});
+
 
 	var comboJaFoiPopulado = false;
+	var filtroAplicado = false;
+
 
  	$(document).ready(function () {
  		ativaMenu("#menu_inicio");
@@ -21,29 +51,36 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 		});
 
 		$('.input_texto_pesquisar').on('input',function(e){
-		    buscaEcarregaServicos();
+			paginasCarregadas = 0;
+		    carregaServicos();
 		});
 
 		$('.combo_tipo_de_servico').on('change', function() {
-			buscaEcarregaServicos();
+			paginasCarregadas = 0;
+			carregaServicos();
 		});
 
 		$('.combo_estado').on('change', function() {
-			buscaEcarregaServicos();
+			paginasCarregadas = 0;
+			carregaServicos();
 		});
 
 
 		
-		buscaEcarregaServicos();
+		carregaServicos();
 	});
 
-	function buscaEcarregaServicos(){
-		limpaServicos();
+	function carregaServicos(){
+		if(paginasCarregadas == 0) {
+			limpaServicos();
+		}
 
 		$.ajax({
 		        type : 'POST',
 		        dataType : 'json',
-		        data: ({filtroTexto:  $('.input_texto_pesquisar').val(), 
+		        data: ({limit: numeroDeItensPorPaginacao,
+		        		offset: numeroDeItensPorPaginacao*paginasCarregadas, 
+		        		filtroTexto:  $('.input_texto_pesquisar').val(), 
 		        	    filtroComboEmprego:  $('.combo_tipo_de_servico').val(),
 		        		filtroComboEstado: $('.combo_estado').val()}) ,
 		        url: 'backend/busca_servicos.php',
@@ -51,11 +88,14 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 		        success : function(json_result) {
 		        	//alert(json_result)
 		        	//console.log(json_result)
-		           
+		            paginasCarregadas++;
+		            
 		            // need to test in IE
 		            var countJsonItens = Object.keys(json_result).length 
-
-		 			if(countJsonItens == 0) {
+		            if(countJsonItens == 0 && paginasCarregadas > 0) {
+		            	carregouTodosOsItems = true;
+		            }
+		 			else if(countJsonItens == 0 && paginasCarregadas == 0) {
 		 					mostraMensagemDeItensNaoEncontrados()
 		 			}
 		 			else {
@@ -173,11 +213,19 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 			</div>
 		</div>
 					
-		<div class="servicos">
+		<div id="servicos" class="servicos">
 		</div>
 		<div class="servicos_itens_nao_encotrados">
 			<p> Desculpe... Nenhum quebra-galho foi encontrado em sua busca. </p>
 		</div>
+
+
+		<div style="clear:both;"></div>
+		<div class="paginacao_carregando">
+			<img class="paginacao_carregando_img" src="img/carregando.gif" />
+			<p class="paginacao_carregando_acabou_msg"> Não há mais resultados... </p>
+		</div>
+		
 
 		 <?php include("webparts/pagina_nao_encontrada.php"); ?>
     </div>

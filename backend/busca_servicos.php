@@ -4,6 +4,8 @@ $filtroComboEmprego = isset($_POST['filtroComboEmprego']) ? trim($_POST['filtroC
 $filtroComboEstado = isset($_POST['filtroComboEstado']) ? trim($_POST['filtroComboEstado']) : '';
 $filtroIdUsuario = isset($_POST['filtroIdUsuario']) ? trim($_POST['filtroIdUsuario']) : '';
 $filtroIdServico = isset($_POST['filtroIdServico']) ? trim($_POST['filtroIdServico']) : '';
+$limit = isset($_POST['limit']) ? trim($_POST['limit']) : '10';
+$offset = isset($_POST['offset']) ? trim($_POST['offset']) : '0';
 
 $errorMessage = "";
 $conn = include "db_connection.php";
@@ -26,6 +28,7 @@ if($filtroIdServico != "") {
 }
 
 $orderBy = " ORDER BY destaque DESC ";
+$orderBy = " LIMIT " .$limit. " OFFSET " .$offset. " ";
 $sql .= $orderBy;
 
 

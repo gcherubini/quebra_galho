@@ -23,3 +23,14 @@ function valorEhVazio (valor) {
 			return false;
 		}
 }
+
+
+
+
+
+
+
+
+
+
+

@@ -24,7 +24,7 @@ echo "<script> var id_usuario = $id_usuario; </script>";
 			$.redirect("voce_precisa_de_uma_conta.php"); 
 		}
 
-		buscaEcarregaComboEmprego();
+		carregaComboEmprego();
 		
 
 		$("#form").validate({
@@ -88,7 +88,7 @@ echo "<script> var id_usuario = $id_usuario; </script>";
 	
 	
 
-	function buscaEcarregaComboEmprego(){
+	function carregaComboEmprego(){
 		$.ajax({
 		        type : 'POST',
 		        dataType : 'json',

@@ -24,8 +24,6 @@
 
 <script src="libraries/jqueryRedirect/jquery.redirect.js"></script>
 
-<script src="js/quebra_galho.js" type="text/javascript"></script>
-
 <!-- CONFLICTS BELLOW!!! -->
 
 <script src="libraries/croppic/assets/js/jquery.mousewheel.min.js"></script>
@@ -35,9 +33,5 @@
 <script src="libraries/validation/js/localization/messages_pt_BR.js"> </script>
 
 
-<!-- http://infiniteajaxscroll.com/docs/getting-started.html -->
-<script src="libraries/infiniteAjaxScroll/jquery-ias.min.js"> </script>
-
-	
-	
+<script src="js/quebra_galho.js" type="text/javascript"></script>
 	

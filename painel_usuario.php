@@ -12,8 +12,8 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
    
  	$(document).ready(function () {
  		
- 		buscaEcarregaServicos();
- 		buscaEcarregaNegociacoes();
+ 		carregaServicos();
+ 		carregaNegociacoes();
 
 		$('.deletar_servico').click(function() {
 	     	deletaServico($(this).attr("id"));
@@ -38,7 +38,7 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 		    });
 	}
 
-	function buscaEcarregaServicos(){
+	function carregaServicos(){
 
 		limpaServicos();
 
@@ -69,7 +69,7 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 		    });
 	}
 
-	function buscaEcarregaNegociacoes(){
+	function carregaNegociacoes(){
 
 		$.ajax({
 		        type : 'POST',

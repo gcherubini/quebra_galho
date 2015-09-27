@@ -183,3 +183,20 @@ form .row {
 .quebra_galho_contato{
 	display: none;
 }
+
+
+
+/* infinite scroll pagination */
+
+.paginacao_carregando{
+	margin:auto;
+	width: 100px;
+}
+.paginacao_carregando_img{
+	display: none;
+}
+
+.paginacao_carregando_acabou_msg{
+	display: none;
+	font-size:18px;
+}
