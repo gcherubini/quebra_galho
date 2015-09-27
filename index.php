@@ -93,7 +93,7 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 		            
 		            // need to test in IE
 		            var countJsonItens = Object.keys(json_result).length ;
-		            alert(countJsonItens)
+		            //alert(countJsonItens)
 		            if(countJsonItens == 0 && paginasCarregadas > 0) {
 		            	carregouTodosOsItems = true;
 		            }
