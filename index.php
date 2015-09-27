@@ -29,7 +29,8 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 					    $(".paginacao_carregando_img").css("display","none");
 
 					    if(carregouTodosOsItems = true){
-							$(".paginacao_carregando_acabou_msg").css("display","block");
+							// need to fix this
+							//$(".paginacao_carregando_acabou_msg").css("display","block");
 						}
 					  }, 2000);
 			   });
@@ -91,7 +92,8 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 		            paginasCarregadas++;
 		            
 		            // need to test in IE
-		            var countJsonItens = Object.keys(json_result).length 
+		            var countJsonItens = Object.keys(json_result).length ;
+		            alert(countJsonItens)
 		            if(countJsonItens == 0 && paginasCarregadas > 0) {
 		            	carregouTodosOsItems = true;
 		            }
