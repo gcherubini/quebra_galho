@@ -40,7 +40,7 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 					    </div>
 					    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
 					      <div class="panel-body">
-					        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+					        Para se cadastrar no Quebra-Galho, basta você acessar a página "<a href="novo_usuario.php">Cadastre-se</a>", preencher os seus dados corretamente e pronto! Você já pode usufruir dos benefícios que somente o Quebra-Galho oferece!
 					      </div>
 					    </div>
 					  </div>
@@ -70,7 +70,7 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 					    </div>
 					    <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
 					      <div class="panel-body">
-					        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+					      	Para encontrar um prestador de serviços que atenda às suas necessidades, basta acessar a <a href="index.php">Página Inicial</a>, utilizar os nossos filtros e escolher o profissional que possua as competências que você deseja. Dica: Caso você esteja procurando por um profissional específico, basta escrever o nome dele na barra de pesquisa. É fácil e rápido!
 					      </div>
 					    </div>
 					  </div>
@@ -115,27 +115,27 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 					    </div>
 					    <div id="collapseSix" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSix">
 					      <div class="panel-body">
-					        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+					        Para entender as suas responsabilidades ao utilizar o Quebra-Galho, acesse a nossa página de "<a href="#">Termos e Responsabilidades</a>".
 					      </div>
 					    </div>
 					  </div>
 
 					</div>
 
-				<h4>Contratante</h4>
-					<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+				<h4>Prestador de Serviços</h4>
+					<div class="panel-group" id="accordion2" role="tablist" aria-multiselectable="true">
 					  
 					  <div class="panel panel-default">
 					    <div class="panel-heading" role="tab" id="headingSeven">
 					      <h4 class="panel-title">
-					        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseSeven" aria-expanded="true" aria-controls="collapseSeven">
+					        <a role="button" data-toggle="collapse" data-parent="#accordion2" href="#collapseSeven" aria-expanded="true" aria-controls="collapseSeven">
 					          Nº7 - Como me registro no Quebra-Galho?
 					        </a>
 					      </h4>
 					    </div>
 					    <div id="collapseSeven" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingSeven">
 					      <div class="panel-body">
-					        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+					        Para se cadastrar no Quebra-Galho, basta você acessar a página "<a href="novo_usuario.php">Cadastre-se</a>", preencher os seus dados corretamente e pronto! Você já pode usufruir dos benefícios que somente o Quebra-Galho oferece!
 					      </div>
 					    </div>
 					  </div>
@@ -143,14 +143,14 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 					  <div class="panel panel-default">
 					    <div class="panel-heading" role="tab" id="headingEight">
 					      <h4 class="panel-title">
-					        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+					        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion2" href="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
 					          Nº8 - Como cadastro um serviço no Quebra-Galho?
 					        </a>
 					      </h4>
 					    </div>
 					    <div id="collapseEight" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingEight">
 					      <div class="panel-body">
-					        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+					        Basta acessar a página de <a href="novo_servico.php">Novos Serviços</a>, preencher os dados solicitados e esperar o contato de seus clientes!
 					      </div>
 					    </div>
 					  </div>
@@ -158,14 +158,14 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 					  <div class="panel panel-default">
 					    <div class="panel-heading" role="tab" id="headingNine">
 					      <h4 class="panel-title">
-					        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
+					        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion2" href="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
 					          Nº9 - Posso cadastrar mais de um serviço no Quebra-Galho?
 					        </a>
 					      </h4>
 					    </div>
 					    <div id="collapseNine" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingNine">
 					      <div class="panel-body">
-					        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+					      	Sim! Com o Quebra-Galho você pode mostrar para o mundo todas as suas qualificações. Basta <a href="novo_servico.php">Publicar</a> um anúncio gratuito dentro das categorias disponíveis e pronto! Agora é só aguardar o contato dos seus clientes.
 					      </div>
 					    </div>
 					  </div>
@@ -173,7 +173,7 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 					  <div class="panel panel-default">
 					    <div class="panel-heading" role="tab" id="headingTen">
 					      <h4 class="panel-title">
-					        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTen" aria-expanded="false" aria-controls="collapseTen">
+					        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion2" href="#collapseTen" aria-expanded="false" aria-controls="collapseTen">
 					          Nº10 - Como adquiro mais créditos para a minha conta?
 					        </a>
 					      </h4>
@@ -188,7 +188,7 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 					  <div class="panel panel-default">
 					    <div class="panel-heading" role="tab" id="headingEleven">
 					      <h4 class="panel-title">
-					        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseEleven" aria-expanded="false" aria-controls="collapseEleven">
+					        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion2" href="#collapseEleven" aria-expanded="false" aria-controls="collapseEleven">
 					          Nº11 - O que devo fazer após receber uma avaliação de um cliente?
 					        </a>
 					      </h4>
@@ -203,14 +203,14 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 					  <div class="panel panel-default">
 					    <div class="panel-heading" role="tab" id="headingTwelve">
 					      <h4 class="panel-title">
-					        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwelve" aria-expanded="false" aria-controls="collapseTwelve">
+					        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwelve" aria-expanded="false" aria-controls="collapseTwelve">
 					          Nº12 - Quais as minhas responsabilidades como prestador de serviços ao utilizar o Quebra-Galho?
 					        </a>
 					      </h4>
 					    </div>
 					    <div id="collapseTwelve" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwelve">
 					      <div class="panel-body">
-					        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+					        Para entender as suas responsabilidades ao utilizar o Quebra-Galho, acesse a nossa página de "<a href="#">Termos e Responsabilidades</a>".
 					      </div>
 					    </div>
 					  </div>
