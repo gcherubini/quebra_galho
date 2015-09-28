@@ -3,33 +3,31 @@
 ?>
 
 
-<div class="col-md-3 servico abrir_quebra_galho" <?php echo  "id='" . $servico["id_servico"] . "'"; ?>> 
-	<div class="servico_espacamento">
+<div class="servico abrir_quebra_galho" <?php echo  "id='" . $servico["id_servico"] . "'"; ?>> 
+	<div class="servico2">
 		<div class="row servico_img">
 			<?php echo '<img class="img-responsive" src="'.$servico["img_url"].'"/>'; ?>
 		</div>
 
-		<div class="row servico_titulo">
+		<div class="servico3">
+			<h3> <?php echo $servico["nome"]; ?></h3> 
+				
+			<h4> <?php echo $servico["emprego"]; ?> </h4> 
 
-			<p> 
-				<div class="col-md-12"> <h3> <?php echo $servico["nome"]; ?> (<?php echo $servico["idade"]; ?> anos)</h3> </div>
-			</p>
-		</div>		
-		<div class="row servico_detalhe">
-			<div class="col-md-12"> <p>"<?php echo $servico["slogan"]; ?>"</p> </div>
-		</div>
-		<div class="row servico_titulo">
-			<div class="col-md-12"> <h4> <?php echo $servico["emprego"]; ?> </h4> </div>
-		</div>
+			<h5>(<?php echo $servico["idade"]; ?> anos)</h5>
+			
 
-		<div class="row servico_detalhe"> 
-			<div class="col-md-12">
+			<p>"<?php echo $servico["slogan"]; ?>"</p> 
+			
+			<p> <b>Numero de serviços: </b> <?php echo $servico["numero_servicos"]; ?></p> 
+
+			<p>
 				<?php
 					$totalEstrelas = 5;
 					$usuarioEstrelas = $servico["estrelas"];
 
 					if($usuarioEstrelas>0){
-						echo "<b> Qualidade de serviço: </b>";
+						echo "<b> Reputação: </b>";
 						for($i = 0; $i < $servico["estrelas"]; $i++){
 						echo "<span class='glyphicon glyphicon-star'> </span>";
 						}
@@ -38,7 +36,8 @@
 						}
 					}
 				?>
-			</div>
+			</p>
+
 		</div>
 	</div>
 </div>

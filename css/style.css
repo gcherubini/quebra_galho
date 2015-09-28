@@ -79,15 +79,7 @@
 
 }
 
-/*painel servicos */
-.servico	{	
-	cursor: pointer;
-}
-
-.servicos_titulo_filtro {
-	margin-top:20px;
-}
-
+/*lista servicos */
 
 .servicos {
 	margin: auto;
@@ -95,21 +87,41 @@
 	margin-top:20px;
 }
 
-
-.servico_espacamento {
-	margin: auto;
-	padding: auto;
+.servico	{	
+	cursor: pointer;
+	margin: 0;
+	padding: 0;
 	text-align: justify;
-	width: 90%;
-	/*padding: 15px 30px;
-	border: solid 1px black;
-	padding-left: 25px;
-	padding-right: 25px;*/
+	float:left;
+	margin-bottom: 30px;
+	width: 25%;
+	float:left;
+}
+
+.servico2{
+	width: 280px;
+	min-height: 400px;
+}
+
+.servico3{
+	width: 95%;
+	text-align: justify;
+	margin: auto;
+}
+
+.servico2:hover, .servico_destaque:hover{
+   background:#ccc;
 }
 
 
-.servico_espacamento:hover{
-   background:#ccc;
+.servico_destaque{
+	height: 200px;
+	margin-bottom: 30px;
+}
+
+.servicos_titulo_filtro {
+	margin-top:20px;
+
 }
 
 .servico_img {
