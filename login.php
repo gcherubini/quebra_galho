@@ -23,12 +23,12 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 		        		window.location.href = "painel_usuario.php";
 		        	}
 		        	else {
-		        		alert("Erro de conexão. Talvez você tenha digitado sua senha errada...")
+		        		mostraResultadoOperacoes(false, "Ops... Aconteceu algum problema, talvez você tenha digitado sua senha incorretamente.");
 		        	}
 		        },
 		        error: function(XMLHttpRequest, textStatus, errorThrown){
-			       alert("Aconteceu um erro inesperado, tente mais tarde...")
-			       alert("error! status:  " + textStatus);
+		        	mostraResultadoOperacoes(false, "Ops... Aconteceu um erro inesperado, tente entrar mais tarde...");
+			       //alert("error! status:  " + textStatus);
 			    }
 		    });
 

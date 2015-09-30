@@ -15,8 +15,8 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
  		carregaServicos();
  		carregaNegociacoes();
 
-		$('.deletar_servico').click(function() {
-	     	deletaServico($(this).attr("id"));
+		$('.container').on('click', '.deletar_servico', function() {
+			deletaServico($(this).attr("id"));
 		});
 
  	});
@@ -27,6 +27,7 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 		        data: ({id_servico: id_servico}) ,
 		        url: 'backend/deletar_servico.php',
 		        success : function(json_result) {
+		        	alert(json_result)
 		        	if(json_result != "") {
 		        		mostraMensagemDeErroNaDelecao()
 		        	}

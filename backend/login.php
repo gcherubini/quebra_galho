@@ -6,7 +6,7 @@ $email = isset($_POST['email']) ? trim($_POST['email']) : '';
 $senha = isset($_POST['senha']) ? trim($_POST['senha']) : '';
 
 $conn = include "db_connection.php";
-$sql = "SELECT * FROM usuario WHERE email = '" .$email."'";
+$sql = "SELECT * FROM usuario WHERE email = '" .$email."' and senha = '" .$senha."'";
 
 if ($conn->connect_error) {
     $errorMessage = "Connection failed: " . $conn->connect_error;

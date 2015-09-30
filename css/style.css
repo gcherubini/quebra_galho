@@ -175,12 +175,16 @@ form .row {
 /* Resultado de Operacoes */ 
 .resultado_de_operacoes{
 	display: none;
+
 }
 .resultado_de_operacoes .resultado_sucesso{
  	display: none;
+ 	font-size:14px;
 }
 .resultado_de_operacoes .resultado_erro{
 	display: none;
+	font-size:14px;
+	padding: 10px;
 }
 
 
