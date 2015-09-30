@@ -19,21 +19,12 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 
 	$(document).ready(function () {
 		$(window).scroll(function() {
-		   if($(window).scrollTop() + $(window).height() > $(document).height() - 10) {
+		   if($(window).scrollTop() + $(window).height() > $(document).height() - 1) {
 		   		//alert("chegou no fim");
 		       $(".paginacao_carregando_img").css("display","block");
 		       $(".paginacao_carregando_acabou_msg").css("display","none");
 		       
-		       $.when( carregaServicos() ).done(function() {
-			   		setTimeout(function() {
-					    $(".paginacao_carregando_img").css("display","none");
-
-					    if(carregouTodosOsItems = true){
-							// need to fix this
-							//$(".paginacao_carregando_acabou_msg").css("display","block");
-						}
-					  }, 2000);
-			   });
+		       setTimeout(carregaServicos,1500);
 		   }
 		});
 	});
@@ -113,6 +104,17 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 			    	mostraMensagemDeItensNaoEncontrados()
 			    } 
 		    });
+		
+		setTimeout(terminaCarregarServicos,1000);
+	}
+
+	function terminaCarregarServicos(){
+		$(".paginacao_carregando_img").css("display","none");
+
+	    if(carregouTodosOsItems = true){
+			// need to fix this
+			$(".paginacao_carregando_acabou_msg").css("display","block");
+		}
 	}
 	
 	function populaComboTipoServico(servico_json){
@@ -223,11 +225,11 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 
 
 		<div style="clear:both;"></div>
-		<div class="paginacao_carregando">
+		
+		<div class="paginacao_carregando">	
 			<img class="paginacao_carregando_img" src="img/carregando.gif" />
 			<p class="paginacao_carregando_acabou_msg"> Não há mais resultados... </p>
 		</div>
-		
 
 		 <?php include("webparts/pagina_nao_encontrada.php"); ?>
     </div>
