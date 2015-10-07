@@ -20,7 +20,7 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 		        data: $(form).serialize(),
 		        success : function(result) {
 		        	if(result == "true") {
-		        		window.location.href = "painel_usuario.php";
+		        		window.location.href = "painel_usuario_usuario.php";
 		        	}
 		        	else {
 		        		mostraResultadoOperacoes(false, "Ops... Aconteceu algum problema, talvez você tenha digitado sua senha incorretamente.");

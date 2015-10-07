@@ -105,7 +105,7 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 
 	function sucessoSalvarDB(error){
 		alert(sucessoMsg);
-		window.location.href = "painel_usuario.php";
+		window.location.href = "painel_usuario_usuario.php";
 	}
 	
 	</script>

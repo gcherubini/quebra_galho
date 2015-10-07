@@ -1,6 +1,9 @@
 function ativaMenu (idMenu) {
 		$(idMenu).addClass("activate");
 }
+function ativaMenuPainelUsuario (idMenu) {
+		$(idMenu).addClass("active");
+}
 
 function mostraResultadoOperacoes (sucesso, msg) {
 	if(sucesso){

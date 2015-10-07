@@ -11,15 +11,16 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
    <script type="text/javascript"> 
    
  	$(document).ready(function () {
+ 		ativaMenuPainelUsuario("#painel_menu_servicos");
  		
  		carregaServicos();
- 		carregaNegociacoes();
 
 		$('.container').on('click', '.deletar_servico', function() {
 			deletaServico($(this).attr("id"));
 		});
 
  	});
+
 	function deletaServico(id_servico){
 		$.ajax({
 		        type : 'POST',
@@ -70,34 +71,6 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 		    });
 	}
 
-	function carregaNegociacoes(){
-
-		$.ajax({
-		        type : 'POST',
-		        dataType : 'json',
-		        url: 'backend/busca_negociacoes.php',
-		        success : function(json_result) {
-		        	//alert(json_result)
-		        	//console.log(json_result)
-		            // need to test in IE
-		            var countJsonItens = Object.keys(json_result).length 
-
-		 			if(countJsonItens == 0) {
-	 					mostraMensagemDeNegociacoesNaoEncontradas()
-		 			}
-		 			else {
-	            		$.each(json_result, function(index, json_result) {	
-	            			populaNegociacaoNaTela(json_result);
-		        		});
-			        }
-		        },
-		        error: function(XMLHttpRequest, textStatus, errorThrown){
-			    	alert("error: " + textStatus);
-			    	mostraMensagemDeNegociacoesNaoEncontradas()
-			    } 
-		    });
-	}
-
 	function populaServicoNaTela(json_result){
 		// carregar servico (divs)
 		var url_div = "webparts/painel_usuario_div_servico_publicado.php";
@@ -114,30 +87,9 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 		});
 	}
 
-	function populaNegociacaoNaTela(json_result){
-		// carregar servico (divs)
-		var url_div = "webparts/painel_usuario_div_negociacao.php";
-    	
-		$.ajax({
-		    type : 'GET',
-		    dataType : 'text',
-		    url: url_div,
-		    data: ({servico: json_result}),
-		    async: false,
-		    success : function(div_result) {
-		    	$('.negociacoes').append(div_result);
-		    } 
-		});
-	}
-
 	function mostraMensagemDeItensNaoEncontrados() {
  		// quando há mudanca de filtros por exemplo
- 		$('.servicos_itens_nao_encotrados').css("display","block");
- 	}
-
- 	function mostraMensagemDeNegociacoesNaoEncontradas() {
- 		// quando há mudanca de filtros por exemplo
- 		$('.negociacoes_nao_encotrados').css("display","block");
+ 		$('.itens_nao_encotrados').css("display","block");
  	}
 
  	function mostraMensagemDeErroNaDelecao() {
@@ -161,32 +113,18 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 <?php
 	if (isset($_SESSION['id_usuario'])) {
  ?>		
- 
-		 <h2> Painel do usuário </h1>
-		 
-		 <p>
-		 	Olá <b> <?php echo $_SESSION["nome"]; ?> </b>, seja bem vindo ao seu painel de configurações 
-		 </p>		
+
+ 		<?php include("webparts/painel_usuario_menu.php"); ?>		
 
 		  <h3> Seus serviços publicados </h1>
 
 		  <div class="servicos_publicados">
 
 		  </div>
-		  <div class="servicos_itens_nao_encotrados">
+		  <div class="itens_nao_encotrados">
 			<p> Você ainda não publicou nenhum serviço... </p>
 			<a href="novo_servico.php"> Seja um Quebra-Galho </a>
 		</div>
-
-		 <h3> Suas negociações </h1>
-
-		  <div class="negociacoes">
-
-		  </div>
-		  <div class="negociacoes_nao_encotrados">
-			<p> Você ainda não está negociando com nenhum quebra-galho... </p>
-			<a href="index.php"> Encontre um Quebra-Galho  </a>
-		  </div>
 
 		  
 <?php

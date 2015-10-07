@@ -142,9 +142,6 @@
 	
 }
 
-.servicos_itens_nao_encotrados{
-	display: none;
-}
 
 
 /* Cadastro Usuário */
@@ -188,11 +185,13 @@ form .row {
 }
 
 
-/* painel usuario */
+/* Painel Usuario */
 
-.negociacoes_nao_encotrados{
-	display:none;
+.itens_nao_encotrados{
+	display: none;
 }
+
+
 
 /* Quebra Galho Perfil */
 

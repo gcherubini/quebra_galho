@@ -116,7 +116,7 @@ echo "<script> var id_usuario = $id_usuario; </script>";
 
 	function sucessoSalvarDB(error){
 		//alert(sucessoMsg);
-		window.location.href = "painel_usuario.php";
+		window.location.href = "painel_usuario_servicos.php";
 	}
 
 

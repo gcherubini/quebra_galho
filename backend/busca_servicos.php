@@ -27,10 +27,8 @@ if($filtroIdServico != "") {
 	$sql .= " AND servico.id_servico = '".$filtroIdServico."'";	
 }
 
-$orderBy = " ORDER BY destaque DESC ";
-$orderBy = " LIMIT " .$limit. " OFFSET " .$offset. " ";
-$sql .= $orderBy;
-
+$sql .= " ORDER BY destaque DESC ";
+$sql .= " LIMIT " .$limit. " OFFSET " .$offset. " ";
 
 // DEBUG MODE ->  echo $sql;
 

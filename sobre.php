@@ -8,43 +8,6 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
    <?php include("webparts/head_imports.php"); ?>
    <title>Quebra-Galho</title>
 
-
-   <script type="text/javascript">
-
-   	
-
-	$(function() {
-
-		ativaMenu("#menu_sobre");
-
-		$(form).submit(function() {
-		   	$.ajax({
-		        type : 'POST',
-		        dataType : 'text',
-		        url: 'backend/login.php',
-		        data: $(form).serialize(),
-		        success : function(result) {
-		        	if(result == "true") {
-		        		window.location.href = "painel_usuario.php";
-		        	}
-		        	else {
-		        		alert("Erro de conexão. Talvez você tenha digitado sua senha errada...")
-		        	}
-		        },
-		        error: function(XMLHttpRequest, textStatus, errorThrown){
-			       alert("Aconteceu um erro inesperado, tente mais tarde...")
-			       alert("error! status:  " + textStatus);
-			    }
-		    });
-
-		    return false; // avoid to execute the actual submit of the form.
-		});	 	
-	});
-
-
-
-	</script>
-
   </head>
   <body>
 

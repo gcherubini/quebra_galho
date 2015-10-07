@@ -18,6 +18,8 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 	var paginasCarregadas = 0;
 
 	$(document).ready(function () {
+		$(".paginacao_carregando_acabou_msg").css("display","none");
+
 		$(window).scroll(function() {
 		   if($(window).scrollTop() + $(window).height() > $(document).height() - 1) {
 		   		//alert("chegou no fim");

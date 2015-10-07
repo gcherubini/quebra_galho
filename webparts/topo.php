@@ -4,10 +4,10 @@ $().ready(function() {
 	     	$.ajax({
 		        url: 'backend/logout.php',
 		        success : function() {
-		        	window.location.reload(true);
+		        	window.location.href = "index.php";
 		        },
 		        error: function(XMLHttpRequest, textStatus, errorThrown){
-			        alert("Erro ao deslogar!");
+			        alert("Aconteceu algum erro ao sair da sua conta... Por favor tente mais tarde!");
 			    }
 		    });
 
@@ -25,7 +25,7 @@ $().ready(function() {
 			
 			<?php if (isset($_SESSION['id_usuario'])) { ?>
 				<a class="logout"> Sair</a>
-				<a href="painel_usuario.php"> <?php echo $_SESSION['nome']; ?> </a>
+				<a href="painel_usuario_usuario.php"> <?php echo $_SESSION['nome']; ?> </a>
 			<?php } else { ?>
 	 	  		<a href="login.php"> Entrar</a>
 				<a href="novo_usuario.php"> Cadastre-se</a>
