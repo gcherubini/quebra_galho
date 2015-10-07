@@ -61,7 +61,7 @@ CREATE TABLE `negociacao` (
   CONSTRAINT `negociacao_ibfk_1` FOREIGN KEY (`contratante`) REFERENCES `usuario` (`id_usuario`),
   CONSTRAINT `negociacao_ibfk_2` FOREIGN KEY (`contratado`) REFERENCES `usuario` (`id_usuario`),
   CONSTRAINT `negociacao_ibfk_3` FOREIGN KEY (`id_servico`) REFERENCES `servico` (`id_servico`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -70,7 +70,7 @@ CREATE TABLE `negociacao` (
 
 LOCK TABLES `negociacao` WRITE;
 /*!40000 ALTER TABLE `negociacao` DISABLE KEYS */;
-INSERT INTO `negociacao` VALUES (8,12,2,3),(9,11,2,3),(10,11,3,4),(15,12,11,2);
+INSERT INTO `negociacao` VALUES (8,12,2,3),(9,11,2,3),(10,11,3,4);
 /*!40000 ALTER TABLE `negociacao` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -84,12 +84,12 @@ DROP TABLE IF EXISTS `notificacao`;
 CREATE TABLE `notificacao` (
   `id_notificacao` int(11) NOT NULL AUTO_INCREMENT,
   `mensagem` varchar(999) DEFAULT NULL,
-  `data_criacao` date DEFAULT NULL,
+  `data_criacao` datetime DEFAULT NULL,
   `id_usuario` int(11) DEFAULT NULL,
   PRIMARY KEY (`id_notificacao`),
   KEY `id_usuario` (`id_usuario`),
   CONSTRAINT `notificacao_ibfk_1` FOREIGN KEY (`id_usuario`) REFERENCES `usuario` (`id_usuario`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -98,7 +98,7 @@ CREATE TABLE `notificacao` (
 
 LOCK TABLES `notificacao` WRITE;
 /*!40000 ALTER TABLE `notificacao` DISABLE KEYS */;
-INSERT INTO `notificacao` VALUES (1,'Uma de suas negociações foi apagada, pois o(a) Teste teste não está mais prestando o serviço de Adestrador\nSe ainda quiser o contato do mesmo(a), segue abaixo: \nE-mail: emailcontato@gmail.com Tel: (51) 3737-9281 Cel: (51) 9438-2932','2015-09-30',12),(2,'Uma de suas negociações foi apagada, pois o(a) Teste teste não está mais prestando o serviço de Alfaiate\nSe ainda quiser o contato do mesmo(a), segue abaixo: \nE-mail: emailcontato@gmail.com Tel: (51) 3737-9281 Cel: (51) 9438-2932','2015-09-30',12),(3,'Uma de suas negociações foi apagada, pois o(a) Teste teste não está mais prestando o serviço de Alfaiate\nSe ainda quiser o contato do mesmo(a), segue abaixo: \nE-mail: emailcontato@gmail.com Tel: (51) 3737-9281 Cel: (51) 9438-2932','2015-09-30',12);
+INSERT INTO `notificacao` VALUES (1,'Uma de suas negociações foi apagada, pois o(a) Silvana Valdemort não está mais prestando o serviço de Cantor\nSe ainda quiser o contato do mesmo(a), segue abaixo: \nE-mail: emailcontato@gmail.com Tel: (51) 3737-9281 Cel: (51) 9438-2932','2015-10-07 01:03:44',11);
 /*!40000 ALTER TABLE `notificacao` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -135,7 +135,7 @@ CREATE TABLE `servico` (
 
 LOCK TABLES `servico` WRITE;
 /*!40000 ALTER TABLE `servico` DISABLE KEYS */;
-INSERT INTO `servico` VALUES (2,'Ser rápido e veloz','x',1,'SP',NULL,'emailcontato@gmail.com','(51) 9438-2932','(51) 3737-9281',11,1),(3,'Jogo 10','x',0,'RS',NULL,'emailcontato@gmail.com','(51) 9438-2932','(51) 3737-9281',2,2),(4,'Trabalho com felicidade','x',0,'RJ',NULL,'emailcontato@gmail.com','(51) 9438-2932','(51) 3737-9281',3,3),(12,'Teste','x',0,'RS',NULL,'emailcontato@gmail.com','(51) 9438-2932','(51) 3737-9281',12,6),(13,'Teste','x',0,'RS',NULL,'emailcontato@gmail.com','(51) 9438-2932','(51) 3737-9281',12,7),(14,'Teste','x',0,'RS',NULL,'emailcontato@gmail.com','(51) 9438-2932','(51) 3737-9281',12,8),(16,'Teste','x',0,'RS',NULL,'emailcontato@gmail.com','(51) 9438-2932','(51) 3737-9281',12,10),(17,'Teste','x',0,'RS',NULL,'emailcontato@gmail.com','(51) 9438-2932','(51) 3737-9281',12,11),(18,'Teste','x',0,'RS',NULL,'emailcontato@gmail.com','(51) 9438-2932','(51) 3737-9281',12,12),(19,'Teste','x',0,'RS',NULL,'emailcontato@gmail.com','(51) 9438-2932','(51) 3737-9281',12,13),(20,'Teste','x',0,'RS',NULL,'emailcontato@gmail.com','(51) 9438-2932','(51) 3737-9281',12,14),(21,'Teste','x',0,'RS',NULL,'emailcontato@gmail.com','(51) 9438-2932','(51) 3737-9281',12,15),(22,'Teste','x',0,'RS',NULL,'emailcontato@gmail.com','(51) 9438-2932','(51) 3737-9281',12,16),(23,'Teste','x',0,'RS',NULL,'emailcontato@gmail.com','(51) 9438-2932','(51) 3737-9281',12,17),(24,'Teste','x',0,'RS',NULL,'emailcontato@gmail.com','(51) 9438-2932','(51) 3737-9281',12,18),(25,'Teste','x',0,'RS',NULL,'emailcontato@gmail.com','(51) 9438-2932','(51) 3737-9281',12,19),(26,'Teste','x',0,'RS',NULL,'emailcontato@gmail.com','(51) 9438-2932','(51) 3737-9281',12,20),(27,'Teste','x',0,'RS',NULL,'emailcontato@gmail.com','(51) 9438-2932','(51) 3737-9281',12,21),(28,'Teste','x',0,'RS',NULL,'emailcontato@gmail.com','(51) 9438-2932','(51) 3737-9281',12,22),(29,'Teste','x',0,'RS',NULL,'emailcontato@gmail.com','(51) 9438-2932','(51) 3737-9281',12,23),(30,'Teste','x',0,'RS',NULL,'emailcontato@gmail.com','(51) 9438-2932','(51) 3737-9281',12,24),(31,'Teste','x',0,'RS',NULL,'emailcontato@gmail.com','(51) 9438-2932','(51) 3737-9281',12,25),(32,'Teste','x',0,'RS',NULL,'emailcontato@gmail.com','(51) 9438-2932','(51) 3737-9281',12,26),(33,'Teste','x',0,'RS',NULL,'emailcontato@gmail.com','(51) 9438-2932','(51) 3737-9281',12,27),(34,'Teste','x',0,'RS',NULL,'emailcontato@gmail.com','(51) 9438-2932','(51) 3737-9281',12,28),(35,'Teste','x',0,'RS',NULL,'emailcontato@gmail.com','(51) 9438-2932','(51) 3737-9281',12,29),(36,'Teste','x',0,'RS',NULL,'emailcontato@gmail.com','(51) 9438-2932','(51) 3737-9281',12,30),(37,'Teste','x',0,'RS',NULL,'emailcontato@gmail.com','(51) 9438-2932','(51) 3737-9281',12,31),(38,'Teste','x',0,'RS',NULL,'emailcontato@gmail.com','(51) 9438-2932','(51) 3737-9281',12,32),(39,'Teste','x',0,'RS',NULL,'emailcontato@gmail.com','(51) 9438-2932','(51) 3737-9281',12,33);
+INSERT INTO `servico` VALUES (3,'Jogo 10','x',0,'RS',NULL,'emailcontato@gmail.com','(51) 9438-2932','(51) 3737-9281',2,2),(4,'Trabalho com felicidade','x',0,'RJ',NULL,'emailcontato@gmail.com','(51) 9438-2932','(51) 3737-9281',3,3),(14,'Teste','x',1,'RS',NULL,'emailcontato@gmail.com','(51) 9438-2932','(51) 3737-9281',12,8),(16,'Teste','x',0,'RS',NULL,'emailcontato@gmail.com','(51) 9438-2932','(51) 3737-9281',12,10),(17,'Teste','x',0,'RS',NULL,'emailcontato@gmail.com','(51) 9438-2932','(51) 3737-9281',12,11),(19,'Teste','x',0,'RS',NULL,'emailcontato@gmail.com','(51) 9438-2932','(51) 3737-9281',12,13),(20,'Teste','x',0,'RS',NULL,'emailcontato@gmail.com','(51) 9438-2932','(51) 3737-9281',12,14),(21,'Teste','x',0,'RS',NULL,'emailcontato@gmail.com','(51) 9438-2932','(51) 3737-9281',12,15),(22,'Teste','x',0,'RS',NULL,'emailcontato@gmail.com','(51) 9438-2932','(51) 3737-9281',12,16),(23,'Teste','x',0,'RS',NULL,'emailcontato@gmail.com','(51) 9438-2932','(51) 3737-9281',12,17),(24,'Teste','x',0,'RS',NULL,'emailcontato@gmail.com','(51) 9438-2932','(51) 3737-9281',12,18),(25,'Teste','x',0,'RS',NULL,'emailcontato@gmail.com','(51) 9438-2932','(51) 3737-9281',12,19),(26,'Teste','x',0,'RS',NULL,'emailcontato@gmail.com','(51) 9438-2932','(51) 3737-9281',12,20),(27,'Teste','x',0,'RS',NULL,'emailcontato@gmail.com','(51) 9438-2932','(51) 3737-9281',12,21),(28,'Teste','x',0,'RS',NULL,'emailcontato@gmail.com','(51) 9438-2932','(51) 3737-9281',12,22),(29,'Teste','x',0,'RS',NULL,'emailcontato@gmail.com','(51) 9438-2932','(51) 3737-9281',12,23),(30,'Teste','x',0,'RS',NULL,'emailcontato@gmail.com','(51) 9438-2932','(51) 3737-9281',12,24),(31,'Teste','x',0,'RS',NULL,'emailcontato@gmail.com','(51) 9438-2932','(51) 3737-9281',12,25),(32,'Teste','x',0,'RS',NULL,'emailcontato@gmail.com','(51) 9438-2932','(51) 3737-9281',12,26),(33,'Teste','x',0,'RS',NULL,'emailcontato@gmail.com','(51) 9438-2932','(51) 3737-9281',12,27),(34,'Teste','x',0,'RS',NULL,'emailcontato@gmail.com','(51) 9438-2932','(51) 3737-9281',12,28),(35,'Teste','x',0,'RS',NULL,'emailcontato@gmail.com','(51) 9438-2932','(51) 3737-9281',12,29),(36,'Teste','x',0,'RS',NULL,'emailcontato@gmail.com','(51) 9438-2932','(51) 3737-9281',12,30),(37,'Teste','x',0,'RS',NULL,'emailcontato@gmail.com','(51) 9438-2932','(51) 3737-9281',12,31),(38,'Teste','x',0,'RS',NULL,'emailcontato@gmail.com','(51) 9438-2932','(51) 3737-9281',12,32),(39,'Teste','x',0,'RS',NULL,'emailcontato@gmail.com','(51) 9438-2932','(51) 3737-9281',12,33);
 /*!40000 ALTER TABLE `servico` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -179,4 +179,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-09-30  1:22:02
+-- Dump completed on 2015-10-07  1:05:12
