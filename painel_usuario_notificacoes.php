@@ -12,6 +12,8 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
    
  	$(document).ready(function () {
  		ativaMenuPainelUsuario("#painel_menu_notificacoes");
+ 		populaNegociacaoNaTela();
+
  		
  		carregaNotificacoes();
 
@@ -48,7 +50,7 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 		$.ajax({
 		        type : 'POST',
 		        dataType : 'json',
-		        url: 'backend/busca_notificacoes.php',
+		        url: 'backend/notificacao_busca.php',
 		        success : function(json_result) {
 		        	//alert(json_result)
 		        	//console.log(json_result)
@@ -86,6 +88,17 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 		    } 
 		});
 	}
+	
+	function populaNegociacaoNaTela() {
+		$.ajax({
+		    dataType : 'text',
+		    url: "backend/notificacao_marca_vista_por_usuario.php",
+		    success : function(error_msg) {
+		    },
+	        error: function(XMLHttpRequest, textStatus, errorThrown){
+		    } 
+		});
+ 	}
 
 	function mostraMensagemDeItensNaoEncontrados() {
  		$('.itens_nao_encotrados').css("display","block");
@@ -115,7 +128,6 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 
  		<?php include("webparts/painel_usuario_menu.php"); ?>		
 
-		  <h3> Seus serviços publicados </h1>
 
 		  <div class="notificacoes">
 

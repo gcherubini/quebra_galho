@@ -23,7 +23,7 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 		$.ajax({
 		        type : 'POST',
 		        dataType : 'json',
-		        url: 'backend/busca_negociacoes.php',
+		        url: 'backend/negociacao_busca.php',
 		        success : function(json_result) {
 		        	//alert(json_result)
 		        	//console.log(json_result)

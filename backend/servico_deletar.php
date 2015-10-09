@@ -32,6 +32,16 @@ while($r = $result->fetch_assoc()) {
 	if ($result2 === FALSE) {
 	    $errorMessage .= "SQL error: " . $sql . "<br>" . $conn->error;
 	}
+
+	//setar tem_nova_notificacao para true
+	$sql = "UPDATE usuario 
+			SET tem_nova_notificacao = true 
+			WHERE id_usuario = '".$r["contratante"]."'";
+	$result3 = $conn->query($sql);
+
+	if ($result3 === FALSE) {
+	    $errorMessage .= "SQL error: " . $sql . "<br>" . $conn->error;
+	}
 }
 
 if($errorMessage == ""){

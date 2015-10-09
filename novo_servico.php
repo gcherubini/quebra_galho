@@ -68,7 +68,7 @@ echo "<script> var id_usuario = $id_usuario; </script>";
 			        type : 'POST',
 			        dataType : 'text',
 			        data: $(form).serialize(),
-			        url: 'backend/novo_servico.php',
+			        url: 'backend/servico_novo.php',
 			        success : function(result) {
 			        	if(result == "") {
 			        		sucessoSalvarDB(result);
@@ -92,7 +92,7 @@ echo "<script> var id_usuario = $id_usuario; </script>";
 		$.ajax({
 		        type : 'POST',
 		        dataType : 'json',
-		        url: 'backend/busca_empregos.php',
+		        url: 'backend/emprego_busca.php',
 		        async: false,
 		        success : function(json_result) {
 		        	//alert(json_result)

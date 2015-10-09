@@ -78,7 +78,7 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 				        type : 'POST',
 				        dataType : 'text',
 				        data: $(form).serialize(),
-				        url: 'backend/novo_usuario.php',
+				        url: 'backend/usuario_novo.php',
 				        success : function(result) {
 				        	if(result == "") {
 				        		sucessoSalvarDB(result);

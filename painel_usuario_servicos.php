@@ -26,7 +26,7 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 		        type : 'POST',
 		        dataType : 'text',
 		        data: ({id_servico: id_servico}) ,
-		        url: 'backend/deletar_servico.php',
+		        url: 'backend/servico_deletar.php',
 		        success : function(json_result) {
 		        	alert(json_result)
 		        	if(json_result != "") {
@@ -48,7 +48,7 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 		        type : 'POST',
 		        dataType : 'json',
 		        data: ({filtroIdUsuario: <?php echo $_SESSION['id_usuario']; ?>	}) ,
-		        url: 'backend/busca_servicos.php',
+		        url: 'backend/servico_busca.php',
 		        success : function(json_result) {
 		        	//alert(json_result)
 		        	//console.log(json_result)
@@ -123,7 +123,7 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 		  </div>
 		  <div class="itens_nao_encotrados">
 			<p> Você ainda não publicou nenhum serviço... </p>
-			<a href="novo_servico.php"> Seja um Quebra-Galho </a>
+			<a href="servico_novo.php"> Seja um Quebra-Galho </a>
 		</div>
 
 		  

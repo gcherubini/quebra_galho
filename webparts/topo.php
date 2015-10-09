@@ -1,5 +1,16 @@
+<?php
+if (session_status() == PHP_SESSION_NONE) { session_start(); }
+?>
+
 <script>
 $().ready(function() {
+	
+	
+	<?php if (isset($_SESSION['id_usuario'])) {?>
+	checaSeUsuarioTemNovasNotificacoes()
+	<?php }?>
+	
+
 	$('.logout').click(function() {
 	     	$.ajax({
 		        url: 'backend/logout.php',
@@ -26,9 +37,10 @@ $().ready(function() {
 			<?php if (isset($_SESSION['id_usuario'])) { ?>
 				<a class="logout"> Sair</a>
 				<a href="painel_usuario_usuario.php"> <?php echo $_SESSION['nome']; ?> </a>
+				<a href="painel_usuario_notificacoes.php" class="notificacao-icon"> <span class="glyphicon glyphicon-exclamation-sign "> </span>  </a>
 			<?php } else { ?>
 	 	  		<a href="login.php"> Entrar</a>
-				<a href="novo_usuario.php"> Cadastre-se</a>
+				<a href="usuario_novo.php"> Cadastre-se</a>
  			<?php } ?>
 			
 	</div>

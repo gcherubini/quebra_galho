@@ -35,7 +35,7 @@ echo "<script> var id_usuario = $id_usuario; </script>";
 		    type : 'POST',
 		    dataType : 'json',
 		    data: ({filtroIdServico: id_servico}) ,
-		    url: 'backend/busca_servicos.php',
+		    url: 'backend/servico_busca.php',
 		    success : function(json_result) {
 		    	$.each(json_result, function(index, servico_json) {	
 					populaServicoNaTela(servico_json);
@@ -63,7 +63,7 @@ echo "<script> var id_usuario = $id_usuario; </script>";
 			$.ajax({
 		        type : 'POST',
 		        dataType : 'json',
-		        url: 'backend/negociar_servico.php',
+		        url: 'backend/negociacao_nova.php',
 		        data: ({id_servico: id_servico}) ,
 		        success : function(json_result) {
 		        	//alert(JSON.stringify(json_result));

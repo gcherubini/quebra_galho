@@ -27,6 +27,17 @@ function valorEhVazio (valor) {
 		}
 }
 
+function checaSeUsuarioTemNovasNotificacoes() {
+	$.ajax({
+				dataType : 'text',
+		        url: 'backend/notificacao_checa_se_usuario_ja_viu.php',
+		        success : function(result) {
+		        	if(result == "true") {
+		    			$(".notificacao-icon").css("display","block");
+		    		}
+		        }
+		    });
+}
 
 
 

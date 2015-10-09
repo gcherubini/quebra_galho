@@ -77,7 +77,7 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 		        		filtroTexto:  $('.input_texto_pesquisar').val(), 
 		        	    filtroComboEmprego:  $('.combo_tipo_de_servico').val(),
 		        		filtroComboEstado: $('.combo_estado').val()}) ,
-		        url: 'backend/busca_servicos.php',
+		        url: 'backend/servico_busca.php',
 		        async: false,
 		        success : function(json_result) {
 		        	//alert(json_result)
