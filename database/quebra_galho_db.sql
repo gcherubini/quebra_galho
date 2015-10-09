@@ -156,6 +156,7 @@ CREATE TABLE `usuario` (
   `img_url` varchar(999) DEFAULT NULL,
   `estrelas` int(11) DEFAULT NULL,
   `numero_servicos` int(11) DEFAULT NULL,
+  `tem_nova_notificacao` tinyint(4) DEFAULT '0',
   PRIMARY KEY (`id_usuario`)
 ) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -166,7 +167,7 @@ CREATE TABLE `usuario` (
 
 LOCK TABLES `usuario` WRITE;
 /*!40000 ALTER TABLE `usuario` DISABLE KEYS */;
-INSERT INTO `usuario` VALUES (1,'joao_belezza@gmail.com','123456','João Belezza',19,'M',NULL,3,0),(2,'pedro.ernesto@gmail.com','123456','Pedro Ernesto',26,'M',NULL,4,0),(3,'maria.rosario@gmail.com','123456','Maria do Rosário',60,'F',NULL,NULL,0),(4,'rosana.coimbar@gmail.com','123456','Rosana Coimbra',32,'F',NULL,5,4),(5,'pedro@gmail.com','123456','Pedro Escobar',89,'m',NULL,NULL,2),(6,'qisso@gmail.com','123456','qisso',19,'m',NULL,NULL,1),(8,'email@mail.com','123456','nome',18,'m',NULL,NULL,3),(9,'larissamerelles@gmail.com','123456','Larissa Merelles',25,'f',NULL,NULL,2),(10,'joaobecker@gmail.com','123456','João Becker',35,'m',NULL,NULL,0),(11,'Silvana@gmail.com','123456','Silvana Valdemort',36,'f',NULL,3,1),(12,'teste@gmail.com','123456','Teste teste',20,'m',NULL,NULL,5);
+INSERT INTO `usuario` VALUES (1,'joao_belezza@gmail.com','123456','João Belezza',19,'M',NULL,3,0,0),(2,'pedro.ernesto@gmail.com','123456','Pedro Ernesto',26,'M',NULL,4,0,0),(3,'maria.rosario@gmail.com','123456','Maria do Rosário',60,'F',NULL,NULL,0,0),(4,'rosana.coimbar@gmail.com','123456','Rosana Coimbra',32,'F',NULL,5,4,0),(5,'pedro@gmail.com','123456','Pedro Escobar',89,'m',NULL,NULL,2,0),(6,'qisso@gmail.com','123456','qisso',19,'m',NULL,NULL,1,0),(8,'email@mail.com','123456','nome',18,'m',NULL,NULL,3,0),(9,'larissamerelles@gmail.com','123456','Larissa Merelles',25,'f',NULL,NULL,2,0),(10,'joaobecker@gmail.com','123456','João Becker',35,'m',NULL,NULL,0,0),(11,'Silvana@gmail.com','123456','Silvana Valdemort',36,'f',NULL,3,1,0),(12,'teste@gmail.com','123456','Teste teste',20,'m',NULL,NULL,5,0);
 /*!40000 ALTER TABLE `usuario` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -179,4 +180,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-10-07  1:05:12
+-- Dump completed on 2015-10-08 23:29:31
