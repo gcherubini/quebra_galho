@@ -1,5 +1,6 @@
 <?php
 if (session_status() == PHP_SESSION_NONE) { session_start(); }
+$pesquisa = isset($_GET['pesquisa']) ? trim($_GET['pesquisa']) : '';
 ?>
 
 <!DOCTYPE html>
@@ -10,14 +11,17 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 
 	<script type="text/javascript"> 
 	
-
-
-
 	var carregouTodosOsItems = false;
 	var numeroDeItensPorPaginacao = 10;
 	var paginasCarregadas = 0;
 
 	$(document).ready(function () {
+		<?php if ($pesquisa != '') {
+		echo " $('.input_texto_pesquisar').val('".$pesquisa."'); ";
+		echo " $('.input_texto_pesquisar_topo').val('".$pesquisa."'); ";
+		}?>
+
+
 		$(".paginacao_carregando_acabou_msg").css("display","none");
 
 		$(window).scroll(function() {
@@ -44,7 +48,13 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 			abrirQuebraGalho($(this).attr("id"));
 		});
 
-		$('.input_texto_pesquisar').on('input',function(e){
+
+		$('.container').on('click', '.botao_procura', function() {
+			paginasCarregadas = 0;
+		    carregaServicos();
+		});
+
+		/*$('.input_texto_pesquisar').on('input',function(e){
 			paginasCarregadas = 0;
 		    carregaServicos();
 		});
@@ -58,7 +68,7 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 			paginasCarregadas = 0;
 			carregaServicos();
 		});
-
+		*/
 
 		
 		carregaServicos();
@@ -90,7 +100,7 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 		            if(countJsonItens == 0 && paginasCarregadas > 0) {
 		            	carregouTodosOsItems = true;
 		            }
-		 			else if(countJsonItens == 0 && paginasCarregadas == 0) {
+		 			if(countJsonItens == 0 && paginasCarregadas == 1) {
 		 					mostraMensagemDeItensNaoEncontrados()
 		 			}
 		 			else {
@@ -113,7 +123,7 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 	function terminaCarregarServicos(){
 		$(".paginacao_carregando_img").css("display","none");
 
-	    if(carregouTodosOsItems = true){
+	    if(carregouTodosOsItems = true && paginasCarregadas > 1){
 			// need to fix this
 			$(".paginacao_carregando_acabou_msg").css("display","block");
 		}
@@ -176,9 +186,13 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 		<p> Pesquise abaixo o serviço que deseja contratar, uma listagem de diversos quebra-galhos de todo Brasil segue abaixo: </p> 
 
 		<div class="row">
-			<div class="col-md-6"> 
-					<input type="text" class="form-control input_texto_pesquisar" placeholder="Pesquisar por...">
+			
+			<div class="col-md-12"> 
+				<input type="text" class="form-control input_texto_pesquisar" placeholder="Pesquisar por...">
+				<span class="glyphicon glyphicon-search botao_procura"> </span>
 			</div>
+
+			<!-- 
 			<div class="col-md-3"> 
 					<select class="form-control combo_tipo_de_servico">
 						<option value="">Tipo de serviço</option>
@@ -217,6 +231,7 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 					</select>
 
 			</div>
+			-->
 		</div>
 					
 		<div id="servicos" class="servicos">

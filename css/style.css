@@ -7,6 +7,11 @@
 	width: 90%;
 }
 
+
+
+
+/* Topo */
+
 .topo1 {
 	height: 30px;
 	width: 100%;
@@ -63,6 +68,42 @@
 	border-bottom: 3px solid #17679D;
 }
 
+.topo2_direita {
+	margin-top:45px;
+	width: 35%;
+}
+
+
+.input_texto_pesquisar_topo{
+	float:left;
+	margin:0;
+	width: 90%;
+}
+.botao_procura{
+	font-size:18px;
+	background: #ccc;
+	margin:auto;
+	width: 45px;
+	height: 33px;
+	text-align: center;
+	padding-top: 7px;
+	float:left;
+	margin:0;
+	cursor: pointer;
+}
+
+.botao_procura_topo{
+	font-size:18px;
+	background: #ccc;
+	margin:auto;
+	width: 10%;
+	height: 33px;
+	text-align: center;
+	padding-top: 7px;
+	float:left;
+	margin:0;
+	cursor: pointer;
+}
 
 .topo3 {
 	margin-top: 20px;
@@ -71,6 +112,19 @@
 	width: 100%;
 	background-color: #ccc;
 }
+
+
+
+.input_texto_pesquisar{
+	float:left;
+	margin:0;
+	width: 40%;
+}
+
+
+
+
+
 
 .pagina_nao_encontrada {
 	display: none;
@@ -261,4 +315,18 @@ form .row {
 	padding-left: 1150px;	
 	color: white;
 	font-style: normal;
+}
+
+
+
+
+
+
+
+
+.left{
+	float:left;
+}
+.right{
+	float: right;
 }

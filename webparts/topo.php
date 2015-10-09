@@ -11,6 +11,17 @@ $().ready(function() {
 	<?php }?>
 	
 
+
+	$('.botao_procura_topo').click(function() {
+		window.location.href = "index.php?pesquisa=" + $('.input_texto_pesquisar_topo').val() ;
+	});
+	$('.input_texto_pesquisar_topo').keyup(function(e){
+	    if(e.keyCode == 13)
+	    { //enter key
+	     	window.location.href = "index.php?pesquisa=" + $('.input_texto_pesquisar_topo').val() ;  
+	    }
+	});
+
 	$('.logout').click(function() {
 	     	$.ajax({
 		        url: 'backend/logout.php',
@@ -49,18 +60,26 @@ $().ready(function() {
 
 <div class="topo2">
 	<div class="container">
-		<div class="col-md-2">
+		
+		<div class="left">
 			<div class="logo">
 			</div>
 		</div>
-		<div class="col-md-10">
-			
+
+		<div class="left">
 			<ul class="menu">
 				<a href="index.php"><li id="menu_inicio"> Inicio </li></a>
 				<a href="novo_servico.php"><li id="menu_publicar">Publicar</li></a>
 				<a href="sobre.php"><li id="menu_sobre">Sobre</li></a>
 			</ul>
 		</div>
+
+		<div class="right topo2_direita" >
+			<input type="text" class="form-control input_texto_pesquisar_topo" placeholder="Pesquisar por...">
+			<span class="glyphicon glyphicon-search botao_procura_topo"> </span>
+		</div>
+
+		
 	</div>
 </div>
 
