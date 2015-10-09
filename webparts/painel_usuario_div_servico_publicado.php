@@ -10,11 +10,11 @@
 		<p> "<?php echo $servico["slogan"]; ?>" </p>
   </div>
    <div class="col-md-2">
-		<p>
+		<!--<p>
 			<a href="" class="editar_servico">Editar informações do serviço</a>
-		</p>
+		</p>-->
 		<p> 
-			<a  <?php echo  "id='" . $servico["id_servico"] . "'"; ?> href="" class="deletar_servico">Deletar serviço</a>
+			<a  <?php echo  "id='" . $servico["id_servico"] . "'"; ?> href="" class="deletar_servico">Apagar serviço</a>
 		</p>
   </div>
 

@@ -51,7 +51,7 @@ $().ready(function() {
 				<a href="painel_usuario_notificacoes.php" class="notificacao-icon"> <span class="glyphicon glyphicon-exclamation-sign "> </span>  </a>
 			<?php } else { ?>
 	 	  		<a href="login.php"> Entrar</a>
-				<a href="usuario_novo.php"> Cadastre-se</a>
+				<a href="novo_usuario.php"> Cadastre-se</a>
  			<?php } ?>
 			
 	</div>

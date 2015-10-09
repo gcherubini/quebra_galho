@@ -18,6 +18,37 @@ USE `servicosonline`;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
+-- Table structure for table `avaliacao`
+--
+
+DROP TABLE IF EXISTS `avaliacao`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `avaliacao` (
+  `id_avaliacao` int(11) NOT NULL AUTO_INCREMENT,
+  `contratado` int(11) DEFAULT NULL,
+  `contratante` int(11) DEFAULT NULL,
+  `numero_estrelas` int(11) DEFAULT NULL,
+  `descricao_do_servico` varchar(999) DEFAULT NULL,
+  `data_criacao` datetime DEFAULT NULL,
+  PRIMARY KEY (`id_avaliacao`),
+  KEY `contratado` (`contratado`),
+  KEY `contratante` (`contratante`),
+  CONSTRAINT `avaliacao_ibfk_1` FOREIGN KEY (`contratado`) REFERENCES `usuario` (`id_usuario`),
+  CONSTRAINT `avaliacao_ibfk_2` FOREIGN KEY (`contratante`) REFERENCES `usuario` (`id_usuario`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `avaliacao`
+--
+
+LOCK TABLES `avaliacao` WRITE;
+/*!40000 ALTER TABLE `avaliacao` DISABLE KEYS */;
+/*!40000 ALTER TABLE `avaliacao` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `emprego`
 --
 
@@ -180,4 +211,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-10-08 23:29:31
+-- Dump completed on 2015-10-09  0:59:41
