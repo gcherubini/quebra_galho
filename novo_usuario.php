@@ -65,7 +65,7 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 					maxlength: "Por favor digite sua idade de no máximo dois dígitos"
 				},
 				sexo: {
-					required: "Por favor nos diga sua idade"
+					required: "Por favor escolha seu sexo"
 				}
 			}
 		});	
@@ -121,96 +121,43 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 
     <?php include("webparts/resultado_de_operacoes.php"); ?>
 
-		<h2> Inscrever-se </h1>
-		<p> Se cadastre no nosso website para poder contratar ou oferecer um serviço: </p> 
+    	<div class="form-box">
+			<?php include("webparts/resultado_de_operacoes.php"); ?>
+			<div class="form-box-header">
+				<h2 class="form-box-title"> Inscreva-se no Quebra-Galho </h2>
+			</div>
+				<div class="form-box-main">			
+					<p> Cadastre-se para contratar ou oferecer um serviço:</p> 
+					<form id="form" method="get" action="" class="form-horizontal">
+					
+						<input type="email" class="form-control" id="email" name="email" placeholder="E-mail" >
+				   		<input type="password" class="form-control" id="senha" name="senha" placeholder="Senha" >
+				   		<input type="password" class="form-control" id="senha_conf" name="senha_conf" placeholder="Confirme sua senha">
+						<input type="text" class="form-control" id="nome" name="nome" placeholder="Seu nome">
+						<input type="text" class="form-control" id="input_idade" name="idade" placeholder="Sua idade">
+						
+			   			<div class="cadastro-usuario-div-sexo">
+							<p> <b>Sexo:</b> </p>
+							<input type="radio" id="sexo-M" value="m" name="sexo">
+				   			<label for="sexo-M" class="control-label" style="font-weight:normal;">Masculino </label>
+				   			<input type="radio" id="sexo-F" value="f" name="sexo">
+				   			<label for="sexo-F" class="control-label" style="font-weight:normal;">Feminino</label>
+			   			</div>
+						
 
-		<form id="form" method="get" action="" class="form-horizontal">
-			<fieldset>
-				<div class="row">
-					  <div class="col-sm-12">
-					  		<div class="col-sm-2">
-					  			<label for="email" class="control-label">E-mail</label>
-					  		</div>
-					  		 <div class="col-sm-10">	
-						   		<input type="email" class="form-control" id="email" name="email" >
-							</div>
-					   </div>
-					   
-				</div>
 
-				<div class="row">
-					  <div class="col-sm-6">
-					  		<div class="col-sm-4">
-					  			<label for="senha" class="control-label">Senha</label>
-					  		</div>
-					  		 <div class="col-sm-8">	
-						   		<input type="password" class="form-control" id="senha" name="senha" >
-							</div>
-					   </div>
-					   <div class="col-sm-6">
-					   		<div class="col-sm-4">
-					  			<label for="senha_conf" class="control-label">Confirmação</label>
-					  		</div>
-					  		 <div class="col-sm-8">	
-						   		<input type="password" class="form-control" id="senha_conf" name="senha_conf" >
-							</div>
-					  </div>
-				</div>
+						<!-- campo foto (nao deletar) 
+						<div id="cropContainerMinimal" class="div_crop_foto_usuario"></div>	
+						-->
+						 
+						<!-- <input class="submit" type="submit" value="Submit">-->
+						<button type="submit" class="btn btn-warning btn-block">Cadastre-se</button>
+					
+				  	</form>
 
-				<div class="row">
-					  <div class="col-sm-12">
-					  		<div class="col-sm-2">
-					  			<label for="nome" class="control-label">Nome</label>
-					  		</div>
-					  		 <div class="col-sm-10">	
-						   		<input type="text" class="form-control" id="nome" name="nome" >
-							</div>
-					   </div>
-					   
-				</div>
 
-				<div class="row">		  
-					  <div class="col-sm-6">
-					  		<div class="col-sm-4">
-					  			<label for="input_idade" class="control-label">Idade</label>
-					  		</div>
-					  		 <div class="col-sm-8">	
-						   		<input type="text" class="form-control" id="input_idade" name="idade">
-							</div>
-					  </div>
-					   <div class="col-sm-6">
-					   		<div class="col-sm-4">
-					  			<label for="input_sexo" class="control-label">Sexo</label>
-					  		</div>
-					  		 <div class="col-sm-8">	 		
-						   			<input type="radio" id="sexo-M" value="m" name="sexo">
-						   			<label for="sexo-M" class="control-label" style="font-weight:normal;">Masculino </label>
-						   			<input type="radio" id="sexo-F" value="f" name="sexo">
-						   			<label for="sexo-F" class="control-label" style="font-weight:normal;">Feminino</label>
-							</div>	   		
-					  </div>
 				</div>
-
-				<!-- <p class="centered" style="float:left; margin-left:20px;"> Envie uma foto sua profissional na qual <br> será visualizada em seus anúncios </p> -->
-				<div class="row">		  
-					  <div class="col-sm-6">
-					  		<div class="col-sm-4">
-					  			<label for="cropContainerMinimal" class="col-sm-2 control-label">Foto</label>
-					  		</div>
-					  		<div class="col-sm-8">	
-						   		<div id="cropContainerMinimal" class="div_crop_foto_usuario"></div>					
-							</div>	   	
-					  </div>
-				</div>
-				 
-				<div class="form-group">
-				  <div class="col-sm-offset-2 col-sm-10">
-					<!-- <button type="submit" class="btn btn-default">Publicar !</button> -->
-					<input class="submit" type="submit" value="Submit">
-				  </div>
-				</div>	
-			</fieldset>
-		</form>
+			</div>
 
 		 <?php include("webparts/pagina_nao_encontrada.php"); ?>
     </div>

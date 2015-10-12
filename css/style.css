@@ -6,9 +6,78 @@
 .container {
 	width: 90%;
 }
+.form-box {
+	width: 50%;
+	margin: auto;
+	border-left-style: solid;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-width: 1px;
+    border-color: #bfbcbc;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	margin-bottom: 20px;
 
+}
 
+.form-box-title{
+	margin: 0;
+	padding: 0;
+	font-size: 24px;
+	color: #696969;
+}
+.form-box-header {
+	padding-top: 4%;
+	padding-bottom: 4%;
+	border-top: solid;
+	border-bottom: solid;
+	border-color: #bfbcbc;
+	border-width: 1px;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	background-color: #e5e5e5;
+	-webkit-border-top-left-radius: 5px;
+	-webkit-border-top-right-radius: 5px;
+	-moz-border-radius-topleft: 5px;
+	-moz-border-radius-topright: 5px;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
 
+}
+.form-box-main {
+	width: 60%;
+	margin: auto;
+	padding-top: 4%;
+	padding-bottom: 4%;
+}
+
+#form-box-ou {
+	text-align: center;
+	padding-top: 4%;
+	padding-bottom: 1%;
+	color: #696969;
+}
+.form-box-main p {
+	margin: 0;
+	padding: 0;
+	text-align: justify;
+	font-size: 16px;
+}
+.form-box-main  input {
+	margin-top:10px;
+}
+
+.form-group {
+	margin-left:0 !important;
+	margin-right: 0 !important;
+}
+
+.cadastro-usuario-div-sexo{
+	margin-top:10px;
+	margin-bottom: 20px;
+}
 
 /* Topo */
 
