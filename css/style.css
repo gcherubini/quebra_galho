@@ -69,6 +69,15 @@
 	margin-top:10px;
 }
 
+.form-box-main  textarea {
+	resize: vertical;
+	margin-top:10px;
+}
+
+.form-box-main  select {
+	margin-top:10px;
+}
+
 .form-box-main  button {
 	margin-top:10px;
 }
@@ -346,9 +355,38 @@ form .row {
 }
 
 .painel_menu{
-	margin-bottom: 30px;
+	margin-bottom: 0px;
 }
 
+.painel_menu li {
+	border-left: solid #ffffff;
+	border-right: solid #ffffff;
+	border-width: 1px;
+}
+
+.painel_menu li a{
+	background-color: #7d8767;
+	font-weight: bold;
+	color: #ffffff;
+}
+
+.painel_menu li a:hover{
+	background-color: #a4ab94;
+}
+
+.painel_menu li.active{
+
+}
+
+.painel_menu li.active a{
+	background-color: #e5e5e5;
+	font-weight: bold;
+	color: #7d8767;
+}
+
+.painel_menu li.active a:hover{
+	background-color: #e5e5e5;
+}
 
 
 /* Quebra Galho Perfil */
