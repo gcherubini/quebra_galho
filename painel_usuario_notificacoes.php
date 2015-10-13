@@ -128,14 +128,19 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 
  		<?php include("webparts/painel_usuario_menu.php"); ?>		
 
+ 		<div class="painel_usuario_main">
+		
+			<div class="notificacoes">
 
-		  <div class="notificacoes">
+			</div>
+			
+			<div class="itens_nao_encotrados">
+				
+				<p> Você ainda não tem nenhuma notificação... </p>
+			
+			</div>
 
-		  </div>
-		  <div class="itens_nao_encotrados">
-			<p> Você ainda não tem nenhuma notificação... </p>
 		</div>
-
 		  
 <?php
 	} else {

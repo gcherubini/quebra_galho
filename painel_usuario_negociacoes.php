@@ -84,17 +84,20 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 
  		<?php include("webparts/painel_usuario_menu.php"); ?>
 
+ 		<div class="painel_usuario_main">
+			
+			<h3> Suas negociações </h1>
 
-		 <h3> Suas negociações </h1>
+			<div class="negociacoes">
 
-		  <div class="negociacoes">
+			</div>
+			
+			<div class="itens_nao_encotrados">
+				<p> Você ainda não está negociando com nenhum quebra-galho... </p>
+				<a href="index.php"> Encontre um Quebra-Galho  </a>
+			</div>
 
-		  </div>
-		  <div class="itens_nao_encotrados">
-			<p> Você ainda não está negociando com nenhum quebra-galho... </p>
-			<a href="index.php"> Encontre um Quebra-Galho  </a>
-		  </div>
-
+		</div>
 		  
 <?php
 	} else {

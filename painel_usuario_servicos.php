@@ -116,14 +116,18 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 
  		<?php include("webparts/painel_usuario_menu.php"); ?>		
 
-		  <h3> Seus serviços publicados </h1>
+ 		<div class="painel_usuario_main">
 
-		  <div class="servicos_publicados">
+			<h3> Seus serviços publicados </h1>
 
-		  </div>
-		  <div class="itens_nao_encotrados">
-			<p> Você ainda não publicou nenhum serviço... </p>
-			<a href="servico_novo.php"> Seja um Quebra-Galho </a>
+			<div class="servicos_publicados">
+
+			</div>
+			 <div class="itens_nao_encotrados">
+				<p> Você ainda não publicou nenhum serviço... </p>
+				<a href="servico_novo.php"> Seja um Quebra-Galho </a>
+			</div>
+
 		</div>
 
 		  

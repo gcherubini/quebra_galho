@@ -45,13 +45,13 @@ echo "<script> var id_usuario = $id_usuario; </script>";
 			},
 			messages: {
 				emprego: {
-					required: "Por favor digite seu emprego"
+					required: "Por favor, selecione uma categoria"
 				},
 				slogan: {
 					maxlength: "Seu slogan deve contar no máximo 100 caracteres"
 				},
 				descricao: {
-					required: "Por favor descreva seu serviço",
+					required: "Por favor, descreva seu serviço",
 					maxlength: "A descrição do seu serviço não pode ser tão grande"
 				},
 				estado: {
@@ -132,89 +132,27 @@ echo "<script> var id_usuario = $id_usuario; </script>";
     	<?php include("webparts/resultado_de_operacoes.php"); ?>
     	
     	<div class="publicar_servico">
-			<h1> Publicar serviço </h1>
-			<p> Adicione informações relacionadas ao serviço prestado </p> 
-			  <form id="form" class="form-horizontal" >
-			  
-				<div class="form-group">
-				  <label for="emprego" class="col-sm-2 control-label">Emprego </label>
-				  <div class="col-sm-10">
-					<select class="form-control combo_emprego" id="emprego" name="emprego">
-						<option value="">Selecione</option>
-					</select>
-				  </div>
+	    	<div class="form-box">
+	    		<div class="form-box-header">
+					<h1 class="form-box-title"> Publicar serviço </h1>
 				</div>
 
-				<div class="form-group">
-				  <label for="descricao" class="col-sm-2 control-label">Slogan</label>
-				  <div class="col-sm-10">
-				   <input type="text" class="form-control" id="slogan" name="slogan">
-				  </div>
-				</div>
+				<div class="form-box-main">
+					<p>Adicione informações relacionadas ao serviço prestado:</p> 
+					<form id="form" class="form-horizontal" >
+					  
+						<select class="form-control combo_emprego" id="emprego" name="emprego">
+							<option value="">Selecione uma categoria</option>
+						</select>
+						<input placeholder="Crie um slogan (Máx. 100 caracteres)" type="text" class="form-control" id="slogan" name="slogan">
+						<textarea placeholder="Descreva suas habilidades (Máx. 180 caracteres)" class="form-control" rows="3" id="descricao" name="descricao" maxlength="180"></textarea>
+						<input placeholder="Cidade(s) de atuação" type="text" class="form-control" id="cidade" name="cidade" maxlength="40">
+					
+						<button type="submit" class="btn btn-primary btn-block">Publicar</button>
 
-				<div class="form-group">
-				  <label for="descricao" class="col-sm-2 control-label">Descrição</label>
-				  <div class="col-sm-10">
-				   <textarea class="form-control" rows="3" id="descricao" name="descricao"></textarea>
-				  </div>
+					</form>
 				</div>
-
-				
-				<div class="row">		  
-					  <div class="col-sm-6">
-					  		<div class="col-sm-4">
-					  			<label for="estado" class="col-sm-2 control-label">Estado</label>
-					  		</div>
-					  		 <div class="col-sm-8">	
-						   		<select class="form-control" id="estado" name="estado">
-									<option value="ALL">Para todo o Brasil</option>
-									<option value="AC">Acre</option>
-									<option value="AL">Alagoas</option>
-									<option value="AP">Amapá</option>
-									<option value="AM">Amazonas</option>
-									<option value="BA">Bahia</option>
-									<option value="CE">Ceará</option>
-									<option value="DF">Distrito Federal</option>
-									<option value="ES">Espirito Santo</option>
-									<option value="GO">Goiás</option>
-									<option value="MA">Maranhão</option>
-									<option value="MT">Mato Grosso</option>
-									<option value="MS">Mato Grosso do Sul</option>
-									<option value="MG">Minas Gerais</option>
-									<option value="PA">Pará</option>
-									<option value="PB">Paraiba</option>
-									<option value="PR">Paraná</option>
-									<option value="PE">Pernambuco</option>
-									<option value="PI">Piauí</option>
-									<option value="RJ">Rio de Janeiro</option>
-									<option value="RN">Rio Grande do Norte</option>
-									<option value="RS">Rio Grande do Sul</option>
-									<option value="RO">Rondônia</option>
-									<option value="RR">Roraima</option>
-									<option value="SC">Santa Catarina</option>
-									<option value="SP">São Paulo</option>
-									<option value="SE">Sergipe</option>
-									<option value="TO">Tocantis</option> 
-								</select>
-							</div>
-					  </div>
-					   <div class="col-sm-6">
-					   		<div class="col-sm-4">
-					  			<label for="cidade" class="control-label">Cidade</label>
-					  		</div>
-					  		 <div class="col-sm-8">	 		
-						   		<input type="text" class="form-control" id="cidade" name="cidade">
-							</div>	   		
-					  </div>
-				</div>	
-
-				 
-				<div class="form-group">
-				  <div class="col-sm-offset-2 col-sm-10">
-					<button type="submit" class="btn btn-default">Publicar</button>
-				  </div>
-				</div>
-			</form>
+			</div>
 		</div>
 
 		 <?php include("webparts/pagina_nao_encontrada.php"); ?>
