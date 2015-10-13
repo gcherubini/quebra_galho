@@ -15,45 +15,26 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 
     <div class="container">
 		<?php include("webparts/resultado_de_operacoes.php"); ?>
-
-		 <h2> Contato </h1>
-		 
-		  <form id="form" class="form-horizontal" >
-			<div class="form-group">
-			  <label for="nome" class="col-sm-2 control-label">Nome</label>
-			  <div class="col-sm-3">
-				<input type="text" class="form-control" id="nome" name="nome">
-			  </div>
+    	<div class="form-box">
+    		<div class="form-box-header">
+				 <h2 class="form-box-title"> Contato </h2>
 			</div>
+				 	<div class="form-box-main">	
+						  <form id="form" class="form-horizontal" >
 
-			<div class="form-group">
-			  <label for="email" class="col-sm-2 control-label">E-mail</label>
-			  <div class="col-sm-3">
-				<input type="text" class="form-control" id="email" name="email">
-			  </div>
-			</div>
+								<input placeholder="Nome e Sobrenome" type="text" class="form-control" id="nome" name="nome">
 
-			<div class="form-group">
-			  <label for="assunto" class="col-sm-2 control-label">Assunto</label>
-			  <div class="col-sm-3">
-				<input type="text" class="form-control" id="assunto" name="assunto">
-			  </div>
-			</div>
+								<input placeholder="E-mail" type="text" class="form-control" id="email" name="email">
 
-			<div class="form-group">
-			  <label for="mensagem" class="col-sm-2 control-label">Mensagem</label>
-			  <div class="col-sm-3">
-				<input type="text" class="form-control" id="mensagem" name="mensagem">
-			  </div>
-			</div>
+								<input placeholder="Assunto" type="text" class="form-control" id="assunto" name="assunto">
 
-			 
-			<div class="form-group">
-			  <div class="col-sm-offset-2 col-sm-10">
-				<button type="submit" class="btn btn-default">Entrar</button>
-			  </div>
-			</div>
-		  </form>
+								<textarea placeholder="Mensagem..." class="form-control" rows="3" id="mensagem" name="mensagem"></textarea>
+
+								<button type="submit" class="btn btn-primary btn-block">Enviar</button>
+
+						  </form>
+					</div>	  
+		</div>		  
 		  
 		   <?php include("webparts/pagina_nao_encontrada.php"); ?>
     </div>
