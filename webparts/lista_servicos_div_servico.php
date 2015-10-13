@@ -5,7 +5,7 @@
 
 <div class="servico abrir_quebra_galho" <?php echo  "id='" . $servico["id_servico"] . "'"; ?>> 
 	<div class="servico2">
-		<div class="row servico_img">
+		<div class="servico_img">
 			<?php echo '<img class="img-responsive" src="'.$servico["img_url"].'"/>'; ?>
 		</div>
 

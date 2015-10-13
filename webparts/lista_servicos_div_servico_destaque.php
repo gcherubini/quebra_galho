@@ -4,12 +4,11 @@
 
 
 <div class="servico_destaque abrir_quebra_galho" <?php echo  "id='" . $servico["id_servico"] . "'"; ?>> 
-	<div class="row">
-		<div class="col-md-3 servico_img"> 
+	<div class="servico_destaque_img servico_img">
 	  		<?php echo '<img class="img-responsive" src="'.$servico["img_url"].'"/>'; ?> 
-	  	</div>
-	  	<div class="col-md-9">
-			<h3> <?php echo $servico["nome"]; ?></h3> 
+	</div>
+	<div class="servico_destaque_content">
+		<h3> <?php echo $servico["nome"]; ?></h3> 
 				
 			<h4> <?php echo $servico["emprego"]; ?> </h4> 
 
@@ -36,6 +35,5 @@
 					}
 				?>
 			</p>
-	  	</div>
 	</div>
 </div>

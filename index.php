@@ -185,12 +185,11 @@ $pesquisa = isset($_GET['pesquisa']) ? trim($_GET['pesquisa']) : '';
 		<h2> Painel de quebra-galhos </h1>
 		<p> Pesquise abaixo o serviço que deseja contratar, uma listagem de diversos quebra-galhos de todo Brasil segue abaixo: </p> 
 
-		<div class="row">
-			
-			<div class="col-md-12"> 
-				<input type="text" class="form-control input_texto_pesquisar" placeholder="Pesquisar por...">
-				<span class="glyphicon glyphicon-search botao_procura"> </span>
-			</div>
+
+		<input type="text" class="form-control input_texto_pesquisar" placeholder="Pesquisar por...">
+		<span class="glyphicon glyphicon-search botao_procura"> </span>
+
+		<div style="clear:both;"></div>
 
 			<!-- 
 			<div class="col-md-3"> 
@@ -232,7 +231,7 @@ $pesquisa = isset($_GET['pesquisa']) ? trim($_GET['pesquisa']) : '';
 
 			</div>
 			-->
-		</div>
+	
 					
 		<div id="servicos" class="servicos">
 		</div>
