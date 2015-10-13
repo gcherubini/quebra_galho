@@ -62,7 +62,7 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 						
 						<button type="submit" class="btn btn-primary btn-block">Entrar</button>
 
-						<p id="form-box-ou">OU</p>
+						<a class="btn btn-danger btn-block" href="contato.php" role="button">Esqueci minha senha</a>
 
 						<a class="btn btn-warning btn-block" href="novo_usuario.php" role="button">Cadastre-se</a>
 							  
