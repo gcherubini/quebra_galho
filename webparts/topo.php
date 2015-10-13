@@ -67,7 +67,7 @@ $().ready(function() {
 
 </script>
 
-<div class="topo_fixed" data-spy="affix" data-offset-top="0">
+<div class="topo_fixed" data-spy="affix" data-offset-top="200">
 
 	<div class="topo1">
 		
