@@ -51,7 +51,9 @@ echo "<script> var id_usuario = $id_usuario; </script>";
 		$(".servico_nome").text(servico_json.nome);
 		$(".servico_emprego_e_idade").text(servico_json.emprego);
 		$(".servico_emprego_e_idade").append(" (" + servico_json.idade + " anos)");
+		$(".servico_slogan").text( '"' + servico_json.slogan + '"');
 		$(".servico_descricao").text(servico_json.descricao);
+		$(".servico_cidade").text(servico_json.cidade);
  		
 	}
 	
@@ -106,21 +108,29 @@ echo "<script> var id_usuario = $id_usuario; </script>";
 
     <?php include("webparts/resultado_de_operacoes.php"); ?>
 
-    	<div class="quebra_galho_contato">
-    		<p> Abaixo seguem as informações de contato: </p>
-			<p class="servico_email_contato">  </p>
-			<p class="servico_cel_contato">  </p>
-			<p class="servico_telefone_contato">  </p>
-			<br>
-			<p> Este quebra-galho foi também salvo no seu painel! </p>
-    	</div>
+    	<div class="quebra_galho_perfil_box">
+    		<div class="quebra_galho_perfil_box_content"> 
+				<div class="quebra_galho_contato">
+					<p> Abaixo seguem as informações de contato: </p>
+					<p class="servico_email_contato">  </p>
+					<p class="servico_cel_contato">  </p>
+					<p class="servico_telefone_contato">  </p>
+					<br>
+					<p> Este quebra-galho foi também salvo no seu painel! </p>
+				</div>
 
-    	<div class="quebra_galho_perfil"> 
-    		 <h1 class="servico_nome">  </h1>
-    		 <h5 class="servico_emprego_e_idade"> </h5> 
-			 <p class="servico_descricao">  </p>
-			 <a class="negociar" href="#"> Negociar </a>
-    	</div>
+				<div class="quebra_galho_perfil"> 
+					<div id="cropContainerMinimal" class="div_crop_foto_usuario"></div>	
+					 <h2 class="servico_nome">  </h2>
+					 <h5 class="servico_emprego_e_idade"> </h5>
+					 <p class="servico_slogan">  </p> 
+					 <p class="servico_descricao">  </p>
+					 <p class="servico_cidade">  </p>
+					 <p> 0 Avaliações </p>
+					 <a class="negociar" href="#"> Eu gostaria de negociar este serviço </a>
+				</div>
+			</div>
+		</div>
     
 	    <?php include("webparts/pagina_nao_encontrada.php"); ?>
     </div>

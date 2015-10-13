@@ -112,11 +112,15 @@
 	margin-right:-12px;
 }
 
-
+.topo_fixed{
+	width: 100%;
+}
 
 .topo2 {
-	height: 100px;
+	height: 120px;
 	width: 100%;
+	background: white;
+	border-bottom: 1px solid #ccc;
 }
 
 .topo2 .logo {
@@ -164,11 +168,12 @@
 	float:left;
 	margin:0;
 	cursor: pointer;
+
 }
 
 .botao_procura_topo{
 	font-size:18px;
-	background: #ccc;
+	background: #D8D8D8    ;
 	margin:auto;
 	width: 10%;
 	height: 33px;
@@ -177,10 +182,14 @@
 	float:left;
 	margin:0;
 	cursor: pointer;
+	margin-left: -2px;
+}
+
+.botao_procura_topo:hover{
+	background-color: #C0C0C0 ;
 }
 
 .topo3 {
-	margin-top: 20px;
 	margin-bottom: 30px;
 	height: 20px;
 	width: 100%;
@@ -248,14 +257,26 @@
 
 
 .servico_destaque{
+	cursor: pointer;
 	height: 200px;
 	margin-bottom: 30px;
 }
 
 .servicos_titulo_filtro {
 	margin-top:20px;
+}
+
+.servico_destaque_img{
+	float:left;
+	width: 25%;
+}
+
+.servico_destaque_content{
+	float:left;
+	width: 75%;
 
 }
+
 
 .servico_img {
 	margin: auto;
@@ -336,6 +357,40 @@ form .row {
 	display: none;
 }
 
+.quebra_galho_perfil_box{
+	width: 60%;
+	margin: auto;
+	text-align: center;
+	border: 1px solid #bfbcbc;
+	
+	margin-bottom: 20px;
+	padding-bottom: 20px;
+
+	border-radius: 5px;
+	-webkit-border-top-left-radius: 5px;
+	-webkit-border-top-right-radius: 5px;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	-moz-border-radius-topleft: 5px;
+	-moz-border-radius-topright: 5px;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+    -webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+}
+.quebra_galho_perfil_box_content {
+	width: 60%;
+	margin: auto;
+}
+.quebra_galho_perfil .div_crop_foto_usuario{
+	margin: auto;
+	margin-top: 15px;
+}
+
+.quebra_galho_perfil_box{
+
+}
+
 
 
 /* infinite scroll pagination */
@@ -403,4 +458,9 @@ form .row {
 }
 .right{
 	float: right;
+}
+
+
+.glyphicon{
+	position: inherit !important;
 }
