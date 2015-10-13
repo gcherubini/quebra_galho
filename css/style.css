@@ -18,8 +18,6 @@
 	-moz-border-radius: 5px;
 	border-radius: 5px;
 	margin-bottom: 20px;
-
-
 }
 
 .form-box-title{
@@ -369,17 +367,18 @@ form .row {
 .painel_menu li {
 	border-left: solid #ffffff;
 	border-right: solid #ffffff;
-	border-width: 1px;
+	border-width: 0;
 }
 
 .painel_menu li a{
-	background-color: #7d8767;
+
 	font-weight: bold;
-	color: #ffffff;
+	color: #989898  ;
 }
 
 .painel_menu li a:hover{
-	background-color: #a4ab94;
+	color: #555 ;
+	background:#E8E8E8  ;
 }
 
 .painel_menu li.active{
@@ -387,18 +386,20 @@ form .row {
 }
 
 .painel_menu li.active a{
-	background-color: #e5e5e5;
+
 	font-weight: bold;
-	color: #7d8767;
+	
 }
 
 .painel_menu li.active a:hover{
-	background-color: #e5e5e5;
+
 }
 
 .painel_usuario_main {
 	padding: 5%;
-	background-color: #e5e5e5;
+	border: 1px solid #e5e5e5;
+	margin-top: -1px;
+
 }
 
 /* Quebra Galho Perfil */
