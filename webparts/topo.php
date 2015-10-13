@@ -72,16 +72,16 @@ $().ready(function() {
 	<div class="topo1">
 		
 		<div class="container header_div_top_right"> 
-				<a href="ajuda.php" > Ajuda </a>
+				<a href="ajuda.php" >Ajuda </a>
 				<span class="glyphicon glyphicon-menu-right"></span>
 				
 				<?php if (isset($_SESSION['id_usuario'])) { ?>
-					<a class="logout"> Sair</a>
-					<a href="painel_usuario_usuario.php"> <?php echo $_SESSION['nome']; ?> </a>
+					<a class="logout"> <span class="glyphicon glyphicon-remove-sign">&nbsp</span>Sair</a>
+					<a href="painel_usuario_usuario.php"><span class="glyphicon glyphicon-user">&nbsp</span><?php echo $_SESSION['nome']; ?> </a>
 					<a href="painel_usuario_notificacoes.php" class="notificacao-icon"> <span class="glyphicon glyphicon-exclamation-sign "> </span>  </a>
 				<?php } else { ?>
-		 	  		<a href="login.php"> Entrar</a>
-					<a href="novo_usuario.php"> Cadastre-se</a>
+		 	  		<a href="login.php"><span class="glyphicon glyphicon-ok">&nbsp</span>Entrar</a>
+					<a href="novo_usuario.php"><span class="glyphicon glyphicon-pencil">&nbsp</span>Cadastre-se</a>
 	 			<?php } ?>
 				
 		</div>

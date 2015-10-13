@@ -96,10 +96,9 @@
 /* Topo */
 
 .topo1 {
-	height: 30px;
+	height: 40px;
 	width: 100%;
 	background-color: #17679D;
-
 }
 
 .header_div_top_right a, .header_div_top_right .glyphicon-menu-right, .header_div_top_right .notificacao-icon{ 
@@ -107,7 +106,8 @@
 	margin-left: 20px;
 	text-align: right;
 	float: right;
-	padding-top:8px;
+	padding-top: 15px;
+	font-weight: bold;
 }
 
 .notificacao-icon{
@@ -116,8 +116,8 @@
 
 .header_div_top_right .glyphicon-menu-right{ 
 	color: white;
-	font-size:12px;
-	padding-top:8px;
+	font-size: 15px;
+	padding-top: 15px;
 	margin-right:-12px;
 }
 
@@ -126,7 +126,7 @@
 }
 
 .topo2 {
-	height: 120px;
+	height: 110px;
 	width: 100%;
 	background: white;
 	border-bottom: 1px solid #ccc;
@@ -136,7 +136,7 @@
 	height: 80px;
 	width: 200px;
 	border:1px solid #ccc;
-	margin-top:20px;
+	margin-top: 15px;
 }
 
 .topo2 .menu  {
