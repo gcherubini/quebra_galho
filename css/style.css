@@ -19,6 +19,7 @@
 	border-radius: 5px;
 	margin-bottom: 20px;
 
+
 }
 
 .form-box-title{
@@ -53,17 +54,24 @@
 	padding-bottom: 4%;
 }
 
-#form-box-ou {
-	text-align: center;
-	padding-top: 4%;
-	padding-bottom: 1%;
-	color: #696969;
+.form-box-main .esqueceu-senha{
+	margin-top: 10px;
+	margin-bottom: 20px;
 }
+
 .form-box-main p {
 	margin: 0;
 	padding: 0;
 	text-align: justify;
 	font-size: 16px;
+}
+.form-box-main .ou {
+	margin: 0;
+	padding: 0;
+	text-align: center;
+	font-size: 12px;
+	margin-top: 15px;
+	margin-bottom: 15px;
 }
 .form-box-main  input {
 	margin-top:10px;

@@ -60,9 +60,13 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 						
 						<input placeholder="Senha" type="password" class="form-control" id="senha" name="senha">
 						
+						<div class="esqueceu-senha">
+							<a  href="contato.php" role="button">Esqueceu sua senha? </a>
+						</div>
+
 						<button type="submit" class="btn btn-primary btn-block">Entrar</button>
 
-						<a class="btn btn-danger btn-block" href="contato.php" role="button">Esqueci minha senha</a>
+						<p class="ou"> ou </p>
 
 						<a class="btn btn-warning btn-block" href="novo_usuario.php" role="button">Cadastre-se</a>
 							  
