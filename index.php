@@ -17,7 +17,6 @@ $pesquisa = isset($_GET['pesquisa']) ? trim($_GET['pesquisa']) : '';
 
 	$(document).ready(function () {
 		<?php if ($pesquisa != '') {
-		echo " $('.input_texto_pesquisar').val('".$pesquisa."'); ";
 		echo " $('.input_texto_pesquisar_topo').val('".$pesquisa."'); ";
 		}?>
 
@@ -84,7 +83,7 @@ $pesquisa = isset($_GET['pesquisa']) ? trim($_GET['pesquisa']) : '';
 		        dataType : 'json',
 		        data: ({limit: numeroDeItensPorPaginacao,
 		        		offset: numeroDeItensPorPaginacao*paginasCarregadas, 
-		        		filtroTexto:  $('.input_texto_pesquisar').val(), 
+		        		filtroTexto:  $('.input_texto_pesquisar_topo').val(), 
 		        	    filtroComboEmprego:  $('.combo_tipo_de_servico').val(),
 		        		filtroComboEstado: $('.combo_estado').val()}) ,
 		        url: 'backend/servico_busca.php',
@@ -181,15 +180,6 @@ $pesquisa = isset($_GET['pesquisa']) ? trim($_GET['pesquisa']) : '';
 		
     <div class="container">
     	<?php include("webparts/resultado_de_operacoes.php"); ?>
-
-		<h2> Painel de quebra-galhos </h1>
-		<p> Pesquise abaixo o serviço que deseja contratar, uma listagem de diversos quebra-galhos de todo Brasil segue abaixo: </p> 
-
-
-		<input type="text" class="form-control input_texto_pesquisar" placeholder="Pesquisar por...">
-		<span class="glyphicon glyphicon-search botao_procura"> </span>
-
-		<div style="clear:both;"></div>
 
 			<!-- 
 			<div class="col-md-3"> 
