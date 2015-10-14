@@ -108,7 +108,9 @@ $().ready(function() {
 		
 			<div class="topo2_menu">
 			
-				<a href="painel_usuario_usuario.php"> 
+				
+
+				<a href="<?php if (isset($_SESSION['id_usuario'])) echo "painel_usuario_usuario.php" ; else echo "login.php"; ?>"> 
 				<div class="minha_conta">
 					<span class="glyphicon glyphicon-user">&nbsp</span> 
 					<p> Minha Conta </p>
@@ -117,7 +119,7 @@ $().ready(function() {
 
 				<ul class="menu">
 					<a href="index.php"><li id="menu_inicio"> Inicio </li></a>
-					<a href="novo_servico.php"><li id="menu_publicar">Publicar</li></a>
+					<a href="<?php if (isset($_SESSION['id_usuario'])) echo "novo_servico.php" ; else echo "login.php"; ?>"><li id="menu_publicar">Publicar</li></a>
 					<a href="sobre.php"><li id="menu_sobre">Sobre</li></a>
 				</ul>
 
