@@ -1,5 +1,6 @@
 <?php
 if (session_status() == PHP_SESSION_NONE) { session_start(); }
+$pAnt = isset($_GET['pAnt']) ? trim($_GET['pAnt']) : "";
 ?>
 
 <!DOCTYPE html>
@@ -14,6 +15,10 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
    <script type="text/javascript">
 
 	$(function() {
+		<?php if($pAnt != "") { ?>
+			$('#modal_acesso_nao_permitido').modal('toggle');
+		<?php } ?>
+
 		$(form).submit(function() {
 		   	$.ajax({
 		        type : 'POST',
@@ -22,7 +27,11 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 		        data: $(form).serialize(),
 		        success : function(result) {
 		        	if(result == "true") {
-		        		window.location.href = "painel_usuario_usuario.php";
+		        		<?php if($pAnt == "") { ?>
+							window.location.href = "painel_usuario_usuario.php";
+						<?php } else { ?>
+							window.location.href = "<?php echo $pAnt; ?>";
+		        		<?php }  ?>
 		        	}
 		        	else {
 		        		mostraResultadoOperacoes(false, "Ops... Aconteceu algum problema, talvez você tenha digitado sua senha incorretamente.");
@@ -44,7 +53,6 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 
   </head>
   <body>
-
 	<?php include("webparts/topo.php"); ?>
 
     <div class="container">
@@ -55,7 +63,7 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 			</div>
 				<div class="form-box-main">			 
 					<form id="form" class="form-horizontal" >
-						
+
 						<input placeholder="E-mail" type="text" class="form-control" id="email" name="email">
 						
 						<input placeholder="Senha" type="password" class="form-control" id="senha" name="senha">

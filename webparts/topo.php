@@ -2,16 +2,17 @@
 if (session_status() == PHP_SESSION_NONE) { session_start(); }
 ?>
 
+
+<?php include("webparts/modal.php"); ?>
+
+
 <script>
 $().ready(function() {
-	
 	
 	<?php if (isset($_SESSION['id_usuario'])) {?>
 	checaSeUsuarioTemNovasNotificacoes()
 	<?php }?>
 	
-
-
 	$('.botao_procura_topo').click(function() {
 		window.location.href = "index.php?pesquisa=" + $('.input_texto_pesquisar_topo').val() ;
 	});
@@ -76,7 +77,7 @@ $().ready(function() {
 				<span class="glyphicon glyphicon-menu-right"></span>
 				
 				<?php if (isset($_SESSION['id_usuario'])) { ?>
-					<a class="logout"> &nbsp</span>Sair</a>
+					<a href="#" class="logout">Sair</a>
 					<a href="painel_usuario_usuario.php"><?php echo $_SESSION['nome']; ?> </a>
 					<a href="painel_usuario_notificacoes.php" class="notificacao-icon"> <span class="glyphicon glyphicon-exclamation-sign "> </span>  </a>
 				<?php } else { ?>
@@ -97,10 +98,16 @@ $().ready(function() {
 			</div>-->
 
 			
+			
 
 			<div class="topo2_pesquisar" >
-				<input type="text" class="form-control input_texto_pesquisar_topo" placeholder="Encontre e contrate um serviço...">
-				<span class="glyphicon glyphicon-search botao_procura_topo"> </span>
+				<div class="input-group">
+		          <input type="text" class="form-control input_texto_pesquisar_topo" placeholder="Encontre e contrate um serviço...">
+		          <div class="input-group-btn">
+		            <button type="button" class="btn btn-default botao_procura_topo" aria-label="Buscar"><span class="glyphicon glyphicon-search "></span></button>
+		          </div>
+		        </div>
+
 			</div>
 
 			
@@ -110,7 +117,7 @@ $().ready(function() {
 			
 				
 
-				<a href="<?php if (isset($_SESSION['id_usuario'])) echo "painel_usuario_usuario.php" ; else echo "login.php"; ?>"> 
+				<a href="painel_usuario_usuario.php"> 
 				<div class="minha_conta">
 					<span class="glyphicon glyphicon-user">&nbsp</span> 
 					<p> Minha Conta </p>
@@ -119,7 +126,7 @@ $().ready(function() {
 
 				<ul class="menu">
 					<a href="index.php"><li id="menu_inicio"> Inicio </li></a>
-					<a href="<?php if (isset($_SESSION['id_usuario'])) echo "novo_servico.php" ; else echo "login.php"; ?>"><li id="menu_publicar">Publicar</li></a>
+					<a href="novo_servico.php"><li id="menu_publicar">Publicar</li></a>
 					<a href="sobre.php"><li id="menu_sobre">Sobre</li></a>
 				</ul>
 

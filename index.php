@@ -16,6 +16,8 @@ $pesquisa = isset($_GET['pesquisa']) ? trim($_GET['pesquisa']) : '';
 	var paginasCarregadas = 0;
 
 	$(document).ready(function () {
+		ativaMenu("#menu_inicio");
+
 		<?php if ($pesquisa != '') {
 		echo " $('.input_texto_pesquisar_topo').val('".$pesquisa."'); ";
 		}?>
@@ -29,7 +31,7 @@ $pesquisa = isset($_GET['pesquisa']) ? trim($_GET['pesquisa']) : '';
 		       $(".paginacao_carregando_img").css("display","block");
 		       $(".paginacao_carregando_acabou_msg").css("display","none");
 		       
-		       setTimeout(carregaServicos,1500);
+		       setTimeout(carregaServicos,1500,$('.input_texto_pesquisar_topo').val());
 		   }
 		});
 	});
@@ -40,8 +42,7 @@ $pesquisa = isset($_GET['pesquisa']) ? trim($_GET['pesquisa']) : '';
 
 
  	$(document).ready(function () {
- 		ativaMenu("#menu_inicio");
-
+ 		
  		// click does not work when we have imported php with ajax
 		$('.container').on('click', '.abrir_quebra_galho', function() {
 			abrirQuebraGalho($(this).attr("id"));
@@ -50,30 +51,13 @@ $pesquisa = isset($_GET['pesquisa']) ? trim($_GET['pesquisa']) : '';
 
 		$('.container').on('click', '.botao_procura', function() {
 			paginasCarregadas = 0;
-		    carregaServicos();
+		    carregaServicos($('.input_texto_pesquisar_topo').val());
 		});
-
-		/*$('.input_texto_pesquisar').on('input',function(e){
-			paginasCarregadas = 0;
-		    carregaServicos();
-		});
-
-		$('.combo_tipo_de_servico').on('change', function() {
-			paginasCarregadas = 0;
-			carregaServicos();
-		});
-
-		$('.combo_estado').on('change', function() {
-			paginasCarregadas = 0;
-			carregaServicos();
-		});
-		*/
-
 		
-		carregaServicos();
+		carregaServicos($('.input_texto_pesquisar_topo').val());
 	});
 
-	function carregaServicos(){
+	function carregaServicos(filtroTexto){
 		if(paginasCarregadas == 0) {
 			limpaServicos();
 		}
@@ -83,9 +67,8 @@ $pesquisa = isset($_GET['pesquisa']) ? trim($_GET['pesquisa']) : '';
 		        dataType : 'json',
 		        data: ({limit: numeroDeItensPorPaginacao,
 		        		offset: numeroDeItensPorPaginacao*paginasCarregadas, 
-		        		filtroTexto:  $('.input_texto_pesquisar_topo').val(), 
-		        	    filtroComboEmprego:  $('.combo_tipo_de_servico').val(),
-		        		filtroComboEstado: $('.combo_estado').val()}) ,
+		        		filtroTexto:  filtroTexto, 
+		        	    }) ,
 		        url: 'backend/servico_busca.php',
 		        async: false,
 		        success : function(json_result) {
@@ -158,6 +141,9 @@ $pesquisa = isset($_GET['pesquisa']) ? trim($_GET['pesquisa']) : '';
 	function mostraMensagemDeItensNaoEncontrados() {
  		// quando há mudanca de filtros por exemplo
  		$('.servicos_itens_nao_encotrados').css("display","block");
+ 		carregaServicos("");
+
+
  	}
 
 	function limpaServicos() {
@@ -222,12 +208,14 @@ $pesquisa = isset($_GET['pesquisa']) ? trim($_GET['pesquisa']) : '';
 			</div>
 			-->
 	
-					
+		<div class="servicos_itens_nao_encotrados">
+			<p  style="margin-bottom:20px;"> Desculpe... Nenhum quebra-galho foi encontrado em sua busca. </p>
+			<p> Veja alguns outros serviços abaixo: </p>
+		</div>
+
 		<div id="servicos" class="servicos">
 		</div>
-		<div class="servicos_itens_nao_encotrados">
-			<p> Desculpe... Nenhum quebra-galho foi encontrado em sua busca. </p>
-		</div>
+		
 
 
 		<div style="clear:both;"></div>

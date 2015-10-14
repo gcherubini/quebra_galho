@@ -1,5 +1,10 @@
 <?php
 if (session_status() == PHP_SESSION_NONE) { session_start(); }
+if(!isset($_SESSION['id_usuario'])){
+	$fileName = basename($_SERVER["SCRIPT_FILENAME"], '.php') . ".php";
+	header("location: login.php?pAnt=" . $fileName);
+	exit;
+}
 $id_usuario = isset($_SESSION['id_usuario']) ? trim($_SESSION['id_usuario']) : 0;
 echo "<script> var id_usuario = $id_usuario; </script>";
 ?>
@@ -151,6 +156,11 @@ echo "<script> var id_usuario = $id_usuario; </script>";
 						<button type="submit" class="btn btn-primary btn-block">Publicar</button>
 
 					</form>
+
+					<div class="esqueceu-senha">
+						<a  href="contato.php" role="button">Não encontrou sua categoria? </a>
+					</div>
+
 				</div>
 			</div>
 		</div>

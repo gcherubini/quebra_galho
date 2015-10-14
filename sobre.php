@@ -7,7 +7,11 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
   <head>
    <?php include("webparts/head_imports.php"); ?>
    <title>Quebra-Galho</title>
-
+   <script type="text/javascript"> 
+	$(document).ready(function () {
+		ativaMenu("#menu_sobre");
+	});
+	</script>
   </head>
   <body>
 

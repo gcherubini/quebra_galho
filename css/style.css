@@ -216,32 +216,6 @@
 
 
 
-.input_texto_pesquisar_topo{
-	float:left;
-	margin:auto;
-	width: 90%;
-}
-
-.botao_procura_topo{
-	font-size:18px;
-	background: #D8D8D8    ;
-	margin:auto;
-	width: 40px;
-	height: 34px;
-	text-align: center;
-	padding-top: 7px;
-	float:left;
-	margin:0;
-	cursor: pointer;
-	margin-left: -2px;
-}
-
-
-
-
-.botao_procura_topo:hover{
-	background-color: #C0C0C0 ;
-}
 
 
 
@@ -283,7 +257,7 @@
 
 }
 
-/*lista servicos */
+/*lista servicos , inicial , home */
 
 .servicos {
 	margin: auto;
@@ -356,6 +330,12 @@
 
 .service_item_content {
 	
+}
+
+.servicos_itens_nao_encotrados p{
+	font: normal 18px "Helvetica Neue",Helvetica,Arial,Sans-serif;
+    color: #333;
+    margin-bottom: 30px;
 }
 
 
@@ -561,4 +541,13 @@ form .row {
 
 .glyphicon{
 	position: inherit !important;
+}
+
+.modal-body{
+	min-height: 100px;
+}
+
+
+.modal-body p{
+	font-size: 14px; 
 }

@@ -1,5 +1,10 @@
 <?php
 if (session_status() == PHP_SESSION_NONE) { session_start(); }
+if(!isset($_SESSION['id_usuario'])){
+	$fileName = basename($_SERVER["SCRIPT_FILENAME"], '.php') . ".php";
+	header("location: login.php?pAnt=" . $fileName);
+	exit;
+}
 ?>
 
 <!DOCTYPE html>

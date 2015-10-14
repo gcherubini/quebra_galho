@@ -134,7 +134,8 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 				   		<input type="password" class="form-control" id="senha" name="senha" placeholder="Senha" >
 				   		<input type="password" class="form-control" id="senha_conf" name="senha_conf" placeholder="Confirme sua senha">
 						<input type="text" class="form-control" id="nome" name="nome" placeholder="Seu nome">
-						<input type="text" class="form-control" id="input_idade" name="idade" placeholder="Sua idade">
+						<input type="text" class="form-control" id="idade" name="idade" placeholder="Sua idade">
+						<!-- <input type="text" class="form-control" id="linkedin" name="linkedin" placeholder="Seu perfil do Linkedin"> -->
 						
 			   			<div class="cadastro-usuario-div-sexo">
 							<p> <b>Sexo:</b> </p>
