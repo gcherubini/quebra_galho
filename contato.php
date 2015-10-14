@@ -17,7 +17,7 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 		<?php include("webparts/resultado_de_operacoes.php"); ?>
     	<div class="form-box">
     		<div class="form-box-header">
-				 <h2 class="form-box-title"> Contato </h2>
+				 <h2 class="form-box-title"> Entre em contato conosco </h2>
 			</div>
 				 	<div class="form-box-main">	
 						  <form id="form" class="form-horizontal" >
