@@ -217,7 +217,7 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 
 					</div>
 
-			<h4> Caso ainda precise de ajuda, acesse nossa <a href="contato.php" id="linkcontato">Página de Contato</a>.</h4>
+			<p class="obs_sobrehelp"> Caso ainda precise de ajuda, acesse nossa <a href="contato.php" class="obs_sobrehelp">Página de Contato</a>.</p>
 
 		   <?php include("webparts/pagina_nao_encontrada.php"); ?>
     </div>
