@@ -434,9 +434,26 @@ form .row {
 
 }
 
-.painel_usuario_main h4 {
+.painel_usuario_main h2 {
 	padding-top: 1%
 
+}
+
+.btn-save,.btn-edit {
+	width: 100px;
+}
+
+.btn-save {
+	display: none;
+}
+
+.painel_usuario_main input[type="text"]:disabled, .painel_usuario_main input[type="password"]:disabled {
+	border: 0 !important;
+	background-color: white !important;
+}
+
+.painel_usuario_main input[type="text"], .painel_usuario_main input[type="password"] {
+	width: 300px;
 }
 
 /* Quebra Galho Perfil */
@@ -561,3 +578,14 @@ form .row {
 .modal-body p{
 	font-size: 14px; 
 }
+
+
+
+/* Sobre nós */
+
+.obs_sobrehelp {
+	font-size: 18px;
+}
+
+/* Ajuda */
+

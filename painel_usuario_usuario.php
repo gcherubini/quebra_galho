@@ -23,8 +23,21 @@ if(!isset($_SESSION['id_usuario'])){
 	$().ready(function() {
 
 
-	    $('#clicker').click(function() {
-	        $('.painel_usuario_main input').each(function() {
+	    $('.btn-edit').click(function() {
+	    	$('.btn-edit').css("display","none")
+	    	$('.btn-save').css("display","block")
+	    	habilitaEdesabilitaInputs()
+	    });
+
+	    $('.btn-save').click(function() {
+	    	$('.btn-edit').css("display","block")
+	    	$('.btn-save').css("display","none")
+	 		habilitaEdesabilitaInputs()
+	    });
+	});
+
+	function habilitaEdesabilitaInputs(){
+		$('.painel_usuario_main input').each(function() {
 	            if ($(this).attr('disabled')) {
 	                $(this).removeAttr('disabled');
 	            }
@@ -34,8 +47,8 @@ if(!isset($_SESSION['id_usuario'])){
 	                });
 	            }
 	        });
-	    });
-	});
+	}
+
 
  	</script>
   </head>
@@ -54,9 +67,7 @@ if(!isset($_SESSION['id_usuario'])){
 	 		<?php include("webparts/painel_usuario_menu.php"); ?>
 
 	 		<div class="painel_usuario_main">
-
-				<h3> Painel do usuário </h3>
-				 
+	 
 					<p>
 						Olá <b> <?php echo $_SESSION["nome"]; ?></b>, seja bem-vindo(a) ao seu painel de configurações.
 					</p>
@@ -65,36 +76,36 @@ if(!isset($_SESSION['id_usuario'])){
 						Aqui você encontra um resumo sobre o seu perfil, onde pode modificar algumas informações pessoais e configurações da sua conta.
 					</p>
 
-				<h4> MEU PERFIL </h4>
+				<h2> Meu Perfil </h2>
 
 					<p>
 						Nome: <?php echo $_SESSION["nome"]; ?>
 					</p>
 
 					<p>
-						E-mail: <input type='text' disabled></input>
+						E-mail: <input class="form-control" type='text' disabled value="joana@gmail.com"></input>
 					</p>
 
 					<p>
-						Senha: <input type='password' disabled></input>
+						Senha: <input class="form-control" type='password' disabled value="123456"></input>
 					</p>
 
 					<p>
-						Telefone: <input type='text' disabled></input>
+						Telefone: <input class="form-control" type='text' disabled value="3269-9999"></input>
 					</p>
 
 					<p>
-						Endereço: <input type='text' disabled></input>
+						Endereço: <input class="form-control" type='text' disabled value="R. Grande, 123"></input>
 					</p>
 
-					<div id='clicker' class="btn btn-default">Editar</div>
+					<div class="btn btn-default btn-edit">Editar</div>
 
-					<div class="btn btn-default">Salvar</div>
+					<div class="btn btn-default btn-save">Salvar</div>
 
-				<h4> MINHAS AVALIAÇÕES </h4>
+				<h2> Minhas Avaliações </h2>
 
 					<p>
-						Você possui X avaliações.
+						Você possui X avaliações - X pendentes (<a href="#">Publique agora!</a>) e X publicadas (<a href="#">Ver</a>)
 					</p>
 
 					<p>
@@ -102,14 +113,10 @@ if(!isset($_SESSION['id_usuario'])){
 					</p>
 
 					<p>
-						Você possui X avaliações.
-					</p>
-
-					<p>
 						<a href="#">Ver minhas avaliações</a>
 					</p>
 
-				<h4> MEUS ANÚNCIOS </h4>
+				<h2> Meus Anúncios </h2>
 
 					<p>
 						Você possui X anúncios cadastrados.
@@ -119,17 +126,17 @@ if(!isset($_SESSION['id_usuario'])){
 						<a href="#">Ver meus anúncios</a> - <a href="#">Promova agora o seu anúncio!</a>
 					</p>
 
-				<h4> MINHAS NEGOCIAÇÕES </h4>
+				<h2> Minhas Negociações </h2>
 
 					<p>
 						X usuários já solicitaram o seu contato para negociar.
 					</p>
 
 					<p>
-						<a href="#">Ver minhas negociações</a>
+						<a href="painel_usuario_negociacoes.php">Ver minhas negociações</a>
 					</p>
 
-				<h4> CONFIGURAÇÕES DA CONTA </h4>
+				<h2> Configurações da Conta </h2>
 
 					<p>
 						Gostaria de receber notificações no meu email (s/n)
