@@ -4,7 +4,7 @@ USE `servicosonline`;
 --
 -- Host: 127.0.0.1    Database: servicosonline
 -- ------------------------------------------------------
--- Server version	5.6.21
+-- Server version	5.6.25
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -157,7 +157,7 @@ CREATE TABLE `servico` (
   KEY `id_usuario` (`id_usuario`),
   CONSTRAINT `servico_ibfk_1` FOREIGN KEY (`id_emprego`) REFERENCES `emprego` (`id_emprego`),
   CONSTRAINT `servico_ibfk_2` FOREIGN KEY (`id_usuario`) REFERENCES `usuario` (`id_usuario`)
-) ENGINE=InnoDB AUTO_INCREMENT=40 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=43 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -166,7 +166,7 @@ CREATE TABLE `servico` (
 
 LOCK TABLES `servico` WRITE;
 /*!40000 ALTER TABLE `servico` DISABLE KEYS */;
-INSERT INTO `servico` VALUES (3,'Jogo 10','x',0,'RS',NULL,'emailcontato@gmail.com','(51) 9438-2932','(51) 3737-9281',2,2),(4,'Trabalho com felicidade','x',0,'RJ',NULL,'emailcontato@gmail.com','(51) 9438-2932','(51) 3737-9281',3,3),(14,'Teste','x',1,'RS',NULL,'emailcontato@gmail.com','(51) 9438-2932','(51) 3737-9281',12,8),(16,'Teste','x',0,'RS',NULL,'emailcontato@gmail.com','(51) 9438-2932','(51) 3737-9281',12,10),(17,'Teste','x',0,'RS',NULL,'emailcontato@gmail.com','(51) 9438-2932','(51) 3737-9281',12,11),(19,'Teste','x',0,'RS',NULL,'emailcontato@gmail.com','(51) 9438-2932','(51) 3737-9281',12,13),(20,'Teste','x',0,'RS',NULL,'emailcontato@gmail.com','(51) 9438-2932','(51) 3737-9281',12,14),(21,'Teste','x',0,'RS',NULL,'emailcontato@gmail.com','(51) 9438-2932','(51) 3737-9281',12,15),(22,'Teste','x',0,'RS',NULL,'emailcontato@gmail.com','(51) 9438-2932','(51) 3737-9281',12,16),(23,'Teste','x',0,'RS',NULL,'emailcontato@gmail.com','(51) 9438-2932','(51) 3737-9281',12,17),(24,'Teste','x',0,'RS',NULL,'emailcontato@gmail.com','(51) 9438-2932','(51) 3737-9281',12,18),(25,'Teste','x',0,'RS',NULL,'emailcontato@gmail.com','(51) 9438-2932','(51) 3737-9281',12,19),(26,'Teste','x',0,'RS',NULL,'emailcontato@gmail.com','(51) 9438-2932','(51) 3737-9281',12,20),(27,'Teste','x',0,'RS',NULL,'emailcontato@gmail.com','(51) 9438-2932','(51) 3737-9281',12,21),(28,'Teste','x',0,'RS',NULL,'emailcontato@gmail.com','(51) 9438-2932','(51) 3737-9281',12,22),(29,'Teste','x',0,'RS',NULL,'emailcontato@gmail.com','(51) 9438-2932','(51) 3737-9281',12,23),(30,'Teste','x',0,'RS',NULL,'emailcontato@gmail.com','(51) 9438-2932','(51) 3737-9281',12,24),(31,'Teste','x',0,'RS',NULL,'emailcontato@gmail.com','(51) 9438-2932','(51) 3737-9281',12,25),(32,'Teste','x',0,'RS',NULL,'emailcontato@gmail.com','(51) 9438-2932','(51) 3737-9281',12,26),(33,'Teste','x',0,'RS',NULL,'emailcontato@gmail.com','(51) 9438-2932','(51) 3737-9281',12,27),(34,'Teste','x',0,'RS',NULL,'emailcontato@gmail.com','(51) 9438-2932','(51) 3737-9281',12,28),(35,'Teste','x',0,'RS',NULL,'emailcontato@gmail.com','(51) 9438-2932','(51) 3737-9281',12,29),(36,'Teste','x',0,'RS',NULL,'emailcontato@gmail.com','(51) 9438-2932','(51) 3737-9281',12,30),(37,'Teste','x',0,'RS',NULL,'emailcontato@gmail.com','(51) 9438-2932','(51) 3737-9281',12,31),(38,'Teste','x',0,'RS',NULL,'emailcontato@gmail.com','(51) 9438-2932','(51) 3737-9281',12,32),(39,'Teste','x',0,'RS',NULL,'emailcontato@gmail.com','(51) 9438-2932','(51) 3737-9281',12,33);
+INSERT INTO `servico` VALUES (3,'Jogo 10','x',0,'RS',NULL,'emailcontato@gmail.com','(51) 9438-2932','(51) 3737-9281',2,2),(4,'Trabalho com felicidade','x',0,'RJ',NULL,'emailcontato@gmail.com','(51) 9438-2932','(51) 3737-9281',3,3),(14,'Teste','x',1,'RS',NULL,'emailcontato@gmail.com','(51) 9438-2932','(51) 3737-9281',12,8),(16,'Teste','x',0,'RS',NULL,'emailcontato@gmail.com','(51) 9438-2932','(51) 3737-9281',12,10),(17,'Teste','x',0,'RS',NULL,'emailcontato@gmail.com','(51) 9438-2932','(51) 3737-9281',12,11),(19,'Teste','x',0,'RS',NULL,'emailcontato@gmail.com','(51) 9438-2932','(51) 3737-9281',12,13),(20,'Teste','x',0,'RS',NULL,'emailcontato@gmail.com','(51) 9438-2932','(51) 3737-9281',12,14),(21,'Teste','x',0,'RS',NULL,'emailcontato@gmail.com','(51) 9438-2932','(51) 3737-9281',12,15),(22,'Teste','x',0,'RS',NULL,'emailcontato@gmail.com','(51) 9438-2932','(51) 3737-9281',12,16),(23,'Teste','x',0,'RS',NULL,'emailcontato@gmail.com','(51) 9438-2932','(51) 3737-9281',12,17),(24,'Teste','x',0,'RS',NULL,'emailcontato@gmail.com','(51) 9438-2932','(51) 3737-9281',12,18),(25,'Teste','x',0,'RS',NULL,'emailcontato@gmail.com','(51) 9438-2932','(51) 3737-9281',12,19),(26,'Teste','x',0,'RS',NULL,'emailcontato@gmail.com','(51) 9438-2932','(51) 3737-9281',12,20),(27,'Teste','x',0,'RS',NULL,'emailcontato@gmail.com','(51) 9438-2932','(51) 3737-9281',12,21),(28,'Teste','x',0,'RS',NULL,'emailcontato@gmail.com','(51) 9438-2932','(51) 3737-9281',12,22),(29,'Teste','x',0,'RS',NULL,'emailcontato@gmail.com','(51) 9438-2932','(51) 3737-9281',12,23),(30,'Teste','x',0,'RS',NULL,'emailcontato@gmail.com','(51) 9438-2932','(51) 3737-9281',12,24),(31,'Teste','x',0,'RS',NULL,'emailcontato@gmail.com','(51) 9438-2932','(51) 3737-9281',12,25),(32,'Teste','x',0,'RS',NULL,'emailcontato@gmail.com','(51) 9438-2932','(51) 3737-9281',12,26),(33,'Teste','x',0,'RS',NULL,'emailcontato@gmail.com','(51) 9438-2932','(51) 3737-9281',12,27),(34,'Teste','x',0,'RS',NULL,'emailcontato@gmail.com','(51) 9438-2932','(51) 3737-9281',12,28),(35,'Teste','x',0,'RS',NULL,'emailcontato@gmail.com','(51) 9438-2932','(51) 3737-9281',12,29),(36,'Teste','x',0,'RS',NULL,'emailcontato@gmail.com','(51) 9438-2932','(51) 3737-9281',12,30),(37,'Teste','x',0,'RS',NULL,'emailcontato@gmail.com','(51) 9438-2932','(51) 3737-9281',12,31),(38,'Teste','x',0,'RS',NULL,'emailcontato@gmail.com','(51) 9438-2932','(51) 3737-9281',12,32),(39,'Teste','x',0,'RS',NULL,'emailcontato@gmail.com','(51) 9438-2932','(51) 3737-9281',12,33),(40,'sada','asda',0,'',NULL,NULL,NULL,NULL,12,76),(41,'Vim pra subtrair','Ilumino bem as garotas',0,'',NULL,NULL,NULL,NULL,19,64),(42,'Trabalho em equipe fantásticamente','Suporte avançado, técnicas de Excel e Powerpoint.',0,'',NULL,NULL,NULL,NULL,21,65);
 /*!40000 ALTER TABLE `servico` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -189,7 +189,7 @@ CREATE TABLE `usuario` (
   `numero_servicos` int(11) DEFAULT NULL,
   `tem_nova_notificacao` tinyint(4) DEFAULT '0',
   PRIMARY KEY (`id_usuario`)
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -198,7 +198,7 @@ CREATE TABLE `usuario` (
 
 LOCK TABLES `usuario` WRITE;
 /*!40000 ALTER TABLE `usuario` DISABLE KEYS */;
-INSERT INTO `usuario` VALUES (1,'joao_belezza@gmail.com','123456','João Belezza',19,'M',NULL,3,0,0),(2,'pedro.ernesto@gmail.com','123456','Pedro Ernesto',26,'M',NULL,4,0,0),(3,'maria.rosario@gmail.com','123456','Maria do Rosário',60,'F',NULL,NULL,0,0),(4,'rosana.coimbar@gmail.com','123456','Rosana Coimbra',32,'F',NULL,5,4,0),(5,'pedro@gmail.com','123456','Pedro Escobar',89,'m',NULL,NULL,2,0),(6,'qisso@gmail.com','123456','qisso',19,'m',NULL,NULL,1,0),(8,'email@mail.com','123456','nome',18,'m',NULL,NULL,3,0),(9,'larissamerelles@gmail.com','123456','Larissa Merelles',25,'f',NULL,NULL,2,0),(10,'joaobecker@gmail.com','123456','João Becker',35,'m',NULL,NULL,0,0),(11,'Silvana@gmail.com','123456','Silvana Valdemort',36,'f',NULL,3,1,0),(12,'teste@gmail.com','123456','Teste teste',20,'m',NULL,NULL,5,0),(13,'carloshcp@gmail.com','123456','Carlos Henrique Cabral Pereira',24,'m',NULL,NULL,NULL,0);
+INSERT INTO `usuario` VALUES (1,'joao_belezza@gmail.com','123456','João Belezza',19,'M',NULL,3,0,0),(2,'pedro.ernesto@gmail.com','123456','Pedro Ernesto',26,'M',NULL,4,0,0),(3,'maria.rosario@gmail.com','123456','Maria do Rosário',60,'F',NULL,NULL,0,0),(4,'rosana.coimbar@gmail.com','123456','Rosana Coimbra',32,'F',NULL,5,4,0),(5,'pedro@gmail.com','123456','Pedro Escobar',89,'m',NULL,NULL,2,0),(6,'qisso@gmail.com','123456','qisso',19,'m',NULL,NULL,1,0),(8,'email@mail.com','123456','nome',18,'m',NULL,NULL,3,0),(9,'larissamerelles@gmail.com','123456','Larissa Merelles',25,'f',NULL,NULL,2,0),(10,'joaobecker@gmail.com','123456','João Becker',35,'m',NULL,NULL,0,0),(11,'Silvana@gmail.com','123456','Silvana Valdemort',36,'f',NULL,3,1,0),(12,'teste@gmail.com','123456','Teste teste',20,'m',NULL,NULL,5,0),(13,'carloshcp@gmail.com','123456','Carlos Henrique Cabral Pereira',24,'m',NULL,NULL,NULL,0),(14,'','','',0,'',NULL,NULL,NULL,0),(15,'hernandes@gmail.com','123456','Hernandes Garcia',36,'m',NULL,NULL,NULL,0),(16,'pedro@gmail.com','123456','Pedroso Coimbra',26,'m',NULL,NULL,NULL,0),(17,'ernestinho@gmail.com','123456','Ernesto Leandro Paiva',56,'m',NULL,NULL,NULL,0),(18,'bocafofaafu@gmail.com','123456','Boca Fofa',66,'m',NULL,NULL,NULL,0),(19,'bocafofa@gmail.com','123456','Boca Fofa Afu',20,'m','img/usuarios/19_17-10-2015_07-29-00.jpg',NULL,NULL,0),(20,'sourei@gmail.com','123456','Hernandez Bezerra',55,'m','img/usuarios/20_17-10-2015_07-32-08.jpg',NULL,NULL,0),(21,'soninha@gmail.com','123456','Soninha Silva Junior Simão',22,'f','img/usuarios/21_17-10-2015_07-44-30.jpg',NULL,NULL,0);
 /*!40000 ALTER TABLE `usuario` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -211,4 +211,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-10-15 12:26:51
+-- Dump completed on 2015-10-17  2:47:14

@@ -73,13 +73,20 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 
 	$.validator.setDefaults({
 			submitHandler: function() {
-				
+			
+				// Move cropped image data to hidden input
+		        var imageData = $('.image-editor').cropit('export');
+          		$('.hidden-image-data').val(imageData);
+
+          		//console.log($('.hidden-image-data').val());
+		         
 			   	$.ajax({
 				        type : 'POST',
 				        dataType : 'text',
-				        data: $(form).serialize(),
+				        data: $('form').serialize(),
 				        url: 'backend/usuario_novo.php',
 				        success : function(result) {
+				        	//alert(result)
 				        	if(result == "") {
 				        		sucessoSalvarDB(result);
 				        	}
@@ -98,9 +105,8 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 		});
 
 	function erroSalvarDB(error){
-		alert(erroMsg);
-		//$(form)[0].reset();
-		//alert(error);
+		//alert(result)
+		mostraResultadoOperacoes(false, "Ops... Aconteceu um erro inesperado, tente criar sua conta mais tarde...");
 	}
 
 	function sucessoSalvarDB(error){
@@ -121,14 +127,16 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 
     <?php include("webparts/resultado_de_operacoes.php"); ?>
 
+
     	<div class="form-box">
-			<?php include("webparts/resultado_de_operacoes.php"); ?>
 			<div class="form-box-header">
 				<h2 class="form-box-title"> Inscreva-se no Quebra-Galho </h2>
 			</div>
 				<div class="form-box-main">			
 					<p> Cadastre-se para contratar ou oferecer um serviço:</p> 
-					<form id="form" method="get" action="" class="form-horizontal">
+					<form id="form" method="POST" enctype="multipart/form-data" action="backend/usuario_novo.php" class="form-horizontal">
+
+						<input type="hidden" name="MAX_FILE_SIZE" value="30000" />
 					
 						<input type="email" class="form-control" id="email" name="email" placeholder="E-mail" >
 				   		<input type="password" class="form-control" id="senha" name="senha" placeholder="Senha" >
@@ -137,7 +145,8 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 						<input type="text" class="form-control" id="idade" name="idade" placeholder="Sua idade">
 						<!-- <input type="text" class="form-control" id="linkedin" name="linkedin" placeholder="Seu perfil do Linkedin"> -->
 						
-			   			<div class="cadastro-usuario-div-sexo">
+
+						<div class="cadastro-usuario-div-sexo">
 							<p> <b>Sexo:</b> </p>
 							<input type="radio" id="sexo-M" value="m" name="sexo">
 				   			<label for="sexo-M" class="control-label" style="font-weight:normal;">Masculino </label>
@@ -145,13 +154,21 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 				   			<label for="sexo-F" class="control-label" style="font-weight:normal;">Feminino</label>
 			   			</div>
 						
+			   				
 
+			   			<div class="image-editor">
+			   				<p> <b>Foto profissional:</b> </p>
 
-						<!-- campo foto (nao deletar) 
-						<div id="cropContainerMinimal" class="div_crop_foto_usuario"></div>	
-						-->
-						 
-						<!-- <input class="submit" type="submit" value="Submit">-->
+					        <input type="file" name="image" class="cropit-image-input form-control"> 
+					         
+					        <div class="cropit-image-preview"></div>
+					        <div class="image-size-label">
+					          Alterar tamanho da foto
+					        </div>
+					        <input type="range" class="cropit-image-zoom-input">
+					        <input type="hidden" name="image-data" class="hidden-image-data" />
+				      	</div>
+
 						<button type="submit" class="btn btn-warning btn-block">Cadastre-se</button>
 					
 				  	</form>
@@ -166,7 +183,13 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
     <?php include("webparts/rodape.php"); ?>
 
     <script>
-	
+      $(function() {
+        $('.image-editor').cropit();
+      });
+    </script>
+
+    <script>
+	/*
 		var croppicContaineroutputMinimal = {
 				uploadUrl:'libraries/croppic/img_save_to_file.php',
 				cropUrl:'libraries/croppic/img_crop_to_file.php', 
@@ -177,8 +200,10 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 		}
 		var cropContaineroutput = new Croppic('cropContainerMinimal', croppicContaineroutputMinimal);
 		
-		
+		*/
 	</script>
+
+
 	
   </body>
 </html>

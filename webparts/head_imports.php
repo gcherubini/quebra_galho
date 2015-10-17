@@ -33,5 +33,8 @@
 <script src="libraries/validation/js/localization/messages_pt_BR.js"> </script>
 
 
+<script src="libraries/cropit/jquery.cropit.js"></script>
+
+
 <script src="js/quebra_galho.js" type="text/javascript"></script>
 	

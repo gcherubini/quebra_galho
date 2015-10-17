@@ -54,6 +54,7 @@ echo "<script> var id_usuario = $id_usuario; </script>";
 		$(".servico_slogan").text( '"' + servico_json.slogan + '"');
 		$(".servico_descricao").text(servico_json.descricao);
 		$(".servico_cidade").text(servico_json.cidade);
+		$('.usuario_foto').attr("src", servico_json.usuario_img_url);
  		
 	}
 	
@@ -120,7 +121,7 @@ echo "<script> var id_usuario = $id_usuario; </script>";
 				</div>
 
 				<div class="quebra_galho_perfil"> 
-					<div id="cropContainerMinimal" class="div_crop_foto_usuario"></div>	
+					 <img class="cropit-image-preview usuario_foto" />
 					 <h2 class="servico_nome">  </h2>
 					 <h5 class="servico_emprego_e_idade"> </h5>
 					 <p class="servico_slogan">  </p> 

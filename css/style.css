@@ -343,8 +343,8 @@
 /* Cadastro Usuário */
 
 .div_crop_foto_usuario {
-	width:200px;
-	height: 200px;
+	width:148px;
+	height: 148px;
 	position: relative;
 	border:1px solid #ccc;
 }
@@ -356,6 +356,18 @@
 form .row {
 	margin-top: 10px;
 	margin-bottom: 20px;
+}
+
+.cropit-image-preview {
+	background-color: #f8f8f8;
+	background-size: cover;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+	margin-top: 7px;
+	width: 148px;
+	height: 148px;
+	cursor: move;
+	margin:auto;
 }
 
 /* Rodape */
