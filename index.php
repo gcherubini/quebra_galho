@@ -13,8 +13,10 @@ $pesquisa = isset($_GET['pesquisa']) ? trim($_GET['pesquisa']) : '';
 	
 	var carregouTodosOsItems = false;
 	var numeroDeItensPorPaginacao = 10;
-	var paginasCarregadas = 0;
+	var numeroDeServicosEmLinha = 4;
 
+	var paginasCarregadas = 0;
+	
 	$(document).ready(function () {
 		ativaMenu("#menu_inicio");
 
@@ -164,7 +166,7 @@ $pesquisa = isset($_GET['pesquisa']) ? trim($_GET['pesquisa']) : '';
 
 	<?php include("webparts/topo.php"); ?>
 		
-    <div class="container">
+    <div class="container container-lista-servicos">
     	<?php include("webparts/resultado_de_operacoes.php"); ?>
 
 			<!-- 

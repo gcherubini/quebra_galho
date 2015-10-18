@@ -68,7 +68,7 @@ $().ready(function() {
 
 </script>
 
-<div class="topo_fixed" data-spy="affix" data-offset-top="200">
+<div class="topo_fixed">
 
 	<div class="topo1">
 		
@@ -92,47 +92,52 @@ $().ready(function() {
 	<div class="topo2" >
 		<div class="container">
 			
+
+			<div class="row" >
+			<!-- xs phone sm tablet md desktop -->
+		        
+		        <div class="col-xs-12 col-sm-2 col-md-2 minha_conta_div">
+		        	
+
+		        	<a href="painel_usuario_usuario.php"> 
+					<div class="minha_conta">
+						<span class="glyphicon glyphicon-user">&nbsp</span> 
+						<p> Minha Conta </p>
+					</div>
+					</a>
+
+		        </div>
+
+		        <div class="col-xs-12 col-sm-5 col-md-5">
+					<ul class="menu">
+						<a href="index.php"><li id="menu_inicio"> Inicio </li></a>
+						<a href="novo_servico.php"><li id="menu_publicar">Publicar</li></a>
+						<a href="ajuda.php"><li id="menu_ajuda">Ajuda</li></a>
+					</ul>
+
+		        </div>
+
+		        
+		        <div class="col-xs-12 col-sm-5 col-md-5"> 
+		        	<div class="input-group">
+			          <input type="text" class="form-control input_texto_pesquisar_topo" placeholder="Encontre e contrate um serviço...">
+			          <div class="input-group-btn">
+			            <button type="button" class="btn btn-default botao_procura_topo" aria-label="Buscar"><span class="glyphicon glyphicon-search "></span></button>
+			          </div>
+			        </div> 
+		        	</div>
+		    	</div>
+
+		   	 
+
 			<!--<div class="topo2_esquerda">
 				<div class="logo">
 				</div>
 			</div>-->
 
 			
-			
+	
 
-			<div class="topo2_pesquisar" >
-				<div class="input-group">
-		          <input type="text" class="form-control input_texto_pesquisar_topo" placeholder="Encontre e contrate um serviço...">
-		          <div class="input-group-btn">
-		            <button type="button" class="btn btn-default botao_procura_topo" aria-label="Buscar"><span class="glyphicon glyphicon-search "></span></button>
-		          </div>
-		        </div>
-
-			</div>
-
-			
-
-		
-			<div class="topo2_menu">
-			
-				
-
-				<a href="painel_usuario_usuario.php"> 
-				<div class="minha_conta">
-					<span class="glyphicon glyphicon-user">&nbsp</span> 
-					<p> Minha Conta </p>
-				</div>
-				</a>
-
-				<ul class="menu">
-					<a href="index.php"><li id="menu_inicio"> Inicio </li></a>
-					<a href="novo_servico.php"><li id="menu_publicar">Publicar</li></a>
-					<a href="sobre.php"><li id="menu_sobre">Sobre</li></a>
-				</ul>
-
-			</div>
-
-			
 		</div>
 	</div>
 

@@ -136,34 +136,41 @@ echo "<script> var id_usuario = $id_usuario; </script>";
     <div class="container">	
     	<?php include("webparts/resultado_de_operacoes.php"); ?>
     	
-    	<div class="publicar_servico">
-	    	<div class="form-box">
-	    		<div class="form-box-header">
-					<h1 class="form-box-title"> Publicar serviço </h1>
-				</div>
 
-				<div class="form-box-main">
-					<p>Adicione informações relacionadas ao serviço prestado:</p> 
-					<form id="form" class="form-horizontal" >
-					  
-						<select class="form-control combo_emprego" id="emprego" name="emprego">
-							<option value="">Selecione uma categoria</option>
-						</select>
-						<input placeholder="Crie um slogan (Máx. 100 caracteres)" type="text" class="form-control" id="slogan" name="slogan">
-						<textarea placeholder="Descreva suas habilidades (Máx. 180 caracteres)" class="form-control" rows="3" id="descricao" name="descricao" maxlength="180"></textarea>
-						<input placeholder="Cidade(s) de atuação" type="text" class="form-control" id="cidade" name="cidade" maxlength="40">
-					
-						<button type="submit" class="btn btn-primary btn-block">Publicar</button>
+    	
 
-					</form>
+	    
+	    	<div class="row row-centered">
+	    		<div class="col-xs-12 col-sm-6 col-md-6 col-centered">
+			    	<div class="form-box">
+			    		<div class="form-box-header">
+							<h1 class="form-box-title"> Publicar serviço </h1>
+						</div>
 
-					<div class="esqueceu-senha">
-						<a  href="contato.php" role="button">Não encontrou sua categoria? </a>
+						<div class="form-box-main">
+							<p>Adicione informações relacionadas ao serviço prestado:</p> 
+							<form id="form" class="form-horizontal" >
+							  
+								<select class="form-control combo_emprego" id="emprego" name="emprego">
+									<option value="">Selecione uma categoria</option>
+								</select>
+								<input placeholder="Crie um slogan (Máx. 100 caracteres)" type="text" class="form-control" id="slogan" name="slogan">
+								<textarea placeholder="Descreva suas habilidades (Máx. 180 caracteres)" class="form-control" rows="3" id="descricao" name="descricao" maxlength="180"></textarea>
+								<input placeholder="Cidade(s) de atuação" type="text" class="form-control" id="cidade" name="cidade" maxlength="40">
+							
+								<button type="submit" class="btn btn-primary btn-block">Publicar</button>
+
+							</form>
+
+							<div class="esqueceu-senha">
+								<a  href="contato.php" role="button">Não encontrou sua categoria? </a>
+							</div>
+
+						</div>
 					</div>
-
 				</div>
 			</div>
-		</div>
+		
 
 		 <?php include("webparts/pagina_nao_encontrada.php"); ?>
     </div>

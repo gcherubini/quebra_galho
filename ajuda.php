@@ -14,6 +14,12 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 		</style>
    <title>Quebra-Galho</title>
 
+    <script type="text/javascript"> 
+	$(document).ready(function () {
+		ativaMenu("#menu_ajuda");
+	});
+	</script>
+
 
   </head>
   <body>

@@ -3,7 +3,7 @@
 ?>
 
 
-<div class="servico_destaque abrir_quebra_galho" <?php echo  "id='" . $servico["id_servico"] . "'"; ?>> 
+<div class="servico servico_destaque abrir_quebra_galho" <?php echo  "id='" . $servico["id_servico"] . "'"; ?>> 
 	<div class="servico_destaque_img servico_img">
 	  		<?php echo '<img class="img-responsive" src="'.$servico["img_url"].'"/>'; ?> 
 	</div>
