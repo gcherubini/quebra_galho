@@ -4,7 +4,7 @@ USE `servicosonline`;
 --
 -- Host: 127.0.0.1    Database: servicosonline
 -- ------------------------------------------------------
--- Server version	5.6.25
+-- Server version	5.6.21
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -182,12 +182,13 @@ CREATE TABLE `usuario` (
   `email` varchar(255) DEFAULT NULL,
   `senha` varchar(255) DEFAULT NULL,
   `nome` varchar(255) DEFAULT NULL,
-  `idade` int(11) DEFAULT NULL,
+  `data_nascimento` date DEFAULT NULL,
   `sexo` char(1) DEFAULT NULL,
   `img_url` varchar(999) DEFAULT NULL,
   `estrelas` int(11) DEFAULT NULL,
   `numero_servicos` int(11) DEFAULT NULL,
   `tem_nova_notificacao` tinyint(4) DEFAULT '0',
+  `data_criacao` datetime DEFAULT NULL,
   PRIMARY KEY (`id_usuario`)
 ) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -198,7 +199,7 @@ CREATE TABLE `usuario` (
 
 LOCK TABLES `usuario` WRITE;
 /*!40000 ALTER TABLE `usuario` DISABLE KEYS */;
-INSERT INTO `usuario` VALUES (1,'joao_belezza@gmail.com','123456','João Belezza',19,'M',NULL,3,0,0),(2,'pedro.ernesto@gmail.com','123456','Pedro Ernesto',26,'M',NULL,4,0,0),(3,'maria.rosario@gmail.com','123456','Maria do Rosário',60,'F',NULL,NULL,0,0),(4,'rosana.coimbar@gmail.com','123456','Rosana Coimbra',32,'F',NULL,5,4,0),(5,'pedro@gmail.com','123456','Pedro Escobar',89,'m',NULL,NULL,2,0),(6,'qisso@gmail.com','123456','qisso',19,'m',NULL,NULL,1,0),(8,'email@mail.com','123456','nome',18,'m',NULL,NULL,3,0),(9,'larissamerelles@gmail.com','123456','Larissa Merelles',25,'f',NULL,NULL,2,0),(10,'joaobecker@gmail.com','123456','João Becker',35,'m',NULL,NULL,0,0),(11,'Silvana@gmail.com','123456','Silvana Valdemort',36,'f',NULL,3,1,0),(12,'teste@gmail.com','123456','Teste teste',20,'m',NULL,NULL,5,0),(13,'carloshcp@gmail.com','123456','Carlos Henrique Cabral Pereira',24,'m',NULL,NULL,NULL,0),(14,'','','',0,'',NULL,NULL,NULL,0),(15,'hernandes@gmail.com','123456','Hernandes Garcia',36,'m',NULL,NULL,NULL,0),(16,'pedro@gmail.com','123456','Pedroso Coimbra',26,'m',NULL,NULL,NULL,0),(17,'ernestinho@gmail.com','123456','Ernesto Leandro Paiva',56,'m',NULL,NULL,NULL,0),(18,'bocafofaafu@gmail.com','123456','Boca Fofa',66,'m',NULL,NULL,NULL,0),(19,'bocafofa@gmail.com','123456','Boca Fofa Afu',20,'m','img/usuarios/19_17-10-2015_07-29-00.jpg',NULL,NULL,0),(20,'sourei@gmail.com','123456','Hernandez Bezerra',55,'m','img/usuarios/20_17-10-2015_07-32-08.jpg',NULL,NULL,0),(21,'soninha@gmail.com','123456','Soninha Silva Junior Simão',22,'f','img/usuarios/21_17-10-2015_07-44-30.jpg',NULL,NULL,0);
+INSERT INTO `usuario` VALUES (1,'joao_belezza@gmail.com','123456','João Belezza','1990-12-01','M',NULL,3,0,0,NULL),(2,'pedro.ernesto@gmail.com','123456','Pedro Ernesto','1990-12-01','M',NULL,4,0,0,NULL),(3,'maria.rosario@gmail.com','123456','Maria do Rosário','1990-12-01','F',NULL,NULL,0,0,NULL),(4,'rosana.coimbar@gmail.com','123456','Rosana Coimbra','1990-12-01','F',NULL,5,4,0,NULL),(5,'pedro@gmail.com','123456','Pedro Escobar','1990-12-01','m',NULL,NULL,2,0,NULL),(6,'qisso@gmail.com','123456','qisso','1990-12-01','m',NULL,NULL,1,0,NULL),(8,'email@mail.com','123456','nome','1990-12-01','m',NULL,NULL,3,0,NULL),(9,'larissamerelles@gmail.com','123456','Larissa Merelles','1990-12-01','f',NULL,NULL,2,0,NULL),(10,'joaobecker@gmail.com','123456','João Becker','1990-12-01','m',NULL,NULL,0,0,NULL),(11,'Silvana@gmail.com','123456','Silvana Valdemort','1990-12-01','f',NULL,3,1,0,NULL),(12,'teste@gmail.com','123456','Teste teste','1990-12-01','m',NULL,NULL,5,0,NULL),(13,'carloshcp@gmail.com','123456','Carlos Henrique Cabral Pereira','1990-12-01','m',NULL,NULL,NULL,0,NULL),(14,'','','','1990-12-01','',NULL,NULL,NULL,0,NULL),(15,'hernandes@gmail.com','123456','Hernandes Garcia','1990-12-01','m',NULL,NULL,NULL,0,NULL),(16,'pedro@gmail.com','123456','Pedroso Coimbra','1990-12-01','m',NULL,NULL,NULL,0,NULL),(17,'ernestinho@gmail.com','123456','Ernesto Leandro Paiva','1990-12-01','m',NULL,NULL,NULL,0,NULL),(18,'bocafofaafu@gmail.com','123456','Boca Fofa','1990-12-01','m',NULL,NULL,NULL,0,NULL),(19,'bocafofa@gmail.com','123456','Boca Fofa Afu','1990-12-01','m','img/usuarios/19_17-10-2015_07-29-00.jpg',NULL,NULL,0,NULL),(20,'sourei@gmail.com','123456','Hernandez Bezerra','1990-12-01','m','img/usuarios/20_17-10-2015_07-32-08.jpg',NULL,NULL,0,NULL),(21,'soninha@gmail.com','123456','Soninha Silva Junior Simão','1990-12-01','f','img/usuarios/21_17-10-2015_07-44-30.jpg',NULL,NULL,0,NULL);
 /*!40000 ALTER TABLE `usuario` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -211,4 +212,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-10-17  2:47:14
+-- Dump completed on 2015-10-18 20:13:17
