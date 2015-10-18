@@ -22,6 +22,16 @@ if(!isset($_SESSION['id_usuario'])){
 
 	$().ready(function() {
 
+		$(".data-nascimento").datepicker({
+		    dateFormat: 'dd/mm/yy',
+		    dayNames: ['Domingo','Segunda','Terça','Quarta','Quinta','Sexta','Sábado'],
+		    dayNamesMin: ['D','S','T','Q','Q','S','S','D'],
+		    dayNamesShort: ['Dom','Seg','Ter','Qua','Qui','Sex','Sáb','Dom'],
+		    monthNames: ['Janeiro','Fevereiro','Março','Abril','Maio','Junho','Julho','Agosto','Setembro','Outubro','Novembro','Dezembro'],
+		    monthNamesShort: ['Jan','Fev','Mar','Abr','Mai','Jun','Jul','Ago','Set','Out','Nov','Dez'],
+		    nextText: 'Próximo',
+		    prevText: 'Anterior'
+		});
 
 	    $('.btn-edit').click(function() {
 	    	$('.btn-edit').css("display","none")
@@ -51,6 +61,36 @@ if(!isset($_SESSION['id_usuario'])){
 
 
  	</script>
+
+
+<style>
+	.ui-datepicker{
+		background: white !important;
+		padding: 5px !important;
+		border: 1px solid #ccc;
+	}
+	.ui-datepicker span, .ui-datepicker td, .ui-datepicker a{
+		margin:3px;
+	}
+
+	.ui-datepicker-prev span, .ui-datepicker-next span {
+		margin: 0 !important;
+	}
+
+	.ui-datepicker-prev {
+		float: left; !important;
+	}
+
+	.ui-datepicker-next {
+		float: right; !important;
+	}
+
+	.ui-datepicker-year {
+		float: right; !important;
+	}
+	
+</style>
+
   </head>
   <body>
 
@@ -80,6 +120,10 @@ if(!isset($_SESSION['id_usuario'])){
 
 					<p>
 						Nome: <?php echo $_SESSION["nome"]; ?>
+					</p>
+
+					<p>
+						Data de Nascimento: <input class="form-control data-nascimento" type='text' disabled value="12/02/1991"></input>
 					</p>
 
 					<p>
