@@ -1,5 +1,25 @@
 <?php 
 	$servico = $_GET['servico']; 
+	$data_nascimento = $servico["data_nascimento"];
+
+
+//	$array = php explode ("-")
+//	$data_nascimento = ;
+//	$mes = $array[0];
+//	$ano = "2013";
+//	$dia = "2";
+
+	/*echo $dia;
+	echo $mes;
+	echo $ano;
+
+	echo "Data completa: ".$data_nascimento."\n";
+	// Exibe somente o dia da data
+	echo "Dia da data: ".$aux2[0]."\n";
+	// Exibe somente o mês da data
+	echo "Mês da data: ".$aux2[1]."\n";
+	// Exibe somente o ano da data
+	echo "Ano da data: ".$aux2[2]."\n";*/
 ?>
 
 

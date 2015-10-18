@@ -10,7 +10,7 @@ $offset = isset($_POST['offset']) ? trim($_POST['offset']) : '0';
 $errorMessage = "";
 $conn = include "db_connection.php";
 
-$sql = "SELECT servico.*,usuario.*,emprego.*, usuario.img_url as usuario_img_url FROM servico 
+$sql = "SELECT servico.*,usuario.*,emprego.*, usuario.img_url as usuario_img_url, TIMESTAMPDIFF(YEAR, usuario.data_nascimento, CURDATE()) as idade  FROM servico 
 		JOIN usuario ON servico.id_usuario = usuario.id_usuario 
 		JOIN emprego ON servico.id_emprego = emprego.id_emprego ";
 
