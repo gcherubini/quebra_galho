@@ -5,9 +5,22 @@
 	padding: 0;
 }
 
+ h1 {
+
+ 	margin: 0;
+ 	margin-bottom: 25px;
+
+ }
+
+
 .container {
+
 	width: 90%;
+	height: 100%
+
 }
+
+
 .form-box {
 	width: 35%;
 	margin: auto;
@@ -129,9 +142,11 @@
 
 }
 
-.topo_fixed{
-		margin-bottom: 30px;
+.topo_fixed {
+
+	margin-bottom: 30px;
 	width: 100%;
+
 }
 
 .topo2 {
@@ -587,7 +602,7 @@ form .row {
 }
 
 
-.modal-body p{
+.modal-body p {
 	font-size: 14px; 
 }
 
@@ -595,9 +610,35 @@ form .row {
 
 /* Sobre nós */
 
-.obs_sobrehelp {
-	font-size: 18px;
+
+.container_sobre p, .container_sobre a {
+
+
+	text-align: justify;
+	font-size: 16px;
+
+
 }
+
+
+
+
+.video {
+
+	margin-top: 50px;
+	display: block;
+	padding-left: 25%;
+
+
+
+}
+
+.obs_sobrehelp {
+
+margin-top: 30px;	
+
+}
+
 
 /* Ajuda */
 
