@@ -112,7 +112,7 @@ $().ready(function() {
 					<ul class="menu">
 						<a href="index.php"><li id="menu_inicio"> Inicio </li></a>
 						<a href="novo_servico.php"><li id="menu_publicar">Publicar</li></a>
-						<a href="ajuda.php"><li id="menu_ajuda">Ajuda</li></a>
+						<a href="sobre.php"><li id="menu_sobre">Sobre</li></a>
 					</ul>
 
 		        </div>
