@@ -52,7 +52,7 @@ if(!isset($_SESSION['id_usuario'])){
 		$.ajax({
 		        type : 'POST',
 		        dataType : 'json',
-		        data: ({filtroIdUsuario: <?php echo $_SESSION['id_usuario']; ?>	}) ,
+		        data: ({filtroIdUsuario: <?php echo $_SESSION['id_usuario']; ?>	, limit: "999"}) ,
 		        url: 'backend/servico_busca.php',
 		        success : function(json_result) {
 		        	//alert(json_result)
