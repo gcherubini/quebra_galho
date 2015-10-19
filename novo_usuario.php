@@ -127,8 +127,8 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 
     <?php include("webparts/resultado_de_operacoes.php"); ?>
 
-
-    	<div class="form-box">
+    <div class="row row-centered">
+    	<div class="form-box  col-xs-12 col-sm-4 col-md-4 col-centered">
 			<div class="form-box-header">
 				<h2 class="form-box-title"> Inscreva-se no Quebra-Galho </h2>
 			</div>
@@ -176,6 +176,7 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 
 				</div>
 			</div>
+		</div>
 
 		 <?php include("webparts/pagina_nao_encontrada.php"); ?>
     </div>
