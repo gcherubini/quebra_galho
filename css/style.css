@@ -12,6 +12,22 @@
 
  }
 
+ html,
+body {
+   margin:0;
+   padding:0;
+   height:100%;
+}
+
+
+.page{
+	min-height:100%;
+	position:relative;
+}
+
+.content {
+	padding-bottom:60px;   /* Height of the footer */
+}
 
 .container {
 	width: 90%;
@@ -543,42 +559,56 @@ form .row {
 	font-size:22px;
 	margin:auto;
 	margin-top: -15px;
+	padding: 15px;
 }
 
 /* Rodape */
 
 
 .footer {
-	
-	width: 100%;
-	height: 150px;
-	background-color: #707070;
+	margin: 0;
+	background-color: #282828;
 	margin-top: 20px;
+	padding: 15px;
+
+
+	position:absolute;
+    bottom:0;
+    width:100%;
+    height:60px;   /* Height of the footer */
 }
 
-.footer_text {
-
-	text-align: center;
-	padding-top: 18px;
-
-
+.footer ul {
+	text-decoration: none;
+	list-style: none;
+	margin:0;
 }
 
-.footer_text a {
+.footer ul li{
+	color: #F8F8F8;
+	float:left;
+	margin:0;
+	margin-right: 40px;
+}
 
-	line-height: 30px;
+.footer p {
+	margin:0;
+}
+
+.footer_copyright{
+	float:right;
 	color: white;
+	padding-top: 7px;
+}
+
+
+.footer a {
+	line-height: 30px;
+	color: #F8F8F8;
 	font-size: 16px;
 	font-style: normal;
-
 }
 
-.footer_copyright {
-	font-size: 12px;
-	padding-left: 1150px;	
-	color: white;
-	font-style: normal;
-}
 
 
 

@@ -118,93 +118,79 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 
   </head>
   <body>
+  	<div class="page">
 
 	
 
-<?php include("webparts/topo.php"); ?>
+		<?php include("webparts/topo.php"); ?>
 
-    <div class="container">
+	    <div class="container content">
 
-    <?php include("webparts/resultado_de_operacoes.php"); ?>
+	    <?php include("webparts/resultado_de_operacoes.php"); ?>
 
-    <div class="row row-centered">
-    	<div class="form-box  col-xs-12 col-sm-4 col-md-4 col-centered">
-			<div class="form-box-header">
-				<h2 class="form-box-title"> Inscreva-se no Quebra-Galho </h2>
-			</div>
-				<div class="form-box-main">			
-					<p> Cadastre-se para contratar ou oferecer um serviço:</p> 
-					<form id="form" method="POST" enctype="multipart/form-data" action="backend/usuario_novo.php" class="form-horizontal">
+	    <div class="row row-centered">
+	    	<div class="form-box  col-xs-12 col-sm-4 col-md-4 col-centered">
+				<div class="form-box-header">
+					<h2 class="form-box-title"> Inscreva-se no Quebra-Galho </h2>
+				</div>
+					<div class="form-box-main">			
+						<p> Cadastre-se para contratar ou oferecer um serviço:</p> 
+						<form id="form" method="POST" enctype="multipart/form-data" action="backend/usuario_novo.php" class="form-horizontal">
 
-						<input type="hidden" name="MAX_FILE_SIZE" value="30000" />
-					
-						<input type="email" class="form-control" id="email" name="email" placeholder="E-mail" >
-				   		<input type="password" class="form-control" id="senha" name="senha" placeholder="Senha" >
-				   		<input type="password" class="form-control" id="senha_conf" name="senha_conf" placeholder="Confirme sua senha">
-						<input type="text" class="form-control" id="nome" name="nome" placeholder="Seu nome">
-						<input type="text" class="form-control" id="idade" name="idade" placeholder="Sua idade">
-						<!-- <input type="text" class="form-control" id="linkedin" name="linkedin" placeholder="Seu perfil do Linkedin"> -->
+							<input type="hidden" name="MAX_FILE_SIZE" value="30000" />
 						
+							<input type="email" class="form-control" id="email" name="email" placeholder="E-mail" >
+					   		<input type="password" class="form-control" id="senha" name="senha" placeholder="Senha" >
+					   		<input type="password" class="form-control" id="senha_conf" name="senha_conf" placeholder="Confirme sua senha">
+							<input type="text" class="form-control" id="nome" name="nome" placeholder="Seu nome">
+							<input type="text" class="form-control" id="idade" name="idade" placeholder="Sua idade">
+							<!-- <input type="text" class="form-control" id="linkedin" name="linkedin" placeholder="Seu perfil do Linkedin"> -->
+							
 
-						<div class="cadastro-usuario-div-sexo">
-							<p> <b>Sexo:</b> </p>
-							<input type="radio" id="sexo-M" value="m" name="sexo">
-				   			<label for="sexo-M" class="control-label" style="font-weight:normal;">Masculino </label>
-				   			<input type="radio" id="sexo-F" value="f" name="sexo">
-				   			<label for="sexo-F" class="control-label" style="font-weight:normal;">Feminino</label>
-			   			</div>
+							<div class="cadastro-usuario-div-sexo">
+								<p> <b>Sexo:</b> </p>
+								<input type="radio" id="sexo-M" value="m" name="sexo">
+					   			<label for="sexo-M" class="control-label" style="font-weight:normal;">Masculino </label>
+					   			<input type="radio" id="sexo-F" value="f" name="sexo">
+					   			<label for="sexo-F" class="control-label" style="font-weight:normal;">Feminino</label>
+				   			</div>
+							
+				   				
+
+				   			<div class="image-editor">
+				   				<p> <b>Foto profissional:</b> </p>
+
+						        <input type="file" name="image" class="cropit-image-input form-control"> 
+						         
+						        <div class="cropit-image-preview"></div>
+						        <div class="image-size-label">
+						          Alterar tamanho da foto
+						        </div>
+						        <input type="range" class="cropit-image-zoom-input">
+						        <input type="hidden" name="image-data" class="hidden-image-data" />
+					      	</div>
+
+							<button type="submit" class="btn btn-warning btn-block">Cadastre-se</button>
 						
-			   				
-
-			   			<div class="image-editor">
-			   				<p> <b>Foto profissional:</b> </p>
-
-					        <input type="file" name="image" class="cropit-image-input form-control"> 
-					         
-					        <div class="cropit-image-preview"></div>
-					        <div class="image-size-label">
-					          Alterar tamanho da foto
-					        </div>
-					        <input type="range" class="cropit-image-zoom-input">
-					        <input type="hidden" name="image-data" class="hidden-image-data" />
-				      	</div>
-
-						<button type="submit" class="btn btn-warning btn-block">Cadastre-se</button>
-					
-				  	</form>
+					  	</form>
 
 
+					</div>
 				</div>
 			</div>
-		</div>
 
-		 <?php include("webparts/pagina_nao_encontrada.php"); ?>
-    </div>
+			 <?php include("webparts/pagina_nao_encontrada.php"); ?>
+	    </div>
 
-    <?php include("webparts/rodape.php"); ?>
+	    <?php include("webparts/rodape.php"); ?>
 
-    <script>
-      $(function() {
-        $('.image-editor').cropit();
-      });
-    </script>
-
-    <script>
-	/*
-		var croppicContaineroutputMinimal = {
-				uploadUrl:'libraries/croppic/img_save_to_file.php',
-				cropUrl:'libraries/croppic/img_crop_to_file.php', 
-				modal:false,
-				doubleZoomControls:true,
-				enableMousescroll:true,
-				loaderHtml:'<div class="loader bubblingG"><span id="bubblingG_1"></span><span id="bubblingG_2"></span><span id="bubblingG_3"></span></div> '
-		}
-		var cropContaineroutput = new Croppic('cropContainerMinimal', croppicContaineroutputMinimal);
-		
-		*/
-	</script>
+	    <script>
+	      $(function() {
+	        $('.image-editor').cropit();
+	      });
+	    </script>
 
 
-	
+	</div>
   </body>
 </html>

@@ -108,44 +108,45 @@ if(!isset($_SESSION['id_usuario'])){
  	</script>
   </head>
   <body>
+  	<div class="page">
 
-	<?php include("webparts/topo.php"); ?>
+			<?php include("webparts/topo.php"); ?>
 
-    <div class="container">
+		    <div class="container content">
 
-    <?php include("webparts/resultado_de_operacoes.php"); ?>
+		    <?php include("webparts/resultado_de_operacoes.php"); ?>
 
-<?php
-	if (isset($_SESSION['id_usuario'])) {
- ?>		
+		<?php
+			if (isset($_SESSION['id_usuario'])) {
+		 ?>		
 
- 		<?php include("webparts/painel_usuario_menu.php"); ?>		
+		 		<?php include("webparts/painel_usuario_menu.php"); ?>		
 
- 		<div class="painel_usuario_main">
+		 		<div class="painel_usuario_main">
 
-			<h3> Seus serviços publicados </h1>
+					<h1> Seus serviços publicados </h1>
 
-			<div class="servicos_publicados">
+					<div class="servicos_publicados">
 
-			</div>
-			 <div class="itens_nao_encotrados">
-				<p> Você ainda não publicou nenhum serviço... </p>
-				<a href="servico_novo.php"> Seja um Quebra-Galho </a>
-			</div>
+					</div>
+					 <div class="itens_nao_encotrados">
+						<p> Você ainda não publicou nenhum serviço... </p>
+						<a href="servico_novo.php"> Seja um Quebra-Galho </a>
+					</div>
 
-		</div>
+				</div>
 
-		  
-<?php
-	} else {
-	  include("webparts/div_voce_precisa_se_logar.php"); 
-	}
-?>		
-					
-			<?php include("webparts/pagina_nao_encontrada.php"); ?>
-    </div>
+				  
+		<?php
+			} else {
+			  include("webparts/div_voce_precisa_se_logar.php"); 
+			}
+		?>		
+							
+					<?php include("webparts/pagina_nao_encontrada.php"); ?>
+		    </div>
 
-     <?php include("webparts/rodape.php"); ?>
-
+		     <?php include("webparts/rodape.php"); ?>
+	</div>
   </body>
 </html>

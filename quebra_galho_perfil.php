@@ -102,46 +102,47 @@ echo "<script> var id_usuario = $id_usuario; </script>";
 
   </head>
   <body>
+  	<div class="page">
+		<?php include("webparts/topo.php"); ?>
 
-	<?php include("webparts/topo.php"); ?>
+	    <div class="container content">
 
-    <div class="container">
+	    <?php include("webparts/resultado_de_operacoes.php"); ?>
 
-    <?php include("webparts/resultado_de_operacoes.php"); ?>
+	    	<div class="quebra_galho_perfil_box">
+	    		<div class="quebra_galho_perfil_box_content"> 
+					<div class="quebra_galho_contato">
+						<p> Abaixo seguem as informações de contato: </p>
+						<p class="servico_email_contato">  </p>
+						<p class="servico_cel_contato">  </p>
+						<p class="servico_telefone_contato">  </p>
+						<br>
+						<p> Este quebra-galho foi também salvo no seu painel! </p>
+					</div>
 
-    	<div class="quebra_galho_perfil_box">
-    		<div class="quebra_galho_perfil_box_content"> 
-				<div class="quebra_galho_contato">
-					<p> Abaixo seguem as informações de contato: </p>
-					<p class="servico_email_contato">  </p>
-					<p class="servico_cel_contato">  </p>
-					<p class="servico_telefone_contato">  </p>
-					<br>
-					<p> Este quebra-galho foi também salvo no seu painel! </p>
-				</div>
-
-				<div class="quebra_galho_perfil"> 
-					 <img class="cropit-image-preview usuario_foto" />
-					 <h2 class="servico_nome">  </h2>
-					 <h5 class="servico_emprego_e_idade"> </h5>
-					 <p class="servico_slogan">  </p> 
-					 <p class="servico_descricao">  </p>
-					 <p class="servico_cidade">  </p>
-					 <p> 0 Avaliações </p>
-					 <a class="negociar" href="#"> Eu gostaria de negociar este serviço </a>
+					<div class="quebra_galho_perfil"> 
+						 <img class="cropit-image-preview usuario_foto" />
+						 <h2 class="servico_nome">  </h2>
+						 <h5 class="servico_emprego_e_idade"> </h5>
+						 <p class="servico_slogan">  </p> 
+						 <p class="servico_descricao">  </p>
+						 <p class="servico_cidade">  </p>
+						 <p> 0 Avaliações </p>
+						 <a class="negociar" href="#"> Eu gostaria de negociar este serviço </a>
+					</div>
 				</div>
 			</div>
-		</div>
-    
-	    <?php include("webparts/pagina_nao_encontrada.php"); ?>
-    </div>
+	    
+		    <?php include("webparts/pagina_nao_encontrada.php"); ?>
+	    </div>
 
-    
+	    
 
 
-    
+	    
 
-    <?php include("webparts/rodape.php"); ?>
+	    <?php include("webparts/rodape.php"); ?>
+	 </div>
 
   </body>
 </html>

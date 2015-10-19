@@ -120,43 +120,43 @@ if(!isset($_SESSION['id_usuario'])){
  	</script>
   </head>
   <body>
+  	<div class="page">
+			<?php include("webparts/topo.php"); ?>
 
-	<?php include("webparts/topo.php"); ?>
+		    <div class="container content">
 
-    <div class="container">
+		    <?php include("webparts/resultado_de_operacoes.php"); ?>
 
-    <?php include("webparts/resultado_de_operacoes.php"); ?>
+		<?php
+			if (isset($_SESSION['id_usuario'])) {
+		 ?>		
 
-<?php
-	if (isset($_SESSION['id_usuario'])) {
- ?>		
+		 		<?php include("webparts/painel_usuario_menu.php"); ?>		
 
- 		<?php include("webparts/painel_usuario_menu.php"); ?>		
-
- 		<div class="painel_usuario_main">
-		
-			<div class="notificacoes">
-
-			</div>
-			
-			<div class="itens_nao_encotrados">
+		 		<div class="painel_usuario_main">
 				
-				<p> Você ainda não tem nenhuma notificação... </p>
-			
-			</div>
+					<div class="notificacoes">
 
-		</div>
-		  
-<?php
-	} else {
-	  include("webparts/div_voce_precisa_se_logar.php"); 
-	}
-?>		
+					</div>
 					
-			<?php include("webparts/pagina_nao_encontrada.php"); ?>
-    </div>
+					<div class="itens_nao_encotrados">
+						
+						<p> Você ainda não tem nenhuma notificação... </p>
+					
+					</div>
 
-     <?php include("webparts/rodape.php"); ?>
+				</div>
+				  
+		<?php
+			} else {
+			  include("webparts/div_voce_precisa_se_logar.php"); 
+			}
+		?>		
+							
+					<?php include("webparts/pagina_nao_encontrada.php"); ?>
+		    </div>
 
+		     <?php include("webparts/rodape.php"); ?>
+	</div>
   </body>
 </html>

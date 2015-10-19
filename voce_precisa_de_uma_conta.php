@@ -15,24 +15,24 @@ echo "<script> var id_usuario = $id_usuario; </script>";
    <title>Quebra-Galho</title>
   </head>
   <body>
+    <div class="page">
+  	<?php include("webparts/topo.php"); ?>
 
-	<?php include("webparts/topo.php"); ?>
+      <div class="container content">
 
-    <div class="container">
+        <?php include("webparts/resultado_de_operacoes.php"); ?>
+        
+      	<div class="voce_precisa_estar_logado">
+  		 	<h2> Acesso requisitado </h2>
 
-      <?php include("webparts/resultado_de_operacoes.php"); ?>
-      
-    	<div class="voce_precisa_estar_logado">
-		 	<h2> Acesso requisitado </h1>
+  			<p> Você ainda ainda não entrou com seu cadastro... </p>
+  			<p> Caso não tenha ainda um cadastro ou deseja logar com o mesmo, acesse os links abaixo: </p>
+  			<a href="novo_usuario.php"> Novo Cadastro </a> ou 
+  			<a href="login.php"> Faça seu login </a>
+  		</div>
+      </div>
 
-			<p> Você ainda ainda não entrou com seu cadastro... </p>
-			<p> Caso não tenha ainda um cadastro ou deseja logar com o mesmo, acesse os links abaixo: </p>
-			<a href="novo_usuario.php"> Novo Cadastro </a> ou 
-			<a href="login.php"> Faça seu login </a>
-		</div>
+      <?php include("webparts/rodape.php"); ?>
     </div>
-
-    <?php include("webparts/rodape.php"); ?>
-
   </body>
 </html>

@@ -1,49 +1,13 @@
 <div class = "footer">
-	
-	<div class = "footer_text">
+	<div class="container">
+		<ul>
+			<li><a href= "sobre.php">    Sobre Nós   </a> </li> 
+			<li><a href= "politicas.php">    Termos de Uso    </a> </li> 
+			<li><a href= "contato.php">    Fale Conosco   </a> </li> 
+		</ul>
 
-		
-
-	
-	<div class = "footer_sobre">
-
-		<a href= "sobre.php"> Sobre Nós </a>
-
+		<p class = "footer_copyright">
+			© QuebraGalho 2015
+		</p>
 	</div>
-
-	<div class  = "footer_politicas">
-
-	<a href = "politicas.php"> Termos de Uso | Política de Responsabilidade </a> 
-	
-		</div>
-
-			<div class = "footer_contato">
-
-			<a href = "contato.php"> Fale Conosco </a>
-
-			</div>
-
-				<div class = "footer_ajuda">
-
-
-		
-					<a href = "ajuda.php"> Central de Ajuda </a>
-
-				</div>
-	
-
-
-	
-	</div>
-
-	<div class = "footer_copyright">
-
-		© QuebraGalho 2015
-		
-
-	</div>
-
-	
-
-
 </div>

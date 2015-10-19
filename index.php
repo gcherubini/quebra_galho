@@ -163,10 +163,10 @@ $pesquisa = isset($_GET['pesquisa']) ? trim($_GET['pesquisa']) : '';
 
   </head>
   <body>
-
+  	<div class="page">
 	<?php include("webparts/topo.php"); ?>
 		
-    <div class="container container-lista-servicos">
+    <div class="container container-lista-servicos content">
     	<?php include("webparts/resultado_de_operacoes.php"); ?>
 
 			<!-- 
@@ -174,39 +174,6 @@ $pesquisa = isset($_GET['pesquisa']) ? trim($_GET['pesquisa']) : '';
 					<select class="form-control combo_tipo_de_servico">
 						<option value="">Tipo de serviço</option>
 					</select>
-			</div>
-			<div class="col-md-3"> 
-					<select class="form-control combo_estado" name="combo_estado">
-						<option value="">Todos os estados</option>
-						<option value="AC">Acre</option>
-						<option value="AL">Alagoas</option>
-						<option value="AP">Amapá</option>
-						<option value="AM">Amazonas</option>
-						<option value="BA">Bahia</option>
-						<option value="CE">Ceará</option>
-						<option value="DF">Distrito Federal</option>
-						<option value="ES">Espirito Santo</option>
-						<option value="GO">Goiás</option>
-						<option value="MA">Maranhão</option>
-						<option value="MT">Mato Grosso</option>
-						<option value="MS">Mato Grosso do Sul</option>
-						<option value="MG">Minas Gerais</option>
-						<option value="PA">Pará</option>
-						<option value="PB">Paraiba</option>
-						<option value="PR">Paraná</option>
-						<option value="PE">Pernambuco</option>
-						<option value="PI">Piauí</option>
-						<option value="RJ">Rio de Janeiro</option>
-						<option value="RN">Rio Grande do Norte</option>
-						<option value="RS">Rio Grande do Sul</option>
-						<option value="RO">Rondônia</option>
-						<option value="RR">Roraima</option>
-						<option value="SC">Santa Catarina</option>
-						<option value="SP">São Paulo</option>
-						<option value="SE">Sergipe</option>
-						<option value="TO">Tocantis</option> 
-					</select>
-
 			</div>
 			-->
 	
@@ -230,7 +197,10 @@ $pesquisa = isset($_GET['pesquisa']) ? trim($_GET['pesquisa']) : '';
 		 <?php include("webparts/pagina_nao_encontrada.php"); ?>
     </div>
 
+	<div style="clear:both;"></div>
+
     <?php include("webparts/rodape.php"); ?>
 
+    </div>
   </body>
 </html>

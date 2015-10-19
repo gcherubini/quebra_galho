@@ -93,10 +93,10 @@ if(!isset($_SESSION['id_usuario'])){
 
   </head>
   <body>
-
+  	<div class="page">
 		<?php include("webparts/topo.php"); ?>
 
-	    <div class="container">
+	    <div class="container content">
 
 	    <?php include("webparts/resultado_de_operacoes.php"); ?>
 
@@ -205,6 +205,6 @@ if(!isset($_SESSION['id_usuario'])){
 	    </div>
 
 	     <?php include("webparts/rodape.php"); ?>
-
+	</div>
   </body>
 </html>

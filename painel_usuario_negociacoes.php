@@ -76,44 +76,44 @@ if(!isset($_SESSION['id_usuario'])){
  	</script>
   </head>
   <body>
+  	<div class="page">
+			<?php include("webparts/topo.php"); ?>
 
-	<?php include("webparts/topo.php"); ?>
+		    <div class="container content">
 
-    <div class="container">
+		    <?php include("webparts/resultado_de_operacoes.php"); ?>
 
-    <?php include("webparts/resultado_de_operacoes.php"); ?>
+		<?php
+			if (isset($_SESSION['id_usuario'])) {
+		 ?>		
 
-<?php
-	if (isset($_SESSION['id_usuario'])) {
- ?>		
+		 		<?php include("webparts/painel_usuario_menu.php"); ?>
 
- 		<?php include("webparts/painel_usuario_menu.php"); ?>
-
- 		<div class="painel_usuario_main">
-			
-			<h3> Suas negociações </h1>
-
-			<div class="negociacoes">
-
-			</div>
-			
-			<div class="itens_nao_encotrados">
-				<p> Você ainda não está negociando com nenhum quebra-galho... </p>
-				<a href="index.php"> Encontre um Quebra-Galho  </a>
-			</div>
-
-		</div>
-		  
-<?php
-	} else {
-	  include("webparts/div_voce_precisa_se_logar.php"); 
-	}
-?>		
+		 		<div class="painel_usuario_main">
 					
-			<?php include("webparts/pagina_nao_encontrada.php"); ?>
-    </div>
+					<h1> Suas negociações </h1>
 
-     <?php include("webparts/rodape.php"); ?>
+					<div class="negociacoes">
 
+					</div>
+					
+					<div class="itens_nao_encotrados">
+						<p> Você ainda não está negociando com nenhum quebra-galho... </p>
+						<a href="index.php"> Encontre um Quebra-Galho  </a>
+					</div>
+
+				</div>
+				  
+		<?php
+			} else {
+			  include("webparts/div_voce_precisa_se_logar.php"); 
+			}
+		?>		
+							
+					<?php include("webparts/pagina_nao_encontrada.php"); ?>
+		    </div>
+
+		     <?php include("webparts/rodape.php"); ?>
+	</div>
   </body>
 </html>
