@@ -93,10 +93,20 @@ if(!isset($_SESSION['id_usuario'])){
 					
 					<h1> Suas negociações </h1>
 
+					<h2> Como prestador de serviços </h2>
+
+					<p> Aqui você encontra informações adicionais sobre todos os clientes que acessaram o seu perfil e quiseram negociar com você.</p>
+
+					<p> COLOCAR AQUI A FOTO DO PERFIL E ALGUNS DADOS DAS PESSOAS QUE CLICARAM EM NEGOCIAR COM ESTE PRESTADOR</p>
+	
+					<h2> Como contratante </h2>
+
+					<p> Aqui você encontra informações adicionais sobre todos os prestadores de serviço que você demonstrou interesse em negociar.</p>
+
 					<div class="negociacoes">
 
 					</div>
-					
+
 					<div class="itens_nao_encotrados">
 						<p> Você ainda não está negociando com nenhum quebra-galho... </p>
 						<a href="index.php"> Encontre um Quebra-Galho  </a>
