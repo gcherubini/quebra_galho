@@ -3,7 +3,7 @@
 ?>
 
 <style>
-	.item_servicos {
+	.itens_painel {
 		border: 1px solid #e5e5e5;
 		margin-bottom: 10px;
 	}
@@ -15,7 +15,7 @@
 		width: 140px;
 		height: 100px;
 	}
-	.servico_main_painel {
+	.main_content_painel {
 		float: left;
 		height: 120px;
 	}
@@ -27,13 +27,13 @@
 	}
 </style>
 
-<div class="row item_servicos">
+<div class="row itens_painel">
 
 	<div class="servico_img_painel col-xs-12 col-sm-2 col-md-2">
 		<?php echo '<img class="img-responsive" src="'.$servico["img_url"].'"/>'; ?>
 	</div>
 
-	<div class="servico_main_painel col-xs-8 col-sm-8 col-md-8">
+	<div class="main_content_painel col-xs-8 col-sm-8 col-md-8">
 		<h4> <?php echo $servico["emprego"]; ?> </h4>
 		<p> "<?php echo $servico["slogan"]; ?>" </p>
 		<p> <b>Número de serviços: </b> <?php echo $servico["numero_servicos"]; ?> (<a href="painel_usuario_negociacoes.php">Ver</a>)</p>
@@ -45,7 +45,7 @@
 			<a href="" class="editar_servico">Editar informações do serviço</a>
 		</p>-->
 		<p> 
-			<a  <?php echo  "id='" . $servico["id_servico"] . "'"; ?> href="" class="deletar_servico btn btn-danger">Apagar serviço</a>
+			<a  <?php echo  "id='" . $servico["id_servico"] . "'"; ?> href="" class="deletar_servico btn btn-danger">Apagar anúncio</a>
 		</p>
   	</div>
 
