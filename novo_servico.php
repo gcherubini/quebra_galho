@@ -5,8 +5,6 @@ if(!isset($_SESSION['id_usuario'])){
 	header("location: login.php?pAnt=" . $fileName);
 	exit;
 }
-$id_usuario = isset($_SESSION['id_usuario']) ? trim($_SESSION['id_usuario']) : 0;
-echo "<script> var id_usuario = $id_usuario; </script>";
 ?>
 
 <!DOCTYPE html>
@@ -24,10 +22,6 @@ echo "<script> var id_usuario = $id_usuario; </script>";
  	$().ready(function() {
 
  		ativaMenu("#menu_publicar");
-
- 		if(id_usuario == 0) {
-			$.redirect("voce_precisa_de_uma_conta.php"); 
-		}
 
 		carregaComboEmprego();
 		carregaComboCidade();
