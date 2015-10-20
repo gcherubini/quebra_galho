@@ -15,14 +15,13 @@ if(!isset($_SESSION['id_usuario'])){
 
    <script type="text/javascript"> 
    
- 	$(document).ready(function () {
- 		ativaMenuPainelUsuario("#painel_menu_usuario");
-
- 	});
-
 	$().ready(function() {
 
-		$(".data-nascimento").datepicker({
+		ativaMenuPainelUsuario("#painel_menu_usuario");
+ 		carregaUsuario();
+
+
+		$(".data_nascimento").datepicker({
 		    dateFormat: 'dd/mm/yy',
 		    dayNames: ['Domingo','Segunda','Terça','Quarta','Quinta','Sexta','Sábado'],
 		    dayNamesMin: ['D','S','T','Q','Q','S','S','D'],
@@ -36,12 +35,20 @@ if(!isset($_SESSION['id_usuario'])){
 	    $('.btn-edit').click(function() {
 	    	$('.btn-edit').css("display","none")
 	    	$('.btn-save').css("display","block")
+	    	$('.btn-cancel').css("display","block")
 	    	habilitaEdesabilitaInputs()
 	    });
 
 	    $('.btn-save').click(function() {
 	    	$('.btn-edit').css("display","block")
 	    	$('.btn-save').css("display","none")
+	    	$('.btn-cancel').css("display","none")
+	 		habilitaEdesabilitaInputs()
+	    });
+	    $('.btn-cancel').click(function() {
+	    	$('.btn-edit').css("display","block")
+	    	$('.btn-save').css("display","none")
+	    	$('.btn-cancel').css("display","none")
 	 		habilitaEdesabilitaInputs()
 	    });
 	});
@@ -59,37 +66,49 @@ if(!isset($_SESSION['id_usuario'])){
 	        });
 	}
 
+	function carregaUsuario(){
+		
+
+		$.ajax({
+		    //type : 'POST',
+		    //data: ({attr: value}) ,
+		    dataType : 'json',
+		    url: 'backend/usuario_busca.php',
+		    success : function(json_result) {
+		    	//alert(JSON.stringify(json_result));
+		    	if(valorEhVazio(json_result)) {
+		    		erroAoCarregarUsuario()
+		    	}
+		    	else{
+		    		populaUsuarioNaTela(json_result[0]);
+		    	}
+		    },
+		    error: function(XMLHttpRequest, textStatus, errorThrown){
+		    	erroAoCarregarUsuario()
+		    } 
+	    });
+	}
+
+	function populaUsuarioNaTela(json_result){
+		$(".perfil_info").css('display','block');
+		$(".data_nascimento").val($.datepicker.formatDate('dd/mm/yy', new Date(json_result.data_nascimento)));
+		$(".email").val(json_result.email);
+		
+		/*$(".senha").val(json_result.senha);*/
+	
+
+
+		
+	}
+
+	function erroAoCarregarUsuario(){
+		mostraResultadoOperacoes(false, "Ops... Aconteceu um erro inesperado ao carregar algumas informações do seu perfil, tente entrar mais tarde...");
+	}
+
 
  	</script>
 
 
-<style>
-	.ui-datepicker{
-		background: white !important;
-		padding: 5px !important;
-		border: 1px solid #ccc;
-	}
-	.ui-datepicker span, .ui-datepicker td, .ui-datepicker a{
-		margin:3px;
-	}
-
-	.ui-datepicker-prev span, .ui-datepicker-next span {
-		margin: 0 !important;
-	}
-
-	.ui-datepicker-prev {
-		float: left; !important;
-	}
-
-	.ui-datepicker-next {
-		float: right; !important;
-	}
-
-	.ui-datepicker-year {
-		float: right; !important;
-	}
-	
-</style>
 
   </head>
   <body>
@@ -98,7 +117,7 @@ if(!isset($_SESSION['id_usuario'])){
 
 	    <div class="container content">
 
-	    <?php include("webparts/resultado_de_operacoes.php"); ?>
+	    
 
 	<?php
 		if (isset($_SESSION['id_usuario'])) {
@@ -107,7 +126,9 @@ if(!isset($_SESSION['id_usuario'])){
 	 		<?php include("webparts/painel_usuario_menu.php"); ?>
 
 	 		<div class="painel_usuario_main">
-	 
+
+	 				
+
 					<p>
 						Olá <b> <?php echo $_SESSION["nome"]; ?></b>, seja bem-vindo(a) ao seu painel de configurações.
 					</p>
@@ -116,6 +137,9 @@ if(!isset($_SESSION['id_usuario'])){
 						Aqui você encontra um resumo sobre o seu perfil, onde pode modificar algumas informações pessoais e configurações da sua conta.
 					</p>
 
+				<?php include("webparts/resultado_de_operacoes.php"); ?>
+
+			<div class="perfil_info">
 				<h2> Meu Perfil </h2>
 
 					<p>
@@ -123,28 +147,32 @@ if(!isset($_SESSION['id_usuario'])){
 					</p>
 
 					<p>
-						Data de Nascimento: <input class="form-control data-nascimento" type='text' disabled value="12/02/1991"></input>
+						Data de Nascimento: <input name="data_nascimento" class="form-control data_nascimento" type='text' disabled value=""></input>
 					</p>
 
 					<p>
-						E-mail: <input class="form-control" type='text' disabled value="joana@gmail.com"></input>
+						E-mail: <input name="email" class="form-control email" type='text' disabled value=""></input>
 					</p>
 
 					<p>
-						Senha: <input class="form-control" type='password' disabled value="123456"></input>
+						Senha: <input name="password" class="form-control password" type='password' disabled value="xxxxxx"></input>
 					</p>
 
-					<p>
-						Telefone: <input class="form-control" type='text' disabled value="3269-9999"></input>
-					</p>
+					<!--<p>
+						Telefone: <input name="telefone" class="form-control telefone" type='text' disabled value=""></input>
+					</p>-->
 
-					<p>
-						Endereço: <input class="form-control" type='text' disabled value="R. Grande, 123"></input>
-					</p>
+					<!-- <p>
+						Endereço: <input name="endereco" class="form-control endereco" type='text' disabled value="R. Grande, 123"></input>
+					</p>-->
 
-					<div class="btn btn-default btn-edit">Editar</div>
+					<div class="btn btn-default btn-edit left">Editar</div>
 
-					<div class="btn btn-default btn-save">Salvar</div>
+					<div class="btn btn-default btn-save left">Salvar</div>
+
+					<div class="btn btn-default btn-cancel left">Cancelar</div>
+
+					<div style="clear:both;"></div>
 
 				<h2> Minhas Avaliações </h2>
 
@@ -194,7 +222,8 @@ if(!isset($_SESSION['id_usuario'])){
 						<a href="#">Deletar conta</a>
 					</p>
 
-			</div>
+		</div>
+	</div>
 	<?php
 		} else {
 		  include("webparts/div_voce_precisa_se_logar.php"); 

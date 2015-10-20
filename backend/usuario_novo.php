@@ -4,15 +4,18 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 $email = isset($_POST['email']) ? trim($_POST['email']) : "";
 $senha = isset($_POST['senha']) ? trim($_POST['senha']) : "";
 $nome = isset($_POST['nome']) ? trim($_POST['nome']) : "";
-$idade = isset($_POST['idade']) ? trim($_POST['idade']) : "";
+$data_nascimento = isset($_POST['data_nascimento']) ? trim($_POST['data_nascimento']) : "";
 $sexo = isset($_POST['sexo']) ? trim($_POST['sexo']) : "";
 $imageData = isset($_POST['image-data']) ? trim($_POST['image-data']) : "";
 
 
+$data_nascimento = strtotime($data_nascimento);
+//http://php.net/manual/en/datetime.format.php
+
 $errorMessage = "";
 $conn = include "db_connection.php";
-$sql = "INSERT INTO usuario (email, senha, nome, idade, sexo)
-		VALUES ('".$email."', '".$senha."','".$nome."', '".$idade."', '".$sexo."')";
+$sql = "INSERT INTO usuario (email, senha, nome, data_nascimento, sexo)
+		VALUES ('".$email."', '".$senha."','".$nome."', '".date('y-m-d',$data_nascimento)."', '".$sexo."')";
 
 if ($conn->connect_error) {
     $errorMessage = "Connection failed: " . $conn->connect_error;

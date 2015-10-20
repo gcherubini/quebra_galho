@@ -15,6 +15,18 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
  	var sucessoMsg = "Usuário salvo com sucesso, obrigado!";
  	
 	$().ready(function() {
+
+		$(".data_nascimento").datepicker({
+		    dateFormat: 'dd/mm/yy',
+		    dayNames: ['Domingo','Segunda','Terça','Quarta','Quinta','Sexta','Sábado'],
+		    dayNamesMin: ['D','S','T','Q','Q','S','S','D'],
+		    dayNamesShort: ['Dom','Seg','Ter','Qua','Qui','Sex','Sáb','Dom'],
+		    monthNames: ['Janeiro','Fevereiro','Março','Abril','Maio','Junho','Julho','Agosto','Setembro','Outubro','Novembro','Dezembro'],
+		    monthNamesShort: ['Jan','Fev','Mar','Abr','Mai','Jun','Jul','Ago','Set','Out','Nov','Dez'],
+		    nextText: 'Próximo',
+		    prevText: 'Anterior'
+		});
+
 		$("#form").validate({
 			rules: {
 				email: {
@@ -33,10 +45,9 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 				nome: {
 					required: true
 				},
-				idade: {
-					required: true,
-					number: true,
-					maxlength: 2
+				data_nascimento: {
+					required: true
+					//,date : true only american
 				},
 				sexo: {
 					required: true
@@ -59,10 +70,8 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 				nome: {
 					required: "Por favor nos diga seu nome"
 				},
-				idade: {
-					required: "Por favor digite sua idade",
-					number: "Por favor, digite apenas números",
-					maxlength: "Por favor digite sua idade de no máximo dois dígitos"
+				data_nascimento: {
+					required: "Por favor nos diga sua data de nascimento"
 				},
 				sexo: {
 					required: "Por favor escolha seu sexo"
@@ -143,7 +152,7 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 					   		<input type="password" class="form-control" id="senha" name="senha" placeholder="Senha" >
 					   		<input type="password" class="form-control" id="senha_conf" name="senha_conf" placeholder="Confirme sua senha">
 							<input type="text" class="form-control" id="nome" name="nome" placeholder="Seu nome">
-							<input type="text" class="form-control" id="idade" name="idade" placeholder="Sua idade">
+							<input type="text" class="form-control data_nascimento" id="data_nascimento" name="data_nascimento" placeholder="Sua data de nascimento">
 							<!-- <input type="text" class="form-control" id="linkedin" name="linkedin" placeholder="Seu perfil do Linkedin"> -->
 							
 
