@@ -17,7 +17,7 @@ if(!isset($_SESSION['id_usuario'])){
    
  	$(document).ready(function () {
  		ativaMenuPainelUsuario("#painel_menu_notificacoes");
- 		populaNegociacaoNaTela();
+ 		marcaNotificacoesComoVistas();
 
  		
  		carregaNotificacoes();
@@ -57,7 +57,7 @@ if(!isset($_SESSION['id_usuario'])){
 		        dataType : 'json',
 		        url: 'backend/notificacao_busca.php',
 		        success : function(json_result) {
-		        	//alert(json_result)
+		        	//alert(JSON.stringify(json_result));
 		        	//console.log(json_result)
 		            // need to test in IE
 		            var countJsonItens = Object.keys(json_result).length 
@@ -67,7 +67,7 @@ if(!isset($_SESSION['id_usuario'])){
 		 			}
 		 			else {
 		            		$.each(json_result, function(index, servico_json) {	
-		            			populaNegociacaoNaTela(servico_json);
+		            			populaNotificacaoNaTela(servico_json);
 			        		});
 			        }
 		        },
@@ -78,7 +78,7 @@ if(!isset($_SESSION['id_usuario'])){
 		    });
 	}
 
-	function populaNegociacaoNaTela(json_result){
+	function populaNotificacaoNaTela(json_result){
 		// carregar servico (divs)
 		var url_div = "webparts/painel_usuario_div_notificacao.php";
     	
@@ -94,7 +94,7 @@ if(!isset($_SESSION['id_usuario'])){
 		});
 	}
 	
-	function populaNegociacaoNaTela() {
+	function marcaNotificacoesComoVistas() {
 		$.ajax({
 		    dataType : 'text',
 		    url: "backend/notificacao_marca_vista_por_usuario.php",

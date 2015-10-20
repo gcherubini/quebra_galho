@@ -33,7 +33,7 @@ if(!isset($_SESSION['id_usuario'])){
 		        data: ({id_servico: id_servico}) ,
 		        url: 'backend/servico_deletar.php',
 		        success : function(json_result) {
-		        	alert(json_result)
+		        	//alert(json_result)
 		        	if(json_result != "") {
 		        		mostraMensagemDeErroNaDelecao()
 		        	}
