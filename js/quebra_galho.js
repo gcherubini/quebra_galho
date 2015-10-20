@@ -33,7 +33,9 @@ function checaSeUsuarioTemNovasNotificacoes() {
 		        url: 'backend/notificacao_checa_se_usuario_ja_viu.php',
 		        success : function(result) {
 		        	if(result == "true") {
-		    			$(".notificacao-icon").css("display","block");
+		    			$(".topo_fixed .notificacao-icon").css("display","block");
+		    			$(".painel_menu .notificacao-icon").css("color","red");
+		    			$("#painel_menu_notificacoes a").css("color","red");
 		    		}
 		        }
 		    });

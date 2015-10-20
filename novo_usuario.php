@@ -151,7 +151,7 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 							<input type="email" class="form-control" id="email" name="email" placeholder="E-mail" >
 					   		<input type="password" class="form-control" id="senha" name="senha" placeholder="Senha" >
 					   		<input type="password" class="form-control" id="senha_conf" name="senha_conf" placeholder="Confirme sua senha">
-							<input type="text" class="form-control" id="nome" name="nome" placeholder="Seu nome">
+							<input type="text" class="form-control" id="nome" name="nome" placeholder="Seu nome completo">
 							<input type="text" class="form-control data_nascimento" id="data_nascimento" name="data_nascimento" placeholder="Sua data de nascimento">
 							<!-- <input type="text" class="form-control" id="linkedin" name="linkedin" placeholder="Seu perfil do Linkedin"> -->
 							
@@ -159,13 +159,12 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 							<div class="cadastro-usuario-div-sexo">
 								<p> <b>Sexo:</b> </p>
 								<input type="radio" id="sexo-M" value="m" name="sexo">
-					   			<label for="sexo-M" class="control-label" style="font-weight:normal;">Masculino </label>
+					   			<label for="sexo-M" class="control-label" style="font-weight:normal;"> Masculino </label>
 					   			<input type="radio" id="sexo-F" value="f" name="sexo">
-					   			<label for="sexo-F" class="control-label" style="font-weight:normal;">Feminino</label>
+					   			<label for="sexo-F" class="control-label" style="font-weight:normal;"> Feminino </label>
 				   			</div>
 							
-				   				
-
+				   			
 				   			<div class="image-editor">
 				   				<p> <b>Foto profissional:</b> </p>
 

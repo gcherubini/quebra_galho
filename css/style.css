@@ -148,9 +148,16 @@ body {
 	padding-bottom: 6px;
 }
 
+.header_div_top_right .notificacao-icon{
+	display: none;
+}
+
 .notificacao-icon{
-	display:none;
-	color: #db1c0a;
+	
+}
+
+.painel_menu .glyphicon{
+	margin-right: 6px;
 }
 
 .header_div_top_right .glyphicon-menu-right{ 
@@ -179,9 +186,9 @@ body {
 
 }
 
-
 .minha_conta_div a {
 	color: #555;
+	float:right;
 }
 
 .minha_conta{
