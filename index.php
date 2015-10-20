@@ -28,7 +28,7 @@ $pesquisa = isset($_GET['pesquisa']) ? trim($_GET['pesquisa']) : '';
 		$(".paginacao_carregando_acabou_msg").css("display","none");
 
 		$(window).scroll(function() {
-		   if($(window).scrollTop() + $(window).height() > $(document).height() - 1) {
+		   if($(window).scrollTop() + $(window).height() > $(document).height() - 40) {
 		   		//alert("chegou no fim");
 		       $(".paginacao_carregando_img").css("display","block");
 		       $(".paginacao_carregando_acabou_msg").css("display","none");
