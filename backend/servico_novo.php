@@ -5,9 +5,16 @@ $id_usuario = isset($_SESSION['id_usuario']) ? trim($_SESSION['id_usuario']) : '
 $emprego = isset($_POST['emprego']) ? trim($_POST['emprego']) : '';
 $slogan = isset($_POST['slogan']) ? trim($_POST['slogan']) : '';
 $descricao = isset($_POST['descricao']) ? trim($_POST['descricao']) : '';
-$estado = isset($_POST['estado']) ? trim($_POST['estado']) : '';
-$cidade = isset($_POST['cidade']) ? trim($_POST['cidade']) : '';
+$telefone = isset($_POST['telefone']) ? trim($_POST['telefone']) : '';
+$cidades = $_POST['cidades'] ? $_POST['cidades'] : null;
 $errorMessage = "";
+
+$cidades_concat = "";
+if($cidades){
+	foreach ($cidades as $c) {
+       $cidades_concat .= $c . "," ;
+	}
+}
 
 $conn = include "db_connection.php";
 
@@ -25,8 +32,8 @@ while($r = $result->fetch_assoc()) {
 $result->close();
 
 // insert new servico
-$sql = "INSERT INTO servico (slogan, descricao, id_usuario, id_emprego, estado)
-		VALUES ('".$slogan."', '".$descricao."','".$id_usuario."', '".$id_emprego."', '".$estado."')";
+$sql = "INSERT INTO servico (slogan, descricao, id_usuario, id_emprego, cidade, tel_contato)
+		VALUES ('".$slogan."', '".$descricao."','".$id_usuario."', '".$id_emprego."', '".$cidades_concat."', '".$telefone."')";
 $result = $conn->query($sql);
 
 if ($result === FALSE) {

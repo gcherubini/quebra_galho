@@ -30,6 +30,7 @@ echo "<script> var id_usuario = $id_usuario; </script>";
 		}
 
 		carregaComboEmprego();
+		carregaComboCidade();
 		
 
 		$("#form").validate({
@@ -44,7 +45,10 @@ echo "<script> var id_usuario = $id_usuario; </script>";
 					required: true,
 					maxlength: 900
 				},
-				estado: {
+				cidades: {
+					required: true
+				},
+				telefone: {
 					required: true
 				}
 			},
@@ -59,8 +63,11 @@ echo "<script> var id_usuario = $id_usuario; </script>";
 					required: "Por favor, descreva seu serviço",
 					maxlength: "A descrição do seu serviço não pode ser tão grande"
 				},
-				estado: {
-					required: "Por favor nos diga a localidade do seu serviço"
+				cidades: {
+					required: "Por favor, escolha pelo menos uma cidade de atuação"
+				},
+				telefone: {
+					required: "Por favor digite seu telefone para contato"
 				}
 			}
 		});	
@@ -68,7 +75,6 @@ echo "<script> var id_usuario = $id_usuario; </script>";
 
 	$.validator.setDefaults({
 			submitHandler: function() {
-				
 			    $.ajax({
 			        type : 'POST',
 			        dataType : 'text',
@@ -100,8 +106,7 @@ echo "<script> var id_usuario = $id_usuario; </script>";
 		        url: 'backend/emprego_busca.php',
 		        async: false,
 		        success : function(json_result) {
-		        	//alert(json_result)
-		        	//console.log(json_result)
+		        	//alert(JSON.stringify(json_result));
 		           
 		            $.each(json_result, function(index, json_result) {	
             			$('.combo_emprego').append("<option>" + json_result.emprego + "</option>");
@@ -112,6 +117,31 @@ echo "<script> var id_usuario = $id_usuario; </script>";
 			    } 
 		    });
 	}
+
+	function carregaComboCidade(){
+		$.ajax({
+		        type : 'POST',
+		        dataType : 'json',
+		        data: ({sql: "SELECT * FROM cidade where estado = '23'"}) ,
+		        url: 'backend/busca_db_simples.php',
+		        async: false,
+		        success : function(json_result) {
+		        	//alert(JSON.stringify(json_result));
+
+		            $.each(json_result, function(index, json_result) {	
+            			$('.combo_cidade').append("<option>" + json_result.nome + "</option>");
+	        		});
+
+	        		$(".combo_cidade").chosen({no_results_text: "Oops, nenhuma cidade encontrada!"}); 
+
+		        },
+		        error: function(XMLHttpRequest, textStatus, errorThrown){
+			    	alert("error: " + textStatus);
+			    } 
+		    });
+	}
+
+
 
 	function erroSalvarDB(error){
 		alert(erroMsg);
@@ -152,8 +182,14 @@ echo "<script> var id_usuario = $id_usuario; </script>";
 										</select>
 										<input placeholder="Crie um slogan (Máx. 100 caracteres)" type="text" class="form-control" id="slogan" name="slogan">
 										<textarea placeholder="Descreva suas habilidades (Máx. 180 caracteres)" class="form-control" rows="3" id="descricao" name="descricao" maxlength="180"></textarea>
-										<input placeholder="Cidade(s) de atuação" type="text" class="form-control" id="cidade" name="cidade" maxlength="40">
-									
+										<br>
+										<select  class="form-control combo_cidade chosen-select" id="cidades" name="cidades[]" multiple
+										 		data-placeholder="Cidade(s) de atuação" >
+												<option> Remotamente/Não-presencial </option>
+										</select>
+
+										<input placeholder="Telefone para contato" type="text" class="form-control telefone" id="telefone" name="telefone" >
+										
 										<button type="submit" class="btn btn-primary btn-block">Publicar</button>
 
 									</form>

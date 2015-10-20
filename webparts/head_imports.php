@@ -6,6 +6,8 @@
  <!-- Bootstrap core CSS -->
 <link href="libraries/bootstrap/css/bootstrap.css" rel="stylesheet">
 
+<link href="libraries/chosen/chosen.css" rel="stylesheet">
+
 <!-- Custom styles for this template -->
 <link href="libraries/croppic/assets/css/croppic.css" rel="stylesheet">
 
@@ -35,6 +37,7 @@
 
 <script src="libraries/cropit/jquery.cropit.js"></script>
 
+<script src="libraries/chosen/chosen.jquery.min.js"></script>
 
 <script src="js/quebra_galho.js" type="text/javascript"></script>
 	

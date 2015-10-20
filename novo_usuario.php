@@ -45,6 +45,9 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 				nome: {
 					required: true
 				},
+				cpf: {
+					required: true
+				},
 				data_nascimento: {
 					required: true
 					//,date : true only american
@@ -152,18 +155,32 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 					   		<input type="password" class="form-control" id="senha" name="senha" placeholder="Senha" >
 					   		<input type="password" class="form-control" id="senha_conf" name="senha_conf" placeholder="Confirme sua senha">
 							<input type="text" class="form-control" id="nome" name="nome" placeholder="Seu nome completo">
+							<input type="text" class="form-control" id="cpf" name="cpf" placeholder="Seu cpf" >
 							<input type="text" class="form-control data_nascimento" id="data_nascimento" name="data_nascimento" placeholder="Sua data de nascimento">
 							<!-- <input type="text" class="form-control" id="linkedin" name="linkedin" placeholder="Seu perfil do Linkedin"> -->
 							
 
-							<div class="cadastro-usuario-div-sexo">
+							<!--
 								<p> <b>Sexo:</b> </p>
 								<input type="radio" id="sexo-M" value="m" name="sexo">
 					   			<label for="sexo-M" class="control-label" style="font-weight:normal;"> Masculino </label>
 					   			<input type="radio" id="sexo-F" value="f" name="sexo">
 					   			<label for="sexo-F" class="control-label" style="font-weight:normal;"> Feminino </label>
-				   			</div>
-							
+				   			-->
+
+				   			<div class="cadastro-usuario-div-sexo">
+					   			<p> <b>Sexo:</b> </p>
+					   			<div class="btn-group" data-toggle="buttons">
+								  <label class="btn btn-primary">
+								    <input type="radio" name="sexo" id="option1" autocomplete="off"> Masculino
+								  </label>
+								  <label class="btn btn-primary">
+								    <input type="radio" name="sexo" id="option3" autocomplete="off"> Feminino
+								  </label>
+								</div>
+							</div>
+
+														
 				   			
 				   			<div class="image-editor">
 				   				<p> <b>Foto profissional:</b> </p>

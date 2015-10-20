@@ -6,6 +6,7 @@ $senha = isset($_POST['senha']) ? trim($_POST['senha']) : "";
 $nome = isset($_POST['nome']) ? trim($_POST['nome']) : "";
 $data_nascimento = isset($_POST['data_nascimento']) ? trim($_POST['data_nascimento']) : "";
 $sexo = isset($_POST['sexo']) ? trim($_POST['sexo']) : "";
+$cpf = isset($_POST['cpf']) ? trim($_POST['cpf']) : "";
 $imageData = isset($_POST['image-data']) ? trim($_POST['image-data']) : "";
 
 
@@ -14,8 +15,8 @@ $data_nascimento = strtotime($data_nascimento);
 
 $errorMessage = "";
 $conn = include "db_connection.php";
-$sql = "INSERT INTO usuario (email, senha, nome, data_nascimento, sexo)
-		VALUES ('".$email."', '".$senha."','".$nome."', '".date('y-m-d',$data_nascimento)."', '".$sexo."')";
+$sql = "INSERT INTO usuario (email, senha, nome, data_nascimento, sexo, cpf)
+		VALUES ('".$email."', '".$senha."','".$nome."', '".date('y-m-d',$data_nascimento)."', '".$sexo."' , '".$cpf."')";
 
 if ($conn->connect_error) {
     $errorMessage = "Connection failed: " . $conn->connect_error;
