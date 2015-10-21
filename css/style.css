@@ -392,11 +392,32 @@ body {
 
 .error {
 	color: red;
+    margin-top: 10px;
+    margin-bottom: -6px;
 }
 
 form .row {
 	margin-top: 10px;
 	margin-bottom: 20px;
+}
+
+.foto-preview{
+	display:none;
+	margin-top:10px;
+}
+
+.image-size-label{
+	margin-top:10px;
+	text-align: center;
+}
+
+.cropit-image-zoom-input{
+	margin-top:-6px;
+}
+
+.novo_usuario_main .cadastre-se{
+	margin-top: 20px;
+	margin-bottom: 10px;
 }
 
 .cropit-image-preview {

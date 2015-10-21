@@ -1,4 +1,4 @@
-<div class="modal modal-xs fade" id="modal_acesso_nao_permitido" role="dialog">
+<div class="modal modal-xs fade" id="modal" role="dialog">
   <div class="modal-dialog">
   
     <!-- Modal content-->

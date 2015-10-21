@@ -4,8 +4,7 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 
 $id_usuario = isset($_SESSION['id_usuario']) ? trim($_SESSION['id_usuario']) : 0;
 $id_servico = isset($_GET['id_servico']) ? trim($_GET['id_servico']) : 0;
-echo "<script> var id_servico = $id_servico; </script>";
-echo "<script> var id_usuario = $id_usuario; </script>";
+
 ?>
 
 <!DOCTYPE html>
@@ -15,6 +14,11 @@ echo "<script> var id_usuario = $id_usuario; </script>";
    <title>Quebra-Galho</title>
 
    <script type="text/javascript">
+
+   <?php
+   		echo " var id_servico = $id_servico; ";
+		echo " var id_usuario = $id_usuario; ";
+   ?>
 
 	$().ready(function () {
 		if(id_servico != 0) {
@@ -60,7 +64,8 @@ echo "<script> var id_usuario = $id_usuario; </script>";
 	
 	function negociar() {
 		if(id_usuario == 0) {
-			$.redirect("voce_precisa_de_uma_conta.php"); 
+			window.location.href = "login.php?pAnt=index.php";
+
 		}
 		else {
 			$.ajax({

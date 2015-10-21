@@ -16,7 +16,9 @@ $pAnt = isset($_GET['pAnt']) ? trim($_GET['pAnt']) : "";
 
 	$(function() {
 		<?php if($pAnt != "") { ?>
-			$('#modal_acesso_nao_permitido').modal('toggle');
+			//$('.modal-title').text('vemcmgf');
+			//$('.modal-body').text('vemcmgf');
+			$('#modal').modal('toggle');
 		<?php } ?>
 
 		$(form).submit(function() {

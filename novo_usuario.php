@@ -16,6 +16,15 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
  	
 	$().ready(function() {
 
+		var options =  { 
+		  onImageLoaded: function() {
+		    $('.foto-preview').fadeIn();
+		  }
+		};
+
+
+    	$('.image-editor').cropit(options);
+
 		$(".data_nascimento").datepicker({
 		    dateFormat: 'dd/mm/yy',
 		    dayNames: ['Domingo','Segunda','Terça','Quarta','Quinta','Sexta','Sábado'],
@@ -73,12 +82,23 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 				nome: {
 					required: "Por favor nos diga seu nome"
 				},
+				cpf: {
+					required: "Por favor digite seu cpf"
+				},
 				data_nascimento: {
 					required: "Por favor nos diga sua data de nascimento"
 				},
 				sexo: {
 					required: "Por favor escolha seu sexo"
 				}
+			},
+			errorPlacement: function(error, element) {
+			   if (element.attr('type') == 'radio') {
+			      error.insertAfter('.radio-error');
+			   }
+			   else {
+			      error.insertAfter(element);
+			   }
 			}
 		});	
 	});
@@ -132,8 +152,6 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
   <body>
   	<div class="page">
 
-	
-
 		<?php include("webparts/topo.php"); ?>
 
 	    <div class="container content">
@@ -145,7 +163,7 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 				<div class="form-box-header">
 					<h2 class="form-box-title"> Inscreva-se no Quebra-Galho </h2>
 				</div>
-					<div class="form-box-main">			
+					<div class="form-box-main novo_usuario_main">			
 						<p> Cadastre-se para contratar ou oferecer um serviço:</p> 
 						<form id="form" method="POST" enctype="multipart/form-data" action="backend/usuario_novo.php" class="form-horizontal">
 
@@ -168,8 +186,12 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 					   			<label for="sexo-F" class="control-label" style="font-weight:normal;"> Feminino </label>
 				   			-->
 
+
+
+
 				   			<div class="cadastro-usuario-div-sexo">
-					   			<p> <b>Sexo:</b> </p>
+					   			<p> <b>Sexo:</b> </p> <br>
+
 					   			<div class="btn-group" data-toggle="buttons">
 								  <label class="btn btn-primary">
 								    <input type="radio" name="sexo" id="option1" autocomplete="off"> Masculino
@@ -177,6 +199,7 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 								  <label class="btn btn-primary">
 								    <input type="radio" name="sexo" id="option3" autocomplete="off"> Feminino
 								  </label>
+								  <div class="radio-error"> </div>
 								</div>
 							</div>
 
@@ -187,15 +210,17 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 
 						        <input type="file" name="image" class="cropit-image-input form-control"> 
 						         
-						        <div class="cropit-image-preview"></div>
-						        <div class="image-size-label">
-						          Alterar tamanho da foto
-						        </div>
-						        <input type="range" class="cropit-image-zoom-input">
-						        <input type="hidden" name="image-data" class="hidden-image-data" />
+						         <div class="foto-preview">
+							        <div class="cropit-image-preview"></div>
+							        <div class="image-size-label">
+							          Você pode alterar o tamanho da foto abaixo
+							        </div>
+							        <input type="range" class="cropit-image-zoom-input">
+							        <input type="hidden" name="image-data" class="hidden-image-data" />
+							     </div>
 					      	</div>
 
-							<button type="submit" class="btn btn-warning btn-block">Cadastre-se</button>
+							<button type="submit" class="btn btn-warning btn-block cadastre-se">Cadastre-se</button>
 						
 					  	</form>
 
@@ -209,11 +234,7 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 
 	    <?php include("webparts/rodape.php"); ?>
 
-	    <script>
-	      $(function() {
-	        $('.image-editor').cropit();
-	      });
-	    </script>
+	    
 
 
 	</div>
