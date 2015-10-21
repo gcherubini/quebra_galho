@@ -136,7 +136,7 @@ body {
 
 .topo1 {
 	width: 100%;
-	background-color: #17679D;
+	background-color: #6C2DC7;
 }
 
 .header_div_top_right a, .header_div_top_right .glyphicon-menu-right, .header_div_top_right .notificacao-icon{ 
@@ -192,26 +192,46 @@ body {
 }
 
 .minha_conta{
-	margin: auto;
+
+	font-weight: bold;
+	background-color: #893BFF;
+	color: white;
+	float: right;
 	cursor: pointer;
 	text-align: center;
 	width: 150px;
 	height: 35px;
 	border: 1px solid #ccc;
 	padding-left: 14px;
+	border-radius: 5px;
+
 }
 
-.minha_conta:hover{
-	background-color: #ccc;
+.minha_conta:hover {
+
+ background: #1589FF;
+ transition: all 0.5s ease 0s;
+ 
+
+
+}
+
+.minha_conta:hover p {
+
+
+text-decoration: underline;
+
 }
 
 .minha_conta span{
+
 	float: left;
 	font-size: 18px;
 	padding-top:8px;
 }
 
-.minha_conta p{
+.minha_conta p {
+
 	float: left;
 	font-weight: bold;
 	font-size: 14px;
@@ -310,9 +330,18 @@ body {
 
 }
 
-.servico2{
+.servico2 {
+
+
 	/*width: 280px;
 	min-height: 270px;*/
+
+
+	
+	border-radius: 10px;
+	width: 280px;
+	min-height: 400px;
+
 }
 
 .servico3{
@@ -323,20 +352,30 @@ body {
 	padding-bottom: 10px;
 }
 
-.servico2:hover, .servico_destaque:hover{
-   background:#ccc;
+.servico2:hover, .servico_destaque:hover {
+
+   background: white;
+   opacity: 0.90;
+   box-shadow: inset 0 0 0 1px gray;
+   transition: all 0.3s ease 0s;
+   text-decoration: underline;
+
 }
 
 .servicos h3 {
+
 	font-size: 18px !important;
 	margin: 0;
 }
 
 .servico_destaque{
+
 	width: 100%;
+	border-radius: 10px;
 	cursor: pointer;
 	height: 190px;
 	margin-bottom: 30px;
+
 }
 
 .servicos_titulo_filtro {
@@ -637,16 +676,17 @@ form .row {
 
 
 .footer {
+
 	margin: 0;
 	background-color: #282828;
 	margin-top: 20px;
 	padding: 15px;
-
-
 	position:absolute;
     bottom:0;
     width:100%;
     height:60px;   /* Height of the footer */
+
+
 }
 
 .footer ul {
@@ -748,14 +788,7 @@ margin-top: 30px;
 
 
 
-
-
-
-
-
-
-
-
+/* Log In */
 
 
 
@@ -777,4 +810,5 @@ margin-top: 30px;
     padding-left: 0 !important;
     padding-right: 0 !important;
 }
+
 

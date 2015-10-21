@@ -124,11 +124,7 @@ $().ready(function() {
 		    	</div>
 
 		   	
-			<!--<div class="topo2_esquerda">
-				<div class="logo">
-				</div>
-			</div>-->
-
+			
 			</div>
 		</div>
 	</div>

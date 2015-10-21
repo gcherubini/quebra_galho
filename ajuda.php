@@ -23,6 +23,7 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 
   </head>
   <body>
+
   	<div class="page">
 
 		<?php include("webparts/topo.php"); ?>
@@ -231,5 +232,6 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 
 	    <?php include("webparts/rodape.php"); ?>
 	 </div>
-  </body>
+ </body>
+  
 </html>
