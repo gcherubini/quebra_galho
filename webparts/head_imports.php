@@ -39,5 +39,8 @@
 
 <script src="libraries/chosen/chosen.jquery.min.js"></script>
 
+
+<script src="libraries/jqueryMask/jquery.mask.js"></script>
+
 <script src="js/quebra_galho.js" type="text/javascript"></script>
 	

@@ -16,13 +16,12 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
  	
 	$().ready(function() {
 
+
 		var options =  { 
 		  onImageLoaded: function() {
 		    $('.foto-preview').fadeIn();
 		  }
 		};
-
-
     	$('.image-editor').cropit(options);
 
 		$(".data_nascimento").datepicker({
@@ -35,6 +34,9 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 		    nextText: 'Próximo',
 		    prevText: 'Anterior'
 		});
+
+		$(".cpf").mask("000.000.000-00");
+		$('.data_nascimento').mask('00/00/0000');
 
 		$("#form").validate({
 			rules: {
@@ -173,7 +175,7 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 					   		<input type="password" class="form-control" id="senha" name="senha" placeholder="Senha" >
 					   		<input type="password" class="form-control" id="senha_conf" name="senha_conf" placeholder="Confirme sua senha">
 							<input type="text" class="form-control" id="nome" name="nome" placeholder="Seu nome completo">
-							<input type="text" class="form-control" id="cpf" name="cpf" placeholder="Seu cpf" >
+							<input type="text" class="form-control cpf" id="cpf" name="cpf" placeholder="Seu cpf" >
 							<input type="text" class="form-control data_nascimento" id="data_nascimento" name="data_nascimento" placeholder="Sua data de nascimento">
 							<!-- <input type="text" class="form-control" id="linkedin" name="linkedin" placeholder="Seu perfil do Linkedin"> -->
 							
