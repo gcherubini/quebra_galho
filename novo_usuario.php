@@ -32,7 +32,8 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 		    monthNames: ['Janeiro','Fevereiro','Março','Abril','Maio','Junho','Julho','Agosto','Setembro','Outubro','Novembro','Dezembro'],
 		    monthNamesShort: ['Jan','Fev','Mar','Abr','Mai','Jun','Jul','Ago','Set','Out','Nov','Dez'],
 		    nextText: 'Próximo',
-		    prevText: 'Anterior'
+		    prevText: 'Anterior',
+		    changeYear: true
 		});
 
 		$('.cpf').mask('000.000.000-00', {reverse: true});
@@ -65,7 +66,8 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 				},
 				sexo: {
 					required: true
-				}
+				},
+				dateITA: true
 			},
 			messages: {
 				email: {
