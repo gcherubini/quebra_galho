@@ -27,6 +27,8 @@ if(!isset($_SESSION['id_usuario'])){
 		carregaComboCidade();
 		
 
+		$('.telefone').mask('(00) 0000-0000');
+
 		$("#form").validate({
 			rules: {
 				emprego: {
