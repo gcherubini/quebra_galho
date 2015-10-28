@@ -74,6 +74,15 @@ if(!isset($_SESSION['id_usuario'])){
 
 
  	</script>
+
+
+	<style>
+		.main_content_painel {
+			margin-bottom: 10px;
+		}
+	</style>
+
+
   </head>
   <body>
   	<div class="page">
@@ -97,7 +106,26 @@ if(!isset($_SESSION['id_usuario'])){
 
 					<p> Aqui você encontra informações adicionais sobre todos os clientes que acessaram o seu perfil e quiseram negociar com você.</p>
 
-					<p> COLOCAR AQUI A FOTO DO PERFIL E ALGUNS DADOS DAS PESSOAS QUE CLICARAM EM NEGOCIAR COM ESTE PRESTADOR</p>
+						<div class="row itens_painel">
+						 
+						 	<div class="servico_img_painel col-xs-12 col-sm-2 col-md-2">
+								<?php echo "<img src='img/usuarios/21_17-10-2015_07-44-30.jpg'>";?>
+							</div>
+
+						  	<div class="main_content_painel col-xs-8 col-sm-8 col-md-8">
+						  		<h4> Nome: Patricia Silva </h4>
+								<h5> Negociação iniciada em: 12/12/12 </h5>
+								<h5> Fone: (51) 3737-9281 - Celular: (51) 9438-2932 </h5>
+								<h5> E-mail: patricia@gmail.com </h5>
+						  	</div>
+						   	
+						   	<div class="botao_remover_painel col-xs-4 col-sm-2 col-md-2">
+								<p> 
+									<a href="#" class="finalizar_negociacao btn btn-danger btn-block">Finalizar negociação</a>
+								</p>
+				  			</div>
+
+						</div>
 	
 					<h2> Como contratante </h2>
 

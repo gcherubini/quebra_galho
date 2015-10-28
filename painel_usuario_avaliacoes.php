@@ -106,6 +106,7 @@ if(!isset($_SESSION['id_usuario'])){
  	}
 
  	</script>
+
   </head>
   <body>
   	<div class="page">
@@ -132,23 +133,16 @@ if(!isset($_SESSION['id_usuario'])){
 
 					<p><b>Obs: Avaliações negativas que não forem respondidas por você serão publicadas automaticamente no seu perfil no prazo de 5 dias após o recebimento da avaliação. </b></p>
 
-					<div class="avaliacoes_pendentes">
-
-					</div>
-
+							 		<div class="testinho">					
+					<?php include("webparts/painel_usuario_div_avaliacao_pend.php"); ?>
+					
+						</div>
 					<h2> Avaliações publicadas no seu perfil </h2>
 
 					<p> As avaliações a seguir se encontram publicadas no seu perfil, de modo que todos usuários do Quebra-Galho podem conferí-las </p>
 
-					<div class="avaliacoes_publicadas">
-
-					</div>
-
-					 <div class="itens_nao_encotrados">
-						<p> Você ainda não publicou nenhum serviço... </p>
-						<a href="servico_novo.php"> Seja um Quebra-Galho </a>
-					</div>
-
+					<?php include("webparts/painel_usuario_div_avaliacao_publ.php"); ?>
+				
 				</div>
 
 				  

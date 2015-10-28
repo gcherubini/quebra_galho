@@ -1,7 +1,3 @@
-<?php 
-	$servico = $_GET['servico'];
-?>
-
 <style>
 	.itens_painel {
 		border: 1px solid #e5e5e5;
@@ -27,23 +23,17 @@
 	}
 </style>
 
-<div class="row itens_painel">
- 
- 	<div class="servico_img_painel col-xs-12 col-sm-2 col-md-2">
-		<?php echo '<img class="img-responsive" src="'.$servico["img_url"].'"/>'; ?>
-	</div>
+		<div class="row itens_painel">
+		 
+		 	<div class="servico_img_painel col-xs-12 col-sm-2 col-md-2">
+				<?php echo "<img src='img/usuarios/20_17-10-2015_07-32-08.jpg'>";?>
+			</div>
 
-  	<div class="main_content_painel col-xs-8 col-sm-8 col-md-8">
-  		<h4> <?php echo $servico["nome"]; ?> </h4>
-		<h5> <?php echo $servico["emprego"]; ?> </h5>
-		<h5> Fone: <?php echo $servico["tel_contato"]; ?> - Celular: <?php echo $servico["cel_contato"]; ?> </h5>
-		<h5> E-mail: <?php echo $servico["email"]; ?> </h5>
-  	</div>
-   	
-   	<div class="botao_remover_painel col-xs-4 col-sm-2 col-md-2">
-		<p> 
-			<a  <?php echo  "id='" . $servico["id_servico"] . "'"; ?> href="" class="finalizar_negociacao btn btn-danger">Finalizar negociação</a>
-		</p>
-  	</div>
-
-</div>
+		  	<div class="main_content_painel col-xs-8 col-sm-8 col-md-8">
+		  		<h4> Nome: Roger Feitosa </h4>
+				<h5> Serviço avaliado: <a href="#"> Barbeiro </a> (Link para a publicação que foi avaliada) </h5>
+				<h5> Estrelas: ✩✩✩✩ </h5>
+				<h5> Avaliação: O teste teste fez a minha barba de forma rápida e por um preço camarada. </h5>
+		  	</div>
+		   	
+		</div>
