@@ -42,7 +42,28 @@ function checaSeUsuarioTemNovasNotificacoes() {
 }
 
 
+function carregaComboCidade(combo_class){
+		$.ajax({
+		        type : 'POST',
+		        dataType : 'json',
+		        data: ({sql: "SELECT * FROM cidade where estado = '23'"}) ,
+		        url: 'backend/busca_db_simples.php',
+		        async: false,
+		        success : function(json_result) {
+		        	//alert(JSON.stringify(json_result));
 
+		            $.each(json_result, function(index, json_result) {	
+            			$(combo_class).append("<option>" + json_result.nome + "</option>");
+	        		});
+
+	        		$(combo_class).chosen({no_results_text: "Oops, nenhuma cidade encontrada!"}); 
+
+		        },
+		        error: function(XMLHttpRequest, textStatus, errorThrown){
+			    	alert("error: " + textStatus);
+			    } 
+		    });
+	}
 
 
 

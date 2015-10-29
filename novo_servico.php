@@ -24,7 +24,7 @@ if(!isset($_SESSION['id_usuario'])){
  		ativaMenu("#menu_publicar");
 
 		carregaComboEmprego();
-		carregaComboCidade();
+		carregaComboCidade(".cidade");
 		
 
 		$('.telefone').mask('(00) 0000-0000');
@@ -114,30 +114,6 @@ if(!isset($_SESSION['id_usuario'])){
 		    });
 	}
 
-	function carregaComboCidade(){
-		$.ajax({
-		        type : 'POST',
-		        dataType : 'json',
-		        data: ({sql: "SELECT * FROM cidade where estado = '23'"}) ,
-		        url: 'backend/busca_db_simples.php',
-		        async: false,
-		        success : function(json_result) {
-		        	//alert(JSON.stringify(json_result));
-
-		            $.each(json_result, function(index, json_result) {	
-            			$('.combo_cidade').append("<option>" + json_result.nome + "</option>");
-	        		});
-
-	        		$(".combo_cidade").chosen({no_results_text: "Oops, nenhuma cidade encontrada!"}); 
-
-		        },
-		        error: function(XMLHttpRequest, textStatus, errorThrown){
-			    	alert("error: " + textStatus);
-			    } 
-		    });
-	}
-
-
 
 	function erroSalvarDB(error){
 		alert(erroMsg);
@@ -179,7 +155,7 @@ if(!isset($_SESSION['id_usuario'])){
 										<input placeholder="Crie um slogan (Máx. 100 caracteres)" type="text" class="form-control" id="slogan" name="slogan">
 										<textarea placeholder="Descreva suas habilidades (Máx. 180 caracteres)" class="form-control" rows="3" id="descricao" name="descricao" maxlength="180"></textarea>
 										<br>
-										<select  class="form-control combo_cidade chosen-select" id="cidades" name="cidades[]" multiple
+										<select  class="form-control cidade chosen-select" id="cidades" name="cidades[]" multiple
 										 		data-placeholder="Cidade(s) de atuação" >
 												<option> Remotamente/Não-presencial </option>
 										</select>

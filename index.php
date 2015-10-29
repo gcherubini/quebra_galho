@@ -19,6 +19,7 @@ $pesquisa = isset($_GET['pesquisa']) ? trim($_GET['pesquisa']) : '';
 	
 	$(document).ready(function () {
 		ativaMenu("#menu_inicio");
+		carregaComboCidade(".cidades");
 
 		<?php if ($pesquisa != '') {
 		echo " $('.input_texto_pesquisar_topo').val('".$pesquisa."'); ";
@@ -166,35 +167,70 @@ $pesquisa = isset($_GET['pesquisa']) ? trim($_GET['pesquisa']) : '';
   	<div class="page">
 	<?php include("webparts/topo.php"); ?>
 		
-    <div class="container container-lista-servicos content">
-    	<?php include("webparts/resultado_de_operacoes.php"); ?>
+    <div class="container content">
+	    
+		<div class="row" >
+			<div class="col-xs-12 col-sm-3 col-md-3 ">
+				<div class="sidebar">
+		        	<p> O que você precisa? </p>	
+		        	<div class="sidebar-categorias">
+		        		<ul>
+		        			<li> <div class="sidebar-centering">Assist. Técnica</div> </li>
+		        			<li> <div class="sidebar-centering">Serviços Domésticos</div>  </li>
+		        			<li> <div class="sidebar-centering">Aulas</div>  </li>
+		        			<li> <div class="sidebar-centering">Design e Tecnologoia</div>  </li>
+		        			<li> <div class="sidebar-centering">Manuteção</div>  </li>
+		        			<li> <div class="sidebar-centering">Eventos</div>  </li>
+		        			<li> <div class="sidebar-centering">Moda e beleza</div>  </li>
+		        			<li> <div class="sidebar-centering">Saúde</div>  </li>
+		        		</ul>
+		        	</div>
 
-			<!-- 
-			<div class="col-md-3"> 
-					<select class="form-control combo_tipo_de_servico">
-						<option value="">Tipo de serviço</option>
+		        	<div style="clear:both;"> </div>
+
+		        	<p class="top20"> Em que cidades de atuação? </p>
+
+		        	<select  class="form-control cidades chosen-select" id="cidades" name="cidades[]" multiple
+					 		data-placeholder="Cidade(s) de atuação" >
+							<option> Remotamente/Não-presencial </option>
 					</select>
-			</div>
-			-->
-	
-		<div class="servicos_itens_nao_encotrados">
-			<p  style="margin-bottom:20px;"> Desculpe... Nenhum quebra-galho foi encontrado em sua busca. </p>
-			<p> Veja alguns outros serviços abaixo: </p>
-		</div>
 
-		<div id="servicos" class="servicos">
-		</div>
-		
+		       	</div>
+	       	</div>
+	        
+	        <div class="col-xs-12 col-sm-9 col-md-9 container-lista-servicos">
+		    	<?php include("webparts/resultado_de_operacoes.php"); ?>
+
+					<!-- 
+					<div class="col-md-3"> 
+							<select class="form-control combo_tipo_de_servico">
+								<option value="">Tipo de serviço</option>
+							</select>
+					</div>
+					-->
+			
+				<div class="servicos_itens_nao_encotrados">
+					<p  style="margin-bottom:20px;"> Desculpe... Nenhum quebra-galho foi encontrado em sua busca. </p>
+					<p> Veja alguns outros serviços abaixo: </p>
+				</div>
+
+				<div id="servicos" class="servicos">
+				</div>
+				
 
 
-		<div style="clear:both;"></div>
-		
-		<div class="paginacao_carregando">	
-			<img class="paginacao_carregando_img" src="img/carregando.gif" />
-			<p class="paginacao_carregando_acabou_msg"> Não há mais resultados... </p>
-		</div>
+				<div style="clear:both;"></div>
+				
+				<div class="paginacao_carregando">	
+					<img class="paginacao_carregando_img" src="img/carregando.gif" />
+					<p class="paginacao_carregando_acabou_msg"> Não há mais resultados... </p>
+				</div>	
+	        </div>
+        </div>
 
-		 <?php include("webparts/pagina_nao_encontrada.php"); ?>
+
+	    
+
     </div>
 
 	<div style="clear:both;"></div>

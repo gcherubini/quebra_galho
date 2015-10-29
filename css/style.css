@@ -29,6 +29,8 @@
 	padding-bottom:60px;   /* Height of the footer */
 }
 
+
+
 .container {
 
 
@@ -38,9 +40,6 @@
 }
 
 
-.container-lista-servicos {
-	width: 80%;
-}
 
 .form-box {
 	
@@ -141,7 +140,7 @@
 
 }
 
-.header_div_top_right a, .header_div_top_right .glyphicon-menu-right, .header_div_top_right .notificacao-icon { 
+.header_div_top_right a, .header_div_top_right .glyphicon-menu-right, .topo2 .notificacao-icon { 
 
 	color: white;
 	margin-left: 20px;
@@ -152,7 +151,7 @@
 }
 
 
-.header_div_top_right .notificacao-icon {
+.topo2 .notificacao-icon {
 
 	display: none;
 
@@ -379,12 +378,66 @@ text-decoration: underline;
 
 /*lista servicos , inicial , home */
 
+.container-lista-servicos {
+	margin-left:-20px;
+}
+
+.sidebar{
+	margin:0 auto;
+	width: 100%;
+}
+
+.sidebar-categorias{
+
+}
+
+.sidebar-categorias ul{
+	margin: auto;
+	margin: 0;
+	text-decoration: none;
+
+	
+
+}
+
+.sidebar-categorias ul li{
+	margin:0;
+	text-decoration: none;
+	list-style: none;
+	border: 1px solid #ccc;
+	padding: 20px;
+	float:left;
+	width: 120px;
+	height: 70px;
+	margin-right: 5px;
+	margin-bottom: 5px;
+	text-align: center;
+	position: relative;
+
+}
+
+.sidebar-categorias ul li .sidebar-centering{
+	  position: absolute;
+	  top: 50%;
+	  left: 50%;
+	  transform: translate(-50%, -50%);
+}
+
+
+.sidebar-categorias ul li:hover{
+	background-color: #ccc;
+	cursor: pointer;
+}
+
+.sidebar .cidades{
+	width: 240px;
+}
+
 .servicos {
 
 	margin: auto;
 	padding: auto;
-	margin-top:20px;
-
+	margin-bottom:20px;
 }
 
 .servico	{	
@@ -394,7 +447,7 @@ text-decoration: underline;
 	padding: 0;
 	text-align: justify;
 	float:left;
-	padding: 0 15px;
+	padding: 0 10px;
 	height: 380px;
 
 
@@ -811,18 +864,6 @@ form .row {
 
 
 
-
-
-
-
-.left{
-	float:left;
-}
-.right{
-	float: right;
-}
-
-
 .glyphicon{
 
 	position: inherit !important;
@@ -870,6 +911,20 @@ margin-top: 30px;
 
 }
 
+/* Modal nova avaliacao */
+.modal_nova_avaliacao .nota{
+	margin-top: 10px;
+
+}
+
+.modal_nova_avaliacao .descricao{
+	margin-top:20px;
+}
+
+.modal_nova_avaliacao .modal-body{
+	padding-bottom:30px; 
+}
+
 
 /* Ajuda */
 
@@ -900,3 +955,28 @@ margin-top: 30px;
 }
 
 
+
+
+
+
+
+
+
+
+
+
+.left{
+	float:left;
+}
+.right{
+	float: right;
+}
+.top10{
+	margin-top: 10px;
+}
+.top15 {
+	margin-top:15px;
+}
+.top20 {
+	margin-top:20px;
+}

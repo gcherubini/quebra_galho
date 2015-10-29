@@ -17,9 +17,8 @@ if(!isset($_SESSION['id_usuario'])){
    
  	$(document).ready(function () {
  		ativaMenuPainelUsuario("#painel_menu_negociacoes");
- 		
  		carregaNegociacoes();
-
+		$('.modal_nova_avaliacao').modal('toggle');
  	});
 	
 
@@ -73,6 +72,7 @@ if(!isset($_SESSION['id_usuario'])){
  	}
 
 
+
  	</script>
 
 
@@ -85,6 +85,8 @@ if(!isset($_SESSION['id_usuario'])){
 
   </head>
   <body>
+  	<?php include("webparts/modal_nova_avaliacao.php"); ?>
+
   	<div class="page">
 			<?php include("webparts/topo.php"); ?>
 
