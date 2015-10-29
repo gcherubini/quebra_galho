@@ -70,49 +70,39 @@ $().ready(function() {
 
 <div class="topo_fixed">
 
-	<div class="topo1">
-		
-		<div class="container header_div_top_right"> 
-				<a href="ajuda.php" >Ajuda </a>
-				<span class="glyphicon glyphicon-menu-right"></span>
-				
-				<?php if (isset($_SESSION['id_usuario'])) { ?>
-					<a href="#" class="logout">Sair</a>
-					<a href="painel_usuario_usuario.php"><?php echo $_SESSION['nome']; ?> </a>
-					<a href="painel_usuario_notificacoes.php" class="notificacao-icon"> <span class="glyphicon glyphicon-exclamation-sign "> </span>  </a>
-				<?php } else { ?>
-		 	  		<a href="login.php">Entrar</a>
-					<a href="novo_usuario.php">Cadastre-se</a>
-	 			<?php } ?>
-				
-		</div>
-		
-	</div>
+	
 
 	<div class="topo2" >
 		<div class="container">
 			
 			<div class="row" >
 			<!-- xs phone sm tablet md desktop -->		   
-		        <div class="col-xs-12 col-sm-5 col-md-5">
+		        <div class="col-xs-12 col-sm-3 col-md-3">
 		        	<div class="input-group">
-			          	<input type="text" class="form-control input_texto_pesquisar_topo" placeholder="Encontre e contrate um serviço...">
+			          	<input type="text" class="form-control input_texto_pesquisar_topo" placeholder="Encontre e contrate serviços de qualidade...">
 				        <div class="input-group-btn">
 				        	<button type="button" class="btn btn-default botao_procura_topo" aria-label="Buscar"><span class="glyphicon glyphicon-search "></span></button>
 				        </div>
 			        </div>
 		        </div>
 
-		        <div class="col-xs-12 col-sm-4 col-md-4 ">
+		  
+
+		        <div class="col-xs-12 col-sm-7 col-md-7 ">
+
 					<ul class="menu">
 						<a href="index.php"><li id="menu_inicio"> Inicio </li></a>
 						<a href="novo_servico.php"><li id="menu_publicar">Publicar</li></a>
-						<a href="sobre.php"><li id="menu_sobre">Sobre</li></a>
+						<a href="sobre.php"><li id="menu_sobre">Ajuda</li></a>
+						<a href="login.php"><li id="menu_entrar">Entrar</li></a>
+			            <a href="novo_usuario.php"><li id="menu_cadastre">Cadastre-se</li></a>
+			            <a href="#"><li id="menu_sair">Sair</li></a>
+
 					</ul>
 
 		        </div>
 		        
-		        <div class="col-xs-12 col-sm-3 col-md-3 minha_conta_div"> 
+		        <div class="col-xs-12 col-sm-2 col-md-2 minha_conta_div"> 
 
 					<a href="painel_usuario_usuario.php"> 
 						<div class="minha_conta">
@@ -122,6 +112,8 @@ $().ready(function() {
 					</a>
 
 		    	</div>
+
+		    	
 
 		   	
 			
