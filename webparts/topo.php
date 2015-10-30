@@ -77,7 +77,7 @@ $().ready(function() {
 			
 			<div class="row" >
 			<!-- xs phone sm tablet md desktop -->		   
-		        <div class="col-xs-12 col-sm-5 col-md-5">
+		        <div class="col-xs-12 col-sm-4 col-md-4">
 		        	<div class="input-group">
 			          	<input type="text" class="form-control input_texto_pesquisar_topo" placeholder="Encontre e contrate serviços de qualidade...">
 				        <div class="input-group-btn">
@@ -88,21 +88,16 @@ $().ready(function() {
 
 		  
 
-		        <div class="col-xs-12 col-sm-5 col-md-5 ">
+		        <div class="col-xs-12 col-sm-6 col-md-6 ">
 
 					<ul class="menu">
 						<a href="index.php"><li id="menu_inicio"> Inicio </li></a>
 						<a href="novo_servico.php"><li id="menu_publicar">Publicar</li></a>
 						<a href="ajuda.php"><li id="menu_ajuda">Ajuda</li></a>
-
-			            <?php if (isset($_SESSION['id_usuario'])) { ?>
-							<a href="#"><li id="menu_sair" class="logout">Sair</li></a>
-						<?php } else { ?>
-							<a href="novo_usuario.php"><li id="menu_cadastre">Cadastre-se</li></a>
-			 			<?php } ?>
-
 					</ul>
 		        </div>
+
+		 
 		        
 		        <div class="col-xs-12 col-sm-2 col-md-2 minha_conta_div"> 
 
@@ -126,16 +121,30 @@ $().ready(function() {
 									?>  
 								</p>
 							<?php } else { ?>
-								<p> Minha Conta </p>
+								<p> Entrar </p>
 			 				<?php } ?>
+
+
 
 							
 						</div>
 					</a>
 
+					 <div class="cadastre_sair">
+
+		        	<?php if (isset($_SESSION['id_usuario'])) { ?>
+							<a href="#"><li id="menu_sair" class="logout">Sair</li></a>
+						<?php } else { ?>
+							<a href="novo_usuario.php"><id="menu_cadastre">Cadastre-se</a>
+			 			<?php } ?>
+
+		        </div>
+
 
 
 		    	</div>
+
+		   
 
 		    	
 

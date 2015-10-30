@@ -26,7 +26,10 @@
 }
 
 .content {
-	padding-bottom:60px;   /* Height of the footer */
+	
+	padding-top: 40px;
+	padding-bottom:60px;   /* Altura do footer */
+
 }
 
 
@@ -130,11 +133,12 @@
 }
 
 .cadastro-usuario-div-sexo{
+
 	margin-top:10px;
 	margin-bottom: 20px;
 }
 
-/* Topo */
+/* TOPO */
 
 
 
@@ -186,10 +190,11 @@
 
 .topo2 {
 
+	opacity: 0.90;
 	position: fixed;
 	width: 100%;
 	background: white;
-	border-bottom: 1px solid gray;
+	border-bottom: 1px solid #493D26;
 	padding-top: 20px;
 	padding-bottom: 20px;
 	margin: 0;
@@ -198,6 +203,7 @@
 	z-index: 100;
 	border-top: 0;
 	
+/* BOTAO DE MINHA CONTA */
 
 }
 
@@ -205,36 +211,45 @@
 	
 	color: #555;
 	float:right;
+	padding-right: 110px;
+
+
 
 }
 
 .minha_conta {
 
-
+	opacity: 1;
 	font-weight: bold;
-	background-color: #52D017;
+	background-color: #C58917;
 	color: white;
 	float: right;
 	cursor: pointer;
 	text-align: center;
-	width: 150px;
+	width: 120px;
 	height: 35px;
 	border: 1px solid #B6B6B4;
 	padding-left: 0px;
-	border-radius: 5px;
+	border-radius: 5px;	
+	box-shadow: 0 5px 5px rgba(0, 0, 0, 0.075) inset;
+
 
 }
 
 .minha_conta:hover {
 
+/* 
  border-color: #E5E4E2;
  background: #59E817;
- transition: all 0.3s ease 0s;
+ */
 
- 
+ transition: all 0.2s ease 0s;
+ box-shadow: 0 5px 5px rgba(0, 0, 0, 0.075) inset, 0 0 3px rgba (0, 0, 0, 0.1);
 
 
 }
+
+
 
 .minha_conta:hover p {
 
@@ -251,13 +266,22 @@ text-decoration: underline;
 
 }
 
+
+
 .minha_conta p {
 
+	
 	float: left;
 	font-weight: bold;
 	font-size: 14px;
 	padding-top:10px;
-	margin-left: -6px;
+	margin-left: -3px;
+
+}
+
+.minha_conta_div {
+
+padding-right: 150px;
 
 }
 
@@ -266,6 +290,11 @@ text-decoration: underline;
 	padding-left: 15px;
 
 }
+
+
+
+/* MENU DO TOPO */
+
 
 
 .topo2_menu a { 
@@ -277,13 +306,16 @@ text-decoration: underline;
 
 .menu  {
 	
+
 	list-style-type: none;
 	float: right;
 	margin-top: 7px;
-	margin-right: 35px;
+	margin-right: 260px;
+
 }
 
 .menu li, .menu a {
+
 	float: left;
 	text-decoration: none;
 	margin-left: 20px;
@@ -303,13 +335,7 @@ text-decoration: underline;
 
 }
 
-
-
-
-
-
-
-
+/* LOGO */
 
 .topo2 .logo {
 
@@ -326,23 +352,25 @@ text-decoration: underline;
 	background-color: #ccc;
 }
 
+.cadastre_sair {
 
-
-.input_texto_pesquisar{
-
-	float:left;
-	margin:0;
-	width: 40%;
-
-}
-
-.input_texto_pesquisar_topo {
+float: right;
+margin-left: -65px;
+position: absolute;
+margin-top: 10px;
+color: #474646;
+font-size: 14px;
 
 
 
 }
 
+.cadastre_sair a {
 
+	color: #474646;
+	font-size: 14px;
+
+}
 
 .glyphicon-search {
 
@@ -357,11 +385,56 @@ text-decoration: underline;
 
 }
 
-/*barra de busca*/
+/* BARRA DE BUSCA */
+
+.input_texto_pesquisar_topo {
+
+	box-shadow: 0 5px 5px rgba(0, 0, 0, 0.075) inset;
+	border-color: #4CC417;
+
+}
+
+
+.input_texto_pesquisar_topo:focus {
+
+	border-color: #4CC417;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.075) inset, 0 0 3px #4CC417;
+    transition: all 0.2s ease 0s;
 
 
 
-/*mensagens da pagina*/
+}
+
+.botao_procura_topo {
+
+	border-color: #4CC417;
+	box-shadow: 0 5px 5px rgba(0, 0, 0, 0.075) inset
+
+}
+
+.botao_procura_topo:hover {
+
+	border-color: #4CC417;
+	box-shadow: 0 5px 5px rgba(0, 0, 0, 0.075) inset
+
+
+}
+
+
+}
+
+.input_texto_pesquisar {
+
+	
+	border-color: #4CC417;
+	float:left;
+	margin:0;
+	width: 40%;
+
+}
+
+
+/* MENSAGENS DA PAGINA */
 
 
 .pagina_nao_encontrada {
@@ -371,12 +444,14 @@ text-decoration: underline;
 .voce_precisa_estar_logado {
 }
 
-/*publicar servico*/
+/* PUBLICAR SERVICO */
+
 .publicar_servico {
 	margin:auto;
+
 }
 
-/*lista servicos , inicial , home */
+/* LISTA DE SERVIÇOS, PAGINA INICIAL, HOMEPAGE */
 
 .container-lista-servicos {
 	margin-left:-20px;
@@ -395,8 +470,6 @@ text-decoration: underline;
 	margin: auto;
 	margin: 0;
 	text-decoration: none;
-
-	
 
 }
 
@@ -606,17 +679,8 @@ form .row {
 	margin:auto;
 }
 
-/* Rodape */
+/* RESULTADO DE OPERACOES */ 
 
-.texto_rodape{
-	color:blue;
-}
-
-
-
-
-
-/* Resultado de Operacoes */ 
 .resultado_de_operacoes{
 	display: none;
 
@@ -632,7 +696,7 @@ form .row {
 }
 
 
-/* Painel Usuario */
+/* PAINEL DO USUARIO */
 
 .itens_nao_encotrados{
 	display: none;
@@ -746,7 +810,7 @@ form .row {
 	margin-top:20px;
 }
 
-/* Quebra Galho Perfil */
+/* PERFIL PUBLICO DO USUARIO */
 
 .quebra_galho_contato{
 	display: none;
@@ -777,43 +841,60 @@ form .row {
 	width: 60%;
 	margin: auto;
 }
-.quebra_galho_perfil .div_crop_foto_usuario{
+.quebra_galho_perfil .div_crop_foto_usuario {
 	margin: auto;
 	margin-top: 15px;
 }
 
-.quebra_galho_perfil_box{
+.quebra_galho_perfil_box {
 
 }
 
 
 
-/* infinite scroll pagination */
-.paginacao_carregando{
+/* INFINITE SCROLL PAGINATION */
+
+.paginacao_carregando {
+	
+
 	width: 100%;
 	text-align: center;
+
 }
 
-.paginacao_carregando_img{
+.paginacao_carregando_img {
+
+
+	
+	padding-right: 250px;
 	display: none;
 	margin-top: -30px;
 	margin:auto;
+	padding-bottom: 30px;
+	padding-top: 25px;
+
 }
-.paginacao_carregando_acabou_msg{
+
+.paginacao_carregando_acabou_msg {
+	
 	display: none;
 	font-size:22px;
 	margin:auto;
 	margin-top: -15px;
-	padding: 15px;
+	padding-bottom: 30px;
+	padding-top: 25px;
+	padding-right: 250px;
 }
 
-/* Rodape */
+/* RODAPE - FOOTER */
 
 
 .footer {
 
+
+
 	margin: 0;
-	background-color: #474646;
+	background-color: #493D26;
 	margin-top: 20px;
 	padding: 15px;
 	position:absolute;
@@ -821,7 +902,7 @@ form .row {
     width:100%;
     height:60px;   
 
-    /* Height of the footer */
+    /* Altura do Footer */
 
 
 }
@@ -842,6 +923,7 @@ form .row {
 }
 
 .footer p {
+
 	margin:0;
 }
 
@@ -863,7 +945,6 @@ form .row {
 
 
 
-
 .glyphicon{
 
 	position: inherit !important;
@@ -880,7 +961,7 @@ form .row {
 
 
 
-/* Sobre nós */
+/* SOBRE NOS */
 
 
 .container_sobre p, .container_sobre a {
@@ -891,8 +972,6 @@ form .row {
 
 
 }
-
-
 
 
 .video {
@@ -911,7 +990,7 @@ margin-top: 30px;
 
 }
 
-/* Modal nova avaliacao */
+/* MODAL NOVA ATUALIZACAO */
 .modal_nova_avaliacao .nota{
 	margin-top: 10px;
 
@@ -926,12 +1005,12 @@ margin-top: 30px;
 }
 
 
-/* Ajuda */
+/* AJUDA */
 
 
 
 
-/* Log In */
+/* LOG IN */
 
 
 
