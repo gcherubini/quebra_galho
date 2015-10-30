@@ -175,14 +175,14 @@ $pesquisa = isset($_GET['pesquisa']) ? trim($_GET['pesquisa']) : '';
 		        	<p> O que você precisa? </p>	
 		        	<div class="sidebar-categorias">
 		        		<ul>
-		        			<li> <div class="sidebar-centering">Assist. Técnica</div> </li>
-		        			<li> <div class="sidebar-centering">Serviços Domésticos</div>  </li>
-		        			<li> <div class="sidebar-centering">Aulas</div>  </li>
-		        			<li> <div class="sidebar-centering">Design e Tecnologoia</div>  </li>
-		        			<li> <div class="sidebar-centering">Manuteção</div>  </li>
-		        			<li> <div class="sidebar-centering">Eventos</div>  </li>
-		        			<li> <div class="sidebar-centering">Moda e beleza</div>  </li>
-		        			<li> <div class="sidebar-centering">Saúde</div>  </li>
+		        			<li> <div class="sidebar-centering">Assist. Técnica</div><span class="glyphicon glyphicon-signal"> </span></li> 
+		        			<li> <div class="sidebar-centering">Serviços Domésticos</div> <span class="glyphicon glyphicon-home"> </span> </li>
+		        			<li> <div class="sidebar-centering">Aulas</div><span class="glyphicon glyphicon-education"> </span>  </li>
+		        			<li> <div class="sidebar-centering">Design e Tecnologia</div><span class="glyphicon glyphicon-iphone-shake"> </span>  </li>
+		        			<li> <div class="sidebar-centering">Manuteção</div><span class="glyphicon glyphicon-settings"> </span>  </li>
+		        			<li> <div class="sidebar-centering">Eventos</div><span class="glyphicon glyphicon-glass"> </span>  </li>
+		        			<li> <div class="sidebar-centering">Moda e beleza</div><span class="glyphicon glyphicon-coat-hanger"> </span>  </li>
+		        			<li> <div class="sidebar-centering">Saúde</div><span class="glyphicon glyphicon-stethoscope"> </span> </li>
 		        		</ul>
 		        	</div>
 

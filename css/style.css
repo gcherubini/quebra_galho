@@ -501,24 +501,35 @@ font-style: bold;
 }
 
 .sidebar{
+
 	margin:0 auto;
 	width: 100%;
 }
 
+
+
 .sidebar-categorias{
+
+
 
 }
 
 .sidebar-categorias ul{
 	margin: auto;
 	margin: 0;
-	text-decoration: none;
+
+
 
 }
 
 .sidebar-categorias ul li{
+
+	
+
+
+	border-radius:5px;
+	box-shadow: 0 5px 5px rgba(0, 0, 0, 0.050) inset;
 	margin:0;
-	text-decoration: none;
 	list-style: none;
 	border: 1px solid #ccc;
 	padding: 20px;
@@ -533,6 +544,7 @@ font-style: bold;
 }
 
 .sidebar-categorias ul li .sidebar-centering{
+
 	  position: absolute;
 	  top: 50%;
 	  left: 50%;
@@ -541,8 +553,10 @@ font-style: bold;
 
 
 .sidebar-categorias ul li:hover{
-	background-color: #ccc;
+	
+	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.050) inset;
 	cursor: pointer;
+	text-decoration: underline;
 }
 
 .sidebar .cidades{
