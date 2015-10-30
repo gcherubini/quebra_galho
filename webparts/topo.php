@@ -74,21 +74,46 @@ $().ready(function() {
 
 	<div class="topo2" >
 		<div class="container">
+
+			
+
 			
 			<div class="row" >
-			<!-- xs phone sm tablet md desktop -->		   
-		        <div class="col-xs-12 col-sm-4 col-md-4">
+			<!-- xs phone sm tablet md desktop -->	
+
+			
+
+		        
+				
+
+		        <div class="col-xs-12 col-sm-2 col-md-2 coluna0">
+		     
+
+			<div class="logo_topo">
+			
+				<a href="index.php"> <img src ="img/logos/Logo_Oct001.png" class="logo_imagem"> </a>
+
+			</div>
+
+		
+
+		        	
+		        </div>
+
+		        <div class="col-xs-12 col-sm-4 col-md-4 coluna1">
+
 		        	<div class="input-group">
 			          	<input type="text" class="form-control input_texto_pesquisar_topo" placeholder="Encontre e contrate serviços de qualidade...">
 				        <div class="input-group-btn">
 				        	<button type="button" class="btn btn-default botao_procura_topo" aria-label="Buscar"><span class="glyphicon glyphicon-search "></span></button>
 				        </div>
 			        </div>
-		        </div>
 
-		  
+			    </div>
 
-		        <div class="col-xs-12 col-sm-6 col-md-6 ">
+		
+
+		        <div class="col-xs-12 col-sm-4 col-md-4 coluna2">
 
 					<ul class="menu">
 						<a href="index.php"><li id="menu_inicio"> Inicio </li></a>
@@ -97,9 +122,10 @@ $().ready(function() {
 					</ul>
 		        </div>
 
-		 
+
+		 	
 		        
-		        <div class="col-xs-12 col-sm-2 col-md-2 minha_conta_div"> 
+		        <div class="col-xs-12 col-sm-2 col-md-2 minha_conta_div coluna3"> 
 
 		        	<!-- Icone de notificacoes -->
 					<a href="painel_usuario_notificacoes.php" class="notificacao-icon"> 
@@ -133,7 +159,7 @@ $().ready(function() {
 					 <div class="cadastre_sair">
 
 		        	<?php if (isset($_SESSION['id_usuario'])) { ?>
-							<a href="#"><li id="menu_sair" class="logout">Sair</li></a>
+							<a href="#"><id="menu_sair" class="logout">Sair</a>
 						<?php } else { ?>
 							<a href="novo_usuario.php"><id="menu_cadastre">Cadastre-se</a>
 			 			<?php } ?>
@@ -143,6 +169,8 @@ $().ready(function() {
 
 
 		    	</div>
+
+	
 
 		   
 

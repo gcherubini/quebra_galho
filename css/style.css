@@ -219,6 +219,7 @@
 
 .minha_conta {
 
+
 	opacity: 1;
 	font-weight: bold;
 	background-color: #C58917;
@@ -230,7 +231,7 @@
 	height: 35px;
 	border: 1px solid #B6B6B4;
 	padding-left: 0px;
-	border-radius: 5px;	
+	border-radius: 10px;	
 	box-shadow: 0 5px 5px rgba(0, 0, 0, 0.075) inset;
 
 
@@ -306,11 +307,11 @@ padding-right: 150px;
 
 .menu  {
 	
-
 	list-style-type: none;
-	float: right;
+	float: left;
+	margin-right: 200px;
 	margin-top: 7px;
-	margin-right: 260px;
+
 
 }
 
@@ -318,8 +319,7 @@ padding-right: 150px;
 
 	float: left;
 	text-decoration: none;
-	margin-left: 20px;
-	color: #474646;
+	color: #493D26;
 	font-size:16px;
 }
 
@@ -335,7 +335,45 @@ padding-right: 150px;
 
 }
 
+/* TESTE POSICAO DE COLUNAS
+
+.coluna0 {
+
+	background: green;
+
+}
+
+.coluna1 {
+
+	background: black;
+}
+.coluna2 {
+
+	background: blue;
+
+}
+
+.coluna3 {
+
+	background: red;
+
+}
+
+*/
+
 /* LOGO */
+
+.logo_imagem {
+
+
+width: 150px;
+
+}
+
+
+
+}
+
 
 .topo2 .logo {
 
@@ -358,8 +396,9 @@ float: right;
 margin-left: -65px;
 position: absolute;
 margin-top: 10px;
-color: #474646;
+color: #493D26;
 font-size: 14px;
+font-style: bold;
 
 
 
@@ -391,6 +430,7 @@ font-size: 14px;
 
 	box-shadow: 0 5px 5px rgba(0, 0, 0, 0.075) inset;
 	border-color: #4CC417;
+	border-radius: 8px;
 
 }
 
@@ -403,12 +443,15 @@ font-size: 14px;
 
 
 
+
 }
 
 .botao_procura_topo {
 
 	border-color: #4CC417;
-	box-shadow: 0 5px 5px rgba(0, 0, 0, 0.075) inset
+	box-shadow: 0 5px 5px rgba(0, 0, 0, 0.075) inset;
+	border-radius: 8px;
+
 
 }
 
@@ -816,11 +859,18 @@ form .row {
 	display: none;
 }
 
+.quebra_galho_perfil {
+
+}
+
 .quebra_galho_perfil_box{
-	width: 60%;
+	
+	width: 100%;
 	margin: auto;
-	text-align: center;
-	border: 1px solid #bfbcbc;
+	text-align: left;
+	border: 1px solid #E5E4E2;
+	padding-right: 900px;
+	padding-top: 30px;
 	
 	margin-bottom: 20px;
 	padding-bottom: 20px;
@@ -838,18 +888,33 @@ form .row {
 	-moz-border-radius: 5px;
 }
 .quebra_galho_perfil_box_content {
+
 	width: 60%;
 	margin: auto;
+
 }
 .quebra_galho_perfil .div_crop_foto_usuario {
+	
+
 	margin: auto;
 	margin-top: 15px;
+}
+
+.cropit-image-preview, .usuario_foto {
+
+	border-radius: 20px;
 }
 
 .quebra_galho_perfil_box {
 
 }
 
+.servico_nome {
+
+
+	padding-left: 200px;
+
+}
 
 
 /* INFINITE SCROLL PAGINATION */
