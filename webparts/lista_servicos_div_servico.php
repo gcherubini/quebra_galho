@@ -29,7 +29,7 @@
 			<?php echo '<img class="img-responsive" src="'.$servico["img_url"].'"/>'; ?>
 		</div>
 
-		<div class="servico3">
+		<div class="servico-conteudo">
 			<h3> <?php echo $servico["nome"]; ?></h3> 
 				
 			<h4> <?php echo $servico["emprego"]; ?> </h4> 

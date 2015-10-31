@@ -42,7 +42,7 @@
    	
    	<div class="botao_remover_painel col-xs-4 col-sm-2 col-md-2">
 		<p> 
-			<a  <?php echo  "id='" . $servico["id_servico"] . "'"; ?> href="" class="finalizar_negociacao btn btn-danger">Finalizar negociação</a>
+			<a  <?php echo  "id='" . $servico["id_servico"] . "'"; ?>  class="finalizar_negociacao_como_contratante btn btn-danger">Finalizar negociação</a>
 		</p>
   	</div>
 

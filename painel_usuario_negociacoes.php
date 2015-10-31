@@ -18,9 +18,47 @@ if(!isset($_SESSION['id_usuario'])){
  	$(document).ready(function () {
  		ativaMenuPainelUsuario("#painel_menu_negociacoes");
  		carregaNegociacoes();
-		$('.modal_nova_avaliacao').modal('toggle');
- 	});
-	
+		
+
+		$('.container').on('click', '.finalizar_negociacao_como_contratante', function() {
+			finalizarNegociacaoComoContratante($(this).attr("id"));
+		});
+
+		$(".avaliar_como_contratante_form").validate({
+			rules: {
+				descricao: {
+					required: true
+				},
+				nota: {
+					required: true
+				}
+			}
+		});	
+	});
+
+	$.validator.setDefaults({
+			submitHandler: function() {
+				alert('la vamos nos')
+			   /* $.ajax({
+			        type : 'POST',
+			        dataType : 'text',
+			        data: $(form).serialize(),
+			        url: 'backend/servico_novo.php',
+			        success : function(result) {
+			        	if(result == "") {
+			        		sucessoSalvarDB(result);
+			        	}
+			        	else{
+			        		erroSalvarDB(result);
+			        	}
+			        },
+			        error: function(XMLHttpRequest, textStatus, errorThrown){
+				        erroSalvarDB(textStatus);
+				    }
+			    });*/
+				
+			}
+		});
 
 	function carregaNegociacoes(){
 
@@ -64,6 +102,30 @@ if(!isset($_SESSION['id_usuario'])){
 		    	$('.negociacoes').append(div_result);
 		    } 
 		});
+	}
+
+	function finalizarNegociacaoComoContratante(id){
+
+		$('.modal_nova_avaliacao').modal('toggle');
+
+		
+		
+		/*$.ajax({
+		        type : 'POST',
+		        dataType : 'text',
+		        data: ({id: id}) ,
+		        url: 'backend/servico_deletar.php',
+		        success : function(json_result) {
+		        	//alert(json_result)
+		        	if(json_result != "") {
+		        		mostraMensagemDeErroNaDelecao()
+		        	}
+		        },
+		        error: function(XMLHttpRequest, textStatus, errorThrown){
+			    	//alert("error: " + textStatus);
+			    	mostraMensagemDeErroNaDelecao()
+			    } 
+		    });*/
 	}
 
  	function mostraMensagemDeNegociacoesNaoEncontradas() {

@@ -396,7 +396,7 @@ float: right;
 margin-left: -65px;
 position: absolute;
 margin-top: 10px;
-color: #493D26;
+color: #474646;
 font-size: 14px;
 font-style: bold;
 
@@ -404,12 +404,6 @@ font-style: bold;
 
 }
 
-.cadastre_sair a {
-
-	color: #474646;
-	font-size: 14px;
-
-}
 
 .glyphicon-search {
 
@@ -541,14 +535,25 @@ font-style: bold;
 	text-align: center;
 	position: relative;
 
+
+
+
 }
 
 .sidebar-categorias ul li .sidebar-centering{
 
 	  position: absolute;
-	  top: 50%;
+	  /*top: 50%;
 	  left: 50%;
-	  transform: translate(-50%, -50%);
+	  transform: translate(-50%, -50%);*/
+	  
+	  left:25%;
+	  width:50%;
+	  height:50%;
+	  top:25%;
+
+
+
 }
 
 
@@ -578,8 +583,7 @@ font-style: bold;
 	text-align: justify;
 	float:left;
 	padding: 0 10px;
-	height: 380px;
-
+	min-height: 400px;
 
 }
 
@@ -589,16 +593,13 @@ font-style: bold;
 	/*width: 280px;
 	min-height: 270px;*/
 
-
-	
-	padding-left: 15px;
 	border-radius: 10px;
 	width: 280px;
-	min-height: 400px;
+	border:1px solid white;
 
 }
 
-.servico3{
+.servico-conteudo{
 	width: 95%;
 	text-align: justify;
 	margin: auto;
@@ -610,9 +611,11 @@ font-style: bold;
 
    background: white;
    opacity: 0.90;
-   box-shadow: inset 0 0 0 1px gray;
+   box-shadow: outset 0 0 0 1px gray;
    transition: all 0.3s ease 0s;
    text-decoration: underline;
+   border:1px solid #ccc;
+
 
 }
 
@@ -623,27 +626,18 @@ font-style: bold;
 }
 
 .servico_destaque{
-
-	
 	width: 100%;
 	border-radius: 10px;
 	cursor: pointer;
-	height: 190px;
+	min-height: 190px;
 	margin-bottom: 30px;
-
 }
 
 .servicos_titulo_filtro {
 	margin-top:20px;
 }
 
-.servico_destaque_img{
 
-	width: 280px;
-	padding-left: 15px;
-	float:left;
-
-}
 
 .servico_destaque_content{
 	
@@ -663,11 +657,30 @@ font-style: bold;
 
 }
 
+.servico_destaque_img{
+
+	width: 280px;
+	float:left;
+
+}
+
 .servico_img img {
-	border-radius: 10px;
 	width: 280px;
 	height: 190px;
+	border-top-left-radius: 7px;
+	border-top-right-radius: 7px;
 }
+
+
+
+.servico_destaque_img img{
+	border-radius: 0;
+	border-bottom-left-radius: 7px;
+	border-top-left-radius: 7px;
+}
+
+
+
 
 .service_item_thumb {	
 	
@@ -1072,6 +1085,7 @@ margin-top: 30px;
 /* MODAL NOVA ATUALIZACAO */
 .modal_nova_avaliacao .nota{
 	margin-top: 10px;
+	min-width: 150px;
 
 }
 
