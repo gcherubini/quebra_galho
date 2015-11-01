@@ -18,6 +18,22 @@ $pesquisa = isset($_GET['pesquisa']) ? trim($_GET['pesquisa']) : '';
 	var paginasCarregadas = 0;
 	
 	$(document).ready(function () {
+
+
+		/* JQUERY PARA BRILHO NO HOVER DA LISTA DE SERVIÇOS
+
+		$(".container").on("mouseover", ".servico2", function(){
+		   $(".servico_img").css("opacity","0.9");
+		});
+
+
+		$(".container").on("mouseout", ".servico2", function(){
+		   $(".servico_img").css("opacity","1");
+		});
+
+
+		*/
+
 		ativaMenu("#menu_inicio");
 		carregaComboCidade(".cidades");
 
@@ -175,13 +191,13 @@ $pesquisa = isset($_GET['pesquisa']) ? trim($_GET['pesquisa']) : '';
 		        	<p> O que você precisa? </p>	
 		        	<div class="sidebar-categorias">
 		        		<ul>
-		        			<li> <div class="sidebar-centering">Assist. Técnica</div><span class="glyphicon glyphicon-signal"> </span></li> 
+		        			<li> <div class="sidebar-centering">Gastronomia</div><span class="glyphicon glyphicon-cutlery"> </span></li> 
 		        			<li> <div class="sidebar-centering">Serviços Domésticos</div> <span class="glyphicon glyphicon-home"> </span> </li>
 		        			<li> <div class="sidebar-centering">Aulas</div><span class="glyphicon glyphicon-education"> </span>  </li>
-		        			<li> <div class="sidebar-centering">Design e Tecnologia</div><span class="glyphicon glyphicon-iphone-shake"> </span>  </li>
+		        			<li> <div class="sidebar-centering">Artes</div><span class="glyphicon glyphicon-iphone-shake"> </span>  </li>
 		        			<li> <div class="sidebar-centering">Manuteção</div><span class="glyphicon glyphicon-settings"> </span>  </li>
 		        			<li> <div class="sidebar-centering">Eventos</div><span class="glyphicon glyphicon-glass"> </span>  </li>
-		        			<li> <div class="sidebar-centering">Moda e beleza</div><span class="glyphicon glyphicon-coat-hanger"> </span>  </li>
+		        			<li> <div class="sidebar-centering">Moda</div><span class="glyphicon glyphicon-coat-hanger"> </span>  </li>
 		        			<li> <div class="sidebar-centering">Saúde</div><span class="glyphicon glyphicon-stethoscope"> </span> </li>
 		        		</ul>
 		        	</div>

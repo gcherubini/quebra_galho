@@ -32,11 +32,8 @@
 		<div class="servico-conteudo">
 			<h3> <?php echo $servico["nome"]; ?></h3> 
 				
-			<h4> <?php echo $servico["emprego"]; ?> </h4> 
-
-			<h5>(<?php echo $servico["idade"]; ?> anos)</h5>
+			<h4> <?php echo $servico["emprego"]; ?> </h4>
 			
-
 			<p>"<?php echo $servico["slogan"]; ?>"</p> 
 			
 			<p> <b>Numero de serviços: </b> <?php echo $servico["numero_servicos"]; ?></p> 

@@ -37,7 +37,7 @@
 .container {
 
 
-	width: 90%;
+	width: 100%;
 	padding-left: 35px;
 
 }
@@ -475,10 +475,12 @@ font-style: bold;
 
 
 .pagina_nao_encontrada {
+
 	display: none;
 }
 
 .voce_precisa_estar_logado {
+
 }
 
 /* PUBLICAR SERVICO */
@@ -494,7 +496,7 @@ font-style: bold;
 	margin-left:-20px;
 }
 
-.sidebar{
+.sidebar {
 
 	margin:0 auto;
 	width: 100%;
@@ -521,8 +523,8 @@ font-style: bold;
 	
 
 
-	border-radius:5px;
-	box-shadow: 0 5px 5px rgba(0, 0, 0, 0.050) inset;
+	border-radius: 5px;
+	box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1) inset;
 	margin:0;
 	list-style: none;
 	border: 1px solid #ccc;
@@ -550,8 +552,37 @@ font-style: bold;
 	  left:25%;
 	  width:50%;
 	  height:50%;
-	  top:25%;
+	  top:80%;
 
+
+
+}
+
+.glyphicon-cutlery {
+
+	font-size: 18px;
+	color: red;
+}
+
+
+
+.glyphicon-home {
+
+	font-size: 18px;
+	color: brown;
+}
+
+.glyphicon-education {
+
+	font-size: 18px;
+	color: green;
+
+}
+
+.glyphicon-glass {
+
+	font-size: 18px;
+	color: blue;
 
 
 }
@@ -559,7 +590,7 @@ font-style: bold;
 
 .sidebar-categorias ul li:hover{
 	
-	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.050) inset;
+	box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1) inset;
 	cursor: pointer;
 	text-decoration: underline;
 }
@@ -572,7 +603,7 @@ font-style: bold;
 
 	margin: auto;
 	padding: auto;
-	margin-bottom:20px;
+	margin-bottom: 20px;
 }
 
 .servico	{	
@@ -583,7 +614,7 @@ font-style: bold;
 	text-align: justify;
 	float:left;
 	padding: 0 10px;
-	min-height: 400px;
+	min-height: 370px;
 
 }
 
@@ -594,28 +625,27 @@ font-style: bold;
 	min-height: 270px;*/
 
 	border-radius: 10px;
-	width: 280px;
-	border:1px solid white;
+	width: 250px;
+	border: 1px solid white;
 
 }
 
 .servico-conteudo{
+
 	width: 95%;
 	text-align: justify;
 	margin: auto;
 	margin-top: 15px;
 	padding-bottom: 10px;
+
 }
 
 .servico2:hover, .servico_destaque:hover { 
-
+   	
    background: white;
-   opacity: 0.90;
-   box-shadow: outset 0 0 0 1px gray;
-   transition: all 0.3s ease 0s;
+   box-shadow: inset 0 0 0 1px gray;  
    text-decoration: underline;
    border:1px solid #ccc;
-
 
 }
 
@@ -623,14 +653,18 @@ font-style: bold;
 
 	font-size: 18px !important;
 	margin: 0;
+
 }
 
 .servico_destaque{
+
 	width: 100%;
 	border-radius: 10px;
 	cursor: pointer;
 	min-height: 190px;
 	margin-bottom: 30px;
+	border: 1px solid white;
+
 }
 
 .servicos_titulo_filtro {
@@ -648,6 +682,11 @@ font-style: bold;
 }
 
 
+.servico_img:hover {
+
+	 opacity: 0.90;	
+
+}
 
 .servico_img {
 
@@ -659,12 +698,13 @@ font-style: bold;
 
 .servico_destaque_img{
 
-	width: 280px;
+	width: 250px;
 	float:left;
 
 }
 
 .servico_img img {
+
 	width: 280px;
 	height: 190px;
 	border-top-left-radius: 7px;
@@ -674,13 +714,11 @@ font-style: bold;
 
 
 .servico_destaque_img img{
+
 	border-radius: 0;
 	border-bottom-left-radius: 7px;
 	border-top-left-radius: 7px;
 }
-
-
-
 
 .service_item_thumb {	
 	
@@ -691,16 +729,16 @@ font-style: bold;
 }
 
 .servicos_itens_nao_encotrados p{
+
 	font: normal 18px "Helvetica Neue",Helvetica,Arial,Sans-serif;
     color: #333;
     margin-bottom: 30px;
 }
 
-
-
 /* Cadastro Usuário */
 
 .div_crop_foto_usuario {
+
 	width:148px;
 	height: 148px;
 	position: relative;
@@ -708,19 +746,23 @@ font-style: bold;
 }
 
 .error {
+
 	color: red;
     margin-top: 10px;
     margin-bottom: -6px;
 }
 
 form .row {
+
 	margin-top: 10px;
 	margin-bottom: 20px;
 }
 
 .foto-preview{
+
 	display:none;
 	margin-top:10px;
+	
 }
 
 .image-size-label{
@@ -913,7 +955,9 @@ form .row {
 	border-top-right-radius: 5px;
     -webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
+
 }
+
 .quebra_galho_perfil_box_content {
 
 	width: 60%;
@@ -1124,18 +1168,8 @@ margin-top: 30px;
     margin-right:-4px;
     padding-left: 0 !important;
     padding-right: 0 !important;
+
 }
-
-
-
-
-
-
-
-
-
-
-
 
 .left{
 	float:left;
