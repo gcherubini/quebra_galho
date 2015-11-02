@@ -39,7 +39,7 @@ CREATE TABLE `avaliacao` (
   CONSTRAINT `avaliacao_ibfk_1` FOREIGN KEY (`contratado`) REFERENCES `usuario` (`id_usuario`),
   CONSTRAINT `avaliacao_ibfk_2` FOREIGN KEY (`contratante`) REFERENCES `usuario` (`id_usuario`),
   CONSTRAINT `avaliacao_ibfk_3` FOREIGN KEY (`id_servico`) REFERENCES `servico` (`id_servico`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -48,7 +48,7 @@ CREATE TABLE `avaliacao` (
 
 LOCK TABLES `avaliacao` WRITE;
 /*!40000 ALTER TABLE `avaliacao` DISABLE KEYS */;
-INSERT INTO `avaliacao` VALUES (5,2,12,3,5,'Toppp','2015-11-02 15:26:23'),(6,3,12,4,3,'Foi bem mais ou menos...','2015-11-02 15:28:01'),(7,21,12,42,5,'tope','2015-11-02 15:28:51');
+INSERT INTO `avaliacao` VALUES (5,2,12,3,5,'Toppp','2015-11-02 15:26:23'),(6,3,12,4,3,'Foi bem mais ou menos...','2015-11-02 15:28:01'),(7,21,12,42,5,'tope','2015-11-02 15:28:51'),(8,12,21,17,5,'po Top o serviço','2015-11-02 18:21:39');
 /*!40000 ALTER TABLE `avaliacao` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -143,6 +143,7 @@ CREATE TABLE `negociacao` (
   `contratado` int(11) DEFAULT NULL,
   `id_servico` int(11) DEFAULT NULL,
   `negociacao_finalizada` tinyint(4) DEFAULT '0',
+  `data_criacao` datetime DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id_negociacao`),
   KEY `contratante` (`contratante`),
   KEY `contratado` (`contratado`),
@@ -150,7 +151,7 @@ CREATE TABLE `negociacao` (
   CONSTRAINT `negociacao_ibfk_1` FOREIGN KEY (`contratante`) REFERENCES `usuario` (`id_usuario`),
   CONSTRAINT `negociacao_ibfk_2` FOREIGN KEY (`contratado`) REFERENCES `usuario` (`id_usuario`),
   CONSTRAINT `negociacao_ibfk_3` FOREIGN KEY (`id_servico`) REFERENCES `servico` (`id_servico`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -159,7 +160,7 @@ CREATE TABLE `negociacao` (
 
 LOCK TABLES `negociacao` WRITE;
 /*!40000 ALTER TABLE `negociacao` DISABLE KEYS */;
-INSERT INTO `negociacao` VALUES (8,12,2,3,1),(9,11,2,3,0),(10,11,3,4,0),(11,12,3,4,1),(12,12,21,42,1),(14,21,3,4,0),(16,11,12,27,0);
+INSERT INTO `negociacao` VALUES (8,12,2,3,1,'2015-11-02 17:59:35'),(9,11,2,3,0,'2015-11-02 17:59:35'),(10,11,3,4,0,'2015-11-02 17:59:35'),(11,12,3,4,1,'2015-11-02 17:59:35'),(12,12,21,42,1,'2015-11-02 17:59:35'),(14,21,3,4,0,'2015-11-02 17:59:35'),(16,11,12,27,0,'2015-11-02 17:59:35'),(17,21,12,17,1,'2015-11-02 17:59:35'),(18,21,12,22,1,'2015-11-02 17:59:35'),(19,21,12,26,1,'2015-11-02 17:59:35');
 /*!40000 ALTER TABLE `negociacao` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -296,4 +297,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-11-02 15:54:25
+-- Dump completed on 2015-11-02 18:31:37

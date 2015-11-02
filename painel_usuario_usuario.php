@@ -13,12 +13,18 @@ if(!isset($_SESSION['id_usuario'])){
    <?php include("webparts/head_imports.php"); ?>
    <title>Quebra-Galho</title>
 
+
+   <style type="text/css">
+   	.ver_mais_avaliacoes{display: none;}
+   </style>
+
    <script type="text/javascript"> 
    
 	$().ready(function() {
 
 		ativaMenuPainelUsuario("#painel_menu_usuario");
  		carregaUsuario();
+ 		carregaAvaliacoes();
 
 
 		$(".data_nascimento").datepicker({
@@ -66,9 +72,8 @@ if(!isset($_SESSION['id_usuario'])){
 	        });
 	}
 
-	function carregaUsuario(){
-		
 
+	function carregaUsuario(){
 		$.ajax({
 		    //type : 'POST',
 		    //data: ({attr: value}) ,
@@ -89,16 +94,63 @@ if(!isset($_SESSION['id_usuario'])){
 	    });
 	}
 
+	function carregaAvaliacoes(){
+		$.ajax({
+		        type : 'POST',
+		        dataType : 'json',
+		        url: 'backend/avaliacao_busca.php',
+		        async: false,
+		        success : function(json_result) {
+		        	//alert(json_result)
+		        	//console.log(json_result)
+		            // need to test in IE
+		            var countJsonItens = Object.keys(json_result).length 
+
+		 			if(countJsonItens == 0) {
+	 					mostraMensagemDeNenhumaAvaliacaoCadastrada()
+		 			}
+		 			else {
+	            		$.each(json_result, function(index, json_result) {	
+	            			populaAvaliacao(json_result);
+		        		});
+			        }
+
+		        },
+		        error: function(XMLHttpRequest, textStatus, errorThrown){
+					mostraMensagemDeNenhumaAvaliacaoCadastrada();	
+			    	//alert("error: " + textStatus);
+			    } 
+		    });
+	}
+
+
 	function populaUsuarioNaTela(json_result){
 		$(".perfil_info").css('display','block');
 		$(".data_nascimento").val($.datepicker.formatDate('dd/mm/yy', new Date(json_result.data_nascimento)));
 		$(".email").val(json_result.email);
 		
 		/*$(".senha").val(json_result.senha);*/
-	
+			
+	}
 
-
+	function populaAvaliacao(json_result){
+		var url_div = "webparts/painel_usuario_div_avaliacao_publ.php";
+		var url_div_sucess = ".avaliacoes";
 		
+		$.ajax({
+		    type : 'GET',
+		    dataType : 'text',
+		    url: url_div,
+		    data: ({json: json_result}),
+		    async: false,
+		    success : function(div_result) {
+		    	$(url_div_sucess).append(div_result);
+		    } 
+		});	
+	}
+
+	function mostraMensagemDeNenhumaAvaliacaoCadastrada(){
+		$('.avaliacoes_nao_encontradas').css("display","block");
 	}
 
 	function erroAoCarregarUsuario(){
@@ -194,11 +246,20 @@ if(!isset($_SESSION['id_usuario'])){
 
 					</p>
 
-					<?php include("webparts/painel_usuario_div_avaliacao_publ.php"); ?>
+					<div class="avaliacoes">
+						
+					</div>
+						
+					
+					<div class="ver_mais_avaliacoes"><a href="#">Ver mais avaliações</a> </div>
+					
+				
 
-					<p>
-						<id class="ver_mais_avaliacoes"><a href="#">Ver mais avaliações</a> </id>
-					</p>
+					<div class="itens_nao_encotrados avaliacoes_nao_encontradas">
+						<p> Você ainda não possui nenhuma avaliação. </p>
+					</div>
+
+
 
 				<h2> Meus Anúncios </h2>
 

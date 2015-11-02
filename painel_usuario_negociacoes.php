@@ -17,7 +17,8 @@ if(!isset($_SESSION['id_usuario'])){
    
  	$(document).ready(function () {
  		ativaMenuPainelUsuario("#painel_menu_negociacoes");
- 		carregaNegociacoes();
+ 		carregaNegociacoes("como_prestador_de_servico");
+ 		carregaNegociacoes("como_contratante");
 		
 
 		$('.container').on('click', '.finalizar_negociacao_como_contratante', function() {
@@ -56,7 +57,7 @@ if(!isset($_SESSION['id_usuario'])){
 
 			        	$('.avaliar_como_contratante_form')[0].reset();
 			        	$('.modal_nova_avaliacao').modal('hide');
-			        	carregaNegociacoes();
+			        	carregaNegociacoes("como_contratante");
 
 			        },
 			        error: function(XMLHttpRequest, textStatus, errorThrown){
@@ -67,15 +68,18 @@ if(!isset($_SESSION['id_usuario'])){
 			}
 		});
 
-	function carregaNegociacoes(){
+	function carregaNegociacoes(tipo){
 
 		// limpa div negociacoes
-		$('.negociacoes').text("");
+		if(tipo == "como_contratante"){
+			$('.negociacoes-como-contratante').text("");
+		}
 
 		// carrega negociacoes
 		$.ajax({
 		        type : 'POST',
 		        dataType : 'json',
+		        data: ({tipo: tipo}) ,
 		        url: 'backend/negociacao_busca.php',
 		        success : function(json_result) {
 		        	//alert(json_result)
@@ -88,7 +92,7 @@ if(!isset($_SESSION['id_usuario'])){
 		 			}
 		 			else {
 	            		$.each(json_result, function(index, json_result) {	
-	            			populaNegociacaoNaTela(json_result);
+	            			populaNegociacaoNaTela(tipo,json_result);
 		        		});
 			        }
 		        },
@@ -99,10 +103,22 @@ if(!isset($_SESSION['id_usuario'])){
 		    });
 	}
 
-	function populaNegociacaoNaTela(json_result){
+	function populaNegociacaoNaTela(tipo, json_result){
+
 		// carregar servico (divs)
-		var url_div = "webparts/painel_usuario_div_negociacao.php";
-    	
+		var url_div = "";
+		var url_div_sucess = "";
+
+		if(tipo == "como_contratante"){
+			url_div = "webparts/painel_usuario_div_negociacao_como_contratante.php";
+			url_div_sucess = ".negociacoes-como-contratante";
+		}
+		else if(tipo == "como_prestador_de_servico"){
+			url_div = "webparts/painel_usuario_div_negociacao_como_prestador_de_servico.php";
+			url_div_sucess = ".negociacoes-como-prestador-de-servicos";
+		}
+
+		
 		$.ajax({
 		    type : 'GET',
 		    dataType : 'text',
@@ -110,9 +126,11 @@ if(!isset($_SESSION['id_usuario'])){
 		    data: ({servico: json_result}),
 		    async: false,
 		    success : function(div_result) {
-		    	$('.negociacoes').append(div_result);
+		    	$(url_div_sucess).append(div_result);
 		    } 
 		});
+
+		
 	}
 
 	function abrirModalAvaliacao(id_servico_e_contratado){
@@ -162,32 +180,18 @@ if(!isset($_SESSION['id_usuario'])){
 
 					<p> Aqui você encontra informações adicionais sobre todos os clientes que acessaram o seu perfil e quiseram negociar com você.</p>
 
-						<div class="row itens_painel">
-						 
-						 	<div class="servico_img_painel col-xs-12 col-sm-2 col-md-2">
-								<?php echo "<img src='img/usuarios/21_17-10-2015_07-44-30.jpg'>";?>
-							</div>
+					<div class="negociacoes-como-prestador-de-servicos">
 
-						  	<div class="main_content_painel col-xs-8 col-sm-8 col-md-8">
-						  		<h4> Nome: Patricia Silva </h4>
-								<h5> Negociação iniciada em: 12/12/12 </h5>
-								<h5> Fone: (51) 3737-9281 - Celular: (51) 9438-2932 </h5>
-								<h5> E-mail: patricia@gmail.com </h5>
-						  	</div>
-						   	
-						   	<div class="botao_remover_painel col-xs-4 col-sm-2 col-md-2">
-								<p> 
-									<a href="#" class="finalizar_negociacao btn btn-danger btn-block">Finalizar negociação</a>
-								</p>
-				  			</div>
+					</div>
 
-						</div>
 	
 					<h2> Como contratante </h2>
 
 					<p> Aqui você encontra informações adicionais sobre todos os prestadores de serviço que você demonstrou interesse em negociar.</p>
 
-					<div class="negociacoes">
+					
+
+					<div class="negociacoes-como-contratante">
 
 					</div>
 

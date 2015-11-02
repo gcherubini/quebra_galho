@@ -1,3 +1,7 @@
+<?php
+$json = isset($_GET['json']) ? $_GET['json'] : "";
+?>
+
 <style>
 	.itens_painel {
 		border: 1px solid #e5e5e5;
@@ -30,10 +34,28 @@
 			</div>
 
 		  	<div class="main_content_painel col-xs-8 col-sm-8 col-md-8">
-		  		<h4> Roger Feitosa </h4>
-				<h5> Serviço avaliado: <id class="link_to_servico"><a href="#">Barbeiro</a></id>(Ver publicação) </h5>
-				<h5> Estrelas: ✩✩✩✩ </h5>
-				<h5> Avaliação: Fulano fez a minha barba de forma rápida e por um preço camarada. </h5>
+		  		<h4> <?php echo $json["nome"]; ?> </h4>
+				<h5> Serviço avaliado: <id class="link_to_servico"><a href="#"><?php echo $json["emprego"]; ?></a></id>(Ver publicação) </h5>
+				
+				<h5> Estrelas:
+
+				<?php
+					$totalEstrelas = 5;
+					$usuarioEstrelas = $json["numero_estrelas"];
+					if($usuarioEstrelas>0){
+						for($i = 0; $i < $usuarioEstrelas; $i++){
+						echo "<span class='glyphicon glyphicon-star'> </span>";
+						}
+						for($i = 0; $i < $totalEstrelas-$usuarioEstrelas; $i++){
+							echo "<span class='glyphicon glyphicon-star-empty'> </span>";
+						}
+					}
+				?>
+
+				</h5>
+
+				
+				<h5> Avaliação: <?php echo $json["descricao_do_servico"]; ?> </h5>
 		  	</div>
 		   	
 		</div>
