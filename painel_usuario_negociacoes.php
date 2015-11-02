@@ -21,7 +21,7 @@ if(!isset($_SESSION['id_usuario'])){
 		
 
 		$('.container').on('click', '.finalizar_negociacao_como_contratante', function() {
-			finalizarNegociacaoComoContratante($(this).attr("id"));
+			abrirModalAvaliacao($(this).attr("id"));
 		});
 
 		$(".avaliar_como_contratante_form").validate({
@@ -36,32 +36,43 @@ if(!isset($_SESSION['id_usuario'])){
 		});	
 	});
 
+ 	// Avaliar como contratante submit formulario 
+ 	// Finalizar negociacao como contratante
 	$.validator.setDefaults({
 			submitHandler: function() {
-				alert('la vamos nos')
-			   /* $.ajax({
+				
+			   $.ajax({
 			        type : 'POST',
 			        dataType : 'text',
-			        data: $(form).serialize(),
-			        url: 'backend/servico_novo.php',
+			        data: $(".avaliar_como_contratante_form").serialize(),
+			        url: 'backend/avaliacao_nova.php',
 			        success : function(result) {
 			        	if(result == "") {
-			        		sucessoSalvarDB(result);
+			        		alert("Avaliação salva com sucesso!")
 			        	}
 			        	else{
-			        		erroSalvarDB(result);
+			        		alert("Oops.. Aconteceu algum erro inesperado ao salvar sua avaliação, por favor tente mais tarde.")
 			        	}
+
+			        	$('.avaliar_como_contratante_form')[0].reset();
+			        	$('.modal_nova_avaliacao').modal('hide');
+			        	carregaNegociacoes();
+
 			        },
 			        error: function(XMLHttpRequest, textStatus, errorThrown){
-				        erroSalvarDB(textStatus);
+				        alert("Oops.. Aconteceu algum erro inesperado ao salvar sua avaliação, por favor tente mais tarde.")
 				    }
-			    });*/
+			    });
 				
 			}
 		});
 
 	function carregaNegociacoes(){
 
+		// limpa div negociacoes
+		$('.negociacoes').text("");
+
+		// carrega negociacoes
 		$.ajax({
 		        type : 'POST',
 		        dataType : 'json',
@@ -104,28 +115,9 @@ if(!isset($_SESSION['id_usuario'])){
 		});
 	}
 
-	function finalizarNegociacaoComoContratante(id){
-
+	function abrirModalAvaliacao(id_servico_e_contratado){
 		$('.modal_nova_avaliacao').modal('toggle');
-
-		
-		
-		/*$.ajax({
-		        type : 'POST',
-		        dataType : 'text',
-		        data: ({id: id}) ,
-		        url: 'backend/servico_deletar.php',
-		        success : function(json_result) {
-		        	//alert(json_result)
-		        	if(json_result != "") {
-		        		mostraMensagemDeErroNaDelecao()
-		        	}
-		        },
-		        error: function(XMLHttpRequest, textStatus, errorThrown){
-			    	//alert("error: " + textStatus);
-			    	mostraMensagemDeErroNaDelecao()
-			    } 
-		    });*/
+		$('.id_servico_e_contratado_input_hidden').val(id_servico_e_contratado);
 	}
 
  	function mostraMensagemDeNegociacoesNaoEncontradas() {

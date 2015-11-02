@@ -42,7 +42,13 @@
    	
    	<div class="botao_remover_painel col-xs-4 col-sm-2 col-md-2">
 		<p> 
-			<a  <?php echo  "id='" . $servico["id_servico"] . "'"; ?>  class="finalizar_negociacao_como_contratante btn btn-danger">Finalizar negociação</a>
+
+		<?php if($servico["negociacao_finalizada"] == "1"){ ?>
+			<p> Negocicação finalizada e avaliada </p>
+		<?php } else{ ?>
+			<a  <?php echo  "id='".$servico["id_servico"]."-".$servico["contratado"]."'"; ?>  class="finalizar_negociacao_como_contratante btn btn-danger">Finalizar negociação</a>
+		<?php }	?>
+			
 		</p>
   	</div>
 

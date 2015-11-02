@@ -10,9 +10,12 @@
 
       <form class="avaliar_como_contratante_form">
         <div class="modal-body">        
-          <textarea placeholder="Descreva como foi o serviço prestado" class="form-control" rows="5" id="descricao" name="descricao" maxlength="255"></textarea>
+
+          <input type="hidden" name="id_servico_e_contratado" class="id_servico_e_contratado_input_hidden" value="">
+
+          <textarea placeholder="Descreva como foi o serviço prestado" class="form-control" rows="5" name="descricao_do_servico" maxlength="255"></textarea>
                       
-          <select  class="form-control nota chosen-select" id="nota" name="nota" placeholder="Qual a nota para o prestador de serviço?">
+          <select  class="form-control nota chosen-select" name="numero_estrelas" placeholder="Qual a nota para o prestador de serviço?">
               <option value=""> Qual a nota para o prestador de serviço? </option>
               <option value="1"> 1 </option>
               <option value="2"> 2 </option>
