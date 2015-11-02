@@ -101,7 +101,7 @@ $().ready(function() {
 
 		
 
-		        <div class="col-xs-12 col-sm-4 col-md-4 coluna2">
+		        <div class="col-xs-6 col-sm-3 col-md-3 coluna2">
 
 					<ul class="menu">
 						<a href="index.php"><li id="menu_inicio"> Inicio </li></a>
@@ -113,7 +113,7 @@ $().ready(function() {
 
 		 	
 		        
-		        <div class="col-xs-12 col-sm-2 col-md-2 minha_conta_div coluna3"> 
+		        <div class="col-xs-6 col-sm-3 col-md-3 minha_conta_div coluna3"> 
 
 		        	<!-- Icone de notificacoes -->
 					<a href="painel_usuario_notificacoes.php" class="notificacao-icon"> 
@@ -121,8 +121,12 @@ $().ready(function() {
 					</a>
 
 		        	<!-- Botão minha conta -->	
-					<a href="painel_usuario_usuario.php"> 
-				
+					<a href="
+					<?php if (isset($_SESSION['id_usuario'])) { echo 'painel_usuario_usuario.php'; } 
+						  else { echo 'login.php';  }
+					?>
+					"> 
+					
 						<div class="minha_conta">
 							<span class="glyphicon glyphicon-user">&nbsp</span> 
 							
@@ -144,15 +148,15 @@ $().ready(function() {
 						</div>
 					</a>
 
-					 <div class="cadastre_sair">
+					 <div class="cadastre_entrar_sair">
 
-		        	<?php if (isset($_SESSION['id_usuario'])) { ?>
-							<a href="#"><id="menu_sair" class="logout">Sair</a>
-						<?php } else { ?>
-							<a href="novo_usuario.php"><id="menu_cadastre">Cadastre-se</a>
-			 			<?php } ?>
+			        	<?php if (isset($_SESSION['id_usuario'])) { ?>
+								<a href="#"><id="menu_sair" class="logout">Sair</a>
+							<?php } else { ?>
+								<a href="novo_usuario.php"><id="menu_cadastre">Cadastre-se</a>
+				 			<?php } ?>
 
-		        </div>
+		       		 </div>
 
 
 

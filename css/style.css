@@ -282,13 +282,13 @@ text-decoration: underline;
 
 }
 
-.cadastre_sair {
+.cadastre_entrar_sair {
 	float: right;
 	margin-top: 10px;
 	color: #474646;
 	font-size: 14px;
 	font-style: bold;
-	margin-right: 30px;
+	margin-right: 25px;
 }
 
 
