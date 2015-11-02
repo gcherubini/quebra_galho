@@ -129,8 +129,11 @@ if(!isset($_SESSION['id_usuario'])){
 
 	 				
 
-					<p>
-						Olá <b> <?php echo $_SESSION["nome"]; ?></b>, seja bem-vindo(a) ao seu painel de configurações.
+					<p> Olá <b> <?php echo $_SESSION["nome"]; ?></b>, seja bem-vindo(a) ao Painel do Usuário. </p>
+
+					<p> Para ver o seu perfil público <id class="ver_perfil_publico"><a href="#"> Clique Aqui. </a> </id> </p>
+
+
 					</p>
 
 					<p>
@@ -174,18 +177,27 @@ if(!isset($_SESSION['id_usuario'])){
 
 					<div style="clear:both;"></div>
 
-				<h2> Minhas Avaliações </h2>
+				<h2> Avaliações </h2>
 
-					<p>
-						Você possui X avaliações - X pendentes (<a href="#">Publique agora!</a>) e X publicadas (<a href="#">Ver</a>)
+					
+
+					<div class="reputacao_geral"> <p>
+						Sua reputação geral: <id class="glyphicon glyphicon-star reputacao_estrelas"> </id>
+
 					</p>
 
-					<p>
-						Sua reputação atual é X.
-					</p>
+				</div>
 
 					<p>
-						<a href="#">Ver minhas avaliações</a>
+						
+						Últimas avaliações sobre seus serviços:
+
+					</p>
+
+					<?php include("webparts/painel_usuario_div_avaliacao_publ.php"); ?>
+
+					<p>
+						<id class="ver_mais_avaliacoes"><a href="#">Ver mais avaliações</a> </id>
 					</p>
 
 				<h2> Meus Anúncios </h2>

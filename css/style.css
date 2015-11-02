@@ -194,7 +194,7 @@
 	position: fixed;
 	width: 100%;
 	background: white;
-	border-bottom: 1px solid #493D26;
+	border-bottom: 1px solid #ccc;
 	padding-top: 20px;
 	padding-bottom: 20px;
 	margin: 0;
@@ -222,7 +222,7 @@
 
 	opacity: 1;
 	font-weight: bold;
-	background-color: #C58917;
+	background-color: orange;
 	color: white;
 	float: right;
 	cursor: pointer;
@@ -231,7 +231,7 @@
 	height: 35px;
 	border: 1px solid #B6B6B4;
 	padding-left: 0px;
-	border-radius: 10px;	
+	border-radius: 5px;	
 	box-shadow: 0 5px 5px rgba(0, 0, 0, 0.075) inset;
 
 
@@ -244,8 +244,8 @@
  background: #59E817;
  */
 
- transition: all 0.2s ease 0s;
- box-shadow: 0 5px 5px rgba(0, 0, 0, 0.075) inset, 0 0 3px rgba (0, 0, 0, 0.1);
+ 
+ box-shadow: 0 2px 2px rgba(0, 0, 0, 0.075) inset;
 
 
 }
@@ -407,8 +407,9 @@ font-style: bold;
 
 .glyphicon-search {
 
-	color: #4CC417;
+	color: orange;
 	font-style: bold;
+	font-size: 14px;
 }
 
 .loginlogout {
@@ -423,7 +424,7 @@ font-style: bold;
 .input_texto_pesquisar_topo {
 
 	box-shadow: 0 5px 5px rgba(0, 0, 0, 0.075) inset;
-	border-color: #4CC417;
+	border-color: orange;
 	border-radius: 8px;
 
 }
@@ -431,8 +432,8 @@ font-style: bold;
 
 .input_texto_pesquisar_topo:focus {
 
-	border-color: #4CC417;
-    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.075) inset, 0 0 3px #4CC417;
+	border-color: orange;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.075) inset, 0 0 3px orange;
     transition: all 0.2s ease 0s;
 
 
@@ -442,7 +443,7 @@ font-style: bold;
 
 .botao_procura_topo {
 
-	border-color: #4CC417;
+	border-color: orange;
 	box-shadow: 0 5px 5px rgba(0, 0, 0, 0.075) inset;
 	border-radius: 8px;
 
@@ -451,7 +452,7 @@ font-style: bold;
 
 .botao_procura_topo:hover {
 
-	border-color: #4CC417;
+	border-color: orange;
 	box-shadow: 0 5px 5px rgba(0, 0, 0, 0.075) inset
 
 
@@ -558,35 +559,55 @@ font-style: bold;
 
 }
 
+/*GLYPHICONS DA SIDEBAR */
+
 .glyphicon-cutlery {
 
 	font-size: 18px;
-	color: red;
+	
 }
-
-
 
 .glyphicon-home {
 
 	font-size: 18px;
-	color: brown;
+	
 }
 
 .glyphicon-education {
 
 	font-size: 18px;
-	color: green;
-
+	
 }
 
-.glyphicon-glass {
+.glyphicon-equalizer {
 
 	font-size: 18px;
-	color: blue;
-
 
 }
 
+.glyphicon-wrench {
+
+	font-size: 18px;
+
+}
+
+.glyphicon-pencil {
+
+	font-size: 18px;
+
+}
+
+.glyphicon-plus {
+
+	font-size: 18px;
+
+}
+
+.glyphicon-sunglasses{
+
+	font-size: 18px;
+
+}
 
 .sidebar-categorias ul li:hover{
 	
@@ -988,6 +1009,51 @@ form .row {
 }
 
 
+/* PAINEL DO USUARIO, MINHA CONTA */
+
+.link_to_servico a{
+
+	font-size: 16px;
+	color: green;
+
+}
+
+.link_to_servico:hover {
+
+	
+	opacity: 0.9;
+	text-decoration: underline;
+
+}
+
+.ver_mais_avaliacoes a{
+
+	font-size: 16px;
+	color: orange;
+
+}
+
+.ver_mais_avaliacoes:hover {
+
+	text-decoration: underline;
+	opacity: 0.9;
+
+}
+
+.foto_usuario img {
+
+}
+
+.reputacao_geral p{
+
+	font-size: 14px;
+	border-color: black;
+	border-width: 1px;
+
+
+}
+
+
 /* INFINITE SCROLL PAGINATION */
 
 .paginacao_carregando {
@@ -1030,7 +1096,7 @@ form .row {
 
 
 	margin: 0;
-	background-color: #493D26;
+	background-color: black;
 	margin-top: 20px;
 	padding: 15px;
 	position:absolute;

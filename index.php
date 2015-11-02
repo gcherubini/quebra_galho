@@ -191,14 +191,14 @@ $pesquisa = isset($_GET['pesquisa']) ? trim($_GET['pesquisa']) : '';
 		        	<p> O que você precisa? </p>	
 		        	<div class="sidebar-categorias">
 		        		<ul>
-		        			<li> <div class="sidebar-centering">Gastronomia</div><span class="glyphicon glyphicon-cutlery"> </span></li> 
-		        			<li> <div class="sidebar-centering">Serviços Domésticos</div> <span class="glyphicon glyphicon-home"> </span> </li>
+		        			<li> <div class="sidebar-centering">Domésticos</div> <span class="glyphicon glyphicon-home"> </span> </li>
+		        			<li> <div class="sidebar-centering">Manuteção</div><span class="glyphicon glyphicon-wrench"> </span>  </li>	
+		        			<li> <div class="sidebar-centering">Saúde</div><span class="glyphicon glyphicon-plus"> </span> </li>
 		        			<li> <div class="sidebar-centering">Aulas</div><span class="glyphicon glyphicon-education"> </span>  </li>
-		        			<li> <div class="sidebar-centering">Artes</div><span class="glyphicon glyphicon-iphone-shake"> </span>  </li>
-		        			<li> <div class="sidebar-centering">Manuteção</div><span class="glyphicon glyphicon-settings"> </span>  </li>
-		        			<li> <div class="sidebar-centering">Eventos</div><span class="glyphicon glyphicon-glass"> </span>  </li>
-		        			<li> <div class="sidebar-centering">Moda</div><span class="glyphicon glyphicon-coat-hanger"> </span>  </li>
-		        			<li> <div class="sidebar-centering">Saúde</div><span class="glyphicon glyphicon-stethoscope"> </span> </li>
+		        			<li> <div class="sidebar-centering">Alimentação</div><span class="glyphicon glyphicon-cutlery"> </span></li>
+		        			<li> <div class="sidebar-centering">Eventos</div><span class="glyphicon glyphicon-equalizer"> </span>  </li> 
+		        			<li> <div class="sidebar-centering">Artes</div><span class="glyphicon glyphicon-pencil"> </span>  </li>
+		        			<li> <div class="sidebar-centering">Moda</div><span class="glyphicon glyphicon-sunglasses"> </span>  </li>
 		        		</ul>
 		        	</div>
 

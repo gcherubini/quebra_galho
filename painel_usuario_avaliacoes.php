@@ -16,7 +16,7 @@ if(!isset($_SESSION['id_usuario'])){
    <script type="text/javascript"> 
    
  	$(document).ready(function () {
- 		ativaMenuPainelUsuario("#painel_menu_avaliacoes");
+
  		
  		carregaServicos();
 
