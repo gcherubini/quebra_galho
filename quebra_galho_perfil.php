@@ -11,7 +11,7 @@ $id_servico = isset($_GET['id_servico']) ? trim($_GET['id_servico']) : 0;
 <html lang="en">
   <head>
    <?php include("webparts/head_imports.php"); ?>
-   <title>Quebra-Galho</title>
+   <title>Quebra-Galho: Contrate serviços de qualidade localmente!</title>
 
    <script type="text/javascript">
 
@@ -126,14 +126,27 @@ $id_servico = isset($_GET['id_servico']) ? trim($_GET['id_servico']) : 0;
 					</div>
 
 					<div class="quebra_galho_perfil"> 
-						 <img class="cropit-image-preview usuario_foto" />
-						 <h2 class="servico_nome">  </h2>
-						 <h5 class="servico_emprego_e_idade"> </h5>
-						 <p class="servico_slogan">  </p> 
+						<div class="row">
+			
+		     				<div class="col-xs-6 col-sm-4 col-md-4 perfil-1i1j">
+		     					 <img class="cropit-image-preview usuario_foto" />
+		     				</div>
+		     				<div class="col-xs-6 col-sm-8 col-md-8 perfil-1i2j">
+		     					 <h2 class="servico_nome">  </h2>
+		     					 <h5 class="servico_emprego_e_idade"> </h5>
+		     					  <p class="servico_slogan">  </p> 
+		     				</div>
+		     			</div>
+					
 						 <p class="servico_descricao">  </p>
 						 <p class="servico_cidade">  </p>
-						 <p> 0 Avaliações </p>
-						 <a class="negociar" href="#"> Eu gostaria de negociar este serviço </a>
+						 	
+						 <a class="negociar" href="#">
+							 <div class="botao_negociar">
+						 	 	<p> Quero Contratar! </p>
+						 	</div>
+						 </a>
+						 <p class="avaliacoes_texto_perfilpub">Avaliações: </p>
 					</div>
 				</div>
 			</div>
