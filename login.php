@@ -9,7 +9,7 @@ $pAnt = isset($_GET['pAnt']) ? trim($_GET['pAnt']) : "";
    <?php include("webparts/head_imports.php"); ?>
       	
 
-   <title>Quebra-Galho</title>
+   <title>QuebraGalho: Encontre serviços de qualidade em Porto Alegre!</title>
 
 
    <script type="text/javascript">

@@ -5,7 +5,7 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 <!DOCTYPE html>
 <html lang="en">
   <head>
-   <title>Quebra-Galho</title>
+   <title>QuebraGalho: Encontre serviços de qualidade em Porto Alegre!</title>
 
 	<?php include("webparts/head_imports.php"); ?>
 

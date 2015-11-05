@@ -626,7 +626,7 @@ text-decoration: underline;
 
 	/*width: 280px;
 	min-height: 270px;*/
-
+	box-shadow: 0 30px 30px rgba(0, 0, 0, 0.075) inset;
 	border-radius: 10px;
 	width: 250px;
 	border: 1px solid white;
@@ -646,7 +646,6 @@ text-decoration: underline;
 .servico2:hover, .servico_destaque:hover { 
    	
    background: white;
- 
    text-decoration: underline;
    border:1px solid #ABABAB;
 
@@ -661,16 +660,21 @@ text-decoration: underline;
 
 .servico_destaque{
 
-	width: 100%;
+	box-shadow: 0 30px 30px rgba(0, 0, 0, 0.075) inset;
+	width: 90%;
 	border-radius: 10px;
 	cursor: pointer;
 	min-height: 190px;
 	margin-bottom: 30px;
 	border: 1px solid white;
+	margin-left:10px;
 
 }
 
+
+
 .servicos_titulo_filtro {
+
 	margin-top:20px;
 }
 
@@ -679,8 +683,8 @@ text-decoration: underline;
 .servico_destaque_content{
 	
 	float:left;
-	margin-left: 45px;
-	margin-top:10px;
+	margin-left: 25px;
+	margin-top:20px;
 
 }
 
@@ -700,9 +704,12 @@ text-decoration: underline;
 }
 
 .servico_destaque_img{
+	
 
+	padding:auto;
 	width: 250px;
 	float:left;
+
 
 }
 
@@ -718,9 +725,14 @@ text-decoration: underline;
 
 .servico_destaque_img img{
 
+	
 	border-radius: 0;
 	border-bottom-left-radius: 7px;
 	border-top-left-radius: 7px;
+}
+
+
+
 }
 
 .service_item_thumb {	
@@ -1109,10 +1121,7 @@ form .row {
 
 }
 
-.servico_nome {
 
-
-}
 
 
 /* INFINITE SCROLL PAGINATION */

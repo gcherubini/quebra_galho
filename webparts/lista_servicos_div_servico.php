@@ -30,9 +30,9 @@
 		</div>
 
 		<div class="servico-conteudo">
-			<h3> <?php echo $servico["nome"]; ?></h3> 
+			<h3 class="servico_nome"> <?php echo $servico["nome"]; ?></h3> 
 				
-			<h4> <?php echo $servico["emprego"]; ?> </h4>
+			<h4 class="servico_emprego"> <?php echo $servico["emprego"]; ?> </h4>
 			
 			<p>"<?php echo $servico["slogan"]; ?>"</p> 
 			

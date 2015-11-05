@@ -12,7 +12,7 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 				font-size: 16px;
 			}
 		</style>
-   <title>Quebra-Galho</title>
+   <title>QuebraGalho: Encontre serviços de qualidade em Porto Alegre!</title>
 
     <script type="text/javascript"> 
 	$(document).ready(function () {

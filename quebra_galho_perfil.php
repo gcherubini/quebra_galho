@@ -11,7 +11,7 @@ $id_servico = isset($_GET['id_servico']) ? trim($_GET['id_servico']) : 0;
 <html lang="en">
   <head>
    <?php include("webparts/head_imports.php"); ?>
-   <title>Quebra-Galho: Contrate serviços de qualidade localmente!</title>
+   <title>Quebra-Galho: Encontre serviços de qualidade em Porto Alegre!</title>
 
    <script type="text/javascript">
 
@@ -139,7 +139,7 @@ $id_servico = isset($_GET['id_servico']) ? trim($_GET['id_servico']) : 0;
 		     			</div>
 					
 						 <p class="servico_descricao">  </p>
-						 <p class="servico_cidade">  </p>
+						 <p class="servico_cidade"></p>
 						 	
 						 <a class="negociar" href="#">
 							 <div class="botao_negociar">

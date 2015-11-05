@@ -7,10 +7,12 @@
 	<div class="servico_destaque_img servico_img">
 	  		<?php echo '<img class="img-responsive" src="'.$servico["img_url"].'"/>'; ?> 
 	</div>
+
 	<div class="servico_destaque_content">
-		<h3> <?php echo $servico["nome"]; ?></h3> 
-				
-			<h4> <?php echo $servico["emprego"]; ?> </h4> 
+
+			<h3 class="destaque_nome"> <?php echo $servico["nome"]; ?></h3> 
+
+			<h4 class="destaque_emprego"> <?php echo $servico["emprego"]; ?> </h4> 
 
 			<h5>(<?php echo $servico["idade"]; ?> anos)</h5>
 			

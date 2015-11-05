@@ -7,7 +7,7 @@ $pesquisa = isset($_GET['pesquisa']) ? trim($_GET['pesquisa']) : '';
 <html lang="en">
   <head>
    <?php include("webparts/head_imports.php"); ?>
-   <title>Quebra-Galho: Contrate serviços de qualidade localmente!</title>
+   <title>QuebraGalho: Encontre serviços de qualidade em Porto Alegre!</title>
 
 	<script type="text/javascript"> 
 	

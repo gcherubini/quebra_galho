@@ -11,7 +11,7 @@ if(!isset($_SESSION['id_usuario'])){
 <html lang="en">
   <head>
    <?php include("webparts/head_imports.php"); ?>
-   <title>Quebra-Galho</title>
+   <title>QuebraGalho: Encontre serviços de qualidade em Porto Alegre!</title>
 
 
    <style type="text/css">
