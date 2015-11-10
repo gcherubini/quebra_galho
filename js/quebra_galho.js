@@ -53,10 +53,29 @@ function carregaComboCidade(combo_class){
 		        	//alert(JSON.stringify(json_result));
 
 		            $.each(json_result, function(index, json_result) {	
-            			$(combo_class).append("<option>" + json_result.nome + "</option>");
+            			$(combo_class).append("<option value='"+ json_result.nome +"'>" + json_result.nome + "</option>");
 	        		});
 
+	        		
+
+		            
+
 	        		$(combo_class).chosen({no_results_text: "Oops, nenhuma cidade encontrada!"}); 
+
+	        		//getting filtroCidades session and populating it 
+					if(!valorEhVazio($.session.get("filtroCidades"))){
+
+						var filtroCArray = $.session.get("filtroCidades").split(',');
+
+						for (f in filtroCArray) {
+							var catSession = $.trim(filtroCArray[f]);
+							//alert(catSession)
+							$(".cidades option[value='"+catSession+"']").attr("selected","selected");
+						}
+
+						$(".cidades").trigger("chosen:updated");
+					}
+
 
 		        },
 		        error: function(XMLHttpRequest, textStatus, errorThrown){

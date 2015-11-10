@@ -43,7 +43,7 @@
 <script src="libraries/jqueryMask/jquery.mask.js"></script>
 
 
-
+<script src="libraries/jquerySession/jquery.session.js"></script>
 
 <script src="js/quebra_galho.js" type="text/javascript"></script>
 	

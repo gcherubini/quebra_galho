@@ -478,12 +478,13 @@ text-decoration: underline;
 .sidebar {
 
 	margin:0 auto;
-	width: 100%;
+	width: 85%;
 }
 
 
 
 .sidebar-categorias{
+	
 
 
 
@@ -493,15 +494,17 @@ text-decoration: underline;
 	margin: auto;
 	margin: 0;
 
+	
+	  /*top: 50%;
+	  left: 50%;
+	  transform: translate(-50%, -50%);*/	  
+	margin: 0 auto;
+
 
 
 }
 
 .sidebar-categorias ul li{
-
-	
-
-
 	border-radius: 5px;
 	box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1) inset;
 	margin:0;
@@ -509,52 +512,59 @@ text-decoration: underline;
 	border: 1px solid #ccc;
 	padding: 20px;
 	float:left;
-	width: 120px;
+	width: 118px;
 	height: 70px;
 	margin-right: 5px;
 	margin-bottom: 5px;
 	text-align: center;
 	position: relative;
-
-
-
-
 }
 
 .sidebar-categorias ul li .sidebar-centering{
-
 	  position: absolute;
 	  /*top: 50%;
 	  left: 50%;
-	  transform: translate(-50%, -50%);*/
-	  
+	  transform: translate(-50%, -50%);*/	  
 	  left:25%;
 	  width:50%;
 	  height:50%;
 	  top:80%;
+}
 
+.sidebar hr{
+	
+}
 
+.sidebar-propaganda {
+	height: 150px; 
 
+	border: 1px solid #aaa;
+	margin-bottom: 20px;
+}
+
+.sidebar-categorias ul li:hover{
+	
+	box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1) inset;
+	cursor: pointer;
+	text-decoration: underline;
+}
+
+.sidebar .cidades{
+	
 }
 
 /*GLYPHICONS DA SIDEBAR */
 
 .glyphicon-cutlery {
-
 	font-size: 18px;
-	
 }
 
 .glyphicon-home {
-
 	font-size: 18px;
-	
 }
 
 .glyphicon-education {
-
 	font-size: 18px;
-	
 }
 
 .glyphicon-equalizer {
@@ -587,16 +597,7 @@ text-decoration: underline;
 
 }
 
-.sidebar-categorias ul li:hover{
-	
-	box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1) inset;
-	cursor: pointer;
-	text-decoration: underline;
-}
 
-.sidebar .cidades{
-	width: 240px;
-}
 
 .servicos {
 
@@ -689,7 +690,7 @@ text-decoration: underline;
 
 .servico_img:hover {
 
-	 opacity: 0.90;	
+
 
 }
 

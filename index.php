@@ -9,30 +9,94 @@ $pesquisa = isset($_GET['pesquisa']) ? trim($_GET['pesquisa']) : '';
    <?php include("webparts/head_imports.php"); ?>
    <title>QuebraGalho: Encontre serviços de qualidade em Porto Alegre!</title>
 
+   <style>
+	   .sidebar-categorias .activate {
+	   		background-color: #FFAE1A;	
+	   }
+   </style>
+
 	<script type="text/javascript"> 
 	
 	var carregouTodosOsItems = false;
 	var numeroDeItensPorPaginacao = 10;
 	var numeroDeServicosEmLinha = 4;
+	var comboJaFoiPopulado = false;
+	var filtroAplicado = false;
 
+	
 	var paginasCarregadas = 0;
+	var filtroCategorias = "";
+	var filtroCidades = "";
 	
 	$(document).ready(function () {
 
+		//getting filtroCategorias session and populating it 
+		if(!valorEhVazio($.session.get("filtroCategorias"))){
+			filtroCategorias = $.session.get("filtroCategorias");
+			var filtroCArray = filtroCategorias.split(',');
+			for (f in filtroCArray) {
+				var catSession = $.trim(filtroCArray[f]);
+				var cat =  $(".sidebar-categoria-item:contains('"+catSession+"')");
+				var procura_cat = cat.text();
+				procura_cat = $.trim(procura_cat);
 
-		/* JQUERY PARA BRILHO NO HOVER DA LISTA DE SERVIÇOS
+				if (catSession == procura_cat){
+					cat.addClass("activate");
+				}
+			}
+		}
 
-		$(".container").on("mouseover", ".servico2", function(){
-		   $(".servico_img").css("opacity","0.9");
+		//getting filtroCidades session and populating it 
+		if(!valorEhVazio($.session.get("filtroCidades"))){
+			filtroCidades = $.session.get("filtroCidades");
+			// the rest of the code to populate filtro cidades with session value, 
+			// is in quebra_galho.js -> success reuslt populating cidades in combo	
+			/*var filtroCArray = filtroCidades.split(',');
+			for (f in filtroCArray) {
+				var catSession = $.trim(filtroCArray[f]);
+				$(".cidades option[value='"+catSession+"']").attr("selected","selected");
+			}*/
+		}
+
+		$(".container").on("mouseover", ".servico2 , .servico_destaque", function(){
+		   $(this).children(".servico_img").css("opacity","0.8");
+
+		});
+
+		$(".container").on("mouseout", ".servico2 , .servico_destaque", function(){
+		   $(this).children(".servico_img").css("opacity","1");
+		});
+
+		$(".sidebar-categoria-item").click(function(event){
+			if ($(this).hasClass("activate")){
+				$(this).removeClass("activate");
+				filtroCategorias = filtroCategorias.replace("," + $(this).children(".sidebar-text").text(), "");
+			}
+			else{
+			    $(this).addClass("activate");
+			    filtroCategorias += "," + $(this).children(".sidebar-text").text();
+			}
+
+			$.session.set("filtroCategorias", filtroCategorias);
+
+			paginasCarregadas = 0;
+			carregaServicos($('.input_texto_pesquisar_topo').val(),filtroCategorias, filtroCidades);
 		});
 
 
-		$(".container").on("mouseout", ".servico2", function(){
-		   $(".servico_img").css("opacity","1");
-		});
+		 $(".cidades").change(function(event) {
+		 	filtroCidades = "";
+		 	$(".cidades option:selected").each(function(){
+				 var cidade = $(this).val()
+				 filtroCidades += "," + cidade;
+			});
+		   
+		    $.session.set("filtroCidades", filtroCidades);
 
+		   	paginasCarregadas = 0;
+			carregaServicos($('.input_texto_pesquisar_topo').val(),filtroCategorias, filtroCidades);
+		  });
 
-		*/
 
 		ativaMenu("#menu_inicio");
 		carregaComboCidade(".cidades");
@@ -50,19 +114,11 @@ $pesquisa = isset($_GET['pesquisa']) ? trim($_GET['pesquisa']) : '';
 		       $(".paginacao_carregando_img").css("display","block");
 		       $(".paginacao_carregando_acabou_msg").css("display","none");
 		       
-		       setTimeout(carregaServicos,1500,$('.input_texto_pesquisar_topo').val());
+		       setTimeout(carregaServicos,1500,$('.input_texto_pesquisar_topo').val(), filtroCategorias, filtroCidades);
 		   }
 		});
-	});
 
-
-	var comboJaFoiPopulado = false;
-	var filtroAplicado = false;
-
-
- 	$(document).ready(function () {
- 		
- 		// click does not work when we have imported php with ajax
+		// click does not work when we have imported php with ajax
 		$('.container').on('click', '.abrir_quebra_galho', function() {
 			abrirQuebraGalho($(this).attr("id"));
 		});
@@ -70,23 +126,31 @@ $pesquisa = isset($_GET['pesquisa']) ? trim($_GET['pesquisa']) : '';
 
 		$('.container').on('click', '.botao_procura', function() {
 			paginasCarregadas = 0;
-		    carregaServicos($('.input_texto_pesquisar_topo').val());
+		    carregaServicos($('.input_texto_pesquisar_topo').val(),filtroCategorias, filtroCidades);
 		});
 		
-		carregaServicos($('.input_texto_pesquisar_topo').val());
+		carregaServicos($('.input_texto_pesquisar_topo').val(),filtroCategorias, filtroCidades);
 	});
 
-	function carregaServicos(filtroTexto){
+
+	
+	function carregaServicos(filtroTexto, filtroCategorias, filtroCidades){
 		if(paginasCarregadas == 0) {
 			limpaServicos();
 		}
+
+		//deletando virgula se existir no inicio do filtro
+		var filtrarPor = filtroTexto + filtroCategorias + filtroCidades;
+		filtrarPor = filtrarPor.indexOf(',') == 0 ? filtrarPor.substring(1) : filtrarPor;
+
+		//alert(filtrarPor)
 
 		$.ajax({
 		        type : 'POST',
 		        dataType : 'json',
 		        data: ({limit: numeroDeItensPorPaginacao,
 		        		offset: numeroDeItensPorPaginacao*paginasCarregadas, 
-		        		filtroTexto:  filtroTexto, 
+		        		filtroTexto:  filtrarPor, 
 		        	    }) ,
 		        url: 'backend/servico_busca.php',
 		        async: false,
@@ -160,7 +224,7 @@ $pesquisa = isset($_GET['pesquisa']) ? trim($_GET['pesquisa']) : '';
 	function mostraMensagemDeItensNaoEncontrados() {
  		// quando há mudanca de filtros por exemplo
  		$('.servicos_itens_nao_encotrados').css("display","block");
- 		carregaServicos("");
+ 		carregaServicos("","", "");
 
 
  	}
@@ -169,6 +233,7 @@ $pesquisa = isset($_GET['pesquisa']) ? trim($_GET['pesquisa']) : '';
  		// quando há mudanca de filtros por exemplo
  		$('.servicos').text("");
  		$('.servicos_itens_nao_encotrados').css("display","none");
+ 		$(".paginacao_carregando_acabou_msg").css("display","none");
  	}
 
  	function abrirQuebraGalho(id_servico){
@@ -191,14 +256,14 @@ $pesquisa = isset($_GET['pesquisa']) ? trim($_GET['pesquisa']) : '';
 		        	<p> O que você precisa? </p>	
 		        	<div class="sidebar-categorias">
 		        		<ul>
-		        			<li> <div class="sidebar-centering">Domésticos</div> <span class="glyphicon glyphicon-home"> </span> </li>
-		        			<li> <div class="sidebar-centering">Manuteção</div><span class="glyphicon glyphicon-wrench"> </span>  </li>	
-		        			<li> <div class="sidebar-centering">Saúde</div><span class="glyphicon glyphicon-plus"> </span> </li>
-		        			<li> <div class="sidebar-centering">Aulas</div><span class="glyphicon glyphicon-education"> </span>  </li>
-		        			<li> <div class="sidebar-centering">Alimentação</div><span class="glyphicon glyphicon-cutlery"> </span></li>
-		        			<li> <div class="sidebar-centering">Eventos</div><span class="glyphicon glyphicon-equalizer"> </span>  </li> 
-		        			<li> <div class="sidebar-centering">Artes</div><span class="glyphicon glyphicon-pencil"> </span>  </li>
-		        			<li> <div class="sidebar-centering">Moda</div><span class="glyphicon glyphicon-sunglasses"> </span>  </li>
+		        			<li class="sidebar-categoria-item"> <div class="sidebar-text sidebar-centering">Domésticos</div> <span class="glyphicon glyphicon-home"> </span> </li>
+		        			<li class="sidebar-categoria-item"> <div class="sidebar-text sidebar-centering">Manuteção</div><span class="glyphicon glyphicon-wrench"> </span>  </li>	
+		        			<li class="sidebar-categoria-item"> <div class="sidebar-text sidebar-centering">Saúde</div><span class="glyphicon glyphicon-plus"> </span> </li>
+		        			<li class="sidebar-categoria-item"> <div class="sidebar-text sidebar-centering">Aulas</div><span class="glyphicon glyphicon-education"> </span>  </li>
+		        			<li class="sidebar-categoria-item"> <div class="sidebar-text sidebar-centering">Alimentação</div><span class="glyphicon glyphicon-cutlery"> </span></li>
+		        			<li class="sidebar-categoria-item"> <div class="sidebar-text sidebar-centering">Eventos</div><span class="glyphicon glyphicon-equalizer"> </span>  </li> 
+		        			<li class="sidebar-categoria-item"> <div class="sidebar-text sidebar-centering">Artes</div><span class="glyphicon glyphicon-pencil"> </span>  </li>
+		        			<li class="sidebar-categoria-item"> <div class="sidebar-text sidebar-centering">Moda</div><span class="glyphicon glyphicon-sunglasses"> </span>  </li>
 		        		</ul>
 		        	</div>
 
@@ -208,8 +273,18 @@ $pesquisa = isset($_GET['pesquisa']) ? trim($_GET['pesquisa']) : '';
 
 		        	<select  class="form-control cidades chosen-select" id="cidades" name="cidades[]" multiple
 					 		data-placeholder="Cidade(s) de atuação" >
-							<option> Remotamente/Não-presencial </option>
+							<option value="Remotamente/Não-presencial"> Remotamente/Não-presencial </option>
 					</select>
+
+					<hr class="top20"/>
+
+					<div class="sidebar-propaganda">
+
+					</div>
+
+					<div class="sidebar-propaganda">
+
+					</div>
 
 		       	</div>
 	       	</div>
