@@ -76,11 +76,11 @@ $pAnt = isset($_GET['pAnt']) ? trim($_GET['pAnt']) : "";
 									<a  href="contato.php" role="button">Esqueceu sua senha? </a>
 								</div>
 
-								<button type="submit" class="btn btn-primary btn-block">Entrar</button>
+								<button type="submit" class="btn btn-primary btn-block btn-entrar">Entrar</button>
 
 								<p class="ou"> ou </p>
 
-								<a class="btn btn-warning btn-block" href="novo_usuario.php" role="button">Cadastre-se</a>
+								<a class="btn btn-warning btn-block btn-register" href="novo_usuario.php" role="button">Cadastre-se</a>
 									  
 							</form>
 						</div>

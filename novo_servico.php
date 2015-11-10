@@ -162,7 +162,7 @@ if(!isset($_SESSION['id_usuario'])){
 
 										<input placeholder="Telefone para contato" type="text" class="form-control telefone" id="telefone" name="telefone" >
 										
-										<button type="submit" class="btn btn-primary btn-block">Publicar</button>
+										<button type="submit" class="btn btn-primary btn-block btn-publish">Publicar</button>
 
 									</form>
 

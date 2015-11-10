@@ -19,7 +19,6 @@
 
 }
 
-
 .page{
 	min-height:100%;
 	position:relative;
@@ -205,6 +204,7 @@
 }
 
 .minha_conta_div a {
+
 	color: #555;
 }
 
@@ -213,7 +213,7 @@
 
 	opacity: 1;
 	font-weight: bold;
-	background-color: orange;
+	background-color: #FF7F00;
 	color: white;
 	float: right;
 	cursor: pointer;
@@ -223,7 +223,7 @@
 	/*border: 1px solid #B6B6B4;*/
 	padding-left: 0px;
 	border-radius: 5px;	
-	box-shadow: 0 5px 5px rgba(0, 0, 0, 0.075) inset;
+	/* box-shadow: 0 5px 5px rgba(0, 0, 0, 0.075) inset; */
 
 
 }
@@ -235,8 +235,8 @@
  background: #59E817;
  */
 
- 
- box-shadow: 0 2px 2px rgba(0, 0, 0, 0.075) inset;
+ background: #EC6307;
+ /* box-shadow: 0 10px 10px rgba(0, 0, 0, 0.075) inset; */
 
 
 }
@@ -388,7 +388,7 @@ text-decoration: underline;
 
 .glyphicon-search {
 
-	color: orange;
+	color: #FF7F00;
 	font-style: bold;
 	font-size: 14px;
 }
@@ -404,8 +404,8 @@ text-decoration: underline;
 
 .input_texto_pesquisar_topo {
 
-	box-shadow: 0 5px 5px rgba(0, 0, 0, 0.075) inset;
-	border-color: orange;
+	box-shadow: 0 10px 10px rgba(0, 0, 0, 0.075) inset;
+	border-color: #FF7F00;
 	border-radius: 5px;
 
 }
@@ -413,18 +413,13 @@ text-decoration: underline;
 
 .input_texto_pesquisar_topo:focus {
 
-	border-color: orange;
-    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.075) inset, 0 0 3px orange;
-    transition: all 0.2s ease 0s;
-
-
-
-
+	border-color: #FF7F00;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.075) inset, 0 0 3px #FF7F00;
 }
 
 .botao_procura_topo {
 
-	border-color: orange;
+	border-color: #FF7F00;
 	box-shadow: 0 5px 5px rgba(0, 0, 0, 0.075) inset;
 	border-radius: 5px;
 
@@ -433,8 +428,8 @@ text-decoration: underline;
 
 .botao_procura_topo:hover {
 
-	background: #FBF6D9;
-	border-color: orange;
+	background: #EFEFEF;
+	border-color: #FF7F00;
 	box-shadow: 0 5px 5px rgba(0, 0, 0, 0.075) inset
 
 
@@ -443,10 +438,11 @@ text-decoration: underline;
 
 
 
+
 .input_texto_pesquisar {
 
 	
-	border-color: #4CC417;
+	border-color: #FF7F00;
 	float:left;
 	margin:0;
 	width: 40%;
@@ -949,6 +945,45 @@ form .row {
 
 }
 
+.btn-entrar {
+
+	background: #FF7F00;
+	border: 1px solid #FF7F00;
+
+}
+
+.btn-entrar:hover {
+
+	background: #EC6307;
+	border: 1px solid #EC6307;
+}
+
+.btn-entrar .activate {
+
+	background: #EC6307;
+	border: 1px solid #EC6307;
+
+}
+
+.btn-register, .btn-publish {
+
+	background: #18B703;
+	border: 1px solid #18B703;
+}
+
+.btn-register:hover, .btn-publish:hover {
+
+	background: #149902;
+	border: 1px solid #149902;
+}
+
+.btn-register .activate, .btn-publish .activate {
+
+	background: #149902;
+	border: 1px solid #149902;
+
+}
+
 .quebra_galho_perfil_box{
 	
 	
@@ -1034,9 +1069,10 @@ form .row {
 .botao_negociar {
 
 	margin-top: 20px;
-	box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1) inset;
+	/* box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1) inset; */
 	border-radius: 5px;
-	background: #3CB736;
+	background: #18B703;
+	border: 1px solid #18B703;
 	width: 150px;
 	margin-left: 200px;
 	height: 40px;
@@ -1046,8 +1082,9 @@ form .row {
 
 .botao_negociar:hover {
 
-	box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1) inset;
-	background: #51D24B;
+	/* box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1) inset; */
+	background: #149902;
+	border: 1px solid #149902;
 
 }
 
