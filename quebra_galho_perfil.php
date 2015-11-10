@@ -100,7 +100,7 @@ $id_servico = isset($_GET['id_servico']) ? trim($_GET['id_servico']) : 0;
 		$(".servico_email_contato").text(json_result.email_contato);
 		$(".servico_cel_contato").text(json_result.cel_contato);
 		$(".servico_telefone_contato").text(json_result.tel_contato);
-		$(".quebra_galho_contato").fadeIn();
+		$('.modal_quero_contratar').modal('toggle');
 	}
 
 	</script>
@@ -109,6 +109,7 @@ $id_servico = isset($_GET['id_servico']) ? trim($_GET['id_servico']) : 0;
   <body>
   	<div class="page">
 		<?php include("webparts/topo.php"); ?>
+		<?php include("webparts/modal_quero_contratar.php"); ?>
 
 	    <div class="container content">
 
@@ -116,14 +117,7 @@ $id_servico = isset($_GET['id_servico']) ? trim($_GET['id_servico']) : 0;
 
 	    	<div class="quebra_galho_perfil_box">
 	    		<div class="quebra_galho_perfil_box_content"> 
-					<div class="quebra_galho_contato">
-						<p> Abaixo seguem as informações de contato: </p>
-						<p class="servico_email_contato">  </p>
-						<p class="servico_cel_contato">  </p>
-						<p class="servico_telefone_contato">  </p>
-						<br>
-						<p> Este quebra-galho foi também salvo no seu painel! </p>
-					</div>
+					
 
 					<div class="quebra_galho_perfil"> 
 						<div class="row">

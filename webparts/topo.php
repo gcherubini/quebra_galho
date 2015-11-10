@@ -36,7 +36,7 @@ $().ready(function() {
 
 	});
 
-	var availableTags = [
+	/*var availableTags = [
       "ActionScript",
       "AppleScript",
       "Asp",
@@ -62,7 +62,7 @@ $().ready(function() {
     ];
     $( ".input_texto_pesquisar_topo" ).autocomplete({
       source: availableTags
-    });
+    });*/
 });
 
 
