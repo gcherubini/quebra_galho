@@ -880,6 +880,11 @@ form .row {
 
 }
 
+.painel_usuario_main .div_usuario_foto{
+	width: 200px;
+	height: 200px;
+}
+
 .btn-save,.btn-edit, .btn-cancel  {
 	width: 100px;
 }
@@ -934,6 +939,32 @@ form .row {
 
 .painel_usuario_main .resultado_de_operacoes{
 	margin-top:20px;
+}
+
+
+/*painel usuario negociacoes */
+
+.itens_painel {
+	border: 1px solid #e5e5e5;
+	margin-bottom: 10px;
+}
+.servico_img_painel {
+	float: left;
+	padding-top: 10px;
+}
+.servico_img_painel img {
+	width: 140px;
+	height: 100px;
+}
+.main_content_painel {
+	float: left;
+	height: 120px;
+}
+.negociacao_botoes {
+	float: right;
+	height: 100px;
+	padding-top: 40px;
+	text-align: center;
 }
 
 /* PERFIL PUBLICO DO USUARIO */

@@ -2,31 +2,6 @@
 	$servico = $_GET['servico'];
 ?>
 
-<style>
-	.itens_painel {
-		border: 1px solid #e5e5e5;
-		margin-bottom: 10px;
-	}
-	.servico_img_painel {
-		float: left;
-		padding-top: 10px;
-	}
-	.servico_img_painel img {
-		width: 140px;
-		height: 100px;
-	}
-	.main_content_painel {
-		float: left;
-		height: 120px;
-	}
-	.botao_remover_painel {
-		float: right;
-		height: 100px;
-		padding-top: 40px;
-		text-align: center;
-	}
-</style>
-
 <div class="row itens_painel">
  
  	<div class="servico_img_painel col-xs-12 col-sm-2 col-md-2">
@@ -40,13 +15,13 @@
 		<h5> E-mail: <?php echo $servico["email"]; ?> </h5>
   	</div>
    	
-   	<div class="botao_remover_painel col-xs-4 col-sm-2 col-md-2">
+   	<div class="negociacao_botoes col-xs-4 col-sm-2 col-md-2">
 		<p> 
 
 		<?php if($servico["negociacao_finalizada"] == "1"){ ?>
 			<p> Negocicação finalizada e avaliada </p>
 		<?php } else{ ?>
-			<a  <?php echo  "id='".$servico["id_servico"]."-".$servico["contratado"]."'"; ?>  class="finalizar_negociacao_como_contratante btn btn-danger">Finalizar negociação</a>
+			<a  <?php echo  "id='".$servico["id_servico"]."-".$servico["contratado"]."'"; ?>  class="finalizar_negociacao_como_contratante btn btn-danger">Finalizar Negociação</a>
 		<?php }	?>
 			
 		</p>

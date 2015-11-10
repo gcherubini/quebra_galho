@@ -128,6 +128,7 @@ if(!isset($_SESSION['id_usuario'])){
 		$(".perfil_info").css('display','block');
 		$(".data_nascimento").val($.datepicker.formatDate('dd/mm/yy', new Date(json_result.data_nascimento)));
 		$(".email").val(json_result.email);
+		$('.usuario_foto').attr("src", json_result.img_url);
 		
 		/*$(".senha").val(json_result.senha);*/
 			
@@ -196,6 +197,12 @@ if(!isset($_SESSION['id_usuario'])){
 
 			<div class="perfil_info">
 				<h2> Meu Perfil </h2>
+
+					<div class="div_usuario_foto">
+		     				<img class="cropit-image-preview usuario_foto" />
+		     		</div>
+
+					
 
 					<p>
 						Nome: <?php echo $_SESSION["nome"]; ?>

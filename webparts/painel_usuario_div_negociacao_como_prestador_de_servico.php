@@ -42,5 +42,9 @@
 		<h5> E-mail: <?php echo $servico["email"]; ?> </h5>
   	</div>
 
+  	<div class="negociacao_botoes col-xs-4 col-sm-2 col-md-2">
+  		<a  <?php echo  "id='".$servico["id_servico"]."-".$servico["contratado"]."'"; ?>  class="solicitar_negociacao_como_prestador btn btn-primary">Solicitar Negociação</a>
+  	</div>
+
 
 </div>

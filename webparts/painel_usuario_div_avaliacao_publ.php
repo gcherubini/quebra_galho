@@ -30,7 +30,7 @@ $json = isset($_GET['json']) ? $_GET['json'] : "";
 		<div class="row itens_painel">
 		 
 		 	<div class="servico_img_painel col-xs-12 col-sm-2 col-md-2">
-				<a href="#"><img src ="img/usuarios/20_17-10-2015_07-32-08.jpg" class="foto_usuario"> </a>
+				<a href="#"><img src ="<?php echo $json["contratante_foto"]; ?>" class="foto_usuario"> </a>
 			</div>
 
 		  	<div class="main_content_painel col-xs-8 col-sm-8 col-md-8">
