@@ -21,7 +21,7 @@ if($tipo != ""){
 		$sql .= " WHERE negociacao.contratado = '".$usuario_logado."'";
 	}
 
-	$sql .= " ORDER BY negociacao.data_criacao DESC ";
+	$sql .= " ORDER BY negociacao.negociacao_finalizada ASC , negociacao.data_criacao DESC ";
 
 	
 	//$orderBy = " ORDER BY date_criacao DESC " need to create this attr in mysql;

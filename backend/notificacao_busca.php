@@ -6,7 +6,7 @@ $id_usuario = isset($_SESSION['id_usuario']) ? trim($_SESSION['id_usuario']) : '
 $errorMessage = "";
 $conn = include "db_connection.php";
 
-$sql = "SELECT * FROM notificacao WHERE id_usuario = '".$id_usuario."' ORDER BY data_criacao";
+$sql = "SELECT * FROM notificacao WHERE id_usuario = '".$id_usuario."' ORDER BY data_criacao DESC";
 
 //$orderBy = " ORDER BY date_criacao DESC " need to create this attr in mysql;
 //$sql .= $orderBy;

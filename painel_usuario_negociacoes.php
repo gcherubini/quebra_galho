@@ -25,6 +25,13 @@ if(!isset($_SESSION['id_usuario'])){
 			abrirModalAvaliacao($(this).attr("id"));
 		});
 
+		$('.container').on('click', '.solicitar_avaliacao_como_prestador', function() {
+			solicitar_avaliacao_como_prestador($(this).attr("id"));
+		});
+
+
+
+
 		$(".avaliar_como_contratante_form").validate({
 			rules: {
 				descricao: {
@@ -133,15 +140,40 @@ if(!isset($_SESSION['id_usuario'])){
 		
 	}
 
-	function abrirModalAvaliacao(id_servico_e_contratado){
+	function abrirModalAvaliacao(ids){
 		$('.modal_nova_avaliacao').modal('toggle');
-		$('.id_servico_e_contratado_input_hidden').val(id_servico_e_contratado);
+		$('.id_servico_e_contratado_input_hidden').val(ids);
 	}
 
  	function mostraMensagemDeNegociacoesNaoEncontradas() {
  		// quando há mudanca de filtros por exemplo
  		$('.itens_nao_encotrados').css("display","block");
  	}
+
+ 	function solicitar_avaliacao_como_prestador(ids) {
+ 		$.ajax({
+		        type : 'POST',
+		        dataType : 'text',
+		        data: ({ids: ids}) ,
+		        url: 'backend/solicitar_avaliacao.php',
+		        success : function(error_msg) {
+		        	if(!valorEhVazio(error_msg)){
+		        		mostraMsgDeSolicitacaoNaoEnviada(error_msg);
+		        	}
+		        	else{
+		        		alert("Solicitação enviada ao contratante com sucesso!")
+		        	}
+		        },
+		        error: function(XMLHttpRequest, textStatus, errorThrown){
+			    	mostraMsgDeSolicitacaoNaoEnviada(textStatus);
+			    } 
+		    });
+ 	}
+
+ 	function mostraMsgDeSolicitacaoNaoEnviada(error_msg) {
+ 		//alert(error_msg)
+ 		alert("Oops.. Aconteceu algum problema ao enviar sua solicitação, por favor tente mais tarde.")
+ 	}	
 
 
 

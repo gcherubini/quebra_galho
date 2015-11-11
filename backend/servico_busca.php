@@ -54,7 +54,7 @@ if($filtroIdServico != "") {
 
 
 
-$sql .= " ORDER BY destaque DESC ";
+$sql .= " ORDER BY servico.destaque DESC , servico.data_criacao DESC ";
 $sql .= " LIMIT " .$limit. " OFFSET " .$offset. " ";
 
 // DEBUG MODE ->  echo $sql;
