@@ -249,6 +249,7 @@ $pesquisa = isset($_GET['pesquisa']) ? trim($_GET['pesquisa']) : '';
 	<?php include("webparts/topo.php"); ?>
 		
     <div class="container content">
+
 	    
 		<div class="row" >
 			<div class="col-xs-12 col-sm-3 col-md-3 ">
