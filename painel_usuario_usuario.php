@@ -184,8 +184,9 @@ if(!isset($_SESSION['id_usuario'])){
 
 					<p> Olá <b> <?php echo $_SESSION["nome"]; ?></b>, seja bem-vindo(a) ao Painel do Usuário. </p>
 
+					<!--
 					<p> Para ver o seu perfil público <id class="ver_perfil_publico"><a href="#"> Clique Aqui. </a> </id> </p>
-
+					-->
 
 					</p>
 
@@ -267,6 +268,7 @@ if(!isset($_SESSION['id_usuario'])){
 					</div>
 
 
+				<!--
 
 				<h2> Meus Anúncios </h2>
 
@@ -288,6 +290,8 @@ if(!isset($_SESSION['id_usuario'])){
 						<a href="painel_usuario_negociacoes.php">Ver minhas negociações</a>
 					</p>
 
+				-->
+
 				<h2> Configurações da Conta </h2>
 
 					<p>
@@ -299,7 +303,7 @@ if(!isset($_SESSION['id_usuario'])){
 					</p>
 
 					<p>
-						<a href="#">Deletar conta</a>
+						<a href="contato.php">Deletar conta</a>
 					</p>
 
 		</div>

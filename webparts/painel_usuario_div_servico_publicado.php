@@ -30,11 +30,11 @@
 <div class="row itens_painel">
 
 	<div class="servico_img_painel col-xs-12 col-sm-2 col-md-2">
-		<?php echo '<img class="img-responsive" src="'.$servico["img_url"].'"/>'; ?>
+		<a href="#"><?php echo '<img class="img-responsive" src="'.$servico["img_url"].'"/>'; ?></a>
 	</div>
 
 	<div class="main_content_painel col-xs-8 col-sm-8 col-md-8">
-		<h4> <?php echo $servico["emprego"]; ?> </h4>
+		<a href="#"><h4> <?php echo $servico["emprego"]; ?> </h4></a>
 		<p> "<?php echo $servico["slogan"]; ?>" </p>
 		<p> <b>Número de serviços: </b> <?php echo $servico["numero_servicos"]; ?> (<a href="painel_usuario_negociacoes.php">Ver</a>)</p>
 		<p>0 Avaliações - PLACEHOLDER (<a href="#">Ver</a>)</p>

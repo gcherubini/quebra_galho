@@ -35,7 +35,7 @@ $json = isset($_GET['json']) ? $_GET['json'] : "";
 
 		  	<div class="main_content_painel col-xs-8 col-sm-8 col-md-8">
 		  		<h4> <?php echo $json["nome"]; ?> </h4>
-				<h5> Serviço avaliado: <id class="link_to_servico"><a href="#"><?php echo $json["emprego"]; ?></a></id>(Ver publicação) </h5>
+				<h5> Serviço avaliado: <id class="link_to_servico"><a href="#"><?php echo $json["emprego"]; ?></a></id> </h5>
 				
 				<h5> Estrelas:
 
