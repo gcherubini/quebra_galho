@@ -70,11 +70,11 @@ $pesquisa = isset($_GET['pesquisa']) ? trim($_GET['pesquisa']) : '';
 		$(".sidebar-categoria-item").click(function(event){
 			if ($(this).hasClass("activate")){
 				$(this).removeClass("activate");
-				filtroCategorias = filtroCategorias.replace("," + $(this).children(".sidebar-text").text(), "");
+				filtroCategorias = filtroCategorias.replace("," + $(this).children(".sidebar-categoria-text").text(), "");
 			}
 			else{
 			    $(this).addClass("activate");
-			    filtroCategorias += "," + $(this).children(".sidebar-text").text();
+			    filtroCategorias += "," + $(this).children(".sidebar-categoria-text").text();
 			}
 
 			$.session.set("filtroCategorias", filtroCategorias);
@@ -257,14 +257,14 @@ $pesquisa = isset($_GET['pesquisa']) ? trim($_GET['pesquisa']) : '';
 		        	<p> O que você precisa? </p>	
 		        	<div class="sidebar-categorias">
 		        		<ul>
-		        			<li class="sidebar-categoria-item"> <div class="sidebar-text sidebar-centering">Domésticos</div> <span class="glyphicon glyphicon-home"> </span> </li>
-		        			<li class="sidebar-categoria-item"> <div class="sidebar-text sidebar-centering">Manuteção</div><span class="glyphicon glyphicon-wrench"> </span>  </li>	
-		        			<li class="sidebar-categoria-item"> <div class="sidebar-text sidebar-centering">Saúde</div><span class="glyphicon glyphicon-plus"> </span> </li>
-		        			<li class="sidebar-categoria-item"> <div class="sidebar-text sidebar-centering">Aulas</div><span class="glyphicon glyphicon-education"> </span>  </li>
-		        			<li class="sidebar-categoria-item"> <div class="sidebar-text sidebar-centering">Alimentação</div><span class="glyphicon glyphicon-cutlery"> </span></li>
-		        			<li class="sidebar-categoria-item"> <div class="sidebar-text sidebar-centering">Eventos</div><span class="glyphicon glyphicon-equalizer"> </span>  </li> 
-		        			<li class="sidebar-categoria-item"> <div class="sidebar-text sidebar-centering">Artes</div><span class="glyphicon glyphicon-pencil"> </span>  </li>
-		        			<li class="sidebar-categoria-item"> <div class="sidebar-text sidebar-centering">Moda</div><span class="glyphicon glyphicon-sunglasses"> </span>  </li>
+		        			<li class="sidebar-categoria-item"> <span class="glyphicon glyphicon-home"> </span> <div class="sidebar-categoria-text ">Domésticos</div>  </li>
+		        			<li class="sidebar-categoria-item"> <span class="glyphicon glyphicon-wrench"> </span> <div class="sidebar-categoria-text  sidebar-item-direita">Manuteção</div>  </li>	
+		        			<li class="sidebar-categoria-item"> <span class="glyphicon glyphicon-plus"> </span> <div class="sidebar-categoria-text ">Saúde</div> </li>
+		        			<li class="sidebar-categoria-item"> <span class="glyphicon glyphicon-education"> </span> <div class="sidebar-categoria-text  sidebar-item-direita">Aulas</div>  </li>
+		        			<li class="sidebar-categoria-item"> <span class="glyphicon glyphicon-cutlery"> </span> <div class="sidebar-categoria-text ">Alimentação</div> </li>
+		        			<li class="sidebar-categoria-item"> <span class="glyphicon glyphicon-equalizer"> </span>  <div class="sidebar-categoria-text  sidebar-item-direita">Eventos</div> </li> 
+		        			<li class="sidebar-categoria-item"> <span class="glyphicon glyphicon-pencil"> </span>  <div class="sidebar-categoria-text ">Artes</div> </li>
+		        			<li class="sidebar-categoria-item"> <span class="glyphicon glyphicon-sunglasses"> </span> <div class="sidebar-categoria-text  sidebar-item-direita">Moda</div>  </li>
 		        		</ul>
 		        	</div>
 

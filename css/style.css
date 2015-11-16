@@ -514,9 +514,10 @@ text-decoration: underline;
 	margin:0;
 	list-style: none;
 	border: 1px solid #ccc;
-	padding: 20px;
+	padding-top: 20px;
+	padding-bottom: 20px; 
 	float:left;
-	width: 118px;
+	width: 47%;
 	height: 70px;
 	margin-right: 5px;
 	margin-bottom: 5px;
@@ -524,15 +525,15 @@ text-decoration: underline;
 	position: relative;
 }
 
-.sidebar-categorias ul li .sidebar-centering{
-	  position: absolute;
-	  /*top: 50%;
-	  left: 50%;
-	  transform: translate(-50%, -50%);*/	  
-	  left:25%;
-	  width:50%;
-	  height:50%;
-	  top:80%;
+
+.sidebar-categoria-text {
+	margin-top: 9px;
+	font-size: 11px;
+	position: relative;
+}
+
+.sidebar-item-direita{
+	margin-right: 0;
 }
 
 .sidebar hr{
