@@ -17,7 +17,7 @@ if($tipo != ""){
 	if($tipo == "como_contratante"){
 		$sql .= " WHERE negociacao.contratante = '".$usuario_logado."'";
 	}
-	else if($tipo == "como_prestador_de_servicos"){
+	else if($tipo == "como_prestador_de_servico"){
 		$sql .= " WHERE negociacao.contratado = '".$usuario_logado."'";
 	}
 
