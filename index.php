@@ -371,11 +371,11 @@ $pesquisa = isset($_GET['pesquisa']) ? trim($_GET['pesquisa']) : '';
 					<hr class="top20"/>
 
 					<div class="sidebar-propaganda">
-
+						<img src="img/banners/banner_tumelero.jpg" style="width:260px;height:150px;">
 					</div>
 
 					<div class="sidebar-propaganda">
-
+						<img src="img/banners/banner_fg.jpg" style="width:260px;height:150px;">
 					</div>
 
 		       	</div>
