@@ -247,14 +247,105 @@ $pesquisa = isset($_GET['pesquisa']) ? trim($_GET['pesquisa']) : '';
   <body>
   	<div class="page">
 	<?php include("webparts/topo.php"); ?>
+
+	<!-- carrossel !-->
+
+		    	<div id="myCarousel" class="carousel slide" data-ride="carousel">
+					  <!-- Indicators -->
+					  <ol class="carousel-indicators">
+					    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+					    <li data-target="#myCarousel" data-slide-to="1"></li>
+					    <li data-target="#myCarousel" data-slide-to="2"></li>
+					    <li data-target="#myCarousel" data-slide-to="3"></li>
+					  </ol>
+
+					  <!-- Wrapper for slides -->
+					  <div class="carousel-inner" role="listbox">
+					    <div class="item active">
+					    	<!-- texto1
+
+					    	<h1 class = "slider-texto1">
+
+					      		ENCONTRE PROFISSIONAIS DE QUALIDADE
+					      	</h1>
+					      	<p class="slider-texto1-2">
+					      		Contrate serviços locais ou remotos.
+					      	</p>
+
+							!-->
+
+					      <img src="img/garden2.jpg" alt="garden2">
+					      	
+						</div>
+
+					    <div class="item">
+
+					    	<!-- texto2
+
+					    	<h1 class = "slider-texto2">
+					      		ANUNCIE GRATUITAMENTE
+					      	</h1>
+					      	<p class="slider-texto2-2">
+					      		Cadastre-se e anuncie seu serviço desde já.
+					      	</p>
+
+							!-->
+
+					      <img src="img/working2.jpg" alt="working2">
+					    </div>
+
+					    <div class="item">
+
+					    	<!-- texto3
+
+					    	<h1 class = "slider-texto3">
+					      		SEJA RECONHECIDO
+					      	</h1>
+					      	<p class="slider-texto3-2">
+					      		Faça um serviço de qualidade e ganhe destaque 	pela sua reputação.
+					      	</p>
+
+							!-->
+
+					      <img src="img/dj2.jpg" alt="dj2">
+					    </div>
+
+					    <div class="item">
+
+					    	<!-- texto4
+
+					    	<h1 class = "slider-texto4">
+					      		FAÇA COM QUEM SABE
+					      	</h1>
+					      	<p class="slider-texto4-2">
+					      		Encontre um profissional que faça exatamente o que você precisa.
+					      	</p>
+
+							!-->
+
+					      <img src="img/kitchen2.jpg" alt="kitchen2">
+					    </div>
+					  </div>
+
+					  <!-- Left and right controls -->
+					  <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+					    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+					    <span class="sr-only">Previous</span>
+					  </a>
+					  <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+					    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+					    <span class="sr-only">Next</span>
+					  </a>
+				</div>
 		
     <div class="container content">
 
+    	
 	    
 		<div class="row" >
 			<div class="col-xs-12 col-sm-3 col-md-3 ">
 				<div class="sidebar">
-		        	<p> O que você precisa? </p>	
+		        	<p class="sidebar-title"> Que tipo de serviço você precisa? </p>	
 		        	<div class="sidebar-categorias">
 		        		<ul>
 		        			<li class="sidebar-categoria-item"> <span class="glyphicon glyphicon-home"> </span> <div class="sidebar-categoria-text ">Domésticos</div>  </li>

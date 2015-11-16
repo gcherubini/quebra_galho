@@ -14,10 +14,13 @@
 
  html, body {
 
-   padding-top: 40px;
+   padding-top: 24px;
    height:100%;
 
+
 }
+
+.container { linear-gradient(transparent, black) ;}
 
 .page{
 	min-height:100%;
@@ -36,8 +39,8 @@
 .container {
 
 
-	width: 95%;
-	
+	width: 100%;
+	position: relative;
 
 }
 
@@ -404,7 +407,7 @@ text-decoration: underline;
 
 .input_texto_pesquisar_topo {
 
-	box-shadow: 0 10px 10px rgba(0, 0, 0, 0.075) inset;
+	box-shadow: 0 5px 5px rgba(0, 0, 0, 0.075) inset;
 	border-color: #FF7F00;
 	border-radius: 5px;
 
@@ -414,7 +417,7 @@ text-decoration: underline;
 .input_texto_pesquisar_topo:focus {
 
 	border-color: #FF7F00;
-    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.075) inset, 0 0 3px #FF7F00;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 3px #FF7F00;
 }
 
 .botao_procura_topo {
@@ -428,10 +431,17 @@ text-decoration: underline;
 
 .botao_procura_topo:hover {
 
-	background: #EFEFEF;
+	background: white;
 	border-color: #FF7F00;
-	box-shadow: 0 5px 5px rgba(0, 0, 0, 0.075) inset
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset
 
+
+}
+
+.botao_procura_topo:focus {
+
+	background: white;
+	border-color: #FF7F00;
 
 }
 
@@ -451,8 +461,131 @@ text-decoration: underline;
 
 /* SLIDER */
 
+/* texto 
+
+h1.slider-texto1 {
+
+	text-align: center;
+	overflow: auto;
+	font-weight: bold;
+	font-size: 40px;
+	line-height: 60px
+	padding-bottom: 100px;
+	position: absolute;
+	color: white;
+	margin-left: 210px;
+	margin-top: 90px;
+
+}
+
+.slider-texto1-2 {
+
+	text-align: center;
+	font-weight: bold;
+	font-size: 18px;
+	line-height: 20px;
+	position: absolute;
+	color: white;
+	margin-left: 480px;
+	margin-top: 160px;
 
 
+}
+
+h1.slider-texto2 {
+
+
+	text-align: center;
+	overflow: auto;
+	font-weight: bold;
+	font-size: 40px;
+	line-height: 60px
+	padding-bottom: 100px;
+	position: absolute;
+	color: white;
+	margin-left: 365px;
+	margin-top: 90px;
+
+}
+
+.slider-texto2-2 {
+
+	text-align: center;
+	font-weight: bold;
+	font-size: 18px;
+	line-height: 20px;
+	position: absolute;
+	color: white;
+	margin-left: 445px;
+	margin-top: 160px;
+
+
+}
+
+h1.slider-texto3 {
+
+	text-align: center;
+	overflow: auto;
+	font-weight: bold;
+	font-size: 40px;
+	line-height: 60px
+	padding-bottom: 100px;
+	position: absolute;
+	color: white;
+	margin-left: 425px;
+	margin-top: 90px;
+
+}
+
+.slider-texto3-2 {
+
+	text-align: center;
+	font-weight: bold;
+	font-size: 18px;
+	line-height: 20px;
+	position: absolute;
+	color: white;
+	margin-left: 340px;
+	margin-top: 160px;
+
+}
+
+h1.slider-texto4 {
+
+	text-align: center;
+	overflow: auto;
+	font-weight: bold;
+	font-size: 40px;
+	line-height: 60px
+	padding-bottom: 100px;
+	position: absolute;
+	color: white;
+	margin-left: 400px;
+	margin-top: 90px;
+
+}
+
+.slider-texto4-2 {
+
+	text-align: center;
+	font-weight: bold;
+	font-size: 18px;
+	line-height: 20px;
+	position: absolute;
+	color: white;
+	margin-left: 350px;
+	margin-top: 160px;
+
+}
+
+fim texto */
+
+.carousel {
+
+margin-bottom: 30px;
+
+
+}
 
 /* MENSAGENS DA PAGINA */
 
@@ -476,21 +609,23 @@ text-decoration: underline;
 /* LISTA DE SERVIÇOS, PAGINA INICIAL, HOMEPAGE */
 
 .container-lista-servicos {
+	
 	margin-left:-20px;
+	margin-top: 22px;
+
 }
 
 .sidebar {
 
-	margin:0 auto;
+	margin: 0 auto;
 	width: 85%;
 }
 
 
 
-.sidebar-categorias{
+.sidebar-title {
 	
-
-
+	color: #FF7F00;
 
 }
 
@@ -510,7 +645,7 @@ text-decoration: underline;
 
 .sidebar-categorias ul li{
 	border-radius: 5px;
-	box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1) inset;
+	box-shadow: 0 10px 10px rgba(0, 0, 0, 0.075) inset;
 	margin:0;
 	list-style: none;
 	border: 1px solid #ccc;
@@ -523,6 +658,7 @@ text-decoration: underline;
 	margin-bottom: 5px;
 	text-align: center;
 	position: relative;
+	linear-gradient (transparent, black) ;
 }
 
 
@@ -549,13 +685,15 @@ text-decoration: underline;
 
 .sidebar-categorias ul li:hover{
 	
-	box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1) inset;
+	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.075) inset;
 	cursor: pointer;
 	text-decoration: underline;
 }
 
 .sidebar .cidades{
 	
+
+
 }
 
 /*GLYPHICONS DA SIDEBAR */
@@ -1191,6 +1329,7 @@ form .row {
 	
 
 }
+
 
 .confirmarservico:hover {
 
