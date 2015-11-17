@@ -650,7 +650,9 @@ fim texto */
 
 .sidebar-title {
 	
-	color: #FF7F00;
+	color: #ccc;
+	font-size: 16px;
+	line-height: 12px;
 
 }
 
@@ -721,9 +723,11 @@ fim texto */
 
 .sidebar-categorias ul li:hover{
 	
-	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.075) inset;
+	box-shadow: 0 5px 5px rgba(0, 0, 0, 0.075) inset;
 	cursor: pointer;
 	text-decoration: underline;
+	border: 1px solid #FF7F00;
+	color: #FF7F00;
 
 }
 
@@ -735,7 +739,7 @@ fim texto */
 
 .cidades {
 
-	width: 96%;
+	width: 98%;
 
 }
 
@@ -796,6 +800,8 @@ fim texto */
 	margin: auto;
 	padding: auto;
 	margin-bottom: 20px;
+	 
+	margin-left: -10px;
 
 
 }
@@ -854,7 +860,7 @@ fim texto */
 .servico_destaque{
 
 	box-shadow: 0 30px 30px rgba(0, 0, 0, 0.075) inset;
-	width: 97%;
+	width: 98%;
 	border-radius: 3px;
 	cursor: pointer;
 	min-height: 160px;
