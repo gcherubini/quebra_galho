@@ -14,7 +14,7 @@
 
  html, body {
 
-   padding-top: 24px;
+   padding-top: 30px;
    height:100%;
 
 
@@ -224,7 +224,8 @@
 	height: 35px;
 	/*border: 1px solid #B6B6B4;*/
 	padding-left: 0px;
-	border-radius: 5px;	
+	border-radius: 3px;	
+
 	/* box-shadow: 0 5px 5px rgba(0, 0, 0, 0.075) inset; */
 
 
@@ -275,6 +276,7 @@ text-decoration: underline;
 
 .minha_conta_div {
 
+	right: 3%;
 
 }
 
@@ -368,7 +370,13 @@ text-decoration: underline;
 /* LOGO */
 
 .logo_imagem {
-	width: 150px;
+	width: 180px;
+
+}
+
+.logo_topo {
+
+	margin-left: 12%;
 }
 
 .topo2 .logo {
@@ -408,7 +416,7 @@ text-decoration: underline;
 
 	box-shadow: 0 5px 5px rgba(0, 0, 0, 0.075) inset;
 	border-color: #FF7F00;
-	border-radius: 5px;
+	border-radius: 3px;
 
 }
 
@@ -423,7 +431,7 @@ text-decoration: underline;
 
 	border-color: #FF7F00;
 	box-shadow: 0 5px 5px rgba(0, 0, 0, 0.075) inset;
-	border-radius: 5px;
+	border-radius: 3px;
 
 
 }
@@ -661,7 +669,7 @@ fim texto */
 }
 
 .sidebar-categorias ul li{
-	border-radius: 5px;
+	border-radius: 3px;
 	box-shadow: 0 10px 10px rgba(0, 0, 0, 0.075) inset;
 	margin:0;
 	list-style: none;
@@ -676,28 +684,34 @@ fim texto */
 	text-align: center;
 	position: relative;
 	linear-gradient (transparent, black) ;
+
 }
 
 
 .sidebar-categoria-text {
+
 	margin-top: 9px;
 	font-size: 11px;
 	position: relative;
+
 }
 
 .sidebar-item-direita{
+
 	margin-right: 0;
+
 }
 
-.sidebar hr{
+.sidebar hr {
 	
 }
 
 .sidebar-propaganda {
-	height: 150px; 
 
+	height: 150px; 
 	border: 1px solid #aaa;
 	margin-bottom: 20px;
+
 }
 
 .sidebar-propaganda img{
@@ -710,26 +724,39 @@ fim texto */
 	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.075) inset;
 	cursor: pointer;
 	text-decoration: underline;
+
 }
 
-.sidebar .cidades{
+.sidebar .cidades {
 	
 
+
+}
+
+.cidades {
+
+	width: 96%;
 
 }
 
 /*GLYPHICONS DA SIDEBAR */
 
 .glyphicon-cutlery {
+
 	font-size: 18px;
+
 }
 
 .glyphicon-home {
+
 	font-size: 18px;
+
 }
 
 .glyphicon-education {
+
 	font-size: 18px;
+
 }
 
 .glyphicon-equalizer {
@@ -769,6 +796,8 @@ fim texto */
 	margin: auto;
 	padding: auto;
 	margin-bottom: 20px;
+
+
 }
 
 .servico	{	
@@ -781,17 +810,19 @@ fim texto */
 	padding: 0 10px;
 	min-height: 370px;
 
+
 }
 
 .servico2 {
 
 
+	
 	/*width: 280px;
 	min-height: 270px;*/
 	box-shadow: 0 30px 30px rgba(0, 0, 0, 0.075) inset;
-	border-radius: 10px;
-	width: 250px;
-	border: 1px solid white;
+	border-radius: 3px;
+	width: 210px;
+	border: 1px solid #ccc;
 
 }
 
@@ -800,7 +831,7 @@ fim texto */
 	width: 95%;
 	text-align: justify;
 	margin: auto;
-	margin-top: 15px;
+	margin-top: 8px;
 	padding-bottom: 10px;
 
 }
@@ -809,7 +840,7 @@ fim texto */
    	
    background: white;
    text-decoration: underline;
-   border:1px solid #ABABAB;
+   border: 1px solid black;
 
 }
 
@@ -823,32 +854,29 @@ fim texto */
 .servico_destaque{
 
 	box-shadow: 0 30px 30px rgba(0, 0, 0, 0.075) inset;
-	width: 90%;
-	border-radius: 10px;
+	width: 97%;
+	border-radius: 3px;
 	cursor: pointer;
-	min-height: 190px;
-	margin-bottom: 30px;
-	border: 1px solid white;
+	min-height: 160px;
+	margin-bottom: 20px;
+	border: 1px solid #ccc;
 	padding: 0;
 	margin-left: 10px;
 
 
 }
 
-
-
 .servicos_titulo_filtro {
 
 	margin-top:20px;
 }
 
-
-
 .servico_destaque_content{
 	
 	float:left;
-	margin-left: 25px;
-	margin-top:20px;
+	margin-left: 10px;
+	margin-top:8px;
+
 
 }
 
@@ -859,19 +887,22 @@ fim texto */
 
 }
 
-.servico_img {
+.servico2 {
 
 	margin: auto;
 	padding: auto;
+	background: linear-gradient (90deg, black, white);
 
 
 }
+
+
 
 .servico_destaque_img{
 	
 
 	padding:auto;
-	width: 250px;
+	width: 210px;
 	float:left;
 
 
@@ -880,9 +911,10 @@ fim texto */
 .servico_img img {
 
 	width: 280px;
-	height: 190px;
-	border-top-left-radius: 7px;
-	border-top-right-radius: 7px;
+	height: 165px;
+	border-top-left-radius: 3px;
+	border-top-right-radius: 3px;
+	z-index: -1;
 }
 
 
@@ -891,8 +923,8 @@ fim texto */
 
 	
 	border-radius: 0;
-	border-bottom-left-radius: 7px;
-	border-top-left-radius: 7px;
+	border-bottom-left-radius: 3px;
+	border-top-left-radius: 3px;
 }
 
 

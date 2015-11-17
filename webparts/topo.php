@@ -76,13 +76,13 @@ $().ready(function() {
 		<div class="container">
 
 
-			<div class="row" >
+			<div class="row row-header" >
 			<!-- xs phone sm tablet md desktop -->					
 
 		        <div class="col-xs-12 col-sm-2 col-md-2 coluna0">
 					<div class="logo_topo">
 					
-						<a href="index.php"> <img src ="img/logos/Logo_Home.png" class="logo_imagem"> </a>
+						<a href="index.php"> <img src ="img/logos/Logo_Oct001.png" class="logo_imagem"> </a>
 
 					</div>
 

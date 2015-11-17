@@ -19,7 +19,11 @@
 
 			<p>"<?php echo $servico["slogan"]; ?>"</p> 
 			
+			<!--
+
 			<p> <b>Numero de serviços: </b> <?php echo $servico["numero_servicos"]; ?></p> 
+
+			!-->
 
 			<p>
 				<?php
