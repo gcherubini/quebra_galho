@@ -340,8 +340,6 @@ $pesquisa = isset($_GET['pesquisa']) ? trim($_GET['pesquisa']) : '';
 		
     <div class="container content">
 
-    	
-	    
 		<div class="row" >
 			<div class="col-xs-12 col-sm-3 col-md-3 ">
 				<div class="sidebar">
@@ -371,11 +369,11 @@ $pesquisa = isset($_GET['pesquisa']) ? trim($_GET['pesquisa']) : '';
 					<hr class="top20"/>
 
 					<div class="sidebar-propaganda">
-						<img src="img/banners/banner_tumelero.jpg" style="width:260px;height:150px;">
+						<img src="img/banners/banner_tumelero.jpg" >
 					</div>
 
 					<div class="sidebar-propaganda">
-						<img src="img/banners/banner_fg.jpg" style="width:260px;height:150px;">
+						<img src="img/banners/banner_fg.jpg" >
 					</div>
 
 		       	</div>

@@ -131,7 +131,7 @@ if(!isset($_SESSION['id_usuario'])){
 					</div>
 					 <div class="itens_nao_encotrados">
 						<p> Você ainda não publicou nenhum serviço... </p>
-						<a href="servico_novo.php"> Seja um Quebra-Galho </a>
+						<a href="novo_servico.php"> Seja um Quebra-Galho </a>
 					</div>
 
 				</div>

@@ -33,6 +33,7 @@ if (session_status() == PHP_SESSION_NONE) { session_start(); }
 		    monthNamesShort: ['Jan','Fev','Mar','Abr','Mai','Jun','Jul','Ago','Set','Out','Nov','Dez'],
 		    nextText: 'Próximo',
 		    prevText: 'Anterior',
+		    yearRange: '-120:+0',
 		    changeYear: true
 		});
 
