@@ -359,7 +359,7 @@ $pesquisa = isset($_GET['pesquisa']) ? trim($_GET['pesquisa']) : '';
 
 		        	<div style="clear:both;"> </div>
 
-		        	<p class="top20"> Em que cidades de atuação? </p>
+		        	<p class="sidebar-title top20"> Em que cidades de atuação? </p>
 
 		        	<select  class="form-control cidades chosen-select" id="cidades" name="cidades[]" multiple
 					 		data-placeholder="Cidade(s) de atuação" >

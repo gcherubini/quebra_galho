@@ -82,7 +82,7 @@ $().ready(function() {
 		        <div class="col-xs-12 col-sm-2 col-md-2 coluna0">
 					<div class="logo_topo">
 					
-						<a href="index.php"> <img src ="img/logos/Logo_Oct001.png" class="logo_imagem"> </a>
+						<a href="index.php"> <img src ="img/logos/Logo_Home_So_Texto.png" class="logo_imagem"> </a>
 
 					</div>
 
