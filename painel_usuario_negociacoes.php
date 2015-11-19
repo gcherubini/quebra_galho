@@ -95,7 +95,7 @@ if(!isset($_SESSION['id_usuario'])){
 		            var countJsonItens = Object.keys(json_result).length 
 
 		 			if(countJsonItens == 0) {
-	 					mostraMensagemDeNegociacoesNaoEncontradas()
+	 					mostraMensagemDeNegociacoesNaoEncontradas(tipo)
 		 			}
 		 			else {
 	            		$.each(json_result, function(index, json_result) {	
@@ -105,7 +105,7 @@ if(!isset($_SESSION['id_usuario'])){
 		        },
 		        error: function(XMLHttpRequest, textStatus, errorThrown){
 			    	alert("error: " + textStatus);
-			    	mostraMensagemDeNegociacoesNaoEncontradas()
+			    	mostraMensagemDeNegociacoesNaoEncontradas(tipo)
 			    } 
 		    });
 	}
@@ -145,9 +145,16 @@ if(!isset($_SESSION['id_usuario'])){
 		$('.id_servico_e_contratado_input_hidden').val(ids);
 	}
 
- 	function mostraMensagemDeNegociacoesNaoEncontradas() {
+ 	function mostraMensagemDeNegociacoesNaoEncontradas(tipo) {
  		// quando há mudanca de filtros por exemplo
- 		$('.itens_nao_encotrados').css("display","block");
+ 		if(tipo == "como_contratante"){
+			$('.itens_nao_encotrados_como_contratante').css("display","block");
+		}
+		else if(tipo == "como_prestador_de_servico"){
+
+		}
+
+ 		
  	}
 
  	function solicitar_avaliacao_como_prestador(ids) {
@@ -212,6 +219,7 @@ if(!isset($_SESSION['id_usuario'])){
 
 					<p> Aqui você encontra informações adicionais sobre todos os clientes que acessaram o seu perfil e quiseram negociar com você.</p>
 
+					
 					<div class="negociacoes-como-prestador-de-servicos">
 
 					</div>
@@ -227,7 +235,7 @@ if(!isset($_SESSION['id_usuario'])){
 
 					</div>
 
-					<div class="itens_nao_encotrados">
+					<div class="itens_nao_encotrados itens_nao_encotrados_como_contratante">
 						<p> Você ainda não está negociando com nenhum quebra-galho... </p>
 						<a href="index.php"> Encontre um Quebra-Galho  </a>
 					</div>
