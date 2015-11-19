@@ -12,10 +12,10 @@
 
         <div class="modal-body">        
 
-            <div class = "modal_texto1"> Se você quiser contratar este serviço, será pedida uma avaliação sua sobre ele.</div>
+           <!-- <div class = "modal_texto1"> Se você quiser contratar este serviço, será pedida uma avaliação sua sobre ele.</div>
             
             <!-- <button type="button" class="btn btn-default confirmarservico">Sim, quero contratar este serviço!</button> !-->
-            <div class = "confirmarservico"> Sim, quero contratar este serviço! </div>
+           <!-- <div class = "confirmarservico"> Sim, quero contratar este serviço! </div> !-->
               <div class="modal_info">
                 <p> Abaixo seguem as informações para contato: </p>
                 <div class = "modal_contato">
