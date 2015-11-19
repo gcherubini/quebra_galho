@@ -16,15 +16,16 @@
   	</div>
    	
    	<div class="negociacao_botoes col-xs-4 col-sm-2 col-md-2">
-		<p> 
+		
 
 		<?php if($servico["negociacao_finalizada"] == "1"){ ?>
 			<p> Negocicação finalizada e avaliada </p>
 		<?php } else{ ?>
-			<a  <?php echo  "id='".$servico["id_servico"]."-".$servico["contratado"]."'"; ?>  class="finalizar_negociacao_como_contratante btn btn-danger">Finalizar Negociação</a>
+			<p> Serviço já foi prestado? </p>
+			<a  <?php echo  "id='".$servico["id_servico"]."-".$servico["contratado"]."'"; ?>  class="finalizar_negociacao_como_contratante btn btn-danger">Avaliar Serviço</a>
 		<?php }	?>
 			
-		</p>
+		
   	</div>
 
 </div>

@@ -371,12 +371,16 @@ text-decoration: underline;
 
 .logo_imagem {
 	width: 175px;
-    margin-top: 6px;
+    margin-top: 4px;
 }
 
 .logo_topo {
 
-	margin-left: 12%;
+	/* tirei este espacamento, 
+	pois acho que fica mais simétrico o site, 
+	ele orientado com todos os elementos do container,
+	por exemplo: sidebar de categorias   -ABREU
+	margin-left: 12%;*/
 }
 
 .topo2 .logo {
@@ -1169,6 +1173,38 @@ form .row {
 	padding-top: 40px;
 	text-align: center;
 }
+
+
+/*painel usuario servicos anuncios*/
+	.itens_painel {
+		border: 1px solid #e5e5e5;
+		margin-bottom: 10px;
+	}
+	.servico_img_painel {
+		float: left;
+		padding-top: 10px;
+	}
+	.servico_img_painel img {
+		width: 140px;
+		height: 100px;
+	}
+	.main_content_painel {
+		float: left;
+		height: 120px;
+	}
+	.painel_item_botoes {
+		float: right;		
+	}
+
+	.painel_item_botoes .btn{
+		min-width: 150px;
+		margin-top: 25px;
+		margin-bottom: -20px;
+	}
+
+
+	
+
 
 /* PERFIL PUBLICO DO USUARIO */
 

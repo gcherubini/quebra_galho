@@ -2,30 +2,6 @@
 	$servico = $_GET['servico']; 
 ?>
 
-<style>
-	.itens_painel {
-		border: 1px solid #e5e5e5;
-		margin-bottom: 10px;
-	}
-	.servico_img_painel {
-		float: left;
-		padding-top: 10px;
-	}
-	.servico_img_painel img {
-		width: 140px;
-		height: 100px;
-	}
-	.main_content_painel {
-		float: left;
-		height: 120px;
-	}
-	.botao_remover_painel {
-		float: right;
-		height: 100px;
-		padding-top: 40px;
-		text-align: center;
-	}
-</style>
 
 <div class="row itens_painel">
 
@@ -34,19 +10,22 @@
 	</div>
 
 	<div class="main_content_painel col-xs-8 col-sm-8 col-md-8">
-		<a href="#"><h4> <?php echo $servico["emprego"]; ?> </h4></a>
+		<a href="quebra_galho_perfil.php?id_servico=<?php echo $servico["id_servico"];?>"><h4> <?php echo $servico["emprego"]; ?> </h4></a>
 		<p> "<?php echo $servico["slogan"]; ?>" </p>
 		<p> <b>Número de serviços: </b> <?php echo $servico["numero_servicos"]; ?> (<a href="painel_usuario_negociacoes.php">Ver</a>)</p>
 		<p>0 Avaliações - PLACEHOLDER (<a href="#">Ver</a>)</p>
 	</div>
 
-	<div class="botao_remover_painel col-xs-4 col-sm-2 col-md-2">
+	<div class="painel_item_botoes col-xs-12 col-sm-2 col-md-2">
 		<!--<p>
 			<a href="" class="editar_servico">Editar informações do serviço</a>
 		</p>-->
-		<p> 
-			<a  <?php echo  "id='" . $servico["id_servico"] . "'"; ?> href="" class="deletar_servico btn btn-danger">Apagar anúncio</a>
-		</p>
+
+		<a  href="quebra_galho_perfil.php?id_servico=<?php echo $servico["id_servico"];?>" class="btn btn-primary">Ver Anúncio</a>
+	
+		<a  <?php echo  "id='" . $servico["id_servico"] . "'"; ?> href="" class="deletar_servico btn btn-danger">Apagar anúncio</a>
+		
+
   	</div>
 
 </div>
