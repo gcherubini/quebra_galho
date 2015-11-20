@@ -8,10 +8,22 @@ if($tipo != ""){
 	$errorMessage = "";
 	$conn = include "db_connection.php";
 
-	$sql = "SELECT negociacao.*, servico.*, usuario.*, emprego.* FROM negociacao 
+	$sql = "";
+
+	if($tipo == "como_contratante"){
+		$sql .= "SELECT negociacao.*, servico.*, usuario.*, emprego.* FROM negociacao 
 			JOIN servico ON negociacao.id_servico = servico.id_servico
 			JOIN usuario ON negociacao.contratado = usuario.id_usuario
 			JOIN emprego ON servico.id_emprego = emprego.id_emprego ";
+	}
+	else if($tipo == "como_prestador_de_servico"){
+		$sql .= "SELECT negociacao.*, servico.*, usuario.*, emprego.*, usuario.img_url AS usuario_img_url FROM negociacao 
+			JOIN servico ON negociacao.id_servico = servico.id_servico
+			JOIN usuario ON negociacao.contratante = usuario.id_usuario
+			JOIN emprego ON servico.id_emprego = emprego.id_emprego ";
+	}
+
+	
 
 
 	if($tipo == "como_contratante"){

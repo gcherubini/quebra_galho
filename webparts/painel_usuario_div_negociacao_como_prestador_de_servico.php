@@ -6,13 +6,13 @@
 <div class="row itens_painel">
 						 
  	<div class="servico_img_painel col-xs-12 col-sm-2 col-md-2">
-		<a href="quebra_galho_perfil.php?id_servico=<?php echo $json["id_servico"];?>"><?php echo '<img class="img-responsive" src="'.$json["img_url"].'"/>'; ?></a>
+		<?php echo '<img class="img-responsive" src="'.$json["usuario_img_url"].'"/>'; ?>
 	</div>
 
   	<div class="main_content_painel col-xs-8 col-sm-8 col-md-8">
-  		<a href="quebra_galho_perfil.php?id_servico=<?php echo $json["id_servico"];?>"><h4> <?php echo $json["nome"]; ?> </h4></a>
+  		<h4> <?php echo $json["nome"]; ?> </h4>
   		<h5> Serviço interessado: <?php echo $json["emprego"]; ?></h5> 
-		<h5> Negociação iniciada em: xx/xx/xxxx </h5>
+		<!-- <h5> Negociação iniciada em: xx/xx/xxxx </h5> -->
 		<h5> Fone: <?php echo $json["tel_contato"]; ?> - Celular: <?php echo $json["cel_contato"]; ?> </h5>
 		<h5> E-mail: <?php echo $json["email"]; ?> </h5>
   	</div>
