@@ -4,7 +4,7 @@ USE `servicosonline`;
 --
 -- Host: 127.0.0.1    Database: servicosonline
 -- ------------------------------------------------------
--- Server version	5.6.25
+-- Server version	5.6.21
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -39,7 +39,7 @@ CREATE TABLE `avaliacao` (
   CONSTRAINT `avaliacao_ibfk_1` FOREIGN KEY (`contratado`) REFERENCES `usuario` (`id_usuario`),
   CONSTRAINT `avaliacao_ibfk_2` FOREIGN KEY (`contratante`) REFERENCES `usuario` (`id_usuario`),
   CONSTRAINT `avaliacao_ibfk_3` FOREIGN KEY (`id_servico`) REFERENCES `servico` (`id_servico`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -48,6 +48,7 @@ CREATE TABLE `avaliacao` (
 
 LOCK TABLES `avaliacao` WRITE;
 /*!40000 ALTER TABLE `avaliacao` DISABLE KEYS */;
+INSERT INTO `avaliacao` VALUES (10,35,37,63,4,'Contratei o Marcos para tocar na minha festa de formatura e ele animou o pessoal a noite inteira. Tocou desde os clássicos até as músicas de hoje, mas ele me deixou bem à vontade para escolher os estilos que tocariam na minha festa. Recomendo!','2015-11-19 23:59:30');
 /*!40000 ALTER TABLE `avaliacao` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -150,7 +151,7 @@ CREATE TABLE `negociacao` (
   CONSTRAINT `negociacao_ibfk_1` FOREIGN KEY (`contratante`) REFERENCES `usuario` (`id_usuario`),
   CONSTRAINT `negociacao_ibfk_2` FOREIGN KEY (`contratado`) REFERENCES `usuario` (`id_usuario`),
   CONSTRAINT `negociacao_ibfk_3` FOREIGN KEY (`id_servico`) REFERENCES `servico` (`id_servico`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -159,6 +160,7 @@ CREATE TABLE `negociacao` (
 
 LOCK TABLES `negociacao` WRITE;
 /*!40000 ALTER TABLE `negociacao` DISABLE KEYS */;
+INSERT INTO `negociacao` VALUES (29,37,35,63,1,'2015-11-19 23:56:27');
 /*!40000 ALTER TABLE `negociacao` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -247,7 +249,7 @@ CREATE TABLE `servico` (
 
 LOCK TABLES `servico` WRITE;
 /*!40000 ALTER TABLE `servico` DISABLE KEYS */;
-INSERT INTO `servico` VALUES (54,36,40,'Mãos leves','Trabalho na área da saúde a 5 anos, tenho bastante experiência em técnicas de shiatsu.',0,'Canoas,Porto Alegre,Viamão,',NULL,NULL,'(51) 9662-2222','2015-11-19 22:01:25'),(55,37,21,'Webdesign e vídeos','Trabalho nesta área a um bom tempo, desde pequena era encantada pelas aulas de artes.',0,'Gravataí,Porto Alegre,',NULL,NULL,'(51) 9625-5151','2015-11-19 22:04:33'),(56,38,19,'Dentes limpos e saudáveis','Trabalho na área da saúde a 10 anos, meus clientes em primeiro lugar. Venha conhecer meu consultório.',1,'Porto Alegre,Viamão,',NULL,NULL,'(51) 9592-2233','2015-11-19 22:07:02'),(57,32,50,'Trabalho com qualidade','Faço manutenção em geral, procuro fazer meu serviço muito bem.',0,'Canoas,Porto Alegre,',NULL,NULL,'(51) 9532-6666','2015-11-19 22:09:04'),(58,32,48,'Pães deliciosos e quentinhos','Vendo pães deliciosos, diversas opções integrais. Atua na área da alimentação a 2 anos.',0,'Canoas,Esteio,',NULL,NULL,'(51) 3646-4643','2015-11-19 22:10:44'),(59,33,17,'Malhas e tramas bem feitas','Me formei em moda em 2000, atuo na área faz tempo, realizando diversos modelitos conteporâneos.',0,'Esteio,Porto Alegre,Viamão,',NULL,NULL,'(51) 9656-2323','2015-11-19 22:12:41'),(60,33,8,'Vim do teatro, teatro não sai de mim','Solicite uma peça teatral para seu baixinho, para mais informações de evento me contate!',0,'Porto Alegre,',NULL,NULL,'(51) 9566-2222','2015-11-19 22:14:13'),(61,34,9,'Faça sua barba com estilo','Vou até sua casa, faço sua barba e te deixo na moda!',0,'Canoas,Porto Alegre,',NULL,NULL,'(51) 9532-6655','2015-11-19 22:15:34'),(62,35,71,'Atendimento ágil 24 horas','Furou o pneu? Me ligue!\r\nManutenção 24 horas.',0,'Porto Alegre,',NULL,NULL,'(51) 9985-6622','2015-11-19 22:19:28'),(63,35,24,'Do clássico ao moderno','Dance sem parar, realizo eventos de todos os portes.',0,'Canoas,Esteio,Novo Hamburgo,Porto Alegre,',NULL,NULL,'(51) 9955-6657','2015-11-19 22:21:04'),(64,39,1,'Cães filhotes e adultos','Experiência de 3 anos adestrando cães domésticos. Atendo em sua casa.',0,'Esteio,Porto Alegre,',NULL,NULL,'(51) 9265-3333','2015-11-19 22:24:08'),(65,39,52,'Aulas particulares de matemática','Dou aulas particulares em seu domicílio, basta me ligar.',0,'Canoas,Esteio,Porto Alegre,',NULL,NULL,'(51) 9655-2335','2015-11-19 22:26:02');
+INSERT INTO `servico` VALUES (54,36,40,'Mãos leves','Trabalho na área da saúde há 5 anos, tenho bastante experiência em técnicas de shiatsu.',0,'Canoas,Porto Alegre,Viamão,',NULL,NULL,'(51) 9662-2222','2015-11-19 22:01:25'),(55,37,21,'Webdesign e vídeos','Trabalho nesta área há um bom tempo, desde pequena era encantada pelas aulas de artes.',0,'Gravataí,Porto Alegre,',NULL,NULL,'(51) 9625-5151','2015-11-19 22:04:33'),(56,38,19,'Dentes limpos e saudáveis','Trabalho na área da saúde há 10 anos, meus clientes em primeiro lugar. Venha conhecer meu consultório.',1,'Porto Alegre,Viamão,',NULL,NULL,'(51) 9592-2233','2015-11-19 22:07:02'),(57,32,50,'Trabalho com qualidade','Faço manutenção em geral, procuro fazer meu serviço muito bem.',0,'Canoas,Porto Alegre,',NULL,NULL,'(51) 9532-6666','2015-11-19 22:09:04'),(58,32,48,'Pães deliciosos e quentinhos','Vendo pães deliciosos, diversas opções integrais. Atua na área da alimentação há 2 anos.',0,'Canoas,Esteio,',NULL,NULL,'(51) 3646-4643','2015-11-19 22:10:44'),(59,33,17,'Malhas e tramas bem feitas','Me formei em moda em 2000, atuo na área faz tempo, realizando diversos modelitos conteporâneos.',0,'Esteio,Porto Alegre,Viamão,',NULL,NULL,'(51) 9656-2323','2015-11-19 22:12:41'),(60,33,8,'Ser ou não ser','Solicite uma peça teatral para seu baixinho, para mais informações de evento me contate!',0,'Porto Alegre,',NULL,NULL,'(51) 9566-2222','2015-11-19 22:14:13'),(61,34,9,'Faça sua barba com estilo','Vou até sua casa, faço sua barba e te deixo na moda!',0,'Canoas,Porto Alegre,',NULL,NULL,'(51) 9532-6655','2015-11-19 22:15:34'),(62,35,71,'Atendimento ágil 24 horas','Furou o pneu? Me ligue!\r\nManutenção 24 horas.',0,'Porto Alegre,',NULL,NULL,'(51) 9985-6622','2015-11-19 22:19:28'),(63,35,24,'Do clássico ao moderno','Dance sem parar, realizo eventos de todos os portes.',0,'Canoas,Esteio,Novo Hamburgo,Porto Alegre,',NULL,NULL,'(51) 9955-6657','2015-11-19 22:21:04'),(64,39,1,'Cães filhotes e adultos','Experiência de 3 anos adestrando cães domésticos. Atendo em sua casa.',0,'Esteio,Porto Alegre,',NULL,NULL,'(51) 9265-3333','2015-11-19 22:24:08'),(65,39,52,'Aulas particulares de matemática','Dou aulas particulares em seu domicílio, basta me ligar.',0,'Canoas,Esteio,Porto Alegre,',NULL,NULL,'(51) 9655-2335','2015-11-19 22:26:02');
 /*!40000 ALTER TABLE `servico` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -281,7 +283,7 @@ CREATE TABLE `usuario` (
 
 LOCK TABLES `usuario` WRITE;
 /*!40000 ALTER TABLE `usuario` DISABLE KEYS */;
-INSERT INTO `usuario` VALUES (32,'albertosilva@gmail.com','123456','Alberto Silva','185.302.491-00','1970-01-01','m','img/usuarios/32_20-11-2015_00-54-18.jpg',4,1,0,NULL),(33,'arthurmendes@gmail.com','123456','Arthur Mendes','297.276.931-72','1981-11-05','m','img/usuarios/33_20-11-2015_00-55-02.jpg',3,2,0,NULL),(34,'felipegarcia@gmail.com','123456','Felipe Garcia','097.979.041-72','1973-11-05','m','img/usuarios/34_20-11-2015_00-56-34.jpg',4,2,0,NULL),(35,'marcosgiaco@gmail.com','123456','Marcos Giacomelli','545.412.121-45','1973-11-05','m','img/usuarios/35_20-11-2015_00-57-05.jpg',4,2,0,NULL),(36,'soniaantunes@gmail.com','123456','Sonia Antunes','121.212.545-55','1981-09-11','f','img/usuarios/36_20-11-2015_00-58-36.jpg',3,1,0,NULL),(37,'maria@gmail.com','123456','Maria Hernandes','121.214.551-02','1982-06-11','f','img/usuarios/37_20-11-2015_01-02-30.jpg',4,0,0,NULL),(38,'alinecastro@gmail.com','123456','Aline Castro','154.125.454-12','1972-09-11','f','img/usuarios/38_20-11-2015_01-05-36.jpg',5,5,0,NULL),(39,'rodrigo@gmail.com','123456','Rodrigo Souza','456.841.515-11','1985-04-11','o','img/usuarios/39_20-11-2015_01-22-04.jpg',NULL,NULL,0,NULL);
+INSERT INTO `usuario` VALUES (32,'albertosilva@gmail.com','123456','Alberto Silva','185.302.491-00','1970-01-01','m','img/usuarios/32_20-11-2015_00-54-18.jpg',4,1,0,NULL),(33,'arthurmendes@gmail.com','123456','Arthur Mendes','297.276.931-72','1981-11-05','m','img/usuarios/33_20-11-2015_00-55-02.jpg',3,2,0,NULL),(34,'felipegarcia@gmail.com','123456','Felipe Garcia','097.979.041-72','1973-11-05','m','img/usuarios/34_20-11-2015_00-56-34.jpg',4,2,0,NULL),(35,'marcosgiaco@gmail.com','123456','Marcos Giacomelli','545.412.121-45','1973-11-05','m','img/usuarios/35_20-11-2015_00-57-05.jpg',4,2,0,NULL),(36,'soniaantunes@gmail.com','123456','Sonia Antunes','121.212.545-55','1981-09-11','f','img/usuarios/36_20-11-2015_00-58-36.jpg',3,1,0,NULL),(37,'maria@gmail.com','123456','Maria Hernandes','121.214.551-02','1982-06-11','f','img/usuarios/37_20-11-2015_01-02-30.jpg',4,0,0,NULL),(38,'alinecastro@gmail.com','123456','Aline Castro','154.125.454-12','1972-09-11','f','img/usuarios/38_20-11-2015_01-05-36.jpg',5,5,0,NULL),(39,'rodrigo@gmail.com','123456','Rodrigo Souza','456.841.515-11','1985-04-11','o','img/usuarios/39_20-11-2015_01-22-04.jpg',5,3,0,NULL);
 /*!40000 ALTER TABLE `usuario` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -294,4 +296,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-11-19 22:27:45
+-- Dump completed on 2015-11-20  0:10:27
