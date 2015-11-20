@@ -9,13 +9,13 @@
 
 <div class="row ">
   
-  <div class="col-md-10">
+  <div class="col-md-12">
 		<p> "<?php echo $notificacao["mensagem"]; ?>" </p>
   </div>
-   <div class="col-md-2">
+   <!-- <div class="col-md-2">
 		<p> 
-			<!-- <a  <?php echo  "id='" . $notificacao["id_notificacao"] . "'"; ?> href="" class="deletar_notificacao">Deletar notificação</a> -->
+			 <a  <?php /*echo  "id='" . $notificacao["id_notificacao"] . "'"; */?> href="" class="deletar_notificacao">Deletar notificação</a> 
 		</p>
-  </div>
+  </div> -->
 
 </div>
