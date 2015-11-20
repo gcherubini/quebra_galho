@@ -52,6 +52,7 @@ $id_servico = isset($_GET['id_servico']) ? trim($_GET['id_servico']) : 0;
 	}
 
 	function populaServicoNaTela (servico_json) {
+		$(".numero_servicos").text(servico_json.numero_servicos);
 		$(".servico_nome").text(servico_json.nome);
 		$(".servico_emprego_e_idade").text(servico_json.emprego);
 		$(".servico_emprego_e_idade").append(" (" + servico_json.idade + " anos)");
@@ -128,7 +129,8 @@ $id_servico = isset($_GET['id_servico']) ? trim($_GET['id_servico']) : 0;
 		     				<div class="col-xs-6 col-sm-8 col-md-8 perfil-1i2j">
 		     					 <h2 class="servico_nome">  </h2>
 		     					 <h5 class="servico_emprego_e_idade"> </h5>
-		     					  <p class="servico_slogan">  </p> 
+		     					 <p>Número de serviços: <span class="numero_servicos"></span></p>
+		     					 <p class="servico_slogan">  </p> 
 		     				</div>
 		     			</div>
 					

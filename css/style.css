@@ -1323,6 +1323,7 @@ form .row {
 .servico_descricao {
 
 	margin-top: 10px;
+	text-align: center;
 
 
 }
@@ -1381,7 +1382,13 @@ form .row {
 .servico_slogan {
 
 	font-size: 12px;
+	text-align: center;
 
+}
+
+.numero_servicos {
+
+	font-weight: bold;
 }
 
 /* MODAL DA CONTRATAÇÃO */
