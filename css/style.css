@@ -1117,8 +1117,6 @@ form .row {
 
 .ui-datepicker{
 	background: white !important;
-	padding: 5px !important;
-	border: 1px solid #ccc;
 }
 .ui-datepicker span, .ui-datepicker td, .ui-datepicker a{
 	margin:3px;

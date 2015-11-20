@@ -170,102 +170,83 @@ if(!isset($_SESSION['id_usuario'])){
 
 	    <div class="container content">
 
-	    
+	    <?php include("webparts/painel_usuario_menu.php"); ?>
 
-	<?php
-		if (isset($_SESSION['id_usuario'])) {
-	 ?>		
+	 	<div class="painel_usuario_main">
 
-	 		<?php include("webparts/painel_usuario_menu.php"); ?>
+			<p> 
+				Olá <b> <?php echo $_SESSION["nome"]; ?></b>, seja bem-vindo(a) ao Painel do Usuário. 
+			</p>
 
-	 		<div class="painel_usuario_main">
+			<p>
+				Aqui você encontra um resumo sobre o seu perfil, onde pode modificar algumas informações pessoais e configurações da sua conta.
+			</p>
 
-	 				
-
-					<p> Olá <b> <?php echo $_SESSION["nome"]; ?></b>, seja bem-vindo(a) ao Painel do Usuário. </p>
-
-					<!--
-					<p> Para ver o seu perfil público <id class="ver_perfil_publico"><a href="#"> Clique Aqui. </a> </id> </p>
-					-->
-
-					</p>
-
-					<p>
-						Aqui você encontra um resumo sobre o seu perfil, onde pode modificar algumas informações pessoais e configurações da sua conta.
-					</p>
-
-				<?php include("webparts/resultado_de_operacoes.php"); ?>
+			<?php include("webparts/resultado_de_operacoes.php"); ?>
 
 			<div class="perfil_info">
 				<h2> Meu Perfil </h2>
 
-					<div class="div_usuario_foto">
-		     				<img class="cropit-image-preview usuario_foto" />
-		     		</div>
+				<div class="div_usuario_foto">
+		     		<img class="cropit-image-preview usuario_foto" />
+		     	</div>
 
-					
+				<p>
+					Nome: <?php echo $_SESSION["nome"]; ?>
+				</p>
 
-					<p>
-						Nome: <?php echo $_SESSION["nome"]; ?>
-					</p>
+				<p>
+					Data de Nascimento: <input name="data_nascimento" class="form-control data_nascimento" type='text' disabled value=""></input>
+				</p>
 
-					<p>
-						Data de Nascimento: <input name="data_nascimento" class="form-control data_nascimento" type='text' disabled value=""></input>
-					</p>
+				<p>
+					E-mail: <input name="email" class="form-control email" type='text' disabled value=""></input>
+				</p>
 
-					<p>
-						E-mail: <input name="email" class="form-control email" type='text' disabled value=""></input>
-					</p>
+				<p>
+					Senha: <input name="password" class="form-control password" type='password' disabled value="xxxxxx"></input>
+				</p>
 
-					<p>
-						Senha: <input name="password" class="form-control password" type='password' disabled value="xxxxxx"></input>
-					</p>
+				<!--<p>
+					Telefone: <input name="telefone" class="form-control telefone" type='text' disabled value=""></input>
+				</p>-->
 
-					<!--<p>
-						Telefone: <input name="telefone" class="form-control telefone" type='text' disabled value=""></input>
-					</p>-->
+				<!-- <p>
+					Endereço: <input name="endereco" class="form-control endereco" type='text' disabled value="R. Grande, 123"></input>
+				</p>-->
 
-					<!-- <p>
-						Endereço: <input name="endereco" class="form-control endereco" type='text' disabled value="R. Grande, 123"></input>
-					</p>-->
+				<div class="btn btn-default btn-edit left">Editar</div>
 
-					<div class="btn btn-default btn-edit left">Editar</div>
+				<div class="btn btn-default btn-save left">Salvar</div>
 
-					<div class="btn btn-default btn-save left">Salvar</div>
+				<div class="btn btn-default btn-cancel left">Cancelar</div>
 
-					<div class="btn btn-default btn-cancel left">Cancelar</div>
-
-					<div style="clear:both;"></div>
+				<div style="clear:both;"></div>
 
 				<h2> Avaliações </h2>
 
-					
-
-					<div class="reputacao_geral"> <p>
+				<div class="reputacao_geral"> 
+					<p>
 						Sua reputação geral: <id class="glyphicon glyphicon-star reputacao_estrelas"> </id>
-
 					</p>
-
 				</div>
 
-					<p>
-						
-						Últimas avaliações sobre seus serviços:
+				<p>
+					Últimas avaliações sobre seus serviços:
+				</p>
 
-					</p>
-
-					<div class="avaliacoes">
-						
-					</div>
+				<div class="avaliacoes">
+					
+				</div>
 						
 					
-					<div class="ver_mais_avaliacoes"><a href="#">Ver mais avaliações</a> </div>
+				<div class="ver_mais_avaliacoes"><a href="#">Ver mais avaliações</a> </div>
 					
 				
 
-					<div class="itens_nao_encotrados avaliacoes_nao_encontradas">
-						<p> Você ainda não possui nenhuma avaliação. </p>
-					</div>
+				<div class="itens_nao_encotrados avaliacoes_nao_encontradas">
+					<p> Você ainda não possui nenhuma avaliação. </p>
+				</div>
 
 
 				<!--
@@ -294,30 +275,25 @@ if(!isset($_SESSION['id_usuario'])){
 
 				<h2> Configurações da Conta </h2>
 
-					<p>
-						Gostaria de receber notificações no meu email (s/n)
-					</p>
+				<p>
+					Gostaria de receber notificações no meu email (s/n)
+				</p>
 
-					<p>
-						Gostaria de receber ofertas do quebra-galho no meu email (s/n)
-					</p>
+				<p>
+					Gostaria de receber ofertas do quebra-galho no meu email (s/n)
+				</p>
 
-					<p>
-						<a href="contato.php">Deletar conta</a>
-					</p>
+				<p>
+					<a href="contato.php">Deletar conta</a>
+				</p>
 
+			</div>
 		</div>
-	</div>
-	<?php
-		} else {
-		  include("webparts/div_voce_precisa_se_logar.php"); 
-		}
-	?>		
-						
-				<?php include("webparts/pagina_nao_encontrada.php"); ?>
-	    </div>
+				
+			
+    </div>
 
-	     <?php include("webparts/rodape.php"); ?>
+     <?php include("webparts/rodape.php"); ?>
 	</div>
   </body>
 </html>

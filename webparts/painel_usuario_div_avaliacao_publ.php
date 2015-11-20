@@ -30,12 +30,12 @@ $json = isset($_GET['json']) ? $_GET['json'] : "";
 		<div class="row itens_painel">
 		 
 		 	<div class="servico_img_painel col-xs-12 col-sm-2 col-md-2">
-				<a href="#"><img src ="<?php echo $json["contratante_foto"]; ?>" class="foto_usuario"> </a>
+				<a href="quebra_galho_perfil.php?id_servico=<?php echo $json["id_servico"];?>"><img src ="<?php echo $json["contratante_foto"]; ?>" class="foto_usuario"> </a>
 			</div>
 
 		  	<div class="main_content_painel col-xs-8 col-sm-8 col-md-8">
 		  		<h4> <?php echo $json["nome"]; ?> </h4>
-				<h5> Serviço avaliado: <id class="link_to_servico"><a href="#"><?php echo $json["emprego"]; ?></a></id> </h5>
+				<h5> Serviço avaliado: <id class="link_to_servico"><a href="quebra_galho_perfil.php?id_servico=<?php echo $json["id_servico"];?>"><?php echo $json["emprego"]; ?></a></id> </h5>
 				
 				<h5> Estrelas:
 
