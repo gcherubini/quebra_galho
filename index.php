@@ -347,7 +347,7 @@ $pesquisa = isset($_GET['pesquisa']) ? trim($_GET['pesquisa']) : '';
 		        	<div class="sidebar-categorias">
 		        		<ul>
 		        			<li class="sidebar-categoria-item"> <span class="glyphicon glyphicon-home"> </span> <div class="sidebar-categoria-text ">Domésticos</div>  </li>
-		        			<li class="sidebar-categoria-item"> <span class="glyphicon glyphicon-wrench"> </span> <div class="sidebar-categoria-text  sidebar-item-direita">Manuteção</div>  </li>	
+		        			<li class="sidebar-categoria-item"> <span class="glyphicon glyphicon-wrench"> </span> <div class="sidebar-categoria-text  sidebar-item-direita">Manutenção</div>  </li>	
 		        			<li class="sidebar-categoria-item"> <span class="glyphicon glyphicon-plus"> </span> <div class="sidebar-categoria-text ">Saúde</div> </li>
 		        			<li class="sidebar-categoria-item"> <span class="glyphicon glyphicon-education"> </span> <div class="sidebar-categoria-text  sidebar-item-direita">Aulas</div>  </li>
 		        			<li class="sidebar-categoria-item"> <span class="glyphicon glyphicon-cutlery"> </span> <div class="sidebar-categoria-text ">Alimentação</div> </li>
